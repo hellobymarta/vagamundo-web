@@ -2,11 +2,14 @@ import Silueta from '@/components/silueta'
 import Boton from '@/components/boton'
 import { useCarrusel } from '@/hooks/use-carrusel'
 import { IMAGEN_POR_DEFECTO } from '@/config/constantes'
-import { fotoDeDestino } from '@/config/destinos'
+import { fotoDeDestino, nombreCorto } from '@/config/destinos'
 
-// Explorador de viajes, calcado del hero de destinos de Utópica: la foto a
-// sangre, el contorno del país dibujándose arriba, el nombre en cursiva
-// serif en el centro, los vecinos apagados a los lados y dos flechas abajo.
+// Explorador de viajes, calcado del hero de destinos de Utópica.
+//
+// Lo importante, y lo que me faltaba: el título grande en cursiva es el
+// nombre del SITIO («Chile», «Omán», «Maldivas»), no el del viaje. Por eso
+// en su web nunca se descuadra: son una o dos palabras. El nombre del viaje
+// va en pequeño encima, y a los lados van otra vez los sitios, no los viajes.
 export default function Explorador({ viajes }) {
   const { indice, siguiente, anterior } = useCarrusel(viajes.length)
 
@@ -35,7 +38,8 @@ export default function Explorador({ viajes }) {
       ))}
 
       {/* Utópica apaga mucho la foto: casi todo el peso lo lleva el texto. */}
-      <div className="absolute inset-0 bg-tinta/66" />
+      <div className="absolute inset-0 bg-tinta/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-tinta/40 via-transparent to-tinta/45" />
 
       <div className="relative flex h-full flex-col items-center justify-center px-6 md:px-10">
         {/* El contorno del país. La key hace que el trazo se vuelva a dibujar
@@ -44,31 +48,36 @@ export default function Explorador({ viajes }) {
           <Silueta destino={destino} />
         </div>
 
-        {/* Los tres nombres, con el actual grande en el centro. */}
-        <div className="mt-14 grid w-full max-w-[1200px] grid-cols-1 items-center gap-8 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]">
+        {/* Los tres sitios, con el actual grande en el centro. */}
+        <div className="mt-12 grid w-full max-w-[1280px] grid-cols-1 items-center gap-6 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]">
           <button
             onClick={anterior}
-            className="titular-cursiva hidden min-w-0 cursor-pointer whitespace-normal text-left text-2xl leading-tight text-white/50 transition hover:text-white/80 md:block"
-            aria-label={`Ver ${anteriorViaje.nombre}`}
+            className="titular-cursiva hidden min-w-0 cursor-pointer whitespace-normal text-left text-xl leading-tight text-white/45 transition hover:text-white/80 lg:block"
+            aria-label={`Ver ${nombreCorto(anteriorViaje.destino)}`}
           >
-            {anteriorViaje.nombre}
+            {nombreCorto(anteriorViaje.destino)}
           </button>
 
-          <h2 className="titular-cursiva t-destino px-4 text-center text-white md:px-10">
-            {nombre}
-          </h2>
+          <div className="px-2 text-center md:px-8">
+            {/* El nombre del viaje, en pequeño y en mayúsculas espaciadas. */}
+            <p className="etiqueta text-white/55">{nombre}</p>
+
+            <h2 className="titular-cursiva t-destino mt-4 text-balance text-white">
+              {nombreCorto(destino)}
+            </h2>
+          </div>
 
           <button
             onClick={siguiente}
-            className="titular-cursiva hidden min-w-0 cursor-pointer whitespace-normal text-right text-2xl leading-tight text-white/50 transition hover:text-white/80 md:block"
-            aria-label={`Ver ${siguienteViaje.nombre}`}
+            className="titular-cursiva hidden min-w-0 cursor-pointer whitespace-normal text-right text-xl leading-tight text-white/45 transition hover:text-white/80 lg:block"
+            aria-label={`Ver ${nombreCorto(siguienteViaje.destino)}`}
           >
-            {siguienteViaje.nombre}
+            {nombreCorto(siguienteViaje.destino)}
           </button>
         </div>
 
         {descripcion && (
-          <p className="mt-7 max-w-xl text-center leading-relaxed text-white/85">{descripcion}</p>
+          <p className="mt-8 max-w-xl text-center leading-relaxed text-white/85">{descripcion}</p>
         )}
 
         <div className="mt-10">
@@ -78,7 +87,7 @@ export default function Explorador({ viajes }) {
         </div>
 
         {/* Solo dos flechas, muy separadas, como en Utópica. */}
-        <div className="mt-16 flex items-center gap-14">
+        <div className="mt-14 flex items-center gap-14">
           <button
             onClick={anterior}
             className="cursor-pointer text-3xl font-light text-white/60 transition hover:text-white"

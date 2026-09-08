@@ -6,6 +6,7 @@
 // a un destino de verdad, igual que hacemos con las siluetas de los mapas.
 
 import { FOTOS } from '@/config/constantes'
+import { contienePalabra } from '@/formato'
 
 export const DESTINOS = [
   {
@@ -17,7 +18,7 @@ export const DESTINOS = [
     titular: 'El país al que siempre volvemos',
     entradilla:
       'Empezamos aquí, y aquí seguimos. La costa amalfitana en mayo y el tacón de la bota en septiembre, cuando el sur vuelve a ser de los del sur.',
-    pistas: ['italia', 'amalfi', 'apulia', 'positano', 'matera', 'bari', 'atrani', 'ravello'],
+    pistas: ['italia', 'amalfi', 'amalfitana', 'apulia', 'positano', 'matera', 'bari', 'atrani', 'ravello'],
   },
   {
     id: 'grecia',
@@ -121,12 +122,29 @@ export const DESTINOS = [
 ]
 
 // De un texto libre («Nordeste de Brasil») al destino que le toca.
+// Compara por palabras completas, no por trozos: «Polinesia Francesa» no
+// puede acabar clasificada como Francia.
 export function buscarDestino(texto = '') {
-  const minusculas = texto.toLowerCase()
-
   return (
-    DESTINOS.find(({ pistas }) => pistas.some((pista) => minusculas.includes(pista))) || null
+    DESTINOS.find(({ pistas }) => pistas.some((pista) => contienePalabra(texto, pista))) || null
   )
+}
+
+// El nombre corto de un destino, para los títulos grandes.
+//
+// Utópica no pone en su hero el nombre del viaje, sino el del sitio: «Chile»,
+// «Omán», «Maldivas». Dos palabras como mucho. Aquí hacemos lo mismo:
+//   «Costa amalfitana, Italia» -> «Italia»   (lo dice la tabla de destinos)
+//   «Kioto, Japón»             -> «Japón»
+//   «Polinesia Francesa»       -> «Polinesia Francesa»  (se queda tal cual)
+export function nombreCorto(texto = '') {
+  const encontrado = buscarDestino(texto)
+  if (encontrado) return encontrado.nombre
+
+  // Si no está en la tabla, nos quedamos con lo que va después de la última
+  // coma, que en un «Ciudad, País» es justo el país.
+  const trozos = texto.split(',')
+  return trozos[trozos.length - 1].trim() || texto
 }
 
 // Todos los viajes que caen en un destino.

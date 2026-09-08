@@ -145,8 +145,11 @@ rejilla), y de ahí salen estas decisiones.
 ### De Utópica, dos piezas
 
 - **El explorador de viajes** (`explorador.jsx`): la foto a sangre muy apagada, el contorno del
-  país dibujándose arriba, el nombre del viaje en **cursiva serif** en el centro, los vecinos
-  apagados a los lados y dos flechas abajo. Los contornos no están dibujados a mano: los genero
+  país dibujándose arriba, dos flechas abajo y, en el centro, el **nombre del sitio** en cursiva
+  serif. Esto último es la clave: Utópica no pone ahí el nombre del viaje, pone «Chile», «Omán»,
+  «Maldivas» — una o dos palabras. Por eso en su web nunca se descuadra. El nombre del viaje va
+  encima, pequeño y en mayúsculas, y a los lados van otra vez los sitios. De traducir
+  «Costa amalfitana, Italia» a «Italia» se encarga `nombreCorto()` en `config/destinos.js`. Los contornos no están dibujados a mano: los genero
   con el atlas de *world-atlas* (Natural Earth 1:110m) proyectado en Mercator y limpio de islas
   pequeñas — 55 países en `config/siluetas.js`.
 - **La marquesina** (`marquesina.jsx`): tres filas de nombres enormes en serif deslizándose

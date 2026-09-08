@@ -107,7 +107,8 @@ label {
 }
 
 .t-destino {
-  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  font-size: clamp(2rem, 4.2vw, 3.5rem);
+  line-height: 1.05;
 }
 
 .cifras {

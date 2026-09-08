@@ -5,6 +5,8 @@
 // 200x200, quitando las islas pequeñas para que el contorno se lea limpio.
 // Cada valor es solo el atributo "d" de un <path>.
 
+import { contienePalabra } from '@/formato'
+
 export const LIENZO_SILUETA = 200
 
 export const SILUETAS = {
@@ -123,7 +125,7 @@ export const SILUETAS = {
 // Cada silueta con las palabras que la disparan. Buscamos en el campo
 // "destino" del viaje, así que basta con que aparezca el país o una ciudad.
 const PISTAS = {
-  italia: ['italia', 'amalfi', 'apulia', 'positano', 'sicilia', 'roma', 'matera', 'bari', 'atrani', 'ravello'],
+  italia: ['italia', 'amalfi', 'amalfitana', 'apulia', 'positano', 'sicilia', 'roma', 'matera', 'bari', 'atrani', 'ravello'],
   brasil: ['brasil', 'brazil', 'rio de janeiro', 'bahia', 'jericoacoara', 'fortaleza', 'lencois', 'lençóis'],
   namibia: ['namibia', 'etosha', 'sossusvlei', 'windhoek', 'kalahari'],
   espana: ['espana', 'españa', 'spain', 'mallorca', 'canarias', 'menorca', 'asturias'],
@@ -181,11 +183,11 @@ const PISTAS = {
 }
 
 // Devuelve la silueta que corresponde a un destino, o null si no la tenemos.
+// Compara por palabras completas: si no, «Polinesia Francesa» acaba
+// enseñando el mapa de Francia, porque «francesa» contiene «france».
 export function buscarSilueta(destino = '') {
-  const texto = destino.toLowerCase()
-
   for (const [clave, pistas] of Object.entries(PISTAS)) {
-    if (pistas.some((pista) => texto.includes(pista))) return SILUETAS[clave]
+    if (pistas.some((pista) => contienePalabra(destino, pista))) return SILUETAS[clave]
   }
 
   return null

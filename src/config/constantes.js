@@ -261,5 +261,7 @@ export const MENSAJES = {
   ELIMINADO: 'Viaje eliminado del catálogo.',
 }
 
-// Imagen de reserva para los viajes que no traen foto.
-export const IMAGEN_POR_DEFECTO = FOTOS.MAR
+// Imagen de reserva para los viajes que no traen foto ni destino conocido.
+// A propósito no es de Amalfi: ilustrar un viaje a Kioto con la costa
+// italiana es peor que no decir nada.
+export const IMAGEN_POR_DEFECTO = FOTOS.SALAR
