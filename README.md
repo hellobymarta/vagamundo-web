@@ -108,9 +108,19 @@ rejilla), y de ahí salen estas decisiones.
 
 ### De NUBA, el esqueleto
 
-- **La cabecera.** Barra sólida en crema (#EFEBE6 en su web) con el texto en negro, los enlaces
-  repartidos a los lados y el nombre de la marca centrado en serif fino con el interletrado muy
-  abierto. No va encima de la foto: la foto empieza justo debajo.
+- **La cabecera y su efecto de scroll.** Lo medí en su propia web, abriendo sus hojas de estilo:
+  usan una clase `.did-scroll` en el `body` y el cambio es exactamente este —
+
+  | | arriba de la página | al bajar |
+  |---|---|---|
+  | alto | 90 px | 75 px |
+  | fondo | transparente | `rgb(239, 235, 230)` |
+  | texto y logotipo | blancos | negros |
+  | borde inferior | ninguno | 1 px |
+
+  con `transition: height 0.6s`. Aquí lo resuelve el hook `use-cabecera-solida`, y como en su web
+  la barra también se vuelve sólida al pasar el ratón por encima. El logotipo va centrado en
+  absoluto (`left: 50%`), no con el flex, para que no se mueva aunque cambien los menús.
 - **La portada rotativa.** Varias campañas que se alternan, con el epígrafe en serif (no en
   mayúsculas), el titular grande, un botón **rectangular** de contorno fino y la paginación en
   puntitos.
@@ -135,6 +145,14 @@ rejilla), y de ahí salen estas decisiones.
   **formulario sobre fondo caqui** con los campos sin caja, y la **banda oscura de cierre**
   con la pregunta a la izquierda y la llamada a la acción a la derecha.
 
+### De Travel Machine, el cursor
+
+`cursor.jsx` dibuja un punto blanco de 12 px que sigue al ratón y, al pasar por encima de algo
+pulsable, crece a 44 px y se queda hueco. El cursor del sistema se esconde con `cursor: none` en
+`index.css`, y en pantallas táctiles (`@media (hover: none)`) no se dibuja nada y vuelve el de
+siempre. Lleva `mix-blend-difference`, así que se lee tanto sobre las fotos oscuras como sobre el
+fondo crema sin cambiarle el color.
+
 ### De Wilderness
 
 Los tres pasos numerados 01/02/03, el precio en formato «Desde X € por persona», la duración en
@@ -153,9 +171,9 @@ para el pie, y un pastel por sección (rosa buganvilla, terracota, amarillo lim�
 
 ### Fotografías
 
-Las de Positano, Amalfi y Atrani son mías, de la PEC 1. Las de Apulia, Brasil, Namibia, India,
-Uzbekistán, Guatemala, Costa Rica, el salar y el Amazonas están sacadas de los catálogos de
-viajes de 2026 y se usan solo con fines académicos en esta práctica.
+Las de Positano, Amalfi y Atrani son mías, de la PEC 1. Las de Apulia, Grecia, Jordania, Brasil,
+Namibia, India, Uzbekistán, Guatemala, Costa Rica, el salar y el Amazonas están extraídas de los
+catálogos de viajes de 2026 y se usan solo con fines académicos en esta práctica.
 
 ## Decisiones de arquitectura
 
@@ -172,6 +190,24 @@ viajes de 2026 y se usan solo con fines académicos en esta práctica.
 - **Listas sin índice.** Todos los `map` usan el `_id` de MongoDB como `key`, nunca la posición.
 - **Deconstrucción y spread.** En el listado se deconstruye cada viaje
   (`{ _id, ...viaje }`) y el resto de sus datos se pasan a `<TarjetaViaje>` con el operador spread.
+
+## El catálogo
+
+`semillas.http` trae los **nueve viajes**, repartidos en cuatro zonas:
+
+| Zona | Viajes |
+|------|--------|
+| Mediterráneo | Amalfi en primavera · Apulia inédita · Del continente a Santorini |
+| África austral y Oriente Medio | Namibia, de Etosha al Kalahari · Jordania, el desierto por dentro |
+| América Latina | Ruta de las emociones · Guatemala, del lago a la selva |
+| Asia | India, de Delhi al Ganges · La Ruta de la Seda |
+
+La duración, el precio y la ruta de cada uno salen de los catálogos de viajes de 2026; los
+nombres y los textos están escritos con la voz de Vagamundo. Se lanzan con la extensión
+**REST Client** de VS Code, pulsando «Send Request» encima de cada bloque.
+
+Las categorías son `Costa`, `Islas`, `Cultural`, `Ciudad`, `Naturaleza` y `Desierto`: seis, una
+por cada baldosa de «Imagina tu viaje», y ninguna se queda a cero.
 
 ## Despliegue en Vercel
 

@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
 
-// Las tres webs de referencia hacen lo mismo: la cabecera empieza
-// transparente sobre la foto y, al bajar, se vuelve sólida.
-// Este hook solo dice si ya hemos bajado del umbral.
-export function useCabeceraSolida(umbral = 90) {
+// El efecto de NUBA al hacer scroll: su cabecera empieza transparente y de
+// 90 px de alto, y en cuanto bajas un poco se vuelve sólida, de 75 px y con
+// el texto en negro. Lo hacen con una clase (.did-scroll) en el body; aquí
+// basta con saber si ya hemos bajado del umbral.
+export function useCabeceraSolida(umbral = 40) {
   const [solida, setSolida] = useState(false)
 
   useEffect(() => {

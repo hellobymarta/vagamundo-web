@@ -1,61 +1,165 @@
 ### Semillas del catálogo · PEC 4
 #
-# Tres viajes para que el catálogo no salga vacío. Se lanzan con la extensión
-# REST Client de VS Code: abre este archivo y pulsa "Send Request" encima de
-# cada bloque. También sirven de prueba manual del POST.
+# Los nueve viajes de Vagamundo. Se lanzan con la extensión REST Client de
+# VS Code: abre este archivo y pulsa "Send Request" encima de cada bloque.
+# También sirven de prueba manual del POST.
 #
-# Los datos (duración, precio y ruta) salen de los catálogos de viajes
-# de 2026. Las descripciones están reescritas con la voz de Vagamundo.
+# La duración, el precio y la ruta salen de los catálogos de viajes de 2026.
+# Los nombres y los textos están escritos con la voz de Vagamundo.
 
 @base = https://vagamundo-api.vercel.app
 
-### 1 · Italia Inédita: Apulia
+# ─────────────────────────────── MEDITERRÁNEO ───────────────────────────────
+
+### 1 · Amalfi en primavera
+POST {{base}}/api/travels
+Content-Type: application/json
+
+{
+  "nombre": "Amalfi en primavera",
+  "destino": "Costa amalfitana, Italia",
+  "descripcion": "Mayo, cuando las escaleras de Positano todavía están vacías y los limones pesan en el árbol. El viaje con el que empezamos y al que seguimos volviendo.",
+  "precio": 2450,
+  "duracionDias": 7,
+  "categoria": "Costa",
+  "imagen": "/positano-atardecer.jpg",
+  "disponible": true,
+  "itinerario": "Día 1 · Llegada a Nápoles y cena de pizza en el Barrio Sanità.\nDía 2 · Positano en ferry. Tarde de baño en la Spiaggia del Fornillo.\nDía 3 · Sendero de los Dioses de Bomerano a Nocelle, cuatro horas cuesta abajo con el mar delante.\nDía 4 · Amalfi y su claustro árabe-normando. Comida en Atrani, en la plaza más pequeña de Italia.\nDía 5 · Ravello. Los jardines de Villa Cimbrone y un concierto en el mirador.\nDía 6 · Día libre. La barca de Salvatore sale a las siete para quien quiera.\nDía 7 · Vuelta desde Nápoles."
+}
+
+### 2 · Apulia inédita
 POST {{base}}/api/travels
 Content-Type: application/json
 
 {
   "nombre": "Apulia inédita",
   "destino": "Apulia y Matera, Italia",
-  "descripcion": "El tacón de la bota, que casi nadie pisa. Trulli blancos, aceite recién molido, focaccia de Bari y una ciudad excavada en la roca.",
+  "descripcion": "El tacón de la bota, que casi nadie pisa. Trulli blancos, aceite recién molido, focaccia de Bari y una ciudad entera excavada en la roca.",
   "precio": 2179,
   "duracionDias": 8,
   "categoria": "Cultural",
   "imagen": "/apulia-vieste.jpg",
   "disponible": true,
-  "itinerario": "Día 1 · Llegada a Bari y cena en el casco viejo.\nDía 2 · Trani y su catedral a pie de mar. Por la tarde, la gruta de San Miguel en Monte Sant'Angelo.\nDía 3 · Vieste, callejeando entre arcos y miradores. Tarde en San Giovanni Rotondo.\nDía 4 · Barletta, un molino de aceite con cata y el pan de Altamura. Bari vieja al atardecer.\nDía 5 · Las cuevas de Castellana, Alberobello y sus trulli, y Ostuni la blanca.\nDía 6 · Lecce, barroco de piedra dorada. Después Otranto, la puerta de Oriente.\nDía 7 · Matera y sus sassi, casas e iglesias excavadas en la roca.\nDía 8 · Vuelta a casa desde Bari."
+  "itinerario": "Día 1 · Llegada a Bari y cena en el casco viejo.\nDía 2 · Trani y su catedral a pie de mar. Por la tarde, la gruta de San Miguel en Monte Sant'Angelo.\nDía 3 · Vieste, callejeando entre arcos y miradores sobre el Adriático.\nDía 4 · Barletta, un molino de aceite con cata y el pan de Altamura. Bari vieja al atardecer.\nDía 5 · Las cuevas de Castellana, Alberobello y sus trulli, y Ostuni la blanca.\nDía 6 · Lecce, barroco de piedra dorada. Después Otranto, la puerta de Oriente.\nDía 7 · Matera. Dormimos en un sasso, dentro de la roca.\nDía 8 · Vuelta desde Bari."
 }
 
-### 2 · Ruta de las emociones (nordeste de Brasil)
+### 3 · Grecia, del continente a Santorini
+POST {{base}}/api/travels
+Content-Type: application/json
+
+{
+  "nombre": "Del continente a Santorini",
+  "destino": "Grecia",
+  "descripcion": "Diez días para hacerlo en el orden correcto: primero las piedras, con tiempo, y solo después el mar. Micenas y Delfos entre semana; Santorini el fin de semana.",
+  "precio": 2219,
+  "duracionDias": 10,
+  "categoria": "Islas",
+  "imagen": "/grecia-mikonos.jpg",
+  "disponible": true,
+  "itinerario": "Día 1 · Llegada a Atenas.\nDía 2 · La Acrópolis a primera hora y el Museo Arqueológico sin prisa.\nDía 3 · El canal de Corinto, el teatro de Epidauro y la puerta de los leones de Micenas.\nDía 4 · Olimpia, donde se corría cada cuatro años. Continuación a Delfos.\nDía 5 · Delfos y la Vía Sacra. Después, Kalambaka.\nDía 6 · Meteora. Dos de los seis monasterios que siguen en pie sobre las rocas.\nDía 7 · Vuelo a Santorini.\nDías 8 y 9 · Santorini. Oia, los viñedos de Assyrtiko y el barco a Thirassia.\nDía 10 · Vuelta desde Santorini."
+}
+
+# ──────────────────── ÁFRICA AUSTRAL Y ORIENTE MEDIO ────────────────────
+
+### 4 · Namibia espectacular
+POST {{base}}/api/travels
+Content-Type: application/json
+
+{
+  "nombre": "Namibia, de Etosha al Kalahari",
+  "destino": "Namibia",
+  "descripcion": "Once días en los que casi no se ve un coche. Rinocerontes negros al amanecer, grabados de seis mil años y dunas de trescientos metros que hay que subir descalza.",
+  "precio": 3890,
+  "duracionDias": 11,
+  "categoria": "Naturaleza",
+  "imagen": "/namibia-arco.jpg",
+  "disponible": true,
+  "itinerario": "Día 1 · Vuelo a Windhoek.\nDía 2 · Llegada y día libre en Windhoek.\nDía 3 · Norte hasta Etosha, con parada en el mercado de tallas de Okahandja y visita a un poblado himba.\nDía 4 · Día completo de safari en Etosha en 4x4: rinoceronte negro, guepardo, impala de cara blanca.\nDía 5 · Damaraland. El bosque petrificado y los grabados rupestres de Twyfelfontein.\nDía 6 · Bajada a Swakopmund, donde el desierto llega hasta el Atlántico.\nDía 7 · Desierto del Namib. Llegada al lodge por la tarde.\nDía 8 · Sossusvlei y Deadvlei al amanecer, antes de que el sol pegue. El cañón de Sesriem.\nDía 9 · Kalahari. Safari en la reserva privada y cóctel al ponerse el sol.\nDía 10 · Caminata con bosquimanos y vuelo de vuelta desde Windhoek.\nDía 11 · Llegada."
+}
+
+### 5 · Jordania
+POST {{base}}/api/travels
+Content-Type: application/json
+
+{
+  "nombre": "Jordania, el desierto por dentro",
+  "destino": "Jordania",
+  "descripcion": "Petra sin la cola de la mañana, dos noches en un campamento beduino de Wadi Rum y el Mar Muerto al final, cuando ya no quedan fuerzas para andar.",
+  "precio": 1450,
+  "duracionDias": 8,
+  "categoria": "Desierto",
+  "imagen": "/jordania-wadirum.jpg",
+  "disponible": true,
+  "itinerario": "Día 1 · Llegada a Amman.\nDía 2 · Jerash, la ciudad romana mejor conservada de Oriente. Tarde en la ciudadela de Amman.\nDía 3 · El castillo de Kerak y los mosaicos de Madaba. Noche a las puertas de Petra.\nDía 4 · Petra entera, desde el Siq hasta el Monasterio. Ocho horas y merece cada una.\nDía 5 · Aqaba y el Mar Rojo. Por la tarde, entrada a Wadi Rum en 4x4.\nDía 6 · Wadi Rum. Amanecer en las dunas y noche en el campamento.\nDía 7 · El Mar Muerto. Flotar y no hacer nada más.\nDía 8 · Vuelta desde Amman."
+}
+
+# ─────────────────────────────── AMÉRICA LATINA ───────────────────────────────
+
+### 6 · Ruta de las emociones
 POST {{base}}/api/travels
 Content-Type: application/json
 
 {
   "nombre": "Ruta de las emociones",
   "destino": "Nordeste de Brasil",
-  "descripcion": "Mil kilómetros de dunas, lagunas de agua de lluvia y playas sin una sola sombrilla, en 4x4 y en lancha entre Fortaleza y los Lençóis Maranhenses.",
+  "descripcion": "Mil kilómetros de dunas y lagunas de agua de lluvia, en 4x4 y en lancha, por playas donde no hay una sola sombrilla. El viaje más incómodo del catálogo y el que más nos piden repetir.",
   "precio": 3970,
   "duracionDias": 11,
   "categoria": "Naturaleza",
   "imagen": "/brasil-lencois.jpg",
   "disponible": true,
-  "itinerario": "Día 1 · Vuelo a Fortaleza.\nDía 2 · Avión a São Luís y tarde libre por el centro colonial.\nDía 3 · Barreirinhas. Por la tarde, 4x4 hasta la Laguna Azul para el baño y el atardecer.\nDía 4 · El río Preguiças en lancha: Vassouras, Mandacaru y su faro, y noche en Atins.\nDía 5 · Atins. Caminata por las dunas del parque y baño en las lagunas.\nDía 6 · Cruce a Caburé y ruta hasta Parnaíba. Los pájaros guarás al ponerse el sol.\nDía 7 · Parnaíba a Jericoacoara en 4x4, con dos ferris y kilómetros de playa desierta.\nDía 8 · Jericoacoara en buggy: Lagoa Azul, Lagoa do Paraíso y las hamacas dentro del agua.\nDía 9 · Vuelta a Fortaleza por la costa.\nDía 10 · Vuelo de regreso.\nDía 11 · Llegada."
+  "itinerario": "Día 1 · Vuelo a Fortaleza.\nDía 2 · Avión a São Luís y tarde libre por el centro colonial.\nDía 3 · Barreirinhas. Por la tarde, 4x4 hasta la Laguna Azul para el baño y el atardecer.\nDía 4 · El río Preguiças en lancha: Vassouras, Mandacaru y su faro. Noche en Atins.\nDía 5 · Atins. Caminata por las dunas del parque y baño en las lagunas de lluvia.\nDía 6 · Cruce a Caburé y ruta hasta Parnaíba. Los pájaros guarás al ponerse el sol.\nDía 7 · Parnaíba a Jericoacoara en 4x4, con dos ferris y kilómetros de playa desierta.\nDía 8 · Jericoacoara en buggy: Lagoa Azul, Lagoa do Paraíso y las hamacas dentro del agua.\nDía 9 · Vuelta a Fortaleza por la costa.\nDía 10 · Vuelo de regreso.\nDía 11 · Llegada."
 }
 
-### 3 · Namibia espectacular
+### 7 · Guatemala esencial
 POST {{base}}/api/travels
 Content-Type: application/json
 
 {
-  "nombre": "Namibia espectacular",
-  "destino": "Namibia",
-  "descripcion": "Etosha al amanecer, los grabados de Twyfelfontein, las dunas de Sossusvlei con trescientos metros de arena y una noche larga en el Kalahari.",
-  "precio": 3890,
-  "duracionDias": 11,
-  "categoria": "Naturaleza",
-  "imagen": "/namibia-arco.jpg",
+  "nombre": "Guatemala, del lago a la selva",
+  "destino": "Guatemala",
+  "descripcion": "Tres volcanes desde la terraza del desayuno, el mercado de Chichicastenango un jueves y Tikal al amanecer, cuando los monos aulladores se oyen antes de verse.",
+  "precio": 1960,
+  "duracionDias": 9,
+  "categoria": "Cultural",
+  "imagen": "/guatemala-tikal.jpg",
   "disponible": true,
-  "itinerario": "Día 1 · Vuelo a Windhoek.\nDía 2 · Llegada y día libre en Windhoek.\nDía 3 · Norte hasta Etosha, con parada en el mercado de tallas de Okahandja y visita a un poblado himba.\nDía 4 · Día completo de safari en Etosha en 4x4: rinoceronte negro, guepardo, impala de cara blanca.\nDía 5 · Damaraland. El bosque petrificado y los grabados rupestres de Twyfelfontein.\nDía 6 · Bajada a Swakopmund, entre el desierto y el Atlántico.\nDía 7 · Desierto del Namib. Llegada al lodge por la tarde.\nDía 8 · Sossusvlei y Deadvlei al amanecer, y el cañón de Sesriem.\nDía 9 · Kalahari. Safari en 4x4 por la reserva privada y cóctel al ponerse el sol.\nDía 10 · Caminata con bosquimanos y vuelo de vuelta desde Windhoek.\nDía 11 · Llegada."
+  "itinerario": "Día 1 · Vuelo a Ciudad de Guatemala.\nDía 2 · Chichicastenango. El mercado de los jueves y la iglesia de Santo Tomás.\nDía 3 · Lago Atitlán en lancha: Santiago y San Juan La Laguna.\nDía 4 · Atitlán a Antigua, entre cafetales.\nDía 5 · Antigua. Día completo: el mercado, las ruinas y una clase de cocina.\nDía 6 · Antigua a Ciudad de Guatemala.\nDía 7 · Tikal. Vuelo temprano y día completo en la selva del Petén.\nDía 8 · Vuelo de regreso.\nDía 9 · Llegada."
 }
 
-### Comprobar que están los tres
+# ─────────────────────────────────── ASIA ───────────────────────────────────
+
+### 8 · India Masala
+POST {{base}}/api/travels
+Content-Type: application/json
+
+{
+  "nombre": "India, de Delhi al Ganges",
+  "destino": "Norte de la India",
+  "descripcion": "Once días de norte a este. Agra al amanecer, con el mármol todavía frío y sin una sola cola, y Benarés al final, que es donde el viaje se te queda pegado.",
+  "precio": 2320,
+  "duracionDias": 11,
+  "categoria": "Ciudad",
+  "imagen": "/india-taj.jpg",
+  "disponible": true,
+  "itinerario": "Día 1 · Vuelo a Delhi.\nDía 2 · Delhi. La vieja y la nueva, en rickshaw y en metro.\nDía 3 · Samode y Jaipur, la ciudad rosa.\nDía 4 · Jaipur. Amber, el observatorio y los tintoreros del bazar.\nDía 5 · Fathepur Sikri, la ciudad que se abandonó por falta de agua. Continuación a Agra.\nDía 6 · El Taj Mahal a las seis de la mañana. Por la tarde, el fuerte rojo.\nDía 7 · Jhansi, Orchha y Khajuraho.\nDía 8 · Los templos de Khajuraho y vuelo a Benarés.\nDía 9 · Benarés. Los ghats al amanecer desde una barca y el aarti de la tarde.\nDía 10 · Vuelo de regreso vía Delhi.\nDía 11 · Llegada."
+}
+
+### 9 · La Ruta de la Seda
+POST {{base}}/api/travels
+Content-Type: application/json
+
+{
+  "nombre": "La Ruta de la Seda",
+  "destino": "Uzbekistán",
+  "descripcion": "Samarcanda, Bujará y Jiva en ocho días. Cúpulas de azulejo turquesa, melón en cada comida y trenes de alta velocidad entre oasis, que casi nadie se espera.",
+  "precio": 1840,
+  "duracionDias": 8,
+  "categoria": "Cultural",
+  "imagen": "/uzbekistan-registan.jpg",
+  "disponible": true,
+  "itinerario": "Día 1 · Vuelo a Tashkent.\nDía 2 · Tashkent. El bazar de Chorsu y el metro soviético, estación por estación.\nDía 3 · Tren a Samarcanda. El Registán al caer la tarde, cuando se enciende.\nDía 4 · Samarcanda. Shakhi-Zinda, el observatorio de Ulugh Beg y la mezquita Bibi-Khanum.\nDía 5 · Bujará. El mausoleo de los Samánidas y el manantial de Chasmai Ayub.\nDía 6 · Bujará entera a pie: la Ciudadela Ark, la madrasa Miri Arab y la mezquita Kalon.\nDía 7 · Jiva, la ciudad amurallada. Atardecer desde la muralla.\nDía 8 · Vuelta desde Urgench."
+}
+
+### Comprobar que están los nueve
 GET {{base}}/api/travels

@@ -56,7 +56,7 @@ export default function Viajes() {
         <Seccion
           tono={TONOS.HUESO}
           etiqueta="Destinos Vagamundo"
-          titulo="Lo que tenemos abierto esta temporada"
+          titulo="Tres que se cierran antes que los demás"
           centrado
         >
           <Destacados viajes={destacados} />
@@ -98,7 +98,7 @@ export default function Viajes() {
         tono={TONOS.HUESO}
         etiqueta="Imagina tu viaje"
         titulo="¿Qué te apetece esta vez?"
-        texto="Seis maneras de mirar el catálogo. Elige una y abajo se queda solo lo que encaja."
+        texto="Seis maneras de mirar los nueve viajes. Elige una y abajo se queda solo lo que encaja."
         centrado
       >
         <Motivaciones activa={motivacion} viajes={viajes} />
@@ -114,7 +114,7 @@ export default function Viajes() {
               <h2 className="titular t-seccion mt-6">
                 {motivacion
                   ? `Viajes de ${motivacion.toLowerCase()}`
-                  : 'Todas las rutas, una por una'}
+                  : 'Los nueve viajes, uno por uno'}
               </h2>
               <p className="mt-6 max-w-lg text-suave">
                 {cargando
@@ -155,7 +155,7 @@ export default function Viajes() {
       <Seccion
         tono={TONOS.TERRACOTA}
         etiqueta="Viajes a medida"
-        titulo="Y si prefieres uno solo para vosotros, en tres pasos"
+        titulo="Y si lo preferís solo para vosotros, en tres pasos"
       >
         <Pasos />
       </Seccion>
@@ -168,7 +168,7 @@ export default function Viajes() {
         tono={TONOS.CREMA}
         etiqueta="Todos los destinos"
         titulo="Donde estamos y donde queremos estar"
-        texto="En negro, lo que hay abierto ahora mismo en el catálogo. En gris, lo que estamos preparando."
+        texto="En negro, los nueve que están abiertos ahora mismo. En gris, los que estamos preparando para 2027."
       >
         <TodosDestinos viajes={viajes} />
       </Seccion>
@@ -188,7 +188,7 @@ export default function Viajes() {
         imagen={FOTOS.SALAR}
         pregunta="¿Cuál es tu viaje soñado?"
         etiqueta="Cuéntanoslo"
-        texto="Añádelo al catálogo con su precio, su duración y su itinerario. Se guarda en la base de datos y aparece arriba al momento."
+        texto="Cuéntanoslo con sus fechas, su precio y su itinerario. Se guarda en la base de datos y aparece en el catálogo al momento."
         accion="Añadir un viaje"
         enlace="/nuevo"
       />

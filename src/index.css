@@ -38,6 +38,34 @@ body {
   font-family: var(--font-texto);
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
+  /* Se esconde el cursor del sistema: lo dibuja el componente Cursor,
+     como en travelmachine.es. */
+  cursor: none;
+}
+
+/* Ningún elemento se lo puede volver a poner por su cuenta. */
+a,
+button,
+input,
+select,
+textarea,
+summary,
+label {
+  cursor: none;
+}
+
+/* En pantallas táctiles no hay cursor propio, así que vuelve el de siempre. */
+@media (hover: none) {
+  body,
+  a,
+  button,
+  input,
+  select,
+  textarea,
+  summary,
+  label {
+    cursor: auto;
+  }
 }
 
 /* Etiquetas pequeñas en mayúsculas muy espaciadas. NUBA y Utópica las usan
@@ -179,4 +207,9 @@ body {
     stroke-dasharray: none;
     animation: none;
   }
+}
+
+/* Con la cabecera fija encima, las anclas tienen que dejar su hueco. */
+[id] {
+  scroll-margin-top: 100px;
 }

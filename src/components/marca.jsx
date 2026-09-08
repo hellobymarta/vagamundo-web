@@ -9,7 +9,8 @@ export default function Marca() {
     <section className="bg-crema px-6 py-28 md:px-10 md:py-36">
       <div className="mx-auto max-w-5xl text-center">
         <h2 className="titular t-seccion">
-          Viajes <em className="titular-cursiva">de autor</em> y experiencias por el Mediterráneo
+          Viajes <em className="titular-cursiva">de autor</em> por el Mediterráneo, y algunos
+          bastante más lejos
         </h2>
 
         <p className="etiqueta mt-7 text-terracota-acento">Más allá del folleto</p>
@@ -18,11 +19,11 @@ export default function Marca() {
           <p>
             Somos un taller pequeño. Volvemos a los mismos sitios año tras año hasta que dejan de
             ser un destino y se convierten en un barrio: sabemos quién abre la panadería a las
-            seis y qué día no hay barco.
+            seis, qué día no hay barco y en qué terraza no hay que sentarse.
           </p>
           <p>
-            Con eso montamos rutas para ocho personas. Ni una más, porque a partir de ahí ya no
-            entras en la cocina de nadie.
+            Con eso montamos nueve rutas para ocho personas. Ni una más, porque a partir de ahí
+            ya no entras en la cocina de nadie.
           </p>
         </div>
 

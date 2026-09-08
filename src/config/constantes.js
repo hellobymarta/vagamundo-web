@@ -8,7 +8,7 @@ export const API_URL = import.meta.env.VITE_API_URL
 export const RUTA_VIAJES = '/api/travels'
 
 // Categorías del catálogo, para el desplegable del formulario.
-export const CATEGORIAS = ['Costa', 'Islas', 'Cultural', 'Ciudad', 'Naturaleza', 'Montaña']
+export const CATEGORIAS = ['Costa', 'Islas', 'Cultural', 'Ciudad', 'Naturaleza', 'Desierto']
 
 // Nombre del parámetro con el que se filtra el catálogo desde la URL.
 export const PARAMETRO_MOTIVACION = 'motivacion'
@@ -37,6 +37,8 @@ export const FOTOS = {
   COSTARICA: '/costarica-costa.jpg',
   SALAR: '/salar-atardecer.jpg',
   AMAZONAS: '/amazonas-aereo.jpg',
+  GRECIA: '/grecia-mikonos.jpg',
+  JORDANIA: '/jordania-wadirum.jpg',
 }
 
 // Las tres campañas que rotan en la portada, como el hero de NUBA.
@@ -45,9 +47,9 @@ export const PORTADAS = [
     id: 'amalfi',
     imagen: FOTOS.PORTADA,
     alt: 'Positano al atardecer, con las casas encendidas sobre el mar',
-    etiqueta: 'Viaje en grupo pequeño a la costa amalfitana',
+    etiqueta: 'Costa amalfitana · siete días en mayo',
     titulo: 'Once años volviendo al mismo trozo de costa',
-    texto: 'Positano, Amalfi, Atrani y Ravello en mayo, cuando todavía no hay nadie.',
+    texto: 'Positano cuando las escaleras están vacías y los limones pesan en el árbol.',
     accion: 'Ver el viaje',
     enlace: '/#catalogo',
   },
@@ -55,28 +57,28 @@ export const PORTADAS = [
     id: 'namibia',
     imagen: FOTOS.NAMIBIA,
     alt: 'Arco de piedra en el desierto de Namibia',
-    etiqueta: 'Viaje en privado a Namibia',
+    etiqueta: 'Namibia · once días de Etosha al Kalahari',
     titulo: 'Donde el desierto llega hasta el mar',
-    texto: 'Etosha, Damaraland y las dunas de Sossusvlei en once días.',
+    texto: 'Dunas de trescientos metros, y once días en los que casi no se ve un coche.',
     accion: 'Solicitar propuesta',
     enlace: '/#catalogo',
   },
   {
     id: 'india',
     imagen: FOTOS.INDIA,
-    alt: 'El Taj Mahal reflejado en el agua',
+    alt: 'El Taj Mahal reflejado en el agua al amanecer',
     etiqueta: 'Nuevo · Norte de la India',
-    titulo: 'Agra antes de que abran las puertas',
-    texto: 'Entramos al amanecer, con el mármol todavía frío y sin una sola cola.',
+    titulo: 'Agra a las seis de la mañana',
+    texto: 'Entramos antes que nadie, con el mármol todavía frío y sin una sola cola.',
     accion: 'Descubrir',
     enlace: '/#catalogo',
   },
   {
     id: 'medida',
-    imagen: FOTOS.SALAR,
-    alt: 'Un salar al atardecer',
+    imagen: FOTOS.JORDANIA,
+    alt: 'Arco de roca en el desierto de Wadi Rum',
     etiqueta: 'Viajes a medida',
-    titulo: 'O cuéntanos el viaje que llevas años imaginando',
+    titulo: 'O cuéntanos el que llevas años imaginando',
     texto: 'Lo montamos entero para vosotros, con las mismas casas y los mismos guías.',
     accion: 'Empezar',
     enlace: '/nuevo',
@@ -116,29 +118,29 @@ export const MOTIVACIONES = [
   { id: 'Islas', titulo: 'Islas', pie: 'Llegar en barco y quedarse' },
   { id: 'Cultural', titulo: 'Cultural', pie: 'Piedra, mercado y sobremesa' },
   { id: 'Ciudad', titulo: 'Ciudad', pie: 'Barrios, no monumentos' },
-  { id: 'Naturaleza', titulo: 'Naturaleza', pie: 'Dunas, fauna y silencio' },
-  { id: 'Montaña', titulo: 'Montaña', pie: 'Andar sin mirar el reloj' },
+  { id: 'Naturaleza', titulo: 'Naturaleza', pie: 'Fauna, agua y silencio' },
+  { id: 'Desierto', titulo: 'Desierto', pie: 'Dunas y noches sin luz' },
 ]
 
 // Los tres pasos de «Tailor-made journeys» de Wilderness, a nuestra manera.
 export const PASOS = [
   {
     numero: '01',
-    titulo: 'Nos cuentas qué buscas',
+    titulo: 'Media hora al teléfono',
     texto:
-      'Una llamada de media hora. Cuántos sois, cuánto tiempo tenéis y qué tipo de viaje os hace ilusión.',
+      'Cuántos sois, cuántos días tenéis y qué queréis que os pase. No hay formulario de veinte campos.',
   },
   {
     numero: '02',
-    titulo: 'Te mandamos una propuesta',
+    titulo: 'Un itinerario con nombres',
     texto:
-      'Un itinerario con nombres y horarios reales, no un folleto. Se cambia tantas veces como haga falta.',
+      'Hoteles con dirección, guías con nombre y horarios de barco de verdad. Se cambia tantas veces como haga falta.',
   },
   {
     numero: '03',
-    titulo: 'Vamos con vosotros',
+    titulo: 'Y allí, alguien de allí',
     texto:
-      'Un guía por grupo, de allí, que conoce a la gente del pueblo. Y un teléfono que se coge siempre.',
+      'Un guía por grupo, del sitio, que conoce al del puerto. Y un teléfono que se coge también en agosto.',
   },
 ]
 
@@ -152,7 +154,7 @@ export const TESTIMONIOS = [
   },
   {
     id: 'nuria',
-    cita: 'Nos cambiaron el itinerario a mitad de viaje porque había mar de fondo. Acertaron.',
+    cita: 'Cambiaron el itinerario a mitad de viaje porque había mar de fondo. Acertaron.',
     firma: 'Nuria D.',
     lugar: 'Apulia · septiembre',
   },
@@ -164,25 +166,31 @@ export const PREGUNTAS = [
     id: 'antelacion',
     pregunta: '¿Con cuánta antelación hay que reservar?',
     respuesta:
-      'Para mayo y septiembre, unos cuatro meses. Julio y agosto se cierran antes porque las casas son pequeñas y hay pocas plazas.',
+      'Cuatro meses para mayo y septiembre. Julio y agosto se cierran antes: las casas son pequeñas y no hay manera de estirarlas.',
   },
   {
     id: 'grupo',
     pregunta: '¿Cuánta gente va en cada viaje?',
     respuesta:
-      'Ocho viajeros y un guía. Es el número que cabe en una barca y en la mesa de un restaurante sin reservar el local entero.',
+      'Ocho viajeros y un guía. Es lo que cabe en una barca y en la mesa de un restaurante sin tener que reservar el local entero.',
   },
   {
     id: 'incluido',
     pregunta: '¿Qué entra en el precio?',
     respuesta:
-      'Alojamiento, desayunos, los traslados del itinerario, las entradas y el guía. Los vuelos y las comidas libres van aparte.',
+      'Alojamiento, desayunos, los traslados del itinerario, las entradas y el guía. Los vuelos y las comidas libres van aparte, y se dice desde el principio.',
+  },
+  {
+    id: 'solo',
+    pregunta: '¿Se puede ir sola?',
+    respuesta:
+      'Cuatro de cada diez plazas las ocupa alguien que viaja solo. No cobramos suplemento por habitación individual en los viajes de grupo.',
   },
   {
     id: 'medida',
     pregunta: '¿Podéis montar un viaje a medida?',
     respuesta:
-      'Sí. La mitad de lo que hacemos son viajes de una sola familia o un grupo de amigos, con las mismas casas y los mismos guías.',
+      'Sí, y es la mitad de lo que hacemos: una familia o un grupo de amigos, con las mismas casas y los mismos guías.',
   },
 ]
 

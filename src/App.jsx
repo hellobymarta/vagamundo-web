@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 import Cabecera from '@/components/cabecera'
 import Pie from '@/components/pie'
 import Cargando from '@/components/cargando'
+import Cursor from '@/components/cursor'
 import { useSubirArriba } from '@/hooks/use-subir-arriba'
 
 // Cada página se descarga solo cuando hace falta (React.lazy) y mientras
@@ -19,6 +20,8 @@ export default function App() {
 
   return (
     <div>
+      <Cursor />
+
       <Cabecera />
 
       <main>
