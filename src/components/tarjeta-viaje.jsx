@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom'
 
 import { IMAGEN_POR_DEFECTO } from '@/config/constantes'
+import { contarNoches, formatearPrecio } from '@/formato'
 
-// Ficha del catálogo, con el aire editorial de las webs de referencia:
-// foto vertical, etiqueta de categoría, título serif, filete y precio.
+// Ficha del catálogo: foto, etiqueta de categoría, título serif, filete y el
+// precio en el formato de Wilderness («Desde X € por persona»).
 // Recibe las props ya deconstruidas, así en el listado basta con esparcir
 // cada viaje del map sobre este componente.
 export default function TarjetaViaje({
@@ -18,46 +19,53 @@ export default function TarjetaViaje({
   disponible,
 }) {
   return (
-    <article className="group">
-      <Link to={`/viaje/${id}`} className="block overflow-hidden">
-        <div className="relative aspect-[4/5] overflow-hidden">
+    <article className="group flex flex-col">
+      <Link to={`/viaje/${id}`} className="block">
+        <div className="relative aspect-[3/2] overflow-hidden">
           <img
             src={imagen || IMAGEN_POR_DEFECTO}
             alt={nombre}
             loading="lazy"
-            className="absolute inset-0 h-full w-full object-cover transition duration-[1200ms] ease-out group-hover:scale-[1.06]"
+            className="absolute inset-0 h-full w-full object-cover transition duration-[1400ms] ease-out group-hover:scale-[1.07]"
           />
 
+          {/* Un velo que se va al pasar por encima: la foto "despierta". */}
+          <div className="absolute inset-0 bg-tinta/10 transition duration-700 group-hover:bg-transparent" />
+
           {!disponible && (
-            <p className="etiqueta absolute left-5 top-5 bg-white/90 px-3 py-1.5 text-tinta">
+            <p className="etiqueta absolute left-5 top-5 bg-crema/95 px-3 py-1.5 text-tinta">
               Plazas agotadas
             </p>
           )}
         </div>
       </Link>
 
-      <div className="pt-6">
-        <p className="etiqueta text-suave">
-          {categoria ? `${categoria} · ${destino}` : destino}
-        </p>
+      <div className="flex flex-1 flex-col pt-7">
+        <p className="etiqueta text-suave">{categoria || 'Viaje'}</p>
 
-        <h3 className="titular mt-3 text-2xl">
+        <h3 className="titular mt-4 text-2xl">
           <Link to={`/viaje/${id}`} className="transition group-hover:text-terracota-acento">
             {nombre}
           </Link>
         </h3>
 
+        <p className="mt-2 text-sm text-suave">{destino}</p>
+
         {descripcion && (
-          <p className="mt-3 line-clamp-2 text-sm font-light leading-relaxed text-suave">
-            {descripcion}
-          </p>
+          <p className="mt-4 line-clamp-2 text-sm leading-relaxed text-suave">{descripcion}</p>
         )}
 
-        <div className="filete mt-6" />
+        {/* mt-auto empuja el precio abajo: así todas las fichas
+            de la fila acaban a la misma altura. */}
+        <div className="mt-auto pt-8">
+          <div className="filete" />
 
-        <div className="mt-4 flex items-baseline justify-between">
-          <p className="etiqueta cifras text-suave">{duracionDias} días</p>
-          <p className="titular cifras text-xl">{precio} €</p>
+          <p className="cifras mt-4 text-sm text-suave">
+            Desde <span className="titular text-lg text-tinta">{formatearPrecio(precio)} €</span> por persona
+          </p>
+          <p className="etiqueta cifras mt-2 text-suave">
+            {duracionDias} días · {contarNoches(duracionDias)} noches
+          </p>
         </div>
       </div>
     </article>

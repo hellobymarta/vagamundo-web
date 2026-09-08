@@ -1,0 +1,29 @@
+import { useCallback, useState } from 'react'
+
+// Un único useState para el carrusel: guarda en qué posición estamos
+// y devuelve las funciones para moverse. Da la vuelta por los dos lados,
+// así nunca se queda sin sitio donde ir.
+export function useCarrusel(cuantos) {
+  const [indice, setIndice] = useState(0)
+
+  const ir = useCallback(
+    (nuevo) => {
+      if (cuantos === 0) return
+      // El módulo con el ajuste de arriba hace que -1 se convierta en el último.
+      setIndice(((nuevo % cuantos) + cuantos) % cuantos)
+    },
+    [cuantos]
+  )
+
+  const siguiente = useCallback(() => setIndice((previo) => (previo + 1) % cuantos), [cuantos])
+
+  const anterior = useCallback(
+    () => setIndice((previo) => (previo - 1 + cuantos) % cuantos),
+    [cuantos]
+  )
+
+  // Si la lista se encoge, el índice podría quedarse fuera: lo acotamos aquí.
+  const seguro = cuantos > 0 ? Math.min(indice, cuantos - 1) : 0
+
+  return { indice: seguro, ir, siguiente, anterior }
+}

@@ -26,7 +26,7 @@ export default function Editar() {
         alt="La playa de Atrani"
         etiqueta="Vagamundo"
         titulo="Ese viaje ya no está en el catálogo"
-        alto="h-[70vh]"
+        alto="h-[72vh]"
       >
         <Boton a="/" variante="claro">
           Volver al catálogo
@@ -47,12 +47,13 @@ export default function Editar() {
         alt={viaje.nombre}
         etiqueta="Editar viaje"
         titulo={viaje.nombre}
+        cursiva
         texto="Los cambios se envían a la API con una petición PUT."
         alto="h-[62vh]"
       />
 
-      <Seccion tono={TONOS.TERRACOTA} ancho="max-w-3xl">
-        <div className="mb-10">
+      <Seccion tono={TONOS.CREMA} ancho="max-w-3xl">
+        <div className="mb-12">
           <Aviso tono="error">{error}</Aviso>
         </div>
 

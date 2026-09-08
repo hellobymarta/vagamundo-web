@@ -4,7 +4,7 @@ import { CATEGORIAS } from '@/config/constantes'
 // un textarea, el desplegable de categorías o una casilla.
 // Sin cajas: solo una línea inferior, como los formularios de Utópica.
 const CLASES = `w-full border-0 border-b border-borde bg-transparent px-0 py-3 text-lg
-  font-light outline-none transition focus:border-terracota-acento`
+  outline-none transition placeholder:text-suave/60 focus:border-terracota-acento`
 
 export default function Campo({ etiqueta, nombre, tipo = 'text', ...resto }) {
   const comunes = { id: nombre, name: nombre, className: CLASES, ...resto }
@@ -14,7 +14,7 @@ export default function Campo({ etiqueta, nombre, tipo = 'text', ...resto }) {
     const { value, ...limpio } = resto
 
     return (
-      <label htmlFor={nombre} className="flex cursor-pointer items-center gap-3 text-sm font-light">
+      <label htmlFor={nombre} className="flex cursor-pointer items-center gap-3 text-sm">
         <input
           {...limpio}
           id={nombre}

@@ -10,7 +10,7 @@ export default function ListaViajes({ viajes }) {
   }
 
   return (
-    <div className="grid gap-x-10 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="grid gap-x-10 gap-y-20 sm:grid-cols-2 lg:grid-cols-3">
       {viajes.map(({ _id, ...viaje }) => (
         <TarjetaViaje key={_id} id={_id} {...viaje} />
       ))}

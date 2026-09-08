@@ -25,11 +25,11 @@ export default function FormularioViaje({
   }
 
   return (
-    <form onSubmit={enviar} className="space-y-12">
-      <fieldset className="space-y-9 border-0 p-0">
+    <form onSubmit={enviar} className="space-y-16">
+      <fieldset className="space-y-10 border-0 p-0">
         <legend className="etiqueta text-terracota-acento">El viaje</legend>
 
-        <div className="grid gap-9 sm:grid-cols-2">
+        <div className="grid gap-10 sm:grid-cols-2">
           <Campo
             etiqueta="Nombre"
             nombre="nombre"
@@ -58,10 +58,10 @@ export default function FormularioViaje({
         />
       </fieldset>
 
-      <fieldset className="space-y-9 border-0 p-0">
+      <fieldset className="space-y-10 border-0 p-0">
         <legend className="etiqueta text-terracota-acento">Plazas y precio</legend>
 
-        <div className="grid gap-9 sm:grid-cols-3">
+        <div className="grid gap-10 sm:grid-cols-3">
           <Campo
             etiqueta="Precio por persona (€)"
             nombre="precio"
@@ -98,7 +98,7 @@ export default function FormularioViaje({
         />
       </fieldset>
 
-      <fieldset className="space-y-9 border-0 p-0">
+      <fieldset className="space-y-10 border-0 p-0">
         <legend className="etiqueta text-terracota-acento">El día a día</legend>
 
         <Campo
@@ -107,7 +107,7 @@ export default function FormularioViaje({
           tipo="textarea"
           value={valores.itinerario}
           onChange={cambiar}
-          placeholder="Nápoles · Positano · Ravello · Atrani…"
+          placeholder="Día 1 · Nápoles. Día 2 · Positano…"
         />
 
         <Campo

@@ -1,67 +1,182 @@
 @import "tailwindcss";
 
-/* Paleta y tipografías de Vagamundo: las mismas que monté en la práctica del
-   día 24, sacadas de las fotos de la costa amalfitana. El azul se reserva para
-   la cabecera, las portadas y el pie; el resto de secciones van en pasteles. */
+/* Base tomada de NUBA: un crema cálido de fondo (#efebe6 en su web), tinta
+   casi negra para el texto y el color usado con cuentagotas. El azul y los
+   pasteles de la costa amalfitana son los de la práctica del día 24. */
 @theme {
   --font-titulo: "Playfair Display", Georgia, "Times New Roman", serif;
   --font-texto: "Inter", system-ui, -apple-system, sans-serif;
   --font-etiqueta: "Montserrat", system-ui, sans-serif;
 
+  --color-crema: #efebe6;
+  --color-crema-hueso: #f6f3ef;
+  --color-tinta: #191512;
+  --color-suave: #7d746c;
+  --color-borde: #ddd6cd;
+
   --color-azul: #1b4b7a;
   --color-azul-medio: #2f6f9f;
   --color-azul-claro: #9cc4e4;
+  --color-noche: #16202b;
 
-  --color-fondo: #fbf7f2;
-  --color-tinta: #2b2622;
-  --color-suave: #7a7068;
-  --color-borde: #e6ded3;
-
-  /* Un color por sección: buganvilla, tiestos de barro, limones y olivos. */
-  --color-rosa: #f7e6e1;
+  --color-rosa: #f4e5e0;
   --color-rosa-acento: #a85c4b;
-  --color-terracota: #f6e3d5;
-  --color-terracota-acento: #b06c3f;
-  --color-amarillo: #f9efd6;
-  --color-amarillo-acento: #a37f2e;
-  --color-oliva: #e8ebdd;
+  --color-terracota: #f3e3d7;
+  --color-terracota-acento: #a2603a;
+  --color-amarillo: #f7eeda;
+  --color-amarillo-acento: #937128;
+  --color-oliva: #e7ebde;
   --color-oliva-acento: #5f6b45;
+
+  /* El caqui del formulario de contacto de Utópica. */
+  --color-caqui: #7d7358;
 }
 
 body {
-  background-color: var(--color-fondo);
+  background-color: var(--color-crema);
   color: var(--color-tinta);
   font-family: var(--font-texto);
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Etiquetas pequeñas en mayúsculas muy espaciadas: el recurso que usan
-   NUBA y Utópica para presentar cada sección. */
+/* Etiquetas pequeñas en mayúsculas muy espaciadas. NUBA y Utópica las usan
+   a 11-12 px con un interletrado enorme para presentar cada bloque. */
 .etiqueta {
   font-family: var(--font-etiqueta);
   font-size: 11px;
   font-weight: 500;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
+  line-height: 1.4;
 }
 
-/* Los títulos serif quedan mejor un poco apretados. */
+/* Títulos serif en peso normal y apretados. */
 .titular {
   font-family: var(--font-titulo);
   font-weight: 400;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+}
+
+/* La cursiva con la que Utópica pone el nombre del destino en su explorador. */
+.titular-cursiva {
+  font-family: var(--font-titulo);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
   line-height: 1.1;
 }
 
-/* Georgia y Playfair traen cifras de altura desigual: las igualamos
-   para que los precios se lean en línea. */
+/* Escala contenida: ninguna de las tres referencias pasa de 40 px
+   en los títulos de sección. El aire hace el trabajo, no el tamaño. */
+.t-portada {
+  font-size: clamp(2rem, 4.4vw, 3.25rem);
+}
+
+.t-seccion {
+  font-size: clamp(1.65rem, 2.7vw, 2.35rem);
+}
+
+.t-destino {
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+}
+
 .cifras {
   font-variant-numeric: lining-nums tabular-nums;
 }
 
-/* Filete fino de separación, como el de las fichas de Wilderness. */
 .filete {
   height: 1px;
   background-color: var(--color-borde);
+}
+
+/* ---- Marquesina ----------------------------------------------------------
+   Las filas de nombres gigantes que Utópica desliza en su home. El truco:
+   la lista va duplicada dentro de la fila y la fila se mueve exactamente
+   la mitad de su ancho, así el bucle no se nota. */
+.marquesina-fila {
+  display: flex;
+  width: max-content;
+  animation: deslizar 46s linear infinite;
+}
+
+.marquesina-fila--reves {
+  animation-direction: reverse;
+}
+
+.marquesina-fila--lenta {
+  animation-duration: 66s;
+}
+
+@keyframes deslizar {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* Si alguien tiene desactivadas las animaciones del sistema, se para. */
+@media (prefers-reduced-motion: reduce) {
+  .marquesina-fila {
+    animation: none;
+  }
+}
+
+/* ---- Carril horizontal --------------------------------------------------- */
+.carril {
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.carril::-webkit-scrollbar {
+  display: none;
+}
+
+.carril > * {
+  scroll-snap-align: start;
+}
+
+/* ---- Preguntas frecuentes, con <details> y sin JavaScript ---------------- */
+.pregunta summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.pregunta summary::-webkit-details-marker {
+  display: none;
+}
+
+.pregunta summary::after {
+  content: "+";
+  float: right;
+  font-family: var(--font-texto);
+}
+
+.pregunta[open] summary::after {
+  content: "–";
+}
+
+/* El contorno del mapa se dibuja solo al aparecer, como en Utópica. */
+@keyframes trazar {
+  from {
+    stroke-dashoffset: 1400;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.silueta path {
+  stroke-dasharray: 1400;
+  animation: trazar 2.4s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .silueta path {
+    stroke-dasharray: none;
+    animation: none;
+  }
 }

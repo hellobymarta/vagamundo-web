@@ -102,22 +102,60 @@ En Vite, solo las variables que empiezan por `VITE_` llegan al navegador, y se l
 
 ## Diseño
 
-La maquetación continúa la línea de la PEC 1 y de la práctica del día 24, y toma como
-referencia tres webs de viajes: **nuba.com**, **utopica.travel** y
-**safaris.wildernessdestinations.com**. De ellas vienen tres decisiones concretas:
+La maquetación toma como base **nuba.com** y le añade dos piezas concretas de
+**utopica.travel**. Antes de maquetar medí lo que hacen por dentro (tipografías, colores y
+rejilla), y de ahí salen estas decisiones.
 
-- **Portadas a sangre.** Cada página abre con una fotografía a pantalla completa, la cabecera
-  encima en transparente y el título en serif sobre la imagen, como hacen NUBA y Utópica.
-- **Pareja tipográfica.** *Playfair Display* en peso 400 para los títulos, con el interletrado
-  ligeramente cerrado, y *Montserrat* en 11 px y mayúsculas muy espaciadas para las etiquetas
-  de sección. Es exactamente el criterio de Utópica; el texto corrido va en *Inter* en peso 300.
-- **Fichas editoriales.** Foto vertical 4:5, etiqueta de categoría, título serif, filete fino y
-  precio alineado abajo, al modo de las tarjetas de Wilderness.
+### De NUBA, el esqueleto
 
-Los colores no se han copiado de ninguna de las tres: son los de la práctica del día 24, sacados
-de mis propias fotografías de la costa amalfitana. El azul se reserva para la cabecera, las
-portadas y el pie, y cada sección de la portada lleva su propio pastel (rosa, terracota, amarillo
-y oliva). Las fotografías de `public/` también son propias.
+- **La cabecera.** Barra sólida en crema (#EFEBE6 en su web) con el texto en negro, los enlaces
+  repartidos a los lados y el nombre de la marca centrado en serif fino con el interletrado muy
+  abierto. No va encima de la foto: la foto empieza justo debajo.
+- **La portada rotativa.** Varias campañas que se alternan, con el epígrafe en serif (no en
+  mayúsculas), el titular grande, un botón **rectangular** de contorno fino y la paginación en
+  puntitos.
+- **El orden de la home.** Portada → bloque de marca centrado con «leer más» → destinos
+  destacados en tres columnas → experiencias → catálogo → boletín → pie a cuatro columnas.
+- **El listado de destinos por continente**, en cuatro columnas con el continente en serif
+  espaciado. Aquí los que están en el catálogo se vuelven enlaces y el resto quedan apagados.
+- **La escala tipográfica.** Ninguna de las referencias pasa de 40 px en los títulos de sección:
+  el aire hace el trabajo, no el tamaño. Por eso la escala va con `clamp()`.
+
+### De Utópica, dos piezas
+
+- **El explorador de viajes** (`explorador.jsx`): la foto a sangre muy apagada, el contorno del
+  país dibujándose arriba, el nombre del viaje en **cursiva serif** en el centro, los vecinos
+  apagados a los lados y dos flechas abajo. Los contornos no están dibujados a mano: los genero
+  con el atlas de *world-atlas* (Natural Earth 1:110m) proyectado en Mercator y limpio de islas
+  pequeñas — 55 países en `config/siluetas.js`.
+- **La marquesina** (`marquesina.jsx`): tres filas de nombres enormes en serif deslizándose
+  sobre fondo oscuro, cada una a su ritmo y en su sentido. Es CSS puro: la lista va duplicada
+  dentro de la fila y la fila se desplaza exactamente el 50 % de su ancho, así el bucle no se ve.
+- También su **cursiva metida dentro del titular** («Comparte tus *sueños* con nosotras»), su
+  **formulario sobre fondo caqui** con los campos sin caja, y la **banda oscura de cierre**
+  con la pregunta a la izquierda y la llamada a la acción a la derecha.
+
+### De Wilderness
+
+Los tres pasos numerados 01/02/03, el precio en formato «Desde X € por persona», la duración en
+«días · noches», los dos testimonios con firma y lugar, y las preguntas frecuentes (aquí con
+`<details>`, sin JavaScript).
+
+### Tipografías y color
+
+*Playfair Display* en peso 400 para los títulos, también en cursiva, que es como Utópica titula
+sus destinos; *Montserrat* a 11 px en mayúsculas con mucho interletrado para las etiquetas; e
+*Inter* en peso 300 para el texto corrido.
+
+De su código no hay ni una línea, y los colores tampoco son suyos: la paleta es la de la
+práctica del día 24, sacada de mis propias fotografías de la costa amalfitana — azul del mar
+para el pie, y un pastel por sección (rosa buganvilla, terracota, amarillo limón y verde oliva).
+
+### Fotografías
+
+Las de Positano, Amalfi y Atrani son mías, de la PEC 1. Las de Apulia, Brasil, Namibia, India,
+Uzbekistán, Guatemala, Costa Rica, el salar y el Amazonas están sacadas de los catálogos de
+viajes de 2026 y se usan solo con fines académicos en esta práctica.
 
 ## Decisiones de arquitectura
 

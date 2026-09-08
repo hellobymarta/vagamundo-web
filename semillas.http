@@ -1,0 +1,61 @@
+### Semillas del catálogo · PEC 4
+#
+# Tres viajes para que el catálogo no salga vacío. Se lanzan con la extensión
+# REST Client de VS Code: abre este archivo y pulsa "Send Request" encima de
+# cada bloque. También sirven de prueba manual del POST.
+#
+# Los datos (duración, precio y ruta) salen de los catálogos de viajes
+# de 2026. Las descripciones están reescritas con la voz de Vagamundo.
+
+@base = https://vagamundo-api.vercel.app
+
+### 1 · Italia Inédita: Apulia
+POST {{base}}/api/travels
+Content-Type: application/json
+
+{
+  "nombre": "Apulia inédita",
+  "destino": "Apulia y Matera, Italia",
+  "descripcion": "El tacón de la bota, que casi nadie pisa. Trulli blancos, aceite recién molido, focaccia de Bari y una ciudad excavada en la roca.",
+  "precio": 2179,
+  "duracionDias": 8,
+  "categoria": "Cultural",
+  "imagen": "/apulia-vieste.jpg",
+  "disponible": true,
+  "itinerario": "Día 1 · Llegada a Bari y cena en el casco viejo.\nDía 2 · Trani y su catedral a pie de mar. Por la tarde, la gruta de San Miguel en Monte Sant'Angelo.\nDía 3 · Vieste, callejeando entre arcos y miradores. Tarde en San Giovanni Rotondo.\nDía 4 · Barletta, un molino de aceite con cata y el pan de Altamura. Bari vieja al atardecer.\nDía 5 · Las cuevas de Castellana, Alberobello y sus trulli, y Ostuni la blanca.\nDía 6 · Lecce, barroco de piedra dorada. Después Otranto, la puerta de Oriente.\nDía 7 · Matera y sus sassi, casas e iglesias excavadas en la roca.\nDía 8 · Vuelta a casa desde Bari."
+}
+
+### 2 · Ruta de las emociones (nordeste de Brasil)
+POST {{base}}/api/travels
+Content-Type: application/json
+
+{
+  "nombre": "Ruta de las emociones",
+  "destino": "Nordeste de Brasil",
+  "descripcion": "Mil kilómetros de dunas, lagunas de agua de lluvia y playas sin una sola sombrilla, en 4x4 y en lancha entre Fortaleza y los Lençóis Maranhenses.",
+  "precio": 3970,
+  "duracionDias": 11,
+  "categoria": "Naturaleza",
+  "imagen": "/brasil-lencois.jpg",
+  "disponible": true,
+  "itinerario": "Día 1 · Vuelo a Fortaleza.\nDía 2 · Avión a São Luís y tarde libre por el centro colonial.\nDía 3 · Barreirinhas. Por la tarde, 4x4 hasta la Laguna Azul para el baño y el atardecer.\nDía 4 · El río Preguiças en lancha: Vassouras, Mandacaru y su faro, y noche en Atins.\nDía 5 · Atins. Caminata por las dunas del parque y baño en las lagunas.\nDía 6 · Cruce a Caburé y ruta hasta Parnaíba. Los pájaros guarás al ponerse el sol.\nDía 7 · Parnaíba a Jericoacoara en 4x4, con dos ferris y kilómetros de playa desierta.\nDía 8 · Jericoacoara en buggy: Lagoa Azul, Lagoa do Paraíso y las hamacas dentro del agua.\nDía 9 · Vuelta a Fortaleza por la costa.\nDía 10 · Vuelo de regreso.\nDía 11 · Llegada."
+}
+
+### 3 · Namibia espectacular
+POST {{base}}/api/travels
+Content-Type: application/json
+
+{
+  "nombre": "Namibia espectacular",
+  "destino": "Namibia",
+  "descripcion": "Etosha al amanecer, los grabados de Twyfelfontein, las dunas de Sossusvlei con trescientos metros de arena y una noche larga en el Kalahari.",
+  "precio": 3890,
+  "duracionDias": 11,
+  "categoria": "Naturaleza",
+  "imagen": "/namibia-arco.jpg",
+  "disponible": true,
+  "itinerario": "Día 1 · Vuelo a Windhoek.\nDía 2 · Llegada y día libre en Windhoek.\nDía 3 · Norte hasta Etosha, con parada en el mercado de tallas de Okahandja y visita a un poblado himba.\nDía 4 · Día completo de safari en Etosha en 4x4: rinoceronte negro, guepardo, impala de cara blanca.\nDía 5 · Damaraland. El bosque petrificado y los grabados rupestres de Twyfelfontein.\nDía 6 · Bajada a Swakopmund, entre el desierto y el Atlántico.\nDía 7 · Desierto del Namib. Llegada al lodge por la tarde.\nDía 8 · Sossusvlei y Deadvlei al amanecer, y el cañón de Sesriem.\nDía 9 · Kalahari. Safari en 4x4 por la reserva privada y cóctel al ponerse el sol.\nDía 10 · Caminata con bosquimanos y vuelo de vuelta desde Windhoek.\nDía 11 · Llegada."
+}
+
+### Comprobar que están los tres
+GET {{base}}/api/travels

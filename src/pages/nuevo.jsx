@@ -16,7 +16,7 @@ export default function Nuevo() {
     const creado = await crearViaje(viaje)
 
     // Si la API lo ha guardado, volvemos al catálogo, donde ya aparece.
-    if (creado) navegar('/')
+    if (creado) navegar('/#catalogo')
   }
 
   return (
@@ -30,8 +30,8 @@ export default function Nuevo() {
         alto="h-[62vh]"
       />
 
-      <Seccion tono={TONOS.TERRACOTA} ancho="max-w-3xl">
-        <div className="mb-10">
+      <Seccion tono={TONOS.CREMA} ancho="max-w-3xl">
+        <div className="mb-12">
           <Aviso tono="error">{error}</Aviso>
         </div>
 

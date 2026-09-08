@@ -18,9 +18,7 @@ export default function App() {
   useSubirArriba()
 
   return (
-    // La cabecera va en posición absoluta sobre la portada de cada página,
-    // así que este contenedor tiene que ser el punto de referencia.
-    <div className="relative">
+    <div>
       <Cabecera />
 
       <main>

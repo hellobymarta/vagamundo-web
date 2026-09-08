@@ -10,7 +10,7 @@ export default function NoEncontrada() {
       etiqueta="Error 404"
       titulo="Por aquí no pasa ninguna ruta"
       texto="La página que buscabas no existe."
-      alto="h-[80vh]"
+      alto="h-[86vh]"
     >
       <Boton a="/" variante="claro">
         Ir al catálogo
