@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+/* Paleta de Vagamundo, la misma línea de la PEC 1: azul profundo para la
+   cabecera y el hero, crema de fondo y los pasteles de la costa amalfitana. */
+@theme {
+  --font-titulo: "Georgia", "Times New Roman", serif;
+
+  --color-azul: #1f3a5f;
+  --color-azul-claro: #2f5480;
+  --color-crema: #faf6ee;
+  --color-arena: #ece3d2;
+  --color-terracota: #c17a52;
+  --color-rosa: #f0dcd2;
+  --color-amarillo: #e6cf9c;
+  --color-oliva: #8d9a72;
+  --color-tinta: #2b2b28;
+  --color-humo: #6f6d65;
+}
+
+body {
+  background-color: var(--color-crema);
+  color: var(--color-tinta);
+}
+
+/* Los precios en serif salen con cifras de altura desigual: las igualamos. */
+.cifras {
+  font-variant-numeric: lining-nums tabular-nums;
+}
