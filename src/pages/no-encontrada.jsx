@@ -1,14 +1,20 @@
+import Portada from '@/components/portada'
 import Boton from '@/components/boton'
+import { FOTOS } from '@/config/constantes'
 
 export default function NoEncontrada() {
   return (
-    <section className="mx-auto max-w-xl px-6 py-28 text-center">
-      <p className="font-titulo text-6xl text-terracota">404</p>
-      <h1 className="mt-4 font-titulo text-3xl">Por aquí no pasa ninguna ruta</h1>
-      <p className="mt-3 text-humo">La página que buscabas no existe.</p>
-      <div className="mt-8">
-        <Boton a="/">Ir al catálogo</Boton>
-      </div>
-    </section>
+    <Portada
+      imagen={FOTOS.NOCHE}
+      alt="Positano de noche"
+      etiqueta="Error 404"
+      titulo="Por aquí no pasa ninguna ruta"
+      texto="La página que buscabas no existe."
+      alto="h-[80vh]"
+    >
+      <Boton a="/" variante="claro">
+        Ir al catálogo
+      </Boton>
+    </Portada>
   )
 }

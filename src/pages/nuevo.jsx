@@ -1,8 +1,11 @@
 import { useNavigate } from 'react-router-dom'
 
+import Portada from '@/components/portada'
+import Seccion from '@/components/seccion'
 import FormularioViaje from '@/components/formulario-viaje'
 import Aviso from '@/components/aviso'
 import { useViajes } from '@/hooks/use-viajes'
+import { FOTOS, TONOS } from '@/config/constantes'
 
 // Alta de un viaje: formulario controlado que hace POST contra la API.
 export default function Nuevo() {
@@ -17,19 +20,23 @@ export default function Nuevo() {
   }
 
   return (
-    <section className="mx-auto max-w-3xl px-6 py-16">
-      <h1 className="font-titulo text-4xl">Añadir un viaje</h1>
-      <p className="mt-2 text-humo">
-        Se guarda en MongoDB a través de la API y aparece en el catálogo al momento.
-      </p>
+    <>
+      <Portada
+        imagen={FOTOS.PLAYA}
+        alt="La playa de Atrani a primera hora"
+        etiqueta="Nuevo en el catálogo"
+        titulo="Cuenta el viaje que tienes en la cabeza"
+        texto="Se guarda en MongoDB a través de la API y aparece en el catálogo al momento."
+        alto="h-[62vh]"
+      />
 
-      <div className="mt-6">
-        <Aviso tono="error">{error}</Aviso>
-      </div>
+      <Seccion tono={TONOS.TERRACOTA} ancho="max-w-3xl">
+        <div className="mb-10">
+          <Aviso tono="error">{error}</Aviso>
+        </div>
 
-      <div className="mt-6">
         <FormularioViaje onEnviar={enviar} enviando={guardando} textoBoton="Publicar viaje" />
-      </div>
-    </section>
+      </Seccion>
+    </>
   )
 }

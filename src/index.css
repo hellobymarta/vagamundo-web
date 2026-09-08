@@ -1,28 +1,67 @@
 @import "tailwindcss";
 
-/* Paleta de Vagamundo, la misma línea de la PEC 1: azul profundo para la
-   cabecera y el hero, crema de fondo y los pasteles de la costa amalfitana. */
+/* Paleta y tipografías de Vagamundo: las mismas que monté en la práctica del
+   día 24, sacadas de las fotos de la costa amalfitana. El azul se reserva para
+   la cabecera, las portadas y el pie; el resto de secciones van en pasteles. */
 @theme {
-  --font-titulo: "Georgia", "Times New Roman", serif;
+  --font-titulo: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-texto: "Inter", system-ui, -apple-system, sans-serif;
+  --font-etiqueta: "Montserrat", system-ui, sans-serif;
 
-  --color-azul: #1f3a5f;
-  --color-azul-claro: #2f5480;
-  --color-crema: #faf6ee;
-  --color-arena: #ece3d2;
-  --color-terracota: #c17a52;
-  --color-rosa: #f0dcd2;
-  --color-amarillo: #e6cf9c;
-  --color-oliva: #8d9a72;
-  --color-tinta: #2b2b28;
-  --color-humo: #6f6d65;
+  --color-azul: #1b4b7a;
+  --color-azul-medio: #2f6f9f;
+  --color-azul-claro: #9cc4e4;
+
+  --color-fondo: #fbf7f2;
+  --color-tinta: #2b2622;
+  --color-suave: #7a7068;
+  --color-borde: #e6ded3;
+
+  /* Un color por sección: buganvilla, tiestos de barro, limones y olivos. */
+  --color-rosa: #f7e6e1;
+  --color-rosa-acento: #a85c4b;
+  --color-terracota: #f6e3d5;
+  --color-terracota-acento: #b06c3f;
+  --color-amarillo: #f9efd6;
+  --color-amarillo-acento: #a37f2e;
+  --color-oliva: #e8ebdd;
+  --color-oliva-acento: #5f6b45;
 }
 
 body {
-  background-color: var(--color-crema);
+  background-color: var(--color-fondo);
   color: var(--color-tinta);
+  font-family: var(--font-texto);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Los precios en serif salen con cifras de altura desigual: las igualamos. */
+/* Etiquetas pequeñas en mayúsculas muy espaciadas: el recurso que usan
+   NUBA y Utópica para presentar cada sección. */
+.etiqueta {
+  font-family: var(--font-etiqueta);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* Los títulos serif quedan mejor un poco apretados. */
+.titular {
+  font-family: var(--font-titulo);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+}
+
+/* Georgia y Playfair traen cifras de altura desigual: las igualamos
+   para que los precios se lean en línea. */
 .cifras {
   font-variant-numeric: lining-nums tabular-nums;
+}
+
+/* Filete fino de separación, como el de las fichas de Wilderness. */
+.filete {
+  height: 1px;
+  background-color: var(--color-borde);
 }

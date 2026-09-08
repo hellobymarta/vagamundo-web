@@ -1,17 +1,20 @@
 import { Link } from 'react-router-dom'
 
-// Botón reutilizable. Si le pasas "a", se dibuja como enlace de React Router;
-// si no, como <button>. Así no repetimos los estilos en cada pantalla.
+// Botón reutilizable, con la forma de píldora y las mayúsculas espaciadas
+// que usan las webs de viajes de referencia.
+// Si le pasas "a", se dibuja como enlace de React Router; si no, como <button>.
 const VARIANTES = {
-  principal: 'bg-azul text-crema hover:bg-azul-claro',
-  terracota: 'bg-terracota text-white hover:bg-[#a86440]',
-  contorno: 'border border-azul text-azul hover:bg-arena',
-  peligro: 'border border-[#b45746] text-[#b45746] hover:bg-[#f6e0da]',
+  principal: 'bg-azul text-white border-azul hover:bg-azul-medio hover:border-azul-medio',
+  terracota:
+    'bg-terracota-acento text-white border-terracota-acento hover:bg-[#96562f] hover:border-[#96562f]',
+  contorno: 'border-tinta/25 text-tinta hover:bg-tinta hover:text-white hover:border-tinta',
+  claro: 'border-white/60 text-white hover:bg-white hover:text-tinta hover:border-white',
+  peligro: 'border-rosa-acento text-rosa-acento hover:bg-rosa-acento hover:text-white',
 }
 
 export default function Boton({ variante = 'principal', a, className = '', children, ...resto }) {
-  const estilo = `inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5
-    text-sm transition disabled:cursor-not-allowed disabled:opacity-50
+  const estilo = `etiqueta inline-flex items-center justify-center rounded-full border px-8 py-3.5
+    transition duration-300 disabled:cursor-not-allowed disabled:opacity-40
     ${VARIANTES[variante]} ${className}`
 
   if (a) {

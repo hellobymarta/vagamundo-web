@@ -2,8 +2,10 @@ import { Link } from 'react-router-dom'
 
 import { IMAGEN_POR_DEFECTO } from '@/config/constantes'
 
-// Tarjeta del catálogo. Recibe las props ya deconstruidas, así en el listado
-// basta con esparcir cada viaje del map sobre este componente.
+// Ficha del catálogo, con el aire editorial de las webs de referencia:
+// foto vertical, etiqueta de categoría, título serif, filete y precio.
+// Recibe las props ya deconstruidas, así en el listado basta con esparcir
+// cada viaje del map sobre este componente.
 export default function TarjetaViaje({
   id,
   nombre,
@@ -16,46 +18,47 @@ export default function TarjetaViaje({
   disponible,
 }) {
   return (
-    <article className="group flex flex-col overflow-hidden rounded-3xl border border-arena bg-white/70 transition hover:shadow-lg">
+    <article className="group">
       <Link to={`/viaje/${id}`} className="block overflow-hidden">
-        <img
-          src={imagen || IMAGEN_POR_DEFECTO}
-          alt={nombre}
-          loading="lazy"
-          className="h-52 w-full object-cover transition duration-500 group-hover:scale-105"
-        />
+        <div className="relative aspect-[4/5] overflow-hidden">
+          <img
+            src={imagen || IMAGEN_POR_DEFECTO}
+            alt={nombre}
+            loading="lazy"
+            className="absolute inset-0 h-full w-full object-cover transition duration-[1200ms] ease-out group-hover:scale-[1.06]"
+          />
+
+          {!disponible && (
+            <p className="etiqueta absolute left-5 top-5 bg-white/90 px-3 py-1.5 text-tinta">
+              Plazas agotadas
+            </p>
+          )}
+        </div>
       </Link>
 
-      <div className="flex flex-1 flex-col p-5">
-        <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-humo">
-          {categoria && <span>{categoria}</span>}
-          {categoria && <span>·</span>}
-          <span>{destino}</span>
-        </div>
+      <div className="pt-6">
+        <p className="etiqueta text-suave">
+          {categoria ? `${categoria} · ${destino}` : destino}
+        </p>
 
-        <h3 className="mt-2 font-titulo text-2xl">
-          <Link to={`/viaje/${id}`} className="hover:text-terracota">
+        <h3 className="titular mt-3 text-2xl">
+          <Link to={`/viaje/${id}`} className="transition group-hover:text-terracota-acento">
             {nombre}
           </Link>
         </h3>
 
         {descripcion && (
-          <p className="mt-2 line-clamp-3 text-sm text-humo">{descripcion}</p>
+          <p className="mt-3 line-clamp-2 text-sm font-light leading-relaxed text-suave">
+            {descripcion}
+          </p>
         )}
 
-        <div className="mt-auto flex items-end justify-between pt-5">
-          <p className="cifras font-titulo text-2xl">
-            {precio} €
-            <span className="ml-1 text-sm text-humo">/ persona</span>
-          </p>
-          <p className="cifras text-sm text-humo">{duracionDias} días</p>
+        <div className="filete mt-6" />
+
+        <div className="mt-4 flex items-baseline justify-between">
+          <p className="etiqueta cifras text-suave">{duracionDias} días</p>
+          <p className="titular cifras text-xl">{precio} €</p>
         </div>
-
-        {!disponible && (
-          <p className="mt-3 rounded-full bg-rosa px-3 py-1 text-center text-xs text-[#8a3f2a]">
-            Plazas agotadas
-          </p>
-        )}
       </div>
     </article>
   )

@@ -25,90 +25,102 @@ export default function FormularioViaje({
   }
 
   return (
-    <form onSubmit={enviar} className="space-y-5 rounded-3xl border border-arena bg-white/70 p-7">
-      <div className="grid gap-5 sm:grid-cols-2">
+    <form onSubmit={enviar} className="space-y-12">
+      <fieldset className="space-y-9 border-0 p-0">
+        <legend className="etiqueta text-terracota-acento">El viaje</legend>
+
+        <div className="grid gap-9 sm:grid-cols-2">
+          <Campo
+            etiqueta="Nombre"
+            nombre="nombre"
+            value={valores.nombre}
+            onChange={cambiar}
+            placeholder="Amalfi en primavera"
+            required
+          />
+          <Campo
+            etiqueta="Destino"
+            nombre="destino"
+            value={valores.destino}
+            onChange={cambiar}
+            placeholder="Costa amalfitana, Italia"
+            required
+          />
+        </div>
+
         <Campo
-          etiqueta="Nombre del viaje"
-          nombre="nombre"
-          value={valores.nombre}
+          etiqueta="Descripción"
+          nombre="descripcion"
+          tipo="textarea"
+          value={valores.descripcion}
           onChange={cambiar}
-          placeholder="Amalfi en primavera"
-          required
+          placeholder="Qué hace especial a este viaje…"
         />
+      </fieldset>
+
+      <fieldset className="space-y-9 border-0 p-0">
+        <legend className="etiqueta text-terracota-acento">Plazas y precio</legend>
+
+        <div className="grid gap-9 sm:grid-cols-3">
+          <Campo
+            etiqueta="Precio por persona (€)"
+            nombre="precio"
+            tipo="number"
+            min="0"
+            value={valores.precio}
+            onChange={cambiar}
+            required
+          />
+          <Campo
+            etiqueta="Duración (días)"
+            nombre="duracionDias"
+            tipo="number"
+            min="1"
+            value={valores.duracionDias}
+            onChange={cambiar}
+            required
+          />
+          <Campo
+            etiqueta="Categoría"
+            nombre="categoria"
+            tipo="categoria"
+            value={valores.categoria}
+            onChange={cambiar}
+          />
+        </div>
+
         <Campo
-          etiqueta="Destino"
-          nombre="destino"
-          value={valores.destino}
+          etiqueta="Hay plazas disponibles"
+          nombre="disponible"
+          tipo="checkbox"
+          value={valores.disponible}
           onChange={cambiar}
-          placeholder="Costa amalfitana, Italia"
-          required
         />
-      </div>
+      </fieldset>
 
-      <Campo
-        etiqueta="Descripción"
-        nombre="descripcion"
-        tipo="textarea"
-        value={valores.descripcion}
-        onChange={cambiar}
-        placeholder="Qué hace especial a este viaje…"
-      />
+      <fieldset className="space-y-9 border-0 p-0">
+        <legend className="etiqueta text-terracota-acento">El día a día</legend>
 
-      <div className="grid gap-5 sm:grid-cols-3">
         <Campo
-          etiqueta="Precio (€)"
-          nombre="precio"
-          tipo="number"
-          min="0"
-          value={valores.precio}
+          etiqueta="Itinerario"
+          nombre="itinerario"
+          tipo="textarea"
+          value={valores.itinerario}
           onChange={cambiar}
-          required
+          placeholder="Nápoles · Positano · Ravello · Atrani…"
         />
+
         <Campo
-          etiqueta="Duración (días)"
-          nombre="duracionDias"
-          tipo="number"
-          min="1"
-          value={valores.duracionDias}
+          etiqueta="Fotografía (URL)"
+          nombre="imagen"
+          tipo="url"
+          value={valores.imagen}
           onChange={cambiar}
-          required
+          placeholder="Déjalo vacío y usaremos una de la costa"
         />
-        <Campo
-          etiqueta="Categoría"
-          nombre="categoria"
-          tipo="categoria"
-          value={valores.categoria}
-          onChange={cambiar}
-        />
-      </div>
+      </fieldset>
 
-      <Campo
-        etiqueta="Itinerario"
-        nombre="itinerario"
-        tipo="textarea"
-        value={valores.itinerario}
-        onChange={cambiar}
-        placeholder="Día 1 Nápoles · Día 2 Positano · Día 3 Ravello…"
-      />
-
-      <Campo
-        etiqueta="Imagen (URL)"
-        nombre="imagen"
-        tipo="url"
-        value={valores.imagen}
-        onChange={cambiar}
-        placeholder="https://…"
-      />
-
-      <Campo
-        etiqueta="Hay plazas disponibles"
-        nombre="disponible"
-        tipo="checkbox"
-        value={valores.disponible}
-        onChange={cambiar}
-      />
-
-      <Boton type="submit" disabled={enviando}>
+      <Boton type="submit" variante="terracota" disabled={enviando}>
         {enviando ? 'Guardando…' : textoBoton}
       </Boton>
     </form>

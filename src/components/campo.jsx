@@ -2,8 +2,9 @@ import { CATEGORIAS } from '@/config/constantes'
 
 // Campo de formulario reutilizable. Según "tipo" dibuja un input,
 // un textarea, el desplegable de categorías o una casilla.
-const CLASES = `w-full rounded-xl border border-[#d9cdb6] bg-white/80 px-4 py-3
-  text-sm outline-none transition focus:border-terracota`
+// Sin cajas: solo una línea inferior, como los formularios de Utópica.
+const CLASES = `w-full border-0 border-b border-borde bg-transparent px-0 py-3 text-lg
+  font-light outline-none transition focus:border-terracota-acento`
 
 export default function Campo({ etiqueta, nombre, tipo = 'text', ...resto }) {
   const comunes = { id: nombre, name: nombre, className: CLASES, ...resto }
@@ -13,14 +14,14 @@ export default function Campo({ etiqueta, nombre, tipo = 'text', ...resto }) {
     const { value, ...limpio } = resto
 
     return (
-      <label htmlFor={nombre} className="flex items-center gap-3 text-sm">
+      <label htmlFor={nombre} className="flex cursor-pointer items-center gap-3 text-sm font-light">
         <input
           {...limpio}
           id={nombre}
           name={nombre}
           type="checkbox"
           checked={value}
-          className="h-4 w-4 accent-[#1f3a5f]"
+          className="h-4 w-4 accent-[#1b4b7a]"
         />
         {etiqueta}
       </label>
@@ -29,7 +30,7 @@ export default function Campo({ etiqueta, nombre, tipo = 'text', ...resto }) {
 
   return (
     <div>
-      <label htmlFor={nombre} className="mb-1.5 block text-sm text-humo">
+      <label htmlFor={nombre} className="etiqueta block text-suave">
         {etiqueta}
       </label>
 

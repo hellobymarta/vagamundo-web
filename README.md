@@ -100,6 +100,25 @@ En Vite, solo las variables que empiezan por `VITE_` llegan al navegador, y se l
 | PUT | `/api/travels/:id` | Página de edición. |
 | DELETE | `/api/travels/:id` | Ficha del viaje. |
 
+## Diseño
+
+La maquetación continúa la línea de la PEC 1 y de la práctica del día 24, y toma como
+referencia tres webs de viajes: **nuba.com**, **utopica.travel** y
+**safaris.wildernessdestinations.com**. De ellas vienen tres decisiones concretas:
+
+- **Portadas a sangre.** Cada página abre con una fotografía a pantalla completa, la cabecera
+  encima en transparente y el título en serif sobre la imagen, como hacen NUBA y Utópica.
+- **Pareja tipográfica.** *Playfair Display* en peso 400 para los títulos, con el interletrado
+  ligeramente cerrado, y *Montserrat* en 11 px y mayúsculas muy espaciadas para las etiquetas
+  de sección. Es exactamente el criterio de Utópica; el texto corrido va en *Inter* en peso 300.
+- **Fichas editoriales.** Foto vertical 4:5, etiqueta de categoría, título serif, filete fino y
+  precio alineado abajo, al modo de las tarjetas de Wilderness.
+
+Los colores no se han copiado de ninguna de las tres: son los de la práctica del día 24, sacados
+de mis propias fotografías de la costa amalfitana. El azul se reserva para la cabecera, las
+portadas y el pie, y cada sección de la portada lleva su propio pastel (rosa, terracota, amarillo
+y oliva). Las fotografías de `public/` también son propias.
+
 ## Decisiones de arquitectura
 
 - **Importaciones absolutas.** El alias `@` apunta a `src`, así que se importa
