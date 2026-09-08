@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 
 import { IMAGEN_POR_DEFECTO } from '@/config/constantes'
+import { fotoDeDestino } from '@/config/destinos'
 import { contarNoches, formatearPrecio } from '@/formato'
 
 // Ficha del catálogo: foto, etiqueta de categoría, título serif, filete y el
@@ -23,7 +24,7 @@ export default function TarjetaViaje({
       <Link to={`/viaje/${id}`} className="block">
         <div className="relative aspect-[3/2] overflow-hidden">
           <img
-            src={imagen || IMAGEN_POR_DEFECTO}
+            src={imagen || fotoDeDestino(destino, IMAGEN_POR_DEFECTO)}
             alt={nombre}
             loading="lazy"
             className="absolute inset-0 h-full w-full object-cover transition duration-[1400ms] ease-out group-hover:scale-[1.07]"

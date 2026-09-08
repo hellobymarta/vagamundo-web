@@ -14,7 +14,7 @@ import { useCabeceraSolida } from '@/hooks/use-cabecera-solida'
 // sólido al pasar el ratón por encima (group-hover).
 const IZQUIERDA = [
   { destino: '/', texto: 'Viajes' },
-  { destino: '/?motivacion=Costa', texto: 'Destinos' },
+  { destino: '/destinos', texto: 'Destinos' },
 ]
 
 const DERECHA = [{ destino: '/nuevo', texto: 'Añadir viaje' }]

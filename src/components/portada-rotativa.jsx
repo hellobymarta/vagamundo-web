@@ -1,24 +1,26 @@
 import Boton from '@/components/boton'
 import { useCarrusel } from '@/hooks/use-carrusel'
-import { PORTADAS } from '@/config/constantes'
+import { PORTADAS, SEGUNDOS_PORTADA } from '@/config/constantes'
 
-// La portada de NUBA no es una foto fija: son varias campañas que van
-// rotando, con el texto centrado, un botón rectangular de contorno fino
-// y la paginación en puntitos abajo.
+// La portada de NUBA: ocupa la pantalla entera, va pasando sola de una
+// campaña a otra y lleva la paginación en puntitos abajo. El texto va
+// centrado, con el epígrafe en serif y un botón rectangular de contorno fino.
 export default function PortadaRotativa() {
-  const { indice, ir } = useCarrusel(PORTADAS.length)
+  const { indice, ir } = useCarrusel(PORTADAS.length, SEGUNDOS_PORTADA * 1000)
   const actual = PORTADAS[indice]
   const { etiqueta, titulo, texto, enlace, accion } = actual
 
   return (
-    <section className="relative h-[88vh] min-h-[540px] overflow-hidden">
+    // h-dvh es la altura real de la ventana, también en el móvil, donde
+    // la barra del navegador se come parte del 100vh.
+    <section className="relative h-dvh min-h-[600px] overflow-hidden">
       {PORTADAS.map(({ id, imagen, alt }) => (
         <img
           key={id}
           src={imagen}
           alt={alt}
           aria-hidden={id !== actual.id}
-          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1200ms] ${
+          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1400ms] ${
             id === actual.id ? 'opacity-100' : 'opacity-0'
           }`}
         />
@@ -41,7 +43,6 @@ export default function PortadaRotativa() {
           </Boton>
         </div>
 
-        {/* Paginación en puntos, como la de NUBA. */}
         <div className="mt-16 flex items-center gap-3">
           {PORTADAS.map(({ id, etiqueta: nombre }) => (
             <button

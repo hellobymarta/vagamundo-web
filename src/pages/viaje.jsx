@@ -10,6 +10,7 @@ import Aviso from '@/components/aviso'
 import Boton from '@/components/boton'
 import { useViajes } from '@/hooks/use-viajes'
 import { FOTOS, IMAGEN_POR_DEFECTO, TONOS } from '@/config/constantes'
+import { buscarDestino, fotoDeDestino } from '@/config/destinos'
 import { contarNoches, formatearPrecio } from '@/formato'
 
 // Ficha de un viaje. Lo buscamos en el catálogo que ya tenemos en el contexto,
@@ -55,6 +56,9 @@ export default function Viaje() {
   // Otros viajes para el carril del final, sin repetir el que se está viendo.
   const otros = viajes.filter((item) => item._id !== id).slice(0, 6)
 
+  // El destino al que pertenece, para enlazar a su página y coger su foto.
+  const sitio = buscarDestino(destino)
+
   async function eliminar() {
     const borrado = await eliminarViaje(id)
     if (borrado) navegar('/')
@@ -97,8 +101,19 @@ export default function Viaje() {
               </div>
               <div>
                 <div className="filete" />
-                <p className="etiqueta mt-5 text-suave">Plazas</p>
-                <p className="titular mt-3 text-2xl">{disponible ? 'Abiertas' : 'Agotadas'}</p>
+                <p className="etiqueta mt-5 text-suave">Destino</p>
+                <p className="titular mt-3 text-2xl">
+                  {sitio ? (
+                    <Link
+                      to={`/destinos/${sitio.id}`}
+                      className="transition hover:text-terracota-acento"
+                    >
+                      {sitio.nombre}
+                    </Link>
+                  ) : (
+                    destino
+                  )}
+                </p>
               </div>
             </div>
           </div>
@@ -132,10 +147,13 @@ export default function Viaje() {
 
       {itinerario && (
         <Seccion tono={TONOS.OLIVA} etiqueta="El itinerario">
+          {/* La foto del bloque es la del destino, no una de Amalfi
+              puesta por defecto: si el viaje es a Namibia, sale Namibia. */}
           <Partido
-            imagen={FOTOS.MAR}
-            alt="El mar de Amalfi desde el camino alto"
-            pie="El camino alto"
+            imagen={fotoDeDestino(destino, imagen || IMAGEN_POR_DEFECTO)}
+            alt={sitio ? sitio.fotoAlt : nombre}
+            rotulo={sitio ? sitio.nombre : destino}
+            pie={sitio ? sitio.titular : undefined}
             invertido
           >
             <h2 className="titular t-seccion">Día a día</h2>

@@ -171,6 +171,12 @@ export default function Viajes() {
         texto="En negro, los nueve que están abiertos ahora mismo. En gris, los que estamos preparando para 2027."
       >
         <TodosDestinos viajes={viajes} />
+
+        <p className="etiqueta mt-16">
+          <Boton a="/destinos" variante="contorno">
+            Ver todos los destinos
+          </Boton>
+        </p>
       </Seccion>
 
       <Seccion

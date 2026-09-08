@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 
 import { IMAGEN_POR_DEFECTO } from '@/config/constantes'
+import { fotoDeDestino } from '@/config/destinos'
 import { formatearPrecio } from '@/formato'
 
 // Los tres destinos destacados de NUBA: foto grande, el destino en
@@ -12,7 +13,7 @@ function Destacado({ id, nombre, destino, descripcion, imagen, precio }) {
       <Link to={`/viaje/${id}`} className="block">
         <div className="relative aspect-[4/5] overflow-hidden">
           <img
-            src={imagen || IMAGEN_POR_DEFECTO}
+            src={imagen || fotoDeDestino(destino, IMAGEN_POR_DEFECTO)}
             alt={nombre}
             loading="lazy"
             className="absolute inset-0 h-full w-full object-cover transition duration-[1400ms] ease-out group-hover:scale-[1.06]"

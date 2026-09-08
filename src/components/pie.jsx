@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 // y tres bloques de enlaces e información al lado.
 const NAVEGAR = [
   { texto: 'Viajes', destino: '/' },
+  { texto: 'Destinos', destino: '/destinos' },
   { texto: 'Añadir viaje', destino: '/nuevo' },
 ]
 

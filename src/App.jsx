@@ -11,6 +11,8 @@ import { useSubirArriba } from '@/hooks/use-subir-arriba'
 // tanto <Suspense> enseña el indicador de carga.
 const Viajes = lazy(() => import('@/pages/viajes'))
 const Viaje = lazy(() => import('@/pages/viaje'))
+const Destinos = lazy(() => import('@/pages/destinos'))
+const Destino = lazy(() => import('@/pages/destino'))
 const Nuevo = lazy(() => import('@/pages/nuevo'))
 const Editar = lazy(() => import('@/pages/editar'))
 const NoEncontrada = lazy(() => import('@/pages/no-encontrada'))
@@ -29,6 +31,8 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Viajes />} />
             <Route path="/viaje/:id" element={<Viaje />} />
+            <Route path="/destinos" element={<Destinos />} />
+            <Route path="/destinos/:pais" element={<Destino />} />
             <Route path="/nuevo" element={<Nuevo />} />
             <Route path="/editar/:id" element={<Editar />} />
             <Route path="*" element={<NoEncontrada />} />

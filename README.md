@@ -48,7 +48,8 @@ PEC4/
     │   └── use-formulario.js   # formularios controlados
     ├── components/             # boton, campo, aviso, cargando, cabecera, pie,
     │   │                       # tarjeta-viaje, lista-viajes, formulario-viaje
-    ├── pages/                  # viajes, viaje, nuevo, editar, no-encontrada
+    ├── pages/                  # viajes, viaje, destinos, destino, nuevo,
+    │   │                       # editar, no-encontrada
     ├── App.jsx
     └── main.jsx
 ```
@@ -121,9 +122,19 @@ rejilla), y de ahí salen estas decisiones.
   con `transition: height 0.6s`. Aquí lo resuelve el hook `use-cabecera-solida`, y como en su web
   la barra también se vuelve sólida al pasar el ratón por encima. El logotipo va centrado en
   absoluto (`left: 50%`), no con el flex, para que no se mueva aunque cambien los menús.
-- **La portada rotativa.** Varias campañas que se alternan, con el epígrafe en serif (no en
-  mayúsculas), el titular grande, un botón **rectangular** de contorno fino y la paginación en
-  puntitos.
+- **La portada rotativa.** Ocupa la ventana entera (`h-dvh`, que es la altura real también en el
+  móvil) y va pasando sola cada siete segundos, con el epígrafe en serif (no en mayúsculas), el
+  titular grande, un botón **rectangular** de contorno fino y la paginación en puntitos. El paso
+  automático está en `useCarrusel`, con su `clearInterval` al desmontar; al pulsar un punto el
+  reloj se reinicia.
+- **Los destinos.** Como ellos, cada sitio tiene entidad propia: un índice en `/destinos`
+  agrupado por continente, con una ficha por destino y el número de viajes que hay abiertos, y
+  una página propia en `/destinos/:pais` con su portada, el contorno del país, una entradilla,
+  los viajes que tenemos allí, los tres pasos, las dudas y la llamada a la acción. Los destinos
+  que estamos preparando aparecen igual, pero dicen «Próximamente» en vez de mentir.
+  Todo está en `config/destinos.js`: el modelo de la API solo guarda un `destino` de texto libre
+  («Nordeste de Brasil»), así que ahí vive la tabla que lo traduce a un destino de verdad, con su
+  continente, su fotografía y su texto — el mismo truco que las siluetas de los mapas.
 - **El orden de la home.** Portada → bloque de marca centrado con «leer más» → destinos
   destacados en tres columnas → experiencias → catálogo → boletín → pie a cuatro columnas.
 - **El listado de destinos por continente**, en cuatro columnas con el continente en serif
@@ -172,8 +183,12 @@ para el pie, y un pastel por sección (rosa buganvilla, terracota, amarillo lim�
 ### Fotografías
 
 Las de Positano, Amalfi y Atrani son mías, de la PEC 1. Las de Apulia, Grecia, Jordania, Brasil,
-Namibia, India, Uzbekistán, Guatemala, Costa Rica, el salar y el Amazonas están extraídas de los
-catálogos de viajes de 2026 y se usan solo con fines académicos en esta práctica.
+Namibia, India, Uzbekistán, Guatemala, Costa Rica y el salar están extraídas de los catálogos de
+viajes de 2026 y se usan solo con fines académicos en esta práctica.
+
+Cada foto va con su sitio: `fotoDeDestino()` resuelve la fotografía que corresponde a un destino,
+así que un viaje a Namibia nunca sale ilustrado con una foto de Amalfi, ni cuando el viaje no
+trae imagen propia, ni en el bloque del itinerario, ni en el explorador.
 
 ## Decisiones de arquitectura
 

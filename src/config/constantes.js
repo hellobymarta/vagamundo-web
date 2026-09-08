@@ -13,6 +13,9 @@ export const CATEGORIAS = ['Costa', 'Islas', 'Cultural', 'Ciudad', 'Naturaleza',
 // Nombre del parámetro con el que se filtra el catálogo desde la URL.
 export const PARAMETRO_MOTIVACION = 'motivacion'
 
+// Cada cuántos segundos pasa sola la portada, como el hero de NUBA.
+export const SEGUNDOS_PORTADA = 7
+
 // Cuántos viajes se enseñan en el bloque de destacados.
 export const CUANTOS_DESTACADOS = 3
 

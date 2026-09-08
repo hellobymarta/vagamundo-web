@@ -2,6 +2,7 @@ import Silueta from '@/components/silueta'
 import Boton from '@/components/boton'
 import { useCarrusel } from '@/hooks/use-carrusel'
 import { IMAGEN_POR_DEFECTO } from '@/config/constantes'
+import { fotoDeDestino } from '@/config/destinos'
 
 // Explorador de viajes, calcado del hero de destinos de Utópica: la foto a
 // sangre, el contorno del país dibujándose arriba, el nombre en cursiva
@@ -21,10 +22,10 @@ export default function Explorador({ viajes }) {
     <section className="relative h-[92vh] min-h-[620px] overflow-hidden bg-tinta">
       {/* Las fotos van todas montadas y solo se enciende la que toca:
           así el cambio es un fundido y no un salto en blanco. */}
-      {viajes.map(({ _id: id, imagen: foto, nombre: titulo }) => (
+      {viajes.map(({ _id: id, imagen: foto, nombre: titulo, destino: sitio }) => (
         <img
           key={id}
-          src={foto || IMAGEN_POR_DEFECTO}
+          src={foto || fotoDeDestino(sitio, IMAGEN_POR_DEFECTO)}
           alt={id === _id ? titulo : ''}
           aria-hidden={id !== _id}
           className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
