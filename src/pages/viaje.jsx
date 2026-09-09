@@ -2,19 +2,26 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 
 import Portada from '@/components/portada'
 import Seccion from '@/components/seccion'
-import Partido from '@/components/partido'
 import Silueta from '@/components/silueta'
+import Itinerario from '@/components/itinerario'
+import Galeria from '@/components/galeria'
+import DatosDestino from '@/components/datos-destino'
+import BandaOscura from '@/components/banda-oscura'
 import TarjetaViaje from '@/components/tarjeta-viaje'
 import Cargando from '@/components/cargando'
 import Aviso from '@/components/aviso'
 import Boton from '@/components/boton'
 import { useViajes } from '@/hooks/use-viajes'
-import { FOTOS, IMAGEN_POR_DEFECTO, TONOS } from '@/config/constantes'
 import { buscarDestino, fotoDeDestino } from '@/config/destinos'
-import { contarNoches, formatearPrecio } from '@/formato'
+import { FOTOS, IMAGEN_POR_DEFECTO, TONOS } from '@/config/constantes'
+import { contarNoches, enPalabras, formatearPrecio } from '@/formato'
 
 // Ficha de un viaje. Lo buscamos en el catálogo que ya tenemos en el contexto,
 // así no repetimos una llamada que la app ya ha hecho.
+//
+// Lo que viene de la API: nombre, destino, descripción, precio, duración e
+// itinerario. Lo que viene de config/destinos.js: la historia del sitio, sus
+// datos y su galería de fotos. Así el modelo de la PEC 3 se queda como está.
 export default function Viaje() {
   const { id } = useParams()
   const { viajes, cargando, guardando, error, eliminarViaje } = useViajes()
@@ -53,11 +60,11 @@ export default function Viaje() {
     disponible,
   } = viaje
 
+  // El sitio al que pertenece: de aquí sale la historia, los datos y las fotos.
+  const sitio = buscarDestino(destino)
+
   // Otros viajes para el carril del final, sin repetir el que se está viendo.
   const otros = viajes.filter((item) => item._id !== id).slice(0, 6)
-
-  // El destino al que pertenece, para enlazar a su página y coger su foto.
-  const sitio = buscarDestino(destino)
 
   async function eliminar() {
     const borrado = await eliminarViaje(id)
@@ -67,21 +74,21 @@ export default function Viaje() {
   return (
     <>
       <Portada
-        imagen={imagen || IMAGEN_POR_DEFECTO}
-        alt={nombre}
+        imagen={imagen || fotoDeDestino(destino, IMAGEN_POR_DEFECTO)}
+        alt={sitio ? sitio.fotoAlt : nombre}
         etiqueta={categoria ? `${categoria} · ${destino}` : destino}
         titulo={nombre}
         cursiva
-        dato={`${duracionDias} días · ${contarNoches(duracionDias)} noches · ocho viajeros`}
-        alto="h-[84vh]"
+        dato={`${duracionDias} días · ${contarNoches(duracionDias)} noches · ocho plazas por salida`}
+        alto="h-[86vh]"
       />
 
       <Seccion tono={TONOS.CREMA}>
         <div className="grid gap-16 md:grid-cols-[1.5fr_1fr] md:gap-24">
           <div>
             {/* El contorno del país, el mismo recurso que en el explorador. */}
-            <div className="text-tinta/25">
-              <Silueta destino={destino} tamano={120} />
+            <div className="text-tinta/20">
+              <Silueta destino={destino} tamano={130} />
             </div>
 
             {descripcion && (
@@ -96,8 +103,8 @@ export default function Viaje() {
               </div>
               <div>
                 <div className="filete" />
-                <p className="etiqueta mt-5 text-suave">Grupo</p>
-                <p className="titular mt-3 text-2xl">8 viajeros</p>
+                <p className="etiqueta mt-5 text-suave">Plazas</p>
+                <p className="titular mt-3 text-2xl">Ocho</p>
               </div>
               <div>
                 <div className="filete" />
@@ -126,7 +133,11 @@ export default function Viaje() {
 
             <div className="filete my-9" />
 
-            <div className="flex flex-col gap-3">
+            <p className="etiqueta text-suave">
+              {disponible ? 'Plazas abiertas' : 'Plazas agotadas'}
+            </p>
+
+            <div className="mt-8 flex flex-col gap-3">
               <Boton a={`/editar/${id}`} variante="principal">
                 Editar viaje
               </Boton>
@@ -145,22 +156,48 @@ export default function Viaje() {
         </div>
       </Seccion>
 
+      {/* La historia del sitio: solo aparece si la tenemos escrita. */}
+      {sitio?.historia && (
+        <Seccion
+          tono={TONOS.HUESO}
+          etiqueta={`Sobre ${sitio.nombre}`}
+          titulo={sitio.titular}
+        >
+          <div className="grid gap-x-20 gap-y-8 md:grid-cols-2">
+            {sitio.historia.map((parrafo) => (
+              // La key es el principio del párrafo, que no se repite.
+              <p key={parrafo.slice(0, 40)} className="leading-relaxed text-suave md:text-lg">
+                {parrafo}
+              </p>
+            ))}
+          </div>
+
+          {sitio.datos && (
+            <div className="mt-20">
+              <DatosDestino datos={sitio.datos} />
+            </div>
+          )}
+        </Seccion>
+      )}
+
       {itinerario && (
-        <Seccion tono={TONOS.OLIVA} etiqueta="El itinerario">
-          {/* La foto del bloque es la del destino, no una de Amalfi
-              puesta por defecto: si el viaje es a Namibia, sale Namibia. */}
-          <Partido
-            imagen={fotoDeDestino(destino, imagen || IMAGEN_POR_DEFECTO)}
-            alt={sitio ? sitio.fotoAlt : nombre}
-            rotulo={sitio ? sitio.nombre : destino}
-            pie={sitio ? sitio.titular : undefined}
-            invertido
-          >
-            <h2 className="titular t-seccion">Día a día</h2>
-            <p className="mt-8 whitespace-pre-line leading-relaxed text-suave md:text-lg">
-              {itinerario}
-            </p>
-          </Partido>
+        <Seccion
+          tono={TONOS.CREMA}
+          etiqueta="El itinerario"
+          titulo="Día a día"
+          texto="El itinerario base, día por día. Se ajusta a lo que os apetezca: es lo primero que hablamos."
+        >
+          <Itinerario texto={itinerario} />
+        </Seccion>
+      )}
+
+      {sitio?.galeria && (
+        <Seccion
+          tono={TONOS.TERRACOTA}
+          etiqueta="Lo que vas a ver"
+          titulo={`${sitio.nombre} en ${enPalabras(sitio.galeria.length)} lugares`}
+        >
+          <Galeria fotos={sitio.galeria} />
         </Seccion>
       )}
 
@@ -186,6 +223,15 @@ export default function Viaje() {
           </p>
         </Seccion>
       )}
+
+      <BandaOscura
+        imagen={imagen || fotoDeDestino(destino, IMAGEN_POR_DEFECTO)}
+        pregunta={sitio ? `¿Nos vamos a ${sitio.nombre}?` : '¿Nos vamos?'}
+        etiqueta="Te llamamos"
+        texto="Una conversación de media hora y os enviamos la propuesta completa: casas, guías y horarios con nombre propio."
+        accion="Solicitar propuesta"
+        enlace="/nuevo"
+      />
     </>
   )
 }

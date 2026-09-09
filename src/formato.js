@@ -20,3 +20,25 @@ export function contienePalabra(texto = '', palabra = '') {
   const limpia = palabra.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
   return new RegExp(`(^|[^\\p{L}])${limpia}([^\\p{L}]|$)`, 'iu').test(texto)
 }
+
+// Los números pequeños, escritos. «7 lugares» suena a lista de internet;
+// «siete lugares», a folleto bien hecho.
+const PALABRAS = [
+  'cero',
+  'uno',
+  'dos',
+  'tres',
+  'cuatro',
+  'cinco',
+  'seis',
+  'siete',
+  'ocho',
+  'nueve',
+  'diez',
+  'once',
+  'doce',
+]
+
+export function enPalabras(numero) {
+  return PALABRAS[numero] || String(numero)
+}

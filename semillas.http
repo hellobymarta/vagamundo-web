@@ -1,6 +1,6 @@
 ### Semillas del catálogo · PEC 4
 #
-# Los nueve viajes de Vagamundo. Se lanzan con la extensión REST Client de
+# Los diez viajes de Vagamundo. Se lanzan con la extensión REST Client de
 # VS Code: abre este archivo y pulsa "Send Request" encima de cada bloque.
 # También sirven de prueba manual del POST.
 #
@@ -61,20 +61,20 @@ Content-Type: application/json
 
 # ──────────────────── ÁFRICA AUSTRAL Y ORIENTE MEDIO ────────────────────
 
-### 4 · Namibia espectacular
+### 4 · Namibia
 POST {{base}}/api/travels
 Content-Type: application/json
 
 {
   "nombre": "Namibia, de Etosha al Kalahari",
   "destino": "Namibia",
-  "descripcion": "Once días en los que casi no se ve un coche. Rinocerontes negros al amanecer, grabados de seis mil años y dunas de trescientos metros que hay que subir descalza.",
+  "descripcion": "Once días y dos mil kilómetros por el desierto más antiguo de la Tierra, en el segundo país menos poblado del mundo. Safari privado en Etosha, una reserva del Kalahari para nosotros solos y las dunas de Sossusvlei antes de que amanezca.",
   "precio": 3890,
   "duracionDias": 11,
   "categoria": "Naturaleza",
   "imagen": "/namibia-arco.jpg",
   "disponible": true,
-  "itinerario": "Día 1 · Vuelo a Windhoek.\nDía 2 · Llegada y día libre en Windhoek.\nDía 3 · Norte hasta Etosha, con parada en el mercado de tallas de Okahandja y visita a un poblado himba.\nDía 4 · Día completo de safari en Etosha en 4x4: rinoceronte negro, guepardo, impala de cara blanca.\nDía 5 · Damaraland. El bosque petrificado y los grabados rupestres de Twyfelfontein.\nDía 6 · Bajada a Swakopmund, donde el desierto llega hasta el Atlántico.\nDía 7 · Desierto del Namib. Llegada al lodge por la tarde.\nDía 8 · Sossusvlei y Deadvlei al amanecer, antes de que el sol pegue. El cañón de Sesriem.\nDía 9 · Kalahari. Safari en la reserva privada y cóctel al ponerse el sol.\nDía 10 · Caminata con bosquimanos y vuelo de vuelta desde Windhoek.\nDía 11 · Llegada."
+  "itinerario": "Día 1 · Vuelo a Windhoek. Noche a bordo.\nDía 2 · Llegada, recepción y traslado privado al Mövenpick. Resto del día libre para recuperar el vuelo.\nDía 3 · Al norte, hacia Etosha: 427 kilómetros por Okahandja y Otjiwarongo. Parada en el mercado de maderas talladas de Mbangura y, por la tarde, visita a un poblado himba, la única etnia que habita este país.\nDía 4 · Día completo de safari en Etosha, en 4x4 abierto y con guía de habla hispana. Es uno de los parques más extensos de África: rinoceronte negro, guepardo e impala de cara blanca.\nDía 5 · Etosha a Twyfelfontein, 484 kilómetros atravesando Damaraland. En ruta, el Bosque Petrificado y la welwitschia mirabilis. Por la tarde, los grabados rupestres de Twyfelfontein, de hasta seis mil años.\nDía 6 · Descenso a Swakopmund, 301 kilómetros. Aquí el desierto entra en el Atlántico. Tarde libre.\nDía 7 · Temprano a Walvis Bay: crucero privado en catamarán entre leones marinos y delfines, con ostras de la bahía y vino espumoso. Después, al desierto del Namib por los pasos de Ghaub y Kuiseb.\nDía 8 · Sossusvlei y Deadvlei al amanecer, cuando la arena todavía se puede pisar y las dunas de trescientos metros están vacías. Por la tarde, el cañón de Sesriem.\nDía 9 · Al Kalahari. Safari en la reserva privada del lodge y cóctel al ponerse el sol, que aquí dura veinte minutos.\nDía 10 · Caminata al alba con bosquimanos, la etnia más antigua de África. Almuerzo, regreso a Windhoek y vuelo de vuelta.\nDía 11 · Llegada a España."
 }
 
 ### 5 · Jordania
@@ -161,5 +161,21 @@ Content-Type: application/json
   "itinerario": "Día 1 · Vuelo a Tashkent.\nDía 2 · Tashkent. El bazar de Chorsu y el metro soviético, estación por estación.\nDía 3 · Tren a Samarcanda. El Registán al caer la tarde, cuando se enciende.\nDía 4 · Samarcanda. Shakhi-Zinda, el observatorio de Ulugh Beg y la mezquita Bibi-Khanum.\nDía 5 · Bujará. El mausoleo de los Samánidas y el manantial de Chasmai Ayub.\nDía 6 · Bujará entera a pie: la Ciudadela Ark, la madrasa Miri Arab y la mezquita Kalon.\nDía 7 · Jiva, la ciudad amurallada. Atardecer desde la muralla.\nDía 8 · Vuelta desde Urgench."
 }
 
-### Comprobar que están los nueve
+### 10 · Japón
+POST {{base}}/api/travels
+Content-Type: application/json
+
+{
+  "nombre": "Japón, de Koyasan al Fuji",
+  "destino": "Japón",
+  "descripcion": "Dieciséis días de Kioto a Tokio en tren bala, con una noche en un monasterio budista de Koyasan y otra en un ryokan sobre el río, en la ruta de peregrinación de Kumano. El equipaje viaja aparte.",
+  "precio": 5060,
+  "duracionDias": 16,
+  "categoria": "Cultural",
+  "imagen": "/japon-kioto.jpg",
+  "disponible": true,
+  "itinerario": "Día 1 · Vuelo a Osaka. Noche a bordo.\nDía 2 · Llegada, recepción en el aeropuerto y traslado a Kioto.\nDía 3 · Kioto. El castillo de Nijo, el Kinkaku-ji o Pabellón Dorado, las mil y una estatuas del Sanjusangen-do, el jardín del Tenryu-ji y el bosque de bambú de Arashiyama.\nDía 4 · Kioto libre. Recomendamos madrugar para Fushimi Inari: a las seis de la mañana el túnel de puertas está vacío. Por la tarde, Nara.\nDía 5 · El castillo de Himeji y Kurashiki, con la residencia de la familia Ohashi y el barrio de Bikan. Noche en Hiroshima. El equipaje viaja aparte: solo hace falta una bolsa de mano.\nDía 6 · Hiroshima. La cúpula de la bomba, el Parque de la Paz y su museo, y por la tarde el santuario de Itsukushima, en la isla de Miyajima, con el torii dentro del agua.\nDía 7 · Tren bala a Shin-Osaka y carretera a Koyasan, montaña sagrada. El templo Kongobu-ji, el Danjo Garan y el mausoleo de Okunoin entre cedros. Noche en un shukubo, un templo budista, con cena vegetariana.\nDía 8 · Oraciones del amanecer para quien quiera y desayuno vegetariano. Camino de Kumano: tres kilómetros de la antigua ruta de peregrinación. Cena kaiseki y noche en un ryokan de Kawayu Onsen, a pie de río.\nDía 9 · Osaka. El observatorio del Umeda Sky y el barrio de Dotombori.\nDía 10 · Kanazawa. El jardín Kenroku-en, el mercado de Oumicho, el barrio de las casas de té de Higashi Chaya-gai y la residencia de los samuráis Nomura.\nDía 11 · Shirakawa-go, patrimonio de la humanidad por sus casas de tejado de paja. Continuación a Takayama y su calle Kami-sannomachi.\nDía 12 · Tren bala a Odawara y Parque Nacional de Fuji-Hakone: minicrucero por el lago Ashi y teleférico para ver el monte Fuji, si el tiempo acompaña. Noche en Tokio.\nDía 13 · Tokio. La torre de Tokio y el templo Sensoji de Asakusa, con la arcada comercial de Nakamise.\nDía 14 · Tokio libre. Se puede subir a Nikko en el día.\nDía 15 · Traslado al aeropuerto y vuelo de regreso. Noche a bordo.\nDía 16 · Llegada a España."
+}
+
+### Comprobar que están todos
 GET {{base}}/api/travels

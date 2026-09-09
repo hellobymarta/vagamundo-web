@@ -4,6 +4,8 @@ import Portada from '@/components/portada'
 import Seccion from '@/components/seccion'
 import Silueta from '@/components/silueta'
 import Pasos from '@/components/pasos'
+import Galeria from '@/components/galeria'
+import DatosDestino from '@/components/datos-destino'
 import Preguntas from '@/components/preguntas'
 import BandaOscura from '@/components/banda-oscura'
 import ListaViajes from '@/components/lista-viajes'
@@ -13,6 +15,7 @@ import Boton from '@/components/boton'
 import { useViajes } from '@/hooks/use-viajes'
 import { DESTINOS, viajesDeDestino } from '@/config/destinos'
 import { FOTOS, TONOS } from '@/config/constantes'
+import { enPalabras } from '@/formato'
 
 // La página de cada destino, al modo de las de NUBA: portada a sangre con el
 // nombre del sitio, el contorno del país, una entradilla, los viajes que
@@ -40,7 +43,8 @@ export default function Destino() {
     )
   }
 
-  const { nombre, continente, foto, fotoAlt, titular, entradilla } = destino
+  const { nombre, continente, foto, fotoAlt, titular, entradilla, historia, datos, galeria } =
+    destino
   const suyos = viajesDeDestino(viajes, pais)
 
   return (
@@ -70,12 +74,36 @@ export default function Destino() {
               <p className="etiqueta cifras text-suave">
                 {suyos.length} {suyos.length === 1 ? 'viaje abierto' : 'viajes abiertos'}
               </p>
-              <p className="etiqueta text-suave">Ocho viajeros por grupo</p>
-              <p className="etiqueta text-suave">Guía de allí</p>
+              <p className="etiqueta text-suave">Ocho plazas por salida</p>
+              <p className="etiqueta text-suave">Guía privado de habla hispana</p>
             </div>
           </div>
         </div>
       </Seccion>
+
+      {historia && (
+        <Seccion tono={TONOS.HUESO} etiqueta="El destino" titulo="Por qué merece el viaje">
+          <div className="grid gap-x-20 gap-y-8 md:grid-cols-2">
+            {historia.map((parrafo) => (
+              <p key={parrafo.slice(0, 40)} className="leading-relaxed text-suave md:text-lg">
+                {parrafo}
+              </p>
+            ))}
+          </div>
+
+          {datos && (
+            <div className="mt-20">
+              <DatosDestino datos={datos} />
+            </div>
+          )}
+        </Seccion>
+      )}
+
+      {galeria && (
+        <Seccion tono={TONOS.CREMA} etiqueta="Lo que vas a ver" titulo={`${nombre} en ${enPalabras(galeria.length)} lugares`}>
+          <Galeria fotos={galeria} />
+        </Seccion>
+      )}
 
       <Seccion
         tono={TONOS.HUESO}
@@ -89,8 +117,8 @@ export default function Destino() {
         ) : (
           <>
             <Aviso tono="info">
-              Estamos recorriéndolo ahora mismo. Abrimos plazas cuando lo hayamos hecho enteras
-              nosotras.
+              Lo estamos recorriendo en este momento. No abrimos plazas hasta haber probado
+              nosotras cada casa y cada guía.
             </Aviso>
             <p className="etiqueta mt-10">
               <Link
@@ -107,7 +135,7 @@ export default function Destino() {
       <Seccion
         tono={TONOS.TERRACOTA}
         etiqueta="Viajes a medida"
-        titulo={`O montamos uno solo para vosotros en ${nombre}`}
+        titulo={`O lo diseñamos en privado, solo para vosotros`}
       >
         <Pasos />
       </Seccion>
@@ -124,9 +152,9 @@ export default function Destino() {
       <BandaOscura
         imagen={foto}
         pregunta={`¿Nos vamos a ${nombre}?`}
-        etiqueta="Cuéntanoslo"
-        texto="Añade tu propio viaje al catálogo con su precio, su duración y su itinerario. Se guarda en la base de datos y aparece al momento."
-        accion="Añadir un viaje"
+        etiqueta="Te llamamos"
+        texto="Una conversación de media hora y os enviamos la propuesta completa: casas, guías y horarios con nombre propio."
+        accion="Solicitar propuesta"
         enlace="/nuevo"
       />
     </>
