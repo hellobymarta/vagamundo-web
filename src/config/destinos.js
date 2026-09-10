@@ -47,7 +47,7 @@ export const DESTINOS = [
     nombre: 'Namibia',
     continente: 'África',
     foto: FOTOS.NAMIBIA,
-    fotoAlt: 'El arco de granito del Spitzkoppe al atardecer',
+    fotoAlt: 'Una manada de elefantes alejándose por la llanura de Etosha',
     titular: 'La tierra más antigua de África',
     entradilla:
       'El desierto más antiguo de la Tierra, el país más joven de África y el segundo menos densamente poblado del mundo. Se conduce durante horas sin cruzarse con nadie: no es una incomodidad del viaje, es el privilegio.',
@@ -58,7 +58,7 @@ export const DESTINOS = [
     //  · la ficha de Namibia de nuba.com
     historia: [
       'El Namib es el desierto más antiguo de la Tierra: cincuenta y cinco millones de años. Solo la región de Sossusvlei ocupa ochenta y un mil kilómetros cuadrados de llanuras, salinas y montañas de arena. Namibia, en cambio, es el país más joven de África —independiente desde 1990— y el segundo menos densamente poblado del mundo después de Mongolia: tres millones de habitantes y 3,7 por kilómetro cuadrado.',
-      'Aquí la fauna no vive en una reserva vallada, sino en un país entero, y ha tenido que aprender a hacerlo. Los elefantes del desierto recorren hasta setenta kilómetros diarios en busca de agua. Los órix resisten temperaturas muy por encima de lo que tolera casi cualquier otro mamífero. Del rinoceronte negro quedan alrededor de cinco mil ejemplares en el mundo, y Namibia conserva una de las mayores poblaciones en libertad que existen.',
+      'Aquí la fauna no vive en una reserva vallada, sino en un país entero, y ha tenido que aprender a hacerlo. Los elefantes del desierto recorren hasta setenta kilómetros diarios en busca de agua. Los órix resisten temperaturas muy por encima de lo que tolera casi cualquier otro mamífero. Del rinoceronte negro quedan alrededor de cinco mil ejemplares en el mundo, y Namibia conserva una de las mayores poblaciones en libertad que existen. Casi todos viven en Etosha, uno de los parques más extensos de África: allí están también el guepardo y el impala de cara blanca, y el día completo se recorre en 4x4 abierto, con un guía para ocho personas.',
       'Damaraland es el África antigua en estado puro: montañas volcánicas, un bosque petrificado y la welwitschia mirabilis, la «planta fósil», capaz de vivir milenios. En Twyfelfontein hay grabados en la roca de hasta seis mil años de antigüedad. Y en la costa, la niebla del Atlántico entra en las dunas y deja la Costa de los Esqueletos.',
       'Después está Deadvlei. Las acacias que siguen en pie llevan unos novecientos años muertas, desde que las dunas cortaron el paso del río que las alimentaba, y no se han descompuesto porque no hay humedad suficiente para que la madera se pudra. Detrás, dunas de más de trescientos metros. Se suben antes del amanecer, descalza, y a las nueve ya no se puede pisar la arena.',
     ],
@@ -82,13 +82,6 @@ export const DESTINOS = [
         pie: 'Acacias muertas hace novecientos años que nunca llegaron a podrirse: no hay humedad. Detrás, dunas de más de trescientos metros.',
       },
       {
-        id: 'etosha',
-        foto: FOTOS.NAMIBIA_FAUNA,
-        alt: 'Una fila de elefantes caminando de espaldas en la llanura de Etosha',
-        rotulo: 'Etosha',
-        pie: 'Uno de los parques más extensos de África. Aquí están el rinoceronte negro, el guepardo y el impala de cara blanca; el día completo se recorre en 4x4 abierto.',
-      },
-      {
         id: 'carretera',
         foto: FOTOS.NAMIBIA_SAFARI,
         alt: 'Cebras cruzando una carretera de grava bajo un cielo de tormenta',
@@ -104,7 +97,7 @@ export const DESTINOS = [
       },
       {
         id: 'spitzkoppe',
-        foto: FOTOS.NAMIBIA,
+        foto: FOTOS.NAMIBIA_ARCO,
         alt: 'El arco de granito del Spitzkoppe al atardecer',
         rotulo: 'Spitzkoppe',
         pie: 'El antiguo santuario bosquimano y sus pinturas en la roca. Se llega al atardecer, cuando el granito se vuelve naranja y no queda nadie.',

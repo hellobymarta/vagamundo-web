@@ -15,8 +15,9 @@ export default function Portada({
     <section className={`relative ${alto} min-h-[460px] overflow-hidden`}>
       <img src={imagen} alt={alt} className="absolute inset-0 h-full w-full object-cover" />
 
-      <div className="absolute inset-0 bg-azul/25" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/35" />
+      {/* El velo pesa donde va el texto y se levanta arriba, para no apagar el cielo. */}
+      <div className="absolute inset-0 bg-azul/15" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/5" />
 
       <div className="relative mx-auto flex h-full max-w-[1440px] flex-col justify-end px-6 pb-16 text-white md:px-10 md:pb-24">
         {etiqueta && <p className="etiqueta text-azul-claro">{etiqueta}</p>}

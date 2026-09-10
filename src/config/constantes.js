@@ -42,9 +42,9 @@ export const FOTOS = {
   // De los catálogos de viajes de 2026
   APULIA: '/apulia-vieste.jpg',
   BRASIL: '/brasil-lencois.jpg',
-  NAMIBIA: '/namibia-arco.jpg',
+  NAMIBIA: '/namibia-elefantes.jpg',
+  NAMIBIA_ARCO: '/namibia-arco.jpg',
   NAMIBIA_DESIERTO: '/namibia-desert.jpg',
-  NAMIBIA_FAUNA: '/namibia-fauna.jpg',
   NAMIBIA_FLORA: '/namibia-flora.jpg',
   NAMIBIA_SAFARI: '/namibia-safari.jpg',
   JAPON: '/japon-kioto.jpg',
