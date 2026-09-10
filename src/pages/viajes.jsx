@@ -19,6 +19,7 @@ import Cargando from '@/components/cargando'
 import Aviso from '@/components/aviso'
 import Boton from '@/components/boton'
 import { useViajes } from '@/hooks/use-viajes'
+import { enPalabras } from '@/formato'
 import {
   CUANTOS_DESTACADOS,
   FOTOS,
@@ -114,7 +115,7 @@ export default function Viajes() {
               <h2 className="titular t-seccion mt-6">
                 {motivacion
                   ? `Viajes de ${motivacion.toLowerCase()}`
-                  : 'Los nueve viajes, uno por uno'}
+                  : `Los ${enPalabras(viajes.length)} viajes, uno por uno`}
               </h2>
               <p className="mt-6 max-w-lg text-suave">
                 {cargando

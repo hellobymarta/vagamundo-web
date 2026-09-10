@@ -38,6 +38,14 @@ export default function Campo({ etiqueta, nombre, tipo = 'text', ...resto }) {
 
       {tipo === 'categoria' && (
         <select {...comunes}>
+          {/* Si el viaje ya tiene una categoría que no está en la lista
+              (porque se creó antes, o desde Postman), la añadimos delante.
+              Si no, el <select> enseñaría la primera opción y al guardar
+              le cambiaría la categoría sin avisar. */}
+          {CATEGORIAS.includes(resto.value) ? null : (
+            <option value={resto.value}>{resto.value}</option>
+          )}
+
           {CATEGORIAS.map((categoria) => (
             <option key={categoria} value={categoria}>
               {categoria}
