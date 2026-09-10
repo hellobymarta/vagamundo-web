@@ -8,7 +8,16 @@ export const API_URL = import.meta.env.VITE_API_URL
 export const RUTA_VIAJES = '/api/travels'
 
 // Categorías del catálogo, para el desplegable del formulario.
-export const CATEGORIAS = ['Costa', 'Islas', 'Cultural', 'Ciudad', 'Naturaleza', 'Desierto']
+export const CATEGORIAS = [
+  'Costa',
+  'Playa',
+  'Islas',
+  'Cultural',
+  'Ciudad',
+  'Naturaleza',
+  'Aventura',
+  'Desierto',
+]
 
 // Nombre del parámetro con el que se filtra el catálogo desde la URL.
 export const PARAMETRO_MOTIVACION = 'motivacion'
@@ -126,16 +135,25 @@ export const FILAS_MARQUESINA = [
   ['Jericoacoara', 'Lençóis', 'Bahía', 'Patagonia', 'Atacama', 'Islandia'],
 ]
 
-// Rejilla de motivaciones, al modo de «Imagina tu viaje» de Utópica.
-// Cada una filtra el catálogo por su categoría a través de la URL.
-export const MOTIVACIONES = [
-  { id: 'Costa', titulo: 'Costa', pie: 'Pueblos colgados sobre el mar' },
-  { id: 'Islas', titulo: 'Islas', pie: 'Llegar en barco y quedarse' },
-  { id: 'Cultural', titulo: 'Cultural', pie: 'Piedra, mercado y sobremesa' },
-  { id: 'Ciudad', titulo: 'Ciudad', pie: 'Barrios, no monumentos' },
-  { id: 'Naturaleza', titulo: 'Naturaleza', pie: 'Fauna, agua y silencio' },
-  { id: 'Desierto', titulo: 'Desierto', pie: 'Dunas y noches sin luz' },
-]
+// Los pies de la rejilla de motivaciones, al modo de «Imagina tu viaje» de
+// Utópica. La rejilla NO se construye con esta lista: se construye con las
+// categorías que existen en el catálogo, así nunca sale una baldosa a cero
+// ni falta una categoría nueva. Esto solo pone la frase de cada una.
+export const PIES_MOTIVACION = {
+  Costa: 'Pueblos colgados sobre el mar',
+  Playa: 'Arena, y nada más que hacer',
+  Islas: 'Llegar en barco y quedarse',
+  Cultural: 'Piedra, mercado y sobremesa',
+  Ciudad: 'Barrios, no monumentos',
+  Naturaleza: 'Fauna, agua y silencio',
+  Aventura: 'Se madruga y se llega lejos',
+  Desierto: 'Dunas y noches sin luz',
+  Montaña: 'Andar sin mirar el reloj',
+}
+
+// La que se usa si aparece una categoría que no está en la tabla.
+export const PIE_MOTIVACION_POR_DEFECTO = 'Otra manera de mirar el mapa'
+
 
 // Los tres pasos de «Tailor-made journeys» de Wilderness, a nuestra manera.
 export const PASOS = [

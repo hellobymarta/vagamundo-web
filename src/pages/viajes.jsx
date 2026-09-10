@@ -51,7 +51,7 @@ export default function Viajes() {
     <>
       <PortadaRotativa />
 
-      <Marca />
+      <Marca cuantos={viajes.length} />
 
       {!cargando && destacados.length > 0 && (
         <Seccion
@@ -99,7 +99,7 @@ export default function Viajes() {
         tono={TONOS.HUESO}
         etiqueta="Imagina tu viaje"
         titulo="¿Qué te apetece esta vez?"
-        texto="Seis maneras de mirar los nueve viajes. Elige una y abajo se queda solo lo que encaja."
+        texto="Las maneras de mirar el catálogo. Elige una y abajo se queda solo lo que encaja."
         centrado
       >
         <Motivaciones activa={motivacion} viajes={viajes} />

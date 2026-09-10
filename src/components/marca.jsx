@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom'
 
+import { enPalabras } from '@/formato'
+
 // El bloque de marca con el que NUBA abre después de la portada: un título
 // largo centrado, una coletilla y un «LEER MÁS» discreto.
 // La cursiva metida dentro del titular es el recurso de Utópica
 // («Tu *viaje de novios*, una experiencia única»).
-export default function Marca() {
+export default function Marca({ cuantos }) {
   return (
     <section className="bg-crema px-6 py-28 md:px-10 md:py-36">
       <div className="mx-auto max-w-5xl text-center">
@@ -22,8 +24,8 @@ export default function Marca() {
             seis, qué día no hay barco y en qué terraza no hay que sentarse.
           </p>
           <p>
-            Con eso montamos nueve rutas para ocho personas. Ni una más, porque a partir de ahí
-            ya no entras en la cocina de nadie.
+            Con eso montamos {enPalabras(cuantos)} {cuantos === 1 ? 'ruta' : 'rutas'} de ocho
+            plazas. Ni una más: a partir de ahí ya no se entra en la cocina de nadie.
           </p>
         </div>
 
