@@ -1,6 +1,6 @@
 ### Semillas del catálogo · PEC 4
 #
-# Los diez viajes de Vagamundo. Se lanzan con la extensión REST Client de
+# Los once viajes de Vagamundo. Se lanzan con la extensión REST Client de
 # VS Code: abre este archivo y pulsa "Send Request" encima de cada bloque.
 # También sirven de prueba manual del POST.
 #
@@ -127,9 +127,25 @@ Content-Type: application/json
   "itinerario": "Día 1 · Vuelo a Ciudad de Guatemala.\nDía 2 · Chichicastenango. El mercado de los jueves y la iglesia de Santo Tomás.\nDía 3 · Lago Atitlán en lancha: Santiago y San Juan La Laguna.\nDía 4 · Atitlán a Antigua, entre cafetales.\nDía 5 · Antigua. Día completo: el mercado, las ruinas y una clase de cocina.\nDía 6 · Antigua a Ciudad de Guatemala.\nDía 7 · Tikal. Vuelo temprano y día completo en la selva del Petén.\nDía 8 · Vuelo de regreso.\nDía 9 · Llegada."
 }
 
+### 8 · Costa Rica de punta a punta
+POST {{base}}/api/travels
+Content-Type: application/json
+
+{
+  "nombre": "Costa Rica de punta a punta",
+  "destino": "Costa Rica",
+  "descripcion": "Del bosque nuboso de Monteverde a los canales de Tortuguero y a Corcovado, el lugar biológicamente más intenso de la Tierra. Un naturalista para ocho personas durante los diez días.",
+  "precio": 4290,
+  "duracionDias": 10,
+  "categoria": "Naturaleza",
+  "imagen": "/costarica-tucan.jpg",
+  "disponible": true,
+  "itinerario": "Día 1 · Llegada a San José y noche en el valle central.\nDía 2 · Tortuguero. Vuelo corto y entrada en lancha por los canales.\nDía 3 · Tortuguero al amanecer, cuando bajan los aulladores. Tarde con los biólogos de la estación de tortugas.\nDía 4 · Arenal. Tarde de termales al pie del volcán.\nDía 5 · Puentes colgantes del Arenal y las cuevas del Venado.\nDía 6 · Monteverde. Bosque nuboso por encima de las copas, buscando el quetzal.\nDía 7 · Vuelo a bahía Drake, en la península de Osa.\nDía 8 · Corcovado, estación Sirena. Día completo con guía, que allí es obligatorio.\nDía 9 · Osa. Snorkel en la isla del Caño o mañana libre en la playa.\nDía 10 · Vuelo desde Drake a San José y regreso."
+}
+
 # ─────────────────────────────────── ASIA ───────────────────────────────────
 
-### 8 · India Masala
+### 9 · India Masala
 POST {{base}}/api/travels
 Content-Type: application/json
 
@@ -145,7 +161,7 @@ Content-Type: application/json
   "itinerario": "Día 1 · Vuelo a Delhi.\nDía 2 · Delhi. La vieja y la nueva, en rickshaw y en metro.\nDía 3 · Samode y Jaipur, la ciudad rosa.\nDía 4 · Jaipur. Amber, el observatorio y los tintoreros del bazar.\nDía 5 · Fathepur Sikri, la ciudad que se abandonó por falta de agua. Continuación a Agra.\nDía 6 · El Taj Mahal a las seis de la mañana. Por la tarde, el fuerte rojo.\nDía 7 · Jhansi, Orchha y Khajuraho.\nDía 8 · Los templos de Khajuraho y vuelo a Benarés.\nDía 9 · Benarés. Los ghats al amanecer desde una barca y el aarti de la tarde.\nDía 10 · Vuelo de regreso vía Delhi.\nDía 11 · Llegada."
 }
 
-### 9 · La Ruta de la Seda
+### 10 · La Ruta de la Seda
 POST {{base}}/api/travels
 Content-Type: application/json
 
@@ -161,7 +177,7 @@ Content-Type: application/json
   "itinerario": "Día 1 · Vuelo a Tashkent.\nDía 2 · Tashkent. El bazar de Chorsu y el metro soviético, estación por estación.\nDía 3 · Tren a Samarcanda. El Registán al caer la tarde, cuando se enciende.\nDía 4 · Samarcanda. Shakhi-Zinda, el observatorio de Ulugh Beg y la mezquita Bibi-Khanum.\nDía 5 · Bujará. El mausoleo de los Samánidas y el manantial de Chasmai Ayub.\nDía 6 · Bujará entera a pie: la Ciudadela Ark, la madrasa Miri Arab y la mezquita Kalon.\nDía 7 · Jiva, la ciudad amurallada. Atardecer desde la muralla.\nDía 8 · Vuelta desde Urgench."
 }
 
-### 10 · Japón
+### 11 · Japón
 POST {{base}}/api/travels
 Content-Type: application/json
 

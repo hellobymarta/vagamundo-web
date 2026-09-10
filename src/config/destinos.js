@@ -265,11 +265,51 @@ export const DESTINOS = [
     nombre: 'Costa Rica',
     continente: 'América',
     foto: FOTOS.COSTARICA,
-    fotoAlt: 'Costa del Pacífico en Costa Rica',
-    titular: 'En preparación para 2027',
+    fotoAlt: 'Un tucán pico iris posado en una rama cubierta de musgo',
+    titular: 'Naturaleza y aventura en estado puro',
     entradilla:
-      'Estamos recorriéndolo ahora: el Arenal, Monteverde y la costa del Pacífico. Abrimos plazas cuando lo hayamos hecho enteras nosotras.',
-    pistas: ['costa rica', 'arenal', 'monteverde', 'tortuguero'],
+      'Un país del tamaño de Aragón que guarda el seis por ciento de la biodiversidad del planeta. Diez días de bosque nuboso, canales y Pacífico, con un naturalista que lleva veinte años mirando las mismas ramas y sigue encontrando cosas.',
+
+    // La historia del sitio. Las cifras están verificadas una a una:
+    //  · biodiversidad, superficie y número de especies: Biodiversidad de
+    //    Costa Rica (Wikipedia, con fuente en el SINAC y el INBio)
+    //  · deforestación y áreas protegidas: Deforestación en Costa Rica
+    //    (Wikipedia) y el informe de la FAO sobre superficie forestal
+    //  · Corcovado y la península de Osa: la ficha del parque en costarica.org
+    //  · el tono y la manera de contar el destino: nuba.com y
+    //    safaris.wildernessdestinations.com
+    historia: [
+      'Costa Rica ocupa 51.100 kilómetros cuadrados, una milésima de la superficie terrestre del planeta, y dentro de ese pañuelo vive alrededor del seis por ciento de todas las especies conocidas. Hay más de ochocientas aves, doscientos veintisiete mamíferos y ciento ochenta y tres anfibios censados, y unas noventa y una mil especies registradas en total, que los biólogos calculan que son apenas la quinta parte de las que quedan por describir. Sale a 1,8 especies por kilómetro cuadrado: no existe otro país con esa densidad.',
+      'No siempre fue así, y esa es la parte que casi nadie cuenta. Después de la Segunda Guerra Mundial el país taló cerca del ochenta por ciento de su bosque para abrir potreros. La vuelta atrás empezó en los años ochenta, pagando a los propietarios por conservar en pie lo que les rentaba más talado, y hoy el veinticinco por ciento del territorio nacional tiene alguna figura de protección y más de la mitad del bosque que queda está dentro de un parque, una reserva biológica o un refugio. Costa Rica es de los poquísimos países que han conseguido revertir su propia deforestación.',
+      'El extremo de todo eso está en la península de Osa, al sur del Pacífico. Corcovado son cuatrocientos veinticuatro kilómetros cuadrados que National Geographic describió como el lugar biológicamente más intenso de la Tierra: trece ecosistemas, más de cuatrocientas aves, los cuatro monos del país y los seis felinos, el tapir y el guacamayo rojo. Se entra en barco desde bahía Drake y no se entra solo: el guía es obligatorio, y con razón.',
+      'Lo demás es un país que cambia cada dos horas de carretera. El Arenal y sus aguas termales al pie del volcán; el bosque nuboso de Monteverde, donde se camina por encima de las copas y donde está el quetzal; los canales de Tortuguero, que se recorren en lancha al amanecer, cuando bajan los monos aulladores a beber; y el Caribe sur, que es otro idioma, otra comida y otro ritmo. Lo llaman pura vida y no es una frase de folleto: es literalmente cómo se saluda y cómo se despide.',
+    ],
+
+    datos: [
+      { etiqueta: 'Capital', valor: 'San José' },
+      { etiqueta: 'Cuándo ir', valor: 'De diciembre a abril' },
+      { etiqueta: 'Territorio protegido', valor: '25 %' },
+      { etiqueta: 'Plazas', valor: 'Ocho por salida' },
+    ],
+
+    galeria: [
+      {
+        id: 'tucan',
+        foto: FOTOS.COSTARICA_PICO,
+        alt: 'Un tucán pico iris posado en una rama con musgo y una bromelia',
+        rotulo: 'El pico iris',
+        pie: 'Vive en las tierras bajas del Caribe y se le oye antes de verlo: un croar seco, más de rana que de pájaro. El pico mide un tercio de su cuerpo y pesa casi nada; por dentro está hueco.',
+      },
+      {
+        id: 'caribe',
+        foto: FOTOS.COSTARICA_CARIBE,
+        alt: 'Playa de arena con palmeras y un islote de roca sobre el arrecife, en el Caribe sur',
+        rotulo: 'El Caribe sur',
+        pie: 'Manzanillo y Punta Uva, donde el arrecife llega hasta la orilla y el país cambia de idioma. Dos días sin plan, que en un viaje así son los que más se agradecen.',
+      },
+    ],
+
+    pistas: ['costa rica', 'arenal', 'monteverde', 'tortuguero', 'corcovado', 'osa', 'manzanillo', 'san jose', 'san josé'],
   },
   {
     id: 'bolivia',
