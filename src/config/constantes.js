@@ -63,6 +63,7 @@ export const FOTOS = {
   AMAZONAS: '/amazonas-aereo.jpg',
   GRECIA: '/grecia-mikonos.jpg',
   JORDANIA: '/jordania-wadirum.jpg',
+  POLINESIA: '/polinesia-bungalos.jpg',
 }
 
 // Las tres campañas que rotan en la portada, como el hero de NUBA.
