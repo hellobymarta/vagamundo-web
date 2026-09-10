@@ -6,6 +6,17 @@ import {
   PIES_MOTIVACION,
   PIE_MOTIVACION_POR_DEFECTO,
 } from '@/config/constantes'
+import { capitalizar } from '@/formato'
+
+// El pie de una categoría, venga escrita como venga: en la base de datos
+// unas están en minúscula y otras no.
+function buscarPie(categoria) {
+  const encontrada = Object.keys(PIES_MOTIVACION).find(
+    (clave) => clave.toLowerCase() === categoria.toLowerCase()
+  )
+
+  return encontrada ? PIES_MOTIVACION[encontrada] : PIE_MOTIVACION_POR_DEFECTO
+}
 
 // Rejilla de motivaciones, como el «Imagina tu viaje» de Utópica.
 //
@@ -17,9 +28,11 @@ import {
 // modo que el filtro se puede compartir y no hace falta guardar nada.
 function ordenar(categorias) {
   // Primero las del orden de siempre; las que no estén, detrás y por alfabeto.
+  const orden = CATEGORIAS.map((categoria) => categoria.toLowerCase())
+
   return [...categorias].sort((una, otra) => {
-    const posicionUna = CATEGORIAS.indexOf(una)
-    const posicionOtra = CATEGORIAS.indexOf(otra)
+    const posicionUna = orden.indexOf(una.toLowerCase())
+    const posicionOtra = orden.indexOf(otra.toLowerCase())
 
     if (posicionUna !== -1 && posicionOtra !== -1) return posicionUna - posicionOtra
     if (posicionUna !== -1) return -1
@@ -39,7 +52,7 @@ export default function Motivaciones({ activa, viajes }) {
       {categorias.map((categoria) => {
         const seleccionada = activa === categoria
         const cuantos = viajes.filter((viaje) => viaje.categoria === categoria).length
-        const pie = PIES_MOTIVACION[categoria] || PIE_MOTIVACION_POR_DEFECTO
+        const pie = buscarPie(categoria)
 
         return (
           <Link
@@ -61,7 +74,7 @@ export default function Motivaciones({ activa, viajes }) {
                   seleccionada ? 'text-terracota-acento' : 'group-hover:text-terracota-acento'
                 }`}
               >
-                {categoria}
+                {capitalizar(categoria)}
               </h3>
 
               <p className="etiqueta cifras text-suave">
