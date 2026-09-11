@@ -243,11 +243,61 @@ export const DESTINOS = [
     nombre: 'India',
     continente: 'Asia',
     foto: FOTOS.INDIA,
-    fotoAlt: 'El Taj Mahal reflejado en el agua al amanecer',
+    fotoAlt: 'El Taj Mahal visto desde el arco de la Gran Puerta de Agra',
     titular: 'De Delhi al Ganges',
     entradilla:
-      'El norte, en el orden que aguanta el cuerpo: las ciudades primero, el mármol de Agra a las seis de la mañana y Benarés al final.',
-    pistas: ['india', 'delhi', 'jaipur', 'agra', 'benares', 'varanasi', 'rajastan'],
+      'El norte, en el orden que aguanta el cuerpo: las ciudades primero, el mármol de Agra a las seis de la mañana y Benarés al final. Vehículo y conductor propios los once días, y un guía distinto en cada ciudad.',
+
+    // La historia del sitio. Fuentes:
+    //  · el folleto de Asia y Oceanía 2026 de Viajes El Corte Inglés
+    //  · Taj Mahal y Hawa Mahal (Wikipedia), para fechas y cifras
+    //  · nuba.com, para la manera de plantear el Rajastán
+    historia: [
+      'El Taj Mahal se levantó entre 1632 y 1654 porque a Shah Jahan se le murió su mujer, Mumtaz Mahal, dando a luz. Trabajaron unos veinte mil obreros y más de mil elefantes acarreando material; el mármol blanco vino de las canteras de Makrana, en Rajastán, a más de trescientos kilómetros. La cúpula mide treinta y cinco metros y los cuatro minaretes que la rodean no están rectos: se construyeron ligeramente inclinados hacia fuera para que, si algún día temblara la tierra, cayeran hacia el jardín y no sobre la tumba.',
+      'Se entra por la Gran Puerta, y esa es la única manera de verlo por primera vez: el arco recorta el mármol al fondo y lo va soltando conforme uno camina. Vamos a las seis de la mañana, cuando abre, porque a las nueve hay siete millones de personas al año repartiéndose el mismo patio y porque a esa hora el mármol todavía está rosa.',
+      'Después viene el Rajastán, que es otra cosa. El Hawa Mahal de Jaipur lo mandó construir Sawai Pratap Singh en 1799 y lo diseñó Lal Chand Ustad: cinco plantas de arenisca rosa y novecientas cincuenta y tres ventanas caladas, los jharokhas, para que las mujeres de la corte pudieran mirar la calle sin ser vistas. De paso, el aire que pasa por esos novecientos cincuenta y tres agujeros se acelera y refresca las salas: un aire acondicionado de 1799.',
+      'Y luego está el país que no cabe en ningún monumento. El dorado del Templo de Amritsar al atardecer y su cocina comunitaria, donde se come gratis y sin que nadie pregunte de dónde vienes. Un Ganesha vestido de oro y flores en un templo cualquiera un martes. Y el callejón, siempre el callejón: la vaca, el claxon, el tuk-tuk amarillo y el olor a cardamomo. Se viaja con chófer y con guía precisamente para poder mirar todo eso sin tener que resolverlo.',
+    ],
+
+    datos: [
+      { etiqueta: 'Capital', valor: 'Nueva Delhi' },
+      { etiqueta: 'Cuándo ir', valor: 'De octubre a marzo' },
+      { etiqueta: 'El mármol', valor: '1632–1654' },
+      { etiqueta: 'Plazas', valor: 'Ocho por salida' },
+    ],
+
+    galeria: [
+      {
+        id: 'hawa',
+        foto: FOTOS.INDIA_HAWA,
+        alt: 'La fachada rosa del Hawa Mahal de Jaipur contra el cielo',
+        rotulo: 'Hawa Mahal',
+        pie: 'Novecientas cincuenta y tres ventanas caladas en arenisca rosa, 1799. Se visita a primera hora, desde la terraza del café de enfrente, con la ciudad todavía en silencio.',
+      },
+      {
+        id: 'ganesha',
+        foto: FOTOS.INDIA_GANESHA,
+        alt: 'Una figura de Ganesha vestida de oro y guirnaldas de flores en un templo',
+        rotulo: 'El templo',
+        pie: 'Oro, perlas y guirnaldas que se cambian cada mañana. No es una atracción ni tiene horario de visita: es un martes cualquiera y hay que descalzarse.',
+      },
+      {
+        id: 'amritsar',
+        foto: FOTOS.INDIA_AMRITSAR,
+        alt: 'El Templo Dorado de Amritsar al atardecer, con un barquero en el estanque',
+        rotulo: 'Amritsar',
+        pie: 'El Templo Dorado sobre el estanque, y al lado la cocina comunitaria más grande del mundo: se come gratis, sentado en el suelo y en fila, sin que nadie pregunte de dónde vienes.',
+      },
+      {
+        id: 'callejon',
+        foto: FOTOS.INDIA_CALLE,
+        alt: 'Un tuk-tuk amarillo aparcado en un callejón estrecho de casas de colores',
+        rotulo: 'El callejón',
+        pie: 'Aquí el coche no entra. Se baja, se camina y el guía va delante: es la parte del viaje que no sale en ninguna lista y la que todo el mundo cuenta al volver.',
+      },
+    ],
+
+    pistas: ['india', 'delhi', 'jaipur', 'agra', 'benares', 'varanasi', 'rajastan', 'rajastán', 'amritsar', 'jodhpur', 'udaipur'],
   },
   {
     id: 'uzbekistan',
@@ -301,6 +351,13 @@ export const DESTINOS = [
         pie: 'Vive en las tierras bajas del Caribe y se le oye antes de verlo: un croar seco, más de rana que de pájaro. El pico mide un tercio de su cuerpo y pesa casi nada; por dentro está hueco.',
       },
       {
+        id: 'arenal',
+        foto: FOTOS.COSTARICA_ARENAL,
+        alt: 'El cono del volcán Arenal enmarcado por palmeras al amanecer',
+        rotulo: 'El Arenal',
+        pie: 'Estuvo cuarenta y dos años en erupción continua, de 1968 a 2010. Ahora está en reposo y lo que queda son las termales que calienta por debajo.',
+      },
+      {
         id: 'caribe',
         foto: FOTOS.COSTARICA_CARIBE,
         alt: 'Playa de arena con palmeras y un islote de roca sobre el arrecife, en el Caribe sur',
@@ -310,6 +367,96 @@ export const DESTINOS = [
     ],
 
     pistas: ['costa rica', 'arenal', 'monteverde', 'tortuguero', 'corcovado', 'osa', 'manzanillo', 'san jose', 'san josé'],
+  },
+  {
+    id: 'polinesia',
+    nombre: 'Polinesia Francesa',
+    continente: 'Oceanía',
+    foto: FOTOS.POLINESIA,
+    fotoAlt: 'Bora Bora desde el aire, con el Otemanu y la laguna turquesa',
+    titular: 'El sitio más lejos al que se puede ir',
+    entradilla:
+      'Ciento dieciocho islas y atolones repartidos en dos millones y medio de kilómetros cuadrados de océano. Se tarda un día entero en llegar y por eso se va dos semanas, no una.',
+
+    // La historia del sitio. Fuentes:
+    //  · Polinesia Francesa y Geografía de Polinesia Francesa (Wikipedia),
+    //    para las cifras de islas, superficie y océano
+    //  · el folleto de Asia y Oceanía 2026 de Viajes El Corte Inglés
+    //  · nuba.com y utopica.travel, para la manera de contar el archipiélago
+    historia: [
+      'Son ciento dieciocho islas y atolones, de los que solo sesenta y siete están habitados, repartidos en cinco archipiélagos: Sociedad, Tuamotu-Gambier, Marquesas y Australes. Toda la tierra firme junta suma 4.167 kilómetros cuadrados —menos que la provincia de Guipúzcoa— y está esparcida por dos millones y medio de kilómetros cuadrados de Pacífico. Doscientas setenta mil personas. Papeete es la única ciudad.',
+      'Un atolón es un volcán que se hundió. El coral que le crecía alrededor siguió subiendo hacia la luz a la misma velocidad a la que la isla se iba al fondo, y cuando el volcán desapareció del todo quedó el anillo: la laguna en el centro, el arrecife fuera y, encima, los motus, esas lenguas de arena y cocoteros separadas por canales. En las Tuamotu, la meseta de basalto sobre la que se apoya todo eso está a mil quinientos o dos mil metros de profundidad.',
+      'Dentro de la laguna el agua tiene dos metros y está a veintiocho grados. Los tiburones de puntas negras que se acercan miden metro y medio, comen peces pequeños y no tienen ningún interés en nadie: se nada entre ellos con un guía polinesio, sin jaula y sin cebo, y lo raro es lo poco que pasa. Fuera, en las pasas donde entra la corriente del océano, es donde está el otro buceo, el de las mantas y los bancos que no caben en el visor.',
+      'Y hay una palabra que conviene aprender antes de ir: rāhui. Es la veda tradicional polinesia —se cierra una zona de pesca, se deja descansar, se reabre— y en 2016 la aplicaron a los dos millones y medio de kilómetros cuadrados de su zona económica exclusiva. No es una política importada: es cómo se ha gestionado este océano desde siempre.',
+    ],
+
+    datos: [
+      { etiqueta: 'Capital', valor: 'Papeete' },
+      { etiqueta: 'Cuándo ir', valor: 'De mayo a octubre' },
+      { etiqueta: 'Islas', valor: '118, 67 habitadas' },
+      { etiqueta: 'Plazas', valor: 'Ocho por salida' },
+    ],
+
+    galeria: [
+      {
+        id: 'tiburones',
+        foto: FOTOS.POLINESIA_TIBURONES,
+        alt: 'Dos personas buceando a pulmón rodeadas de tiburones de puntas negras y una raya',
+        rotulo: 'La laguna',
+        pie: 'Dos metros de agua, veintiocho grados y tiburones de puntas negras alrededor. Sin jaula y sin cebo: con un guía polinesio que lleva toda la vida entrando ahí.',
+      },
+      {
+        id: 'gruta',
+        foto: FOTOS.POLINESIA_GRUTA,
+        alt: 'Dos apneístas bajo la bóveda de una gruta de coral atravesada por rayos de luz',
+        rotulo: 'A pulmón',
+        pie: 'Dos días de iniciación a la apnea antes de bajar aquí. No hace falta ser nadie: hace falta aprender a estar quieto, que es lo difícil.',
+      },
+      {
+        id: 'arrecife',
+        foto: FOTOS.POLINESIA_ARRECIFE,
+        alt: 'Un jardín de coral acropora con cientos de peces de colores sobre él',
+        rotulo: 'El arrecife',
+        pie: 'El coral crece hacia la luz a la misma velocidad a la que la isla se hunde. Esto es lo que queda cuando el volcán ya no está.',
+      },
+      {
+        id: 'motus',
+        foto: FOTOS.POLINESIA_MOTUS,
+        alt: 'Vista aérea de una hilera de motus de cocoteros sobre la laguna, con Bora Bora al fondo',
+        rotulo: 'Los motus',
+        pie: 'Lenguas de arena y cocoteros sobre el anillo de coral, separadas por canales. Al fondo, a cuarenta kilómetros, el Otemanu de Bora Bora.',
+      },
+      {
+        id: 'playa',
+        foto: FOTOS.POLINESIA_PLAYA,
+        alt: 'Playa de arena blanca con cocoteros inclinados sobre una laguna transparente',
+        rotulo: 'Moorea',
+        pie: 'La pensión familiar en la que dormimos: seis habitaciones, la cocina de la señora de la casa y el mismo trozo de laguna para todo el mundo.',
+      },
+      {
+        id: 'atardecer',
+        foto: FOTOS.POLINESIA_ATARDECER,
+        alt: 'Un columpio colgado de una palmera inclinada sobre el agua, al atardecer',
+        rotulo: 'Las siete',
+        pie: 'A las siete se acaba la luz, de golpe, todos los días del año. Es la hora en la que no hay nada que hacer y en la que se entiende el viaje.',
+      },
+    ],
+
+    pistas: [
+      'polinesia',
+      'polinesia francesa',
+      'tahiti',
+      'tahití',
+      'bora bora',
+      'moorea',
+      'rangiroa',
+      'fakarava',
+      'tuamotu',
+      'marquesas',
+      'papeete',
+      'huahine',
+      'taha',
+    ],
   },
   {
     id: 'bolivia',
@@ -362,7 +509,7 @@ export function fotoDeDestino(texto, porDefecto) {
 }
 
 // Los continentes en el orden de NUBA, con sus destinos dentro.
-export const CONTINENTES_CON_DESTINOS = ['Europa', 'África', 'Oriente Medio', 'Asia', 'América']
+export const CONTINENTES_CON_DESTINOS = ['Europa', 'África', 'Oriente Medio', 'Asia', 'Oceanía', 'América']
   .map((nombre) => ({
     nombre,
     destinos: DESTINOS.filter((destino) => destino.continente === nombre),
