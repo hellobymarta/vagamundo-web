@@ -2,6 +2,12 @@ import Boton from '@/components/boton'
 import { useCarrusel } from '@/hooks/use-carrusel'
 import { PORTADAS, SEGUNDOS_PORTADA } from '@/config/constantes'
 
+// Dos intensidades de velo. Las fotografías claras necesitan el fuerte para
+// que se lea el titular; una nocturna con el velo fuerte se queda en negro,
+// así que la campaña puede pedir el suave con velo: 'suave'.
+const VELO_FUERTE = 'bg-gradient-to-t from-tinta/80 via-tinta/35 to-tinta/25'
+const VELO_SUAVE = 'bg-gradient-to-t from-tinta/65 via-tinta/15 to-transparent'
+
 // La portada de NUBA: ocupa la pantalla entera, va pasando sola de una
 // campaña a otra y lleva la paginación en puntitos abajo. El texto va
 // centrado, con el epígrafe en serif y un botón rectangular de contorno fino.
@@ -26,8 +32,10 @@ export default function PortadaRotativa() {
         />
       ))}
 
-      <div className="absolute inset-0 bg-tinta/32" />
-      <div className="absolute inset-0 bg-gradient-to-t from-tinta/80 via-tinta/35 to-tinta/25" />
+      <div className={`absolute inset-0 ${actual.velo === 'suave' ? 'bg-tinta/10' : 'bg-tinta/32'}`} />
+      <div
+        className={`absolute inset-0 ${actual.velo === 'suave' ? VELO_SUAVE : VELO_FUERTE}`}
+      />
 
       <div className="relative mx-auto flex h-full max-w-[1440px] flex-col items-center justify-end px-6 pb-24 text-center text-white md:px-10">
         {/* NUBA pone el epígrafe en serif, no en mayúsculas. */}

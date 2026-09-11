@@ -72,6 +72,11 @@ export const FOTOS = {
   AMAZONAS: '/amazonas-aereo.jpg',
   GRECIA: '/grecia-mikonos.jpg',
   JORDANIA: '/jordania-wadirum.jpg',
+  ISLANDIA: '/islandia-auroras.jpg',
+  ISLANDIA_SELJALANDSFOSS: '/islandia.jpg',
+  ISLANDIA_DETRAS: '/islandia-natura.jpg',
+  ISLANDIA_GLACIAR: '/islandia-glaciar.jpg',
+  ISLANDIA_PLAYA: '/islandia-playa.jpg',
   POLINESIA: '/polinesia-borabora.jpg',
   POLINESIA_BUNGALOS: '/polinesia-bungalos.jpg',
   POLINESIA_TIBURONES: '/polinesia-tiburones.jpg',
@@ -107,7 +112,7 @@ export const PORTADAS = [
   {
     id: 'india',
     imagen: FOTOS.INDIA,
-    alt: 'El Taj Mahal reflejado en el agua al amanecer',
+    alt: 'El Taj Mahal visto desde el arco de la Gran Puerta de Agra',
     etiqueta: 'Nuevo · Norte de la India',
     titulo: 'Agra a las seis de la mañana',
     texto: 'Entramos antes que nadie, con el mármol todavía frío y sin una sola cola.',
@@ -116,8 +121,10 @@ export const PORTADAS = [
   },
   {
     id: 'medida',
-    imagen: FOTOS.JORDANIA,
-    alt: 'Arco de roca en el desierto de Wadi Rum',
+    imagen: FOTOS.ISLANDIA,
+    alt: 'Una aurora boreal sobre un 4x4 parado en la nieve, en Islandia',
+    // La foto ya es nocturna: con el velo fuerte se queda en negro.
+    velo: 'suave',
     etiqueta: 'Viajes a medida',
     titulo: 'O cuéntanos el que llevas años imaginando',
     texto: 'Lo montamos entero para vosotros, con las mismas casas y los mismos guías.',

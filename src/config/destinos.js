@@ -32,6 +32,78 @@ export const DESTINOS = [
     pistas: ['grecia', 'santorini', 'atenas', 'mikonos', 'cicladas', 'creta'],
   },
   {
+    id: 'islandia',
+    nombre: 'Islandia',
+    continente: 'Europa',
+    foto: FOTOS.ISLANDIA,
+    fotoAlt: 'Una aurora boreal verde sobre un 4x4 parado en la nieve',
+    titular: 'Una isla que todavía se está haciendo',
+    entradilla:
+      'Nueve días de febrero dando la vuelta a la isla en 4x4, con conductor y con un cazador de auroras que decide cada noche adónde vamos según el parte. No se promete la aurora: se persigue.',
+
+    // La historia del sitio. Fuentes:
+    //  · Islandia y Jökulsárlón (Wikipedia), para superficie, población,
+    //    energía y las cifras de la laguna
+    //  · nuba.com y utopica.travel, para la manera de plantear el viaje
+    historia: [
+      'Islandia está justo encima de la dorsal mesoatlántica, la costura por la que se separan la placa norteamericana y la euroasiática. Por eso hay más de doscientos volcanes y una erupción cada cinco años de media: la isla no está terminada, se sigue haciendo. Ciento tres mil kilómetros cuadrados y poco más de trescientos sesenta mil habitantes, la mayoría en Reikiavik, que es la capital más al norte del mundo. Salir de la carretera principal es quedarse solo de verdad.',
+      'Ese mismo calor de debajo es el que lo mueve todo. La geotermia y el agua de los ríos cubren el cien por cien de la electricidad del país y cerca del ochenta por ciento de toda la energía que consume: las casas se calientan con agua que sale hirviendo del suelo. Es lo que explica que en mitad de la nada, a diez bajo cero, haya una piscina al aire libre a treinta y ocho grados.',
+      'La Jökulsárlón no existía hace un siglo. Apareció entre 1934 y 1935, cuando la lengua del Breiðamerkurjökull empezó a retirarse, y desde entonces no ha parado de crecer: de ocho kilómetros cuadrados en 1975 a dieciocho hoy. Los icebergs que se desprenden flotan doscientos metros sobre el fondo, salen al mar por un río de kilómetro y medio y vuelven con la marea a vararse en la arena negra, del otro lado de la carretera.',
+      'Y luego está la aurora, que es lo que trae a casi todo el mundo en invierno. Aparece cuando las partículas del sol chocan con la atmósfera a cien kilómetros de altura y se ve solo si el cielo está despejado y lejos de las luces. No hay manera de reservarla: se sale de noche, se conduce hasta donde diga el parte y se espera. Las ocho plazas van en un solo vehículo precisamente por eso, porque hay que poder cambiar de idea a las once de la noche.',
+    ],
+
+    datos: [
+      { etiqueta: 'Capital', valor: 'Reikiavik' },
+      { etiqueta: 'Cuándo ir', valor: 'De septiembre a abril' },
+      { etiqueta: 'Energía renovable', valor: '100 % de la luz' },
+      { etiqueta: 'Plazas', valor: 'Ocho por salida' },
+    ],
+
+    galeria: [
+      {
+        id: 'glaciar',
+        foto: FOTOS.ISLANDIA_GLACIAR,
+        alt: 'Icebergs azules flotando en la laguna glaciar de Jökulsárlón',
+        rotulo: 'Jökulsárlón',
+        pie: 'No existía hace un siglo: apareció en 1935 cuando el glaciar empezó a retirarse, y desde 1975 ha pasado de ocho kilómetros cuadrados a dieciocho.',
+      },
+      {
+        id: 'playa',
+        foto: FOTOS.ISLANDIA_PLAYA,
+        alt: 'Un farallón de roca sobre la arena negra de una playa islandesa',
+        rotulo: 'La arena negra',
+        pie: 'Reynisfjara, donde el basalto molido hace de playa y el Atlántico entra sin avisar. Se mira desde arriba: aquí abajo no se le da la espalda al mar.',
+      },
+      {
+        id: 'seljalandsfoss',
+        foto: FOTOS.ISLANDIA_SELJALANDSFOSS,
+        alt: 'La cascada de Seljalandsfoss cayendo sobre la llanura verde al atardecer',
+        rotulo: 'Seljalandsfoss',
+        pie: 'Sesenta metros de caída por el borde de lo que fue la línea de costa, antes de que la isla creciera. En junio esta luz dura hasta las dos de la mañana.',
+      },
+      {
+        id: 'detras',
+        foto: FOTOS.ISLANDIA_DETRAS,
+        alt: 'La misma cascada vista desde la cueva que hay detrás de la cortina de agua',
+        rotulo: 'Por detrás',
+        pie: 'Se puede rodear entera y salir por el otro lado. Se vuelve empapado y merece la pena: es de las pocas cascadas del mundo que dejan pasar.',
+      },
+    ],
+
+    pistas: [
+      'islandia',
+      'reikiavik',
+      'reykjavik',
+      'jokulsarlon',
+      'vatnajokull',
+      'seljalandsfoss',
+      'reynisfjara',
+      'vik',
+      'auroras',
+      'aurora boreal',
+    ],
+  },
+  {
     id: 'jordania',
     nombre: 'Jordania',
     continente: 'Oriente Medio',
