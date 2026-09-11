@@ -108,11 +108,69 @@ export const DESTINOS = [
     nombre: 'Jordania',
     continente: 'Oriente Medio',
     foto: FOTOS.JORDANIA,
-    fotoAlt: 'Arco de roca en el desierto de Wadi Rum',
-    titular: 'Un país entero en ocho días',
+    fotoAlt: 'La fachada del Tesoro de Petra tallada en la roca rosa',
+    titular: 'Petra, y todo lo que hay alrededor',
     entradilla:
-      'Cabe en una semana y no se parece a nada: una ciudad romana, otra tallada en la roca, dos noches de desierto y un mar en el que no te hundes.',
-    pistas: ['jordania', 'petra', 'wadi rum', 'amman', 'aqaba'],
+      'Cabe en ocho días y no se parece a nada: una ciudad romana en pie, otra tallada en la roca, dos noches de desierto en campamento y un mar en el que no te hundes. Entramos en Petra dos veces, una de ellas de noche.',
+
+    // La historia del sitio. Fuentes:
+    //  · Petra y Mar Muerto (Wikipedia), para fechas, cifras y la ingeniería
+    //    hidráulica nabatea
+    //  · el folleto de África y Oriente Medio 2026 de Viajes El Corte Inglés
+    //  · nuba.com, para la manera de plantear los días
+    historia: [
+      'Petra es Patrimonio de la Humanidad desde el 6 de diciembre de 1985 y una de las siete nuevas maravillas del mundo desde 2007, y aun así sigue sin parecerse a lo que uno se imagina. No es un monumento: es una ciudad entera excavada en la roca, capital de los nabateos, un pueblo de caravaneros que controló durante siglos la ruta del incienso y la mirra entre Arabia y el Mediterráneo.',
+      'Se entra por el Siq, una grieta de kilómetro y medio con paredes de hasta doscientos metros que en algún punto se estrecha hasta los dos. Se camina esa grieta en penumbra, dando vueltas, sin ver nada, y al final se abre de golpe la fachada del Tesoro. Lo de Tesoro se lo pusieron los beduinos, que creían que dentro había oro escondido; en realidad es una tumba monumental del siglo I, probablemente la del rey Aretas IV.',
+      'Lo que de verdad impresiona cuando te lo cuenta alguien que lo conoce no es la talla, es el agua. Los nabateos montaron una red de presas, cisternas y canalizaciones de cerámica que llevaba unos cuarenta millones de litros diarios hasta el centro de la ciudad, en mitad del desierto y sin una sola bomba. Por eso hubo aquí veinte o treinta mil personas. Europa no supo de Petra hasta 1812, cuando el suizo Burckhardt se hizo pasar por peregrino musulmán para poder entrar, y la mayor parte de la ciudad sigue todavía bajo la arena.',
+      'Alrededor hay un país que se recorre en pocas horas de coche. Jerash, que es de las ciudades romanas de provincias mejor conservadas que quedan en pie. Wadi Rum, donde se duerme en campamento y la arena es literalmente naranja. Y el mar Muerto, a cuatrocientos treinta y cinco metros bajo el nivel del mar —el punto más bajo de la tierra firme del planeta—, nueve veces más salado que el océano y bajando un metro al año.',
+    ],
+
+    datos: [
+      { etiqueta: 'Capital', valor: 'Amán' },
+      { etiqueta: 'Cuándo ir', valor: 'De marzo a mayo y de septiembre a noviembre' },
+      { etiqueta: 'Petra', valor: 'Patrimonio desde 1985' },
+      { etiqueta: 'Plazas', valor: 'Ocho por salida' },
+    ],
+
+    galeria: [
+      {
+        id: 'tesoro',
+        foto: FOTOS.JORDANIA_TESORO,
+        alt: 'El Tesoro de Petra visto desde lo alto del cañón, con la explanada al pie',
+        rotulo: 'El Tesoro desde arriba',
+        pie: 'Novecientos escalones hasta el mirador que casi nadie sube, y desde el que se entiende de una vez lo que es Petra: una grieta, una explanada y una fachada de cuarenta metros.',
+      },
+      {
+        id: 'zoco',
+        foto: FOTOS.JORDANIA_ZOCO,
+        alt: 'Bandejas de especias, flores secas y hierbas en la puerta de una tienda del zoco',
+        rotulo: 'El zoco',
+        pie: 'Zaatar, sumac, flor de hibisco y canela en rama. Se compra donde compra el cocinero que nos da de cenar, que es la única manera de no comprar mal.',
+      },
+      {
+        id: 'wadirum',
+        foto: FOTOS.JORDANIA_WADIRUM,
+        alt: 'Las montañas de Wadi Rum sobre la arena naranja, con bruma al fondo',
+        rotulo: 'Wadi Rum',
+        pie: 'Dos noches de campamento, cena bajo tierra —el zarb se cuece enterrado en la arena— y un cielo sin una sola luz alrededor.',
+      },
+      {
+        id: 'aman',
+        foto: FOTOS.JORDANIA_AMAN,
+        alt: 'Los tejados de Amán extendiéndose hasta el horizonte con la bandera gigante al fondo',
+        rotulo: 'Amán',
+        pie: 'Blanca, en cuesta y mucho más grande de lo que nadie espera. Se sube a la ciudadela al atardecer, cuando empiezan las llamadas a la oración y se oyen unas encima de otras.',
+      },
+      {
+        id: 'bandera',
+        foto: FOTOS.JORDANIA_BANDERA,
+        alt: 'La bandera de Jordania ondeando en un mirador sobre el cañón',
+        rotulo: 'El mirador',
+        pie: 'Los colores del levantamiento árabe y la estrella de siete puntas, una por cada versículo de la primera azora. Está en todos los altos del país.',
+      },
+    ],
+
+    pistas: ['jordania', 'petra', 'wadi rum', 'amman', 'amán', 'aqaba', 'jerash', 'mar muerto', 'siq', 'nabateo'],
   },
   {
     id: 'namibia',

@@ -21,7 +21,7 @@ export default function Galeria({ fotos }) {
               <img src={foto} alt={alt} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
               {/* Dos velos: uno de abajo arriba y otro desde la izquierda, para que
                   el pie se lea igual sobre una foto oscura que sobre una de arena. */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
               <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/10 to-transparent" />
               <figcaption className="absolute inset-x-0 bottom-0 px-8 pb-8 text-white md:px-14">
                 <p className="titular text-3xl">{rotulo}</p>
