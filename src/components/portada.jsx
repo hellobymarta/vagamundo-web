@@ -13,7 +13,14 @@ export default function Portada({
 }) {
   return (
     <section className={`relative ${alto} min-h-[460px] overflow-hidden`}>
-      <img src={imagen} alt={alt} className="absolute inset-0 h-full w-full object-cover" />
+      {/* Los destinos que todavía preparamos no tienen fotografía propia, y
+          ponerles una de archivo sería justo lo contrario de lo que decimos.
+          En su lugar, el fondo oscuro de la casa. */}
+      {imagen ? (
+        <img src={imagen} alt={alt} className="absolute inset-0 h-full w-full object-cover" />
+      ) : (
+        <div className="absolute inset-0 bg-noche" />
+      )}
 
       {/* El velo pesa donde va el texto y se levanta arriba, para no apagar el cielo. */}
       <div className="absolute inset-0 bg-azul/15" />

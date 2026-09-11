@@ -17,7 +17,7 @@ const IZQUIERDA = [
   { destino: '/destinos', texto: 'Destinos' },
 ]
 
-const DERECHA = [{ destino: '/nuevo', texto: 'Añadir viaje' }]
+const DERECHA = [{ destino: '/nuevo', corto: 'Añadir', texto: 'Añadir viaje' }]
 
 export default function Cabecera() {
   const solida = useCabeceraSolida()
@@ -62,20 +62,29 @@ export default function Cabecera() {
         </nav>
 
         {/* NUBA centra el logotipo en absoluto, no con el flex: así no se
-            mueve aunque los menús de los lados cambien de ancho. */}
+            mueve aunque los menús de los lados cambien de ancho. En el móvil
+            no hay menú a la izquierda que compensar, así que va en el flujo:
+            centrado se le echaban encima los enlaces de la derecha. */}
         <Link
           to="/"
-          className={`titular absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap tracking-[0.38em] transition-all duration-500 group-hover:text-tinta ${
-            solida ? 'text-xl text-tinta md:text-2xl' : 'text-2xl text-white md:text-3xl'
+          className={`titular whitespace-nowrap tracking-[0.26em] transition-all duration-500 group-hover:text-tinta md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:tracking-[0.38em] ${
+            solida ? 'text-lg text-tinta md:text-2xl' : 'text-lg text-white md:text-3xl'
           }`}
         >
           VAGAMUNDO
         </Link>
 
-        <nav className="flex flex-1 items-center justify-end gap-9">
-          {DERECHA.map(({ destino, texto }) => (
+        <nav className="flex flex-1 items-center justify-end gap-5 md:gap-9">
+          {/* En el móvil, Destinos se queda aquí: es la otra página de la web
+              y sin esto no había manera de llegar a ella. */}
+          <NavLink to="/destinos" className={`${clase({ isActive: false })} md:hidden`} end>
+            Destinos
+          </NavLink>
+
+          {DERECHA.map(({ destino, corto, texto }) => (
             <NavLink key={destino} to={destino} className={clase} end>
-              {texto}
+              <span className="md:hidden">{corto}</span>
+              <span className="hidden md:inline">{texto}</span>
             </NavLink>
           ))}
           <span

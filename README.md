@@ -3,7 +3,7 @@
 Frontend en **React + Vite** del proyecto Vagamundo. No tiene datos propios: todo el catálogo
 de viajes se pide a la **API de la PEC 3** (Express + MongoDB Atlas) y se pinta en pantalla.
 
-- **Frontend desplegado:** _(pendiente de desplegar en Vercel)_
+- **Frontend desplegado:** _(pendiente de desplegar en Vercel)_ ← último paso que queda
 - **Repositorio del frontend:** https://github.com/hellobymarta/vagamundo-web
 - **Repositorio de la API (PEC 3):** https://github.com/hellobymarta/vagamundo-api
 - **API desplegada:** https://vagamundo-api.vercel.app
@@ -38,7 +38,10 @@ PEC4/
 ├── vercel.json           # reescrituras para que funcione el router en producción
 └── src/
     ├── config/
-    │   └── constantes.js       # API_URL, RUTA_VIAJES, CATEGORIAS… (UPPER_SNAKE_CASE)
+    │   ├── constantes.js       # API_URL, RUTA_VIAJES, CATEGORIAS… (UPPER_SNAKE_CASE)
+    │   ├── destinos.js         # la capa editorial: historia, datos y galería de cada sitio
+    │   ├── motivaciones.js     # las tres puertas de entrada al catálogo y su filtro
+    │   └── siluetas.js         # 55 contornos de países, generados con TopoJSON
     ├── services/
     │   └── api.js              # todas las llamadas a la API, en un solo sitio
     ├── context/
@@ -47,7 +50,9 @@ PEC4/
     │   ├── use-viajes.js       # atajo para leer el contexto
     │   └── use-formulario.js   # formularios controlados
     ├── components/             # boton, campo, aviso, cargando, cabecera, pie,
-    │   │                       # tarjeta-viaje, lista-viajes, formulario-viaje
+    │   │                       # tarjeta-viaje, lista-viajes, formulario-viaje,
+    │   │                       # marca, destacados, explorador, maneras, medida,
+    │   │                       # motivaciones, testimonios, preguntas, galeria…
     ├── pages/                  # viajes, viaje, destinos, destino, nuevo,
     │   │                       # editar, no-encontrada
     ├── App.jsx
@@ -169,9 +174,11 @@ fondo crema sin cambiarle el color.
 
 ### De Wilderness
 
-Los tres pasos numerados 01/02/03, el precio en formato «Desde X € por persona», la duración en
-«días · noches», los dos testimonios con firma y lugar, y las preguntas frecuentes (aquí con
-`<details>`, sin JavaScript).
+Los tres pasos numerados 01/02/03 (aquí en la sección de viajes a medida, con su fotografía al
+lado), el precio en formato «Desde X € por persona», la duración en «días · noches», los
+testimonios con firma y lugar —cuatro, con su valoración en estrellas— y las preguntas
+frecuentes, que van con `<details>` y por tanto se abren con teclado y sin una línea de
+JavaScript.
 
 ### Tipografías y color
 
@@ -186,12 +193,20 @@ para el pie, y un pastel por sección (rosa buganvilla, terracota, amarillo lim�
 ### Fotografías
 
 Las de Positano, Amalfi y Atrani son mías, de la PEC 1. Las de Apulia, Grecia, Jordania, Brasil,
-Namibia, India, Uzbekistán, Guatemala, Costa Rica y el salar están extraídas de los catálogos de
-viajes de 2026 y se usan solo con fines académicos en esta práctica.
+Namibia, Japón, India, Islandia, Polinesia, Guatemala, Costa Rica y el salar están extraídas de
+los catálogos de viajes de 2026 y se usan solo con fines académicos en esta práctica. Todas
+pasan por el mismo tratamiento antes de entrar: 1.800 px de ancho y JPEG progresivo de calidad
+83, que deja la carpeta `public` en una décima parte de lo que ocupaban los originales.
 
 Cada foto va con su sitio: `fotoDeDestino()` resuelve la fotografía que corresponde a un destino,
 así que un viaje a Namibia nunca sale ilustrado con una foto de Amalfi, ni cuando el viaje no
-trae imagen propia, ni en el bloque del itinerario, ni en el explorador.
+trae imagen propia, ni en el bloque del itinerario, ni en el explorador. Y `fotoAlternativa()`
+devuelve **otra** del mismo sitio —la primera de su galería—, que es la que usa el bloque de
+plazas para no repetir las mismas cuatro imágenes que se ven después en el catálogo.
+
+Los destinos que todavía estamos preparando no llevan fotografía a propósito: su ficha dibuja el
+contorno del país sobre fondo oscuro. Ilustrar con una imagen de archivo un sitio al que aún no
+hemos llevado a nadie sería justo lo contrario de lo que dice la web.
 
 ## Decisiones de arquitectura
 
@@ -211,21 +226,35 @@ trae imagen propia, ni en el bloque del itinerario, ni en el explorador.
 
 ## El catálogo
 
-`semillas.http` trae los **nueve viajes**, repartidos en cuatro zonas:
+`semillas.http` trae los **once viajes**, repartidos en cinco zonas:
 
 | Zona | Viajes |
 |------|--------|
 | Mediterráneo | Amalfi en primavera · Apulia inédita · Del continente a Santorini |
+| Norte de Europa | Islandia, a la caza de la aurora |
 | África austral y Oriente Medio | Namibia, de Etosha al Kalahari · Jordania, el desierto por dentro |
-| América Latina | Ruta de las emociones · Guatemala, del lago a la selva |
-| Asia | India, de Delhi al Ganges · La Ruta de la Seda |
+| América Latina | Ruta de las emociones · Guatemala, del lago a la selva · Costa Rica de punta a punta |
+| Asia | India, de Delhi al Ganges · Japón, el Gran Tour |
 
 La duración, el precio y la ruta de cada uno salen de los catálogos de viajes de 2026; los
 nombres y los textos están escritos con la voz de Vagamundo. Se lanzan con la extensión
 **REST Client** de VS Code, pulsando «Send Request» encima de cada bloque.
 
-Las categorías son `Costa`, `Islas`, `Cultural`, `Ciudad`, `Naturaleza` y `Desierto`: seis, una
-por cada baldosa de «Imagina tu viaje», y ninguna se queda a cero.
+### Categorías y motivaciones
+
+La API guarda la categoría con el detalle que haga falta (`playa`, `costa`, `islas`, `cultural`,
+`ciudad`, `naturaleza`, `aventura`, `desierto`). La web, en cambio, solo ofrece **tres** puertas
+de entrada, porque son las que de verdad decide alguien que empieza a mirar:
+
+| Motivación | Agrupa |
+|------------|--------|
+| Playa | playa · costa · islas |
+| Cultural | cultural · ciudad |
+| Naturaleza y aventura | naturaleza · aventura · desierto · montaña |
+
+La tabla vive en `src/config/motivaciones.js` junto a `viajesDeMotivacion()`, que es quien filtra.
+Así el filtro es simple por fuera y fiel a los datos por dentro, y añadir una categoría nueva en
+la base de datos no obliga a tocar la interfaz.
 
 ## Despliegue en Vercel
 

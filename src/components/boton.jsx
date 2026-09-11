@@ -32,6 +32,7 @@ export default function Boton({
 
   const estilo = `etiqueta inline-flex items-center justify-center border ${FORMAS[forma]}
     ${tamano} transition duration-500 disabled:cursor-not-allowed disabled:opacity-40
+    focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current
     ${VARIANTES[variante]} ${className}`
 
   if (a) {

@@ -1,15 +1,31 @@
 import { PREGUNTAS } from '@/config/constantes'
 
-// Preguntas frecuentes con <details>: se abren y se cierran solas,
-// sin una línea de JavaScript ni estado que mantener.
+// Preguntas frecuentes en dos columnas por tema: «El viaje» y «Papeleo».
+// Siguen siendo <details>, así que se abren y se cierran sin una línea de
+// JavaScript, funcionan con teclado desde el primer día y el buscador lee
+// las respuestas aunque estén cerradas.
+//
+// Un Set sobre los grupos da los temas en el orden en que aparecen escritos.
 export default function Preguntas() {
+  const grupos = [...new Set(PREGUNTAS.map(({ grupo }) => grupo))]
+
   return (
-    <div className="mx-auto max-w-3xl">
-      {PREGUNTAS.map(({ id, pregunta, respuesta }) => (
-        <details key={id} className="pregunta border-b border-tinta/10 py-7">
-          <summary className="titular text-xl">{pregunta}</summary>
-          <p className="mt-5 max-w-2xl leading-relaxed text-suave">{respuesta}</p>
-        </details>
+    <div className="grid gap-x-16 gap-y-14 md:grid-cols-2">
+      {grupos.map((grupo) => (
+        <div key={grupo}>
+          <p className="etiqueta text-amarillo-acento">{grupo}</p>
+
+          <div className="mt-8">
+            {PREGUNTAS.filter((pregunta) => pregunta.grupo === grupo).map(
+              ({ id, pregunta, respuesta }) => (
+                <details key={id} className="pregunta border-t border-tinta/12">
+                  <summary className="titular py-5 pr-8 text-lg leading-snug">{pregunta}</summary>
+                  <p className="pb-6 pr-8 leading-relaxed text-suave">{respuesta}</p>
+                </details>
+              )
+            )}
+          </div>
+        </div>
       ))}
     </div>
   )

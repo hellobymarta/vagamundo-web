@@ -21,10 +21,15 @@ export default function Pie() {
             <p className="titular text-2xl tracking-[0.3em]">VAGAMUNDO</p>
             <p className="titular-cursiva mt-4 text-xl text-azul-claro">Más allá del folleto</p>
             <p className="mt-7 max-w-sm leading-relaxed text-azul-claro/80">
-              Atelier de viajes por el Mediterráneo y algún sitio más lejos. Grupos de ocho,
-              casas con nombre e itinerarios que dejan hueco a no hacer nada.
+              Montamos viajes de cinco a ocho personas por sitios que hemos recorrido antes
+              nosotras, en la misma época del año y con el mismo presupuesto. Sin autocares, sin
+              paradas comerciales y con un guía de allí en cada salida.
             </p>
-            <p className="etiqueta mt-9 text-white/40">Est. 2024</p>
+            <p className="mt-5 max-w-sm leading-relaxed text-azul-claro/80">
+              Cada día está pensado para que algo se entienda, no solo se vea. Y siempre queda
+              hueco para no hacer nada, que es la parte que más se agradece al volver.
+            </p>
+            <p className="etiqueta mt-9 text-white/40">Desde 1994</p>
           </div>
 
           <div>

@@ -104,6 +104,15 @@ export const DESTINOS = [
     ],
   },
   {
+    id: 'portugal',
+    nombre: 'Portugal',
+    continente: 'Europa',
+    titular: 'En preparación para 2027',
+    entradilla:
+      'El Alentejo en abril y la costa vicentina cuando no hay nadie. Estamos cerrando las casas, que es lo que siempre cuesta.',
+    pistas: ['portugal', 'lisboa', 'alentejo', 'oporto', 'algarve', 'azores'],
+  },
+  {
     id: 'jordania',
     nombre: 'Jordania',
     continente: 'Oriente Medio',
@@ -247,6 +256,24 @@ export const DESTINOS = [
       'swakopmund',
       'namib',
     ],
+  },
+  {
+    id: 'marruecos',
+    nombre: 'Marruecos',
+    continente: 'África',
+    titular: 'En preparación para 2027',
+    entradilla:
+      'El Atlas y el sur, sin la parada de la cooperativa de argán. Llevamos dos viajes de reconocimiento y falta uno.',
+    pistas: ['marruecos', 'marrakech', 'fez', 'esauira', 'merzouga', 'atlas'],
+  },
+  {
+    id: 'botsuana',
+    nombre: 'Botsuana',
+    continente: 'África',
+    titular: 'En preparación para 2027',
+    entradilla:
+      'El delta del Okavango en mokoro y sin motor. Es el destino más difícil de montar en grupo pequeño y por eso se está tomando su tiempo.',
+    pistas: ['botsuana', 'botswana', 'okavango', 'chobe', 'maun'],
   },
   {
     id: 'japon',
@@ -430,15 +457,13 @@ export const DESTINOS = [
     pistas: ['india', 'delhi', 'jaipur', 'agra', 'benares', 'varanasi', 'rajastan', 'rajastán', 'amritsar', 'jodhpur', 'udaipur'],
   },
   {
-    id: 'uzbekistan',
-    nombre: 'Uzbekistán',
+    id: 'vietnam',
+    nombre: 'Vietnam',
     continente: 'Asia',
-    foto: FOTOS.UZBEKISTAN,
-    fotoAlt: 'La plaza del Registán en Samarcanda',
-    titular: 'La Ruta de la Seda, en tren',
+    titular: 'En preparación para 2027',
     entradilla:
-      'Samarcanda, Bujará y Jiva. Cúpulas de azulejo turquesa, melón en cada comida y trenes de alta velocidad entre oasis, que nadie se espera.',
-    pistas: ['uzbekistan', 'uzbekistán', 'samarcanda', 'bujara', 'bukhara', 'tashkent', 'jiva'],
+      'De norte a sur en tren nocturno, con parada larga en Hoi An. Abrimos plazas cuando tengamos guía propio en las tres ciudades.',
+    pistas: ['vietnam', 'hanoi', 'hoi an', 'saigon', 'halong', 'hue'],
   },
   {
     id: 'costarica',
@@ -474,18 +499,18 @@ export const DESTINOS = [
 
     galeria: [
       {
-        id: 'tucan',
-        foto: FOTOS.COSTARICA_PICO,
-        alt: 'Un tucán pico iris posado en una rama con musgo y una bromelia',
-        rotulo: 'El pico iris',
-        pie: 'Vive en las tierras bajas del Caribe y se le oye antes de verlo: un croar seco, más de rana que de pájaro. El pico mide un tercio de su cuerpo y pesa casi nada; por dentro está hueco.',
-      },
-      {
         id: 'arenal',
         foto: FOTOS.COSTARICA_ARENAL,
         alt: 'El cono del volcán Arenal enmarcado por palmeras al amanecer',
         rotulo: 'El Arenal',
         pie: 'Estuvo cuarenta y dos años en erupción continua, de 1968 a 2010. Ahora está en reposo y lo que queda son las termales que calienta por debajo.',
+      },
+      {
+        id: 'tucan',
+        foto: FOTOS.COSTARICA_PICO,
+        alt: 'Un tucán pico iris posado en una rama con musgo y una bromelia',
+        rotulo: 'El pico iris',
+        pie: 'Vive en las tierras bajas del Caribe y se le oye antes de verlo: un croar seco, más de rana que de pájaro. El pico mide un tercio de su cuerpo y pesa casi nada; por dentro está hueco.',
       },
       {
         id: 'caribe',
@@ -564,6 +589,13 @@ export const DESTINOS = [
         pie: 'La pensión familiar en la que dormimos: seis habitaciones, la cocina de la señora de la casa y el mismo trozo de laguna para todo el mundo.',
       },
       {
+        id: 'bungalos',
+        foto: FOTOS.POLINESIA_BUNGALOS,
+        alt: 'Pasarela de madera entre bungalós sobre el agua, con la montaña detrás',
+        rotulo: 'Sobre el agua',
+        pie: 'Dos noches, no más: son caras y se disfrutan igual. El resto del viaje se duerme en pensiones familiares, que es donde se conoce a alguien.',
+      },
+      {
         id: 'atardecer',
         foto: FOTOS.POLINESIA_ATARDECER,
         alt: 'Un columpio colgado de una palmera inclinada sobre el agua, al atardecer',
@@ -589,6 +621,24 @@ export const DESTINOS = [
     ],
   },
   {
+    id: 'nuevazelanda',
+    nombre: 'Nueva Zelanda',
+    continente: 'Oceanía',
+    titular: 'En preparación para 2027',
+    entradilla:
+      'La isla sur entera, de Wanaka a los fiordos. Son tres semanas largas y estamos viendo cómo hacerlas caber en dos.',
+    pistas: ['nueva zelanda', 'nuevazelanda', 'wanaka', 'queenstown', 'milford', 'auckland'],
+  },
+  {
+    id: 'australia',
+    nombre: 'Australia',
+    continente: 'Oceanía',
+    titular: 'En preparación para 2027',
+    entradilla:
+      'El centro rojo y el arrecife, con comunidades aborígenes que llevan la visita ellas mismas. Es la parte que estamos cerrando.',
+    pistas: ['australia', 'uluru', 'sidney', 'sydney', 'cairns', 'tasmania'],
+  },
+  {
     id: 'bolivia',
     nombre: 'Bolivia',
     continente: 'América',
@@ -598,6 +648,24 @@ export const DESTINOS = [
     entradilla:
       'El salar de Uyuni sin caravana de todoterrenos, que es más difícil de lo que parece. Estamos buscando la manera.',
     pistas: ['bolivia', 'uyuni', 'la paz'],
+  },
+  {
+    id: 'mexico',
+    nombre: 'México',
+    continente: 'América',
+    titular: 'En preparación para 2027',
+    entradilla:
+      'Oaxaca en noviembre y la península de Yucatán por dentro, no por la costa. Con cocinera en dos de los días.',
+    pistas: ['mexico', 'méxico', 'oaxaca', 'yucatan', 'yucatán', 'merida', 'chiapas'],
+  },
+  {
+    id: 'estadosunidos',
+    nombre: 'Estados Unidos',
+    continente: 'América',
+    titular: 'En preparación para 2027',
+    entradilla:
+      'Los parques del oeste en furgoneta y fuera de temporada alta, que es la única manera de que no parezcan un aparcamiento.',
+    pistas: ['estados unidos', 'estadosunidos', 'utah', 'arizona', 'yosemite', 'california'],
   },
 ]
 
@@ -636,6 +704,16 @@ export function viajesDeDestino(viajes, id) {
 // una foto de Amalfi en un viaje a Namibia.
 export function fotoDeDestino(texto, porDefecto) {
   return buscarDestino(texto)?.foto || porDefecto
+}
+
+// Otra fotografía del mismo sitio, distinta de la que lleva el viaje en el
+// catálogo. La primera de su galería sirve: es del destino y ya está elegida
+// y escrita. Sin galería, cae en la portada del destino, y sin destino, en
+// la imagen de reserva.
+export function fotoAlternativa(texto, porDefecto) {
+  const destino = buscarDestino(texto)
+
+  return destino?.galeria?.[0]?.foto || destino?.foto || porDefecto
 }
 
 // Los continentes en el orden de NUBA, con sus destinos dentro.

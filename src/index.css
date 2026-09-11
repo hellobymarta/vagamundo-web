@@ -168,24 +168,75 @@ label {
   scroll-snap-align: start;
 }
 
-/* ---- Preguntas frecuentes, con <details> y sin JavaScript ---------------- */
+/* ---- Preguntas frecuentes, con <details> y sin JavaScript ----------------
+   El signo de la derecha es un trazo girado, no un carácter: así la cruz se
+   convierte en raya con una transición y siempre queda a la misma altura. */
 .pregunta summary {
+  position: relative;
   cursor: pointer;
   list-style: none;
+  transition: color 0.3s ease;
 }
 
 .pregunta summary::-webkit-details-marker {
   display: none;
 }
 
+.pregunta summary:hover {
+  color: var(--color-amarillo-acento);
+}
+
+/* El foco del teclado tiene que verse, y con holgura. */
+.pregunta summary:focus-visible {
+  outline: 2px solid var(--color-amarillo-acento);
+  outline-offset: 4px;
+}
+
+/* La barra horizontal del signo, siempre visible. */
+.pregunta summary::before,
 .pregunta summary::after {
-  content: "+";
-  float: right;
-  font-family: var(--font-texto);
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 13px;
+  height: 1px;
+  background-color: currentColor;
+  transition: transform 0.35s ease;
+}
+
+/* La vertical se gira hasta tumbarse: de + a –. */
+.pregunta summary::after {
+  transform: rotate(90deg);
 }
 
 .pregunta[open] summary::after {
-  content: "–";
+  transform: rotate(0deg);
+}
+
+/* La respuesta entra sin dar el salto seco de siempre. */
+.pregunta[open] > p {
+  animation: desplegar 0.35s ease-out;
+}
+
+@keyframes desplegar {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pregunta summary::before,
+  .pregunta summary::after,
+  .pregunta[open] > p {
+    transition: none;
+    animation: none;
+  }
 }
 
 /* El contorno del mapa se dibuja solo al aparecer, como en Utópica. */

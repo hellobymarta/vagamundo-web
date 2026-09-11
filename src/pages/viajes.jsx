@@ -4,14 +4,14 @@ import PortadaRotativa from '@/components/portada-rotativa'
 import Marca from '@/components/marca'
 import Destacados from '@/components/destacados'
 import Explorador from '@/components/explorador'
+import Maneras from '@/components/maneras'
+import Medida from '@/components/medida'
 import Marquesina from '@/components/marquesina'
 import TodosDestinos from '@/components/todos-destinos'
 import BandaOscura from '@/components/banda-oscura'
 import Boletin from '@/components/boletin'
 import Seccion from '@/components/seccion'
-import Partido from '@/components/partido'
 import Motivaciones from '@/components/motivaciones'
-import Pasos from '@/components/pasos'
 import Testimonios from '@/components/testimonios'
 import Preguntas from '@/components/preguntas'
 import ListaViajes from '@/components/lista-viajes'
@@ -20,6 +20,7 @@ import Aviso from '@/components/aviso'
 import Boton from '@/components/boton'
 import { useViajes } from '@/hooks/use-viajes'
 import { enPalabras } from '@/formato'
+import { MOTIVACIONES, viajesDeMotivacion } from '@/config/motivaciones'
 import {
   CUANTOS_DESTACADOS,
   FOTOS,
@@ -29,20 +30,19 @@ import {
 } from '@/config/constantes'
 
 // Página principal. El esqueleto es el de NUBA (portada rotativa, bloque de
-// marca, destinos destacados, experiencias, boletín y pie a columnas) y
+// marca, plazas que se acaban, experiencias, boletín y pie a columnas) y
 // dentro van las dos piezas de Utópica: el explorador con la silueta del
 // país y la marquesina de nombres.
 export default function Viajes() {
   const { viajes, cargando, error, aviso, cargarViajes } = useViajes()
 
-  // El filtro por motivación se guarda en la URL, no en el estado:
-  // así se puede compartir el enlace y funciona el botón de atrás.
+  // El filtro se guarda en la URL, no en el estado: así se puede compartir
+  // el enlace y el botón de atrás funciona solo.
   const [parametros] = useSearchParams()
   const motivacion = parametros.get(PARAMETRO_MOTIVACION)
 
-  const visibles = motivacion
-    ? viajes.filter(({ categoria }) => categoria === motivacion)
-    : viajes
+  const elegida = MOTIVACIONES.find(({ id }) => id === motivacion)
+  const visibles = viajesDeMotivacion(viajes, motivacion)
 
   const destacados = viajes.slice(0, CUANTOS_DESTACADOS)
   const paraExplorar = viajes.slice(0, 6)
@@ -56,8 +56,9 @@ export default function Viajes() {
       {!cargando && destacados.length > 0 && (
         <Seccion
           tono={TONOS.HUESO}
-          etiqueta="Destinos Vagamundo"
-          titulo="Tres que se cierran antes que los demás"
+          etiqueta="Plazas que se acaban"
+          titulo="Reserva tu plaza antes de que se agote"
+          texto="Son los cuatro que cerramos primero cada temporada. Las salidas llevan de cinco a ocho personas, así que cuando quedan dos plazas quedan dos de verdad."
           centrado
         >
           <Destacados viajes={destacados} />
@@ -66,57 +67,37 @@ export default function Viajes() {
 
       {!cargando && <Explorador viajes={paraExplorar} />}
 
-      <Seccion tono={TONOS.CREMA} etiqueta="Viajes Vagamundo">
-        <Partido
-          imagen={FOTOS.BARCA}
-          alt="Barca de madera fondeada frente a Positano"
-          rotulo="Positano"
-          pie="La barca de Salvatore sale a las siete, antes de que se levante el viento."
-          invertido
-        >
-          <h2 className="titular t-seccion">
-            El mar se ve mejor desde una <em className="titular-cursiva">barca de madera</em>
-          </h2>
-          <p className="mt-8 leading-relaxed text-suave md:text-lg">
-            Nos movemos como se mueve la gente de allí: en barca cuando hay mar, andando cuando la
-            carretera no merece la pena, y en el autobús de línea sin ninguna vergüenza.
-          </p>
-          <div className="mt-10">
-            <div className="filete" />
-            <p className="etiqueta mt-5 text-suave">
-              Ocho viajeros · un solo guía · sin autocares
-            </p>
-          </div>
-          <div className="mt-10">
-            <Boton a="/#catalogo" variante="contorno">
-              Ver el catálogo
-            </Boton>
-          </div>
-        </Partido>
+      <Seccion
+        tono={TONOS.CREMA}
+        etiqueta="Viajes Vagamundo"
+        titulo="Un día cualquiera, en tres viajes distintos"
+        texto="La manera de viajar no se explica con adjetivos, así que aquí van tres jornadas reales de tres rutas que no se parecen en nada."
+      >
+        <Maneras />
       </Seccion>
 
       <Seccion
         tono={TONOS.HUESO}
         etiqueta="Imagina tu viaje"
         titulo="¿Qué te apetece esta vez?"
-        texto="Las maneras de mirar el catálogo. Elige una y abajo se queda solo lo que encaja."
+        texto="Tres maneras de mirar el catálogo. Elige una y abajo se queda solo lo que encaja."
         centrado
       >
         <Motivaciones activa={motivacion} viajes={viajes} />
       </Seccion>
-
-      <Marquesina />
 
       <section id="catalogo" className="scroll-mt-24 bg-crema px-6 py-28 md:px-10 md:py-36">
         <div className="mx-auto max-w-[1440px]">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
               <p className="etiqueta text-terracota-acento">El catálogo</p>
+
               <h2 className="titular t-seccion mt-6">
-                {motivacion
-                  ? `Viajes de ${motivacion.toLowerCase()}`
+                {elegida
+                  ? elegida.tituloCatalogo
                   : `Los ${enPalabras(viajes.length)} viajes, uno por uno`}
               </h2>
+
               <p className="mt-6 max-w-lg text-suave">
                 {cargando
                   ? 'Consultando la API…'
@@ -125,7 +106,7 @@ export default function Viajes() {
             </div>
 
             <div className="flex flex-wrap gap-3">
-              {motivacion && (
+              {elegida && (
                 <Boton a="/#catalogo" variante="contorno" compacto>
                   Ver todos
                 </Boton>
@@ -153,15 +134,18 @@ export default function Viajes() {
         </div>
       </section>
 
-      <Seccion
-        tono={TONOS.TERRACOTA}
-        etiqueta="Viajes a medida"
-        titulo="Y si lo preferís solo para vosotros, en tres pasos"
-      >
-        <Pasos />
-      </Seccion>
+      <Medida />
 
-      <Seccion tono={TONOS.HUESO} etiqueta="Lo que cuentan">
+      {/* La marquesina hace de respiro entre la banda de color de los viajes
+          a medida y las opiniones, que vuelven al fondo claro. */}
+      <Marquesina />
+
+      <Seccion
+        tono={TONOS.HUESO}
+        etiqueta="Lo que cuentan"
+        titulo="Cuatro que han vuelto"
+        centrado
+      >
         <Testimonios />
       </Seccion>
 
@@ -169,7 +153,7 @@ export default function Viajes() {
         tono={TONOS.CREMA}
         etiqueta="Todos los destinos"
         titulo="Donde estamos y donde queremos estar"
-        texto="En negro, los nueve que están abiertos ahora mismo. En gris, los que estamos preparando para 2027."
+        texto="En negro, los que tienen plazas abiertas ahora mismo. En gris, los que estamos preparando para 2027: no aparecen hasta que los hemos hecho enteros nosotras."
       >
         <TodosDestinos viajes={viajes} />
 
@@ -184,7 +168,7 @@ export default function Viajes() {
         tono={TONOS.AMARILLO}
         etiqueta="Todo lo que hay que saber"
         titulo="Las dudas de siempre"
-        centrado
+        texto="Lo que nos preguntáis por teléfono antes de decidiros, contestado igual que lo contestamos allí."
       >
         <Preguntas />
       </Seccion>

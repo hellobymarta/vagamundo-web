@@ -1,98 +1,67 @@
 import { Link } from 'react-router-dom'
 
-import {
-  CATEGORIAS,
-  PARAMETRO_MOTIVACION,
-  PIES_MOTIVACION,
-  PIE_MOTIVACION_POR_DEFECTO,
-} from '@/config/constantes'
-import { capitalizar } from '@/formato'
+import { PARAMETRO_MOTIVACION } from '@/config/constantes'
+import { MOTIVACIONES, esDeMotivacion } from '@/config/motivaciones'
 
-// El pie de una categoría, venga escrita como venga: en la base de datos
-// unas están en minúscula y otras no.
-function buscarPie(categoria) {
-  const encontrada = Object.keys(PIES_MOTIVACION).find(
-    (clave) => clave.toLowerCase() === categoria.toLowerCase()
-  )
-
-  return encontrada ? PIES_MOTIVACION[encontrada] : PIE_MOTIVACION_POR_DEFECTO
-}
-
-// Rejilla de motivaciones, como el «Imagina tu viaje» de Utópica.
+// «Imagina tu viaje», reducido a tres puertas de entrada: playa, cultural y
+// naturaleza. Cada una agrupa varias categorías de la base de datos, así que
+// el catálogo se puede seguir guardando con el detalle que tenga.
 //
-// Se construye con las categorías que hay de verdad en el catálogo, no con
-// una lista escrita a mano: así nunca aparece una baldosa con cero viajes,
-// y si mañana se crea un viaje con una categoría nueva, sale sola.
+// La motivación elegida se escribe en la URL, no en el estado: el enlace se
+// puede compartir y el botón de atrás funciona solo.
 //
-// Cada baldosa filtra el catálogo escribiendo su categoría en la URL, de
-// modo que el filtro se puede compartir y no hace falta guardar nada.
-function ordenar(categorias) {
-  // Primero las del orden de siempre; las que no estén, detrás y por alfabeto.
-  const orden = CATEGORIAS.map((categoria) => categoria.toLowerCase())
-
-  return [...categorias].sort((una, otra) => {
-    const posicionUna = orden.indexOf(una.toLowerCase())
-    const posicionOtra = orden.indexOf(otra.toLowerCase())
-
-    if (posicionUna !== -1 && posicionOtra !== -1) return posicionUna - posicionOtra
-    if (posicionUna !== -1) return -1
-    if (posicionOtra !== -1) return 1
-    return una.localeCompare(otra, 'es')
-  })
-}
-
+// Deconstruimos cada motivación dentro del map y la key es su id.
 export default function Motivaciones({ activa, viajes }) {
-  // Un Set quita las repetidas, y filtramos los viajes que vengan sin categoría.
-  const categorias = ordenar(new Set(viajes.map(({ categoria }) => categoria).filter(Boolean)))
-
-  if (categorias.length === 0) return null
-
   return (
-    <div className="grid gap-x-12 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-      {categorias.map((categoria) => {
-        const seleccionada = activa === categoria
-        const cuantos = viajes.filter((viaje) => viaje.categoria === categoria).length
-        const pie = buscarPie(categoria)
+    <div className="grid gap-x-8 gap-y-12 md:grid-cols-3">
+      {MOTIVACIONES.map(({ id, titulo, entradilla, texto, foto, fotoAlt }) => {
+        const seleccionada = activa === id
+        const cuantos = viajes.filter(({ categoria }) => esDeMotivacion(categoria, id)).length
 
         return (
           <Link
-            key={categoria}
-            to={
-              seleccionada ? '/#catalogo' : `/?${PARAMETRO_MOTIVACION}=${categoria}#catalogo`
-            }
-            className="group block"
+            key={id}
+            to={seleccionada ? '/#catalogo' : `/?${PARAMETRO_MOTIVACION}=${id}#catalogo`}
+            aria-pressed={seleccionada}
+            className="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracota-acento"
           >
-            <div
-              className={`filete transition-all duration-500 ${
-                seleccionada ? 'bg-terracota-acento' : 'group-hover:bg-terracota-acento'
-              }`}
-            />
-
-            <div className="flex items-baseline justify-between gap-4 pt-6">
-              <h3
-                className={`titular text-2xl transition ${
-                  seleccionada ? 'text-terracota-acento' : 'group-hover:text-terracota-acento'
+            <div className="relative aspect-[5/6] overflow-hidden">
+              <img
+                src={foto}
+                alt={fotoAlt}
+                loading="lazy"
+                className={`absolute inset-0 h-full w-full object-cover transition duration-[1400ms] ease-out group-hover:scale-[1.06] ${
+                  seleccionada ? 'scale-[1.06]' : ''
                 }`}
-              >
-                {capitalizar(categoria)}
-              </h3>
+              />
 
-              <p className="etiqueta cifras text-suave">
-                {cuantos} {cuantos === 1 ? 'viaje' : 'viajes'}
-              </p>
+              <div
+                className={`absolute inset-0 bg-gradient-to-t transition duration-700 ${
+                  seleccionada
+                    ? 'from-tinta/95 via-tinta/70 to-tinta/20'
+                    : 'from-tinta/95 via-tinta/55 to-tinta/5 group-hover:via-tinta/65'
+                }`}
+              />
+
+              <div className="absolute inset-x-0 bottom-0 px-7 pb-7 text-white">
+                <p className="etiqueta text-white/60">{entradilla}</p>
+
+                <h3 className="titular mt-3 text-3xl leading-tight">{titulo}</h3>
+
+                {/* Altura fija: los tres pies ocupan dos líneas pasen las que
+                    pasen, así las baldosas no bailan entre ellas. */}
+                <p className="mt-4 min-h-[4.5rem] max-w-xs text-sm leading-relaxed text-white/75">
+                  {texto}
+                </p>
+
+                <p className="etiqueta mt-5 flex items-center gap-3">
+                  <span className={seleccionada ? 'text-white' : 'text-white/70'}>
+                    {seleccionada ? 'Quitar filtro' : `Ver los ${cuantos}`}
+                  </span>
+                  <span aria-hidden="true" className="h-px w-8 bg-white/50" />
+                </p>
+              </div>
             </div>
-
-            <p className="mt-3 text-sm leading-relaxed text-suave">{pie}</p>
-
-            <p
-              className={`etiqueta mt-5 transition duration-300 ${
-                seleccionada
-                  ? 'text-terracota-acento'
-                  : 'text-suave/50 group-hover:text-terracota-acento'
-              }`}
-            >
-              {seleccionada ? 'Quitar filtro' : 'Saber más'}
-            </p>
           </Link>
         )
       })}

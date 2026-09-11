@@ -58,11 +58,14 @@ export default function Explorador({ viajes }) {
             {nombreCorto(anteriorViaje.destino)}
           </button>
 
-          <div className="px-2 text-center md:px-8">
+          {/* Altura fija. Los nombres miden lo que miden —«Namibia» y
+              «Polinesia Francesa» no ocupan lo mismo— y sin reservar el
+              hueco la sección entera daba un salto en cada cambio. */}
+          <div className="flex min-h-[7.5rem] flex-col justify-center px-2 text-center md:min-h-[9.5rem] md:px-8">
             {/* El nombre del viaje, en pequeño y en mayúsculas espaciadas. */}
-            <p className="etiqueta text-white/55">{nombre}</p>
+            <p className="etiqueta line-clamp-1 text-white/55">{nombre}</p>
 
-            <h2 className="titular-cursiva t-destino mt-4 text-balance text-white">
+            <h2 className="titular-cursiva t-destino mt-4 line-clamp-2 text-balance text-white">
               {nombreCorto(destino)}
             </h2>
           </div>
@@ -76,9 +79,11 @@ export default function Explorador({ viajes }) {
           </button>
         </div>
 
-        {descripcion && (
-          <p className="mt-8 max-w-xl text-center leading-relaxed text-white/85">{descripcion}</p>
-        )}
+        {/* Lo mismo con la descripción: se recorta a tres líneas y el hueco
+            está reservado, aunque el viaje venga sin ella. */}
+        <p className="mt-8 line-clamp-4 min-h-[6.5rem] max-w-xl text-center leading-relaxed text-white/85 md:line-clamp-3 md:min-h-[5rem]">
+          {descripcion}
+        </p>
 
         <div className="mt-10">
           <Boton a={`/viaje/${_id}`} variante="claro">

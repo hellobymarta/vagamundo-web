@@ -1,6 +1,6 @@
 ### Semillas del catálogo · PEC 4
 #
-# Los doce viajes de Vagamundo. Se lanzan con la extensión REST Client de
+# Los once viajes de Vagamundo. Se lanzan con la extensión REST Client de
 # VS Code: abre este archivo y pulsa "Send Request" encima de cada bloque.
 # También sirven de prueba manual del POST.
 #
@@ -179,23 +179,7 @@ Content-Type: application/json
   "itinerario": "Día 1 · Vuelo a Delhi.\nDía 2 · Delhi. La vieja y la nueva, en rickshaw y en metro.\nDía 3 · Samode y Jaipur, la ciudad rosa.\nDía 4 · Jaipur. Amber, el observatorio y los tintoreros del bazar.\nDía 5 · Fathepur Sikri, la ciudad que se abandonó por falta de agua. Continuación a Agra.\nDía 6 · El Taj Mahal a las seis de la mañana. Por la tarde, el fuerte rojo.\nDía 7 · Jhansi, Orchha y Khajuraho.\nDía 8 · Los templos de Khajuraho y vuelo a Benarés.\nDía 9 · Benarés. Los ghats al amanecer desde una barca y el aarti de la tarde.\nDía 10 · Vuelo de regreso vía Delhi.\nDía 11 · Llegada."
 }
 
-### 11 · La Ruta de la Seda
-POST {{base}}/api/travels
-Content-Type: application/json
-
-{
-  "nombre": "La Ruta de la Seda",
-  "destino": "Uzbekistán",
-  "descripcion": "Samarcanda, Bujará y Jiva en ocho días. Cúpulas de azulejo turquesa, melón en cada comida y trenes de alta velocidad entre oasis, que casi nadie se espera.",
-  "precio": 1840,
-  "duracionDias": 8,
-  "categoria": "Cultural",
-  "imagen": "/uzbekistan-registan.jpg",
-  "disponible": true,
-  "itinerario": "Día 1 · Vuelo a Tashkent.\nDía 2 · Tashkent. El bazar de Chorsu y el metro soviético, estación por estación.\nDía 3 · Tren a Samarcanda. El Registán al caer la tarde, cuando se enciende.\nDía 4 · Samarcanda. Shakhi-Zinda, el observatorio de Ulugh Beg y la mezquita Bibi-Khanum.\nDía 5 · Bujará. El mausoleo de los Samánidas y el manantial de Chasmai Ayub.\nDía 6 · Bujará entera a pie: la Ciudadela Ark, la madrasa Miri Arab y la mezquita Kalon.\nDía 7 · Jiva, la ciudad amurallada. Atardecer desde la muralla.\nDía 8 · Vuelta desde Urgench."
-}
-
-### 12 · Japón
+### 11 · Japón
 POST {{base}}/api/travels
 Content-Type: application/json
 
