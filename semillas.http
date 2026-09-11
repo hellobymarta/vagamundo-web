@@ -1,6 +1,6 @@
 ### Semillas del catálogo · PEC 4
 #
-# Los once viajes de Vagamundo. Se lanzan con la extensión REST Client de
+# Los diez viajes de Vagamundo. Se lanzan con la extensión REST Client de
 # VS Code: abre este archivo y pulsa "Send Request" encima de cada bloque.
 # También sirven de prueba manual del POST.
 #
@@ -102,13 +102,13 @@ Content-Type: application/json
 {
   "nombre": "Jordania, el desierto por dentro",
   "destino": "Jordania",
-  "descripcion": "Petra sin la cola de la mañana, dos noches en un campamento beduino de Wadi Rum y el Mar Muerto al final, cuando ya no quedan fuerzas para andar.",
+  "descripcion": "Petra sin la cola de la mañana, dos noches en un campamento beduino de Wadi Rum y el mar Muerto al final, cuando ya no quedan fuerzas para andar.",
   "precio": 1450,
   "duracionDias": 8,
   "categoria": "Desierto",
   "imagen": "/jordania-wadirum.jpg",
   "disponible": true,
-  "itinerario": "Día 1 · Llegada a Amman.\nDía 2 · Jerash, la ciudad romana mejor conservada de Oriente. Tarde en la ciudadela de Amman.\nDía 3 · El castillo de Kerak y los mosaicos de Madaba. Noche a las puertas de Petra.\nDía 4 · Petra entera, desde el Siq hasta el Monasterio. Ocho horas y merece cada una.\nDía 5 · Aqaba y el Mar Rojo. Por la tarde, entrada a Wadi Rum en 4x4.\nDía 6 · Wadi Rum. Amanecer en las dunas y noche en el campamento.\nDía 7 · El Mar Muerto. Flotar y no hacer nada más.\nDía 8 · Vuelta desde Amman."
+  "itinerario": "Día 1 · Llegada a Ammán.\nDía 2 · Jerash, la ciudad romana mejor conservada de Oriente. Tarde en la ciudadela de Ammán.\nDía 3 · El castillo de Kerak y los mosaicos de Madaba. Noche a las puertas de Petra.\nDía 4 · Petra entera, desde el Siq hasta el Monasterio. Ocho horas, y merece la pena cada una.\nDía 5 · Aqaba y el mar Rojo. Por la tarde, entrada a Wadi Rum en 4x4.\nDía 6 · Wadi Rum. Amanecer en las dunas y noche en el campamento.\nDía 7 · El mar Muerto. Flotar y no hacer nada más.\nDía 8 · Vuelta desde Ammán."
 }
 
 # ─────────────────────────────── AMÉRICA LATINA ───────────────────────────────
@@ -129,23 +129,7 @@ Content-Type: application/json
   "itinerario": "Día 1 · Vuelo a Fortaleza.\nDía 2 · Avión a São Luís y tarde libre por el centro colonial.\nDía 3 · Barreirinhas. Por la tarde, 4x4 hasta la Laguna Azul para el baño y el atardecer.\nDía 4 · El río Preguiças en lancha: Vassouras, Mandacaru y su faro. Noche en Atins.\nDía 5 · Atins. Caminata por las dunas del parque y baño en las lagunas de lluvia.\nDía 6 · Cruce a Caburé y ruta hasta Parnaíba. Los pájaros guarás al ponerse el sol.\nDía 7 · Parnaíba a Jericoacoara en 4x4, con dos ferris y kilómetros de playa desierta.\nDía 8 · Jericoacoara en buggy: Lagoa Azul, Lagoa do Paraíso y las hamacas dentro del agua.\nDía 9 · Vuelta a Fortaleza por la costa.\nDía 10 · Vuelo de regreso.\nDía 11 · Llegada."
 }
 
-### 8 · Guatemala esencial
-POST {{base}}/api/travels
-Content-Type: application/json
-
-{
-  "nombre": "Guatemala, del lago a la selva",
-  "destino": "Guatemala",
-  "descripcion": "Tres volcanes desde la terraza del desayuno, el mercado de Chichicastenango un jueves y Tikal al amanecer, cuando los monos aulladores se oyen antes de verse.",
-  "precio": 1960,
-  "duracionDias": 9,
-  "categoria": "Cultural",
-  "imagen": "/guatemala-tikal.jpg",
-  "disponible": true,
-  "itinerario": "Día 1 · Vuelo a Ciudad de Guatemala.\nDía 2 · Chichicastenango. El mercado de los jueves y la iglesia de Santo Tomás.\nDía 3 · Lago Atitlán en lancha: Santiago y San Juan La Laguna.\nDía 4 · Atitlán a Antigua, entre cafetales.\nDía 5 · Antigua. Día completo: el mercado, las ruinas y una clase de cocina.\nDía 6 · Antigua a Ciudad de Guatemala.\nDía 7 · Tikal. Vuelo temprano y día completo en la selva del Petén.\nDía 8 · Vuelo de regreso.\nDía 9 · Llegada."
-}
-
-### 9 · Costa Rica de punta a punta
+### 8 · Costa Rica de punta a punta
 POST {{base}}/api/travels
 Content-Type: application/json
 
@@ -163,7 +147,7 @@ Content-Type: application/json
 
 # ─────────────────────────────────── ASIA ───────────────────────────────────
 
-### 10 · India Masala
+### 9 · India Masala
 POST {{base}}/api/travels
 Content-Type: application/json
 
@@ -176,10 +160,10 @@ Content-Type: application/json
   "categoria": "Ciudad",
   "imagen": "/india-mov.jpg",
   "disponible": true,
-  "itinerario": "Día 1 · Vuelo a Delhi.\nDía 2 · Delhi. La vieja y la nueva, en rickshaw y en metro.\nDía 3 · Samode y Jaipur, la ciudad rosa.\nDía 4 · Jaipur. Amber, el observatorio y los tintoreros del bazar.\nDía 5 · Fathepur Sikri, la ciudad que se abandonó por falta de agua. Continuación a Agra.\nDía 6 · El Taj Mahal a las seis de la mañana. Por la tarde, el fuerte rojo.\nDía 7 · Jhansi, Orchha y Khajuraho.\nDía 8 · Los templos de Khajuraho y vuelo a Benarés.\nDía 9 · Benarés. Los ghats al amanecer desde una barca y el aarti de la tarde.\nDía 10 · Vuelo de regreso vía Delhi.\nDía 11 · Llegada."
+  "itinerario": "Día 1 · Vuelo a Delhi.\nDía 2 · Delhi. La vieja y la nueva, en rickshaw y en metro.\nDía 3 · Samode y Jaipur, la ciudad rosa.\nDía 4 · Jaipur. Amber, el observatorio y los tintoreros del bazar.\nDía 5 · Fatehpur Sikri, la ciudad que se abandonó por falta de agua. Continuación a Agra.\nDía 6 · El Taj Mahal a las seis de la mañana. Por la tarde, el fuerte rojo.\nDía 7 · Jhansi, Orchha y Khajuraho.\nDía 8 · Los templos de Khajuraho y vuelo a Benarés.\nDía 9 · Benarés. Los ghats al amanecer desde una barca y el aarti de la tarde.\nDía 10 · Vuelo de regreso vía Delhi.\nDía 11 · Llegada."
 }
 
-### 11 · Japón
+### 10 · Japón
 POST {{base}}/api/travels
 Content-Type: application/json
 

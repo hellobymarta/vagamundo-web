@@ -62,7 +62,6 @@ export const FOTOS = {
   INDIA_GANESHA: '/india-cultura.jpg',
   INDIA_AMRITSAR: '/india-watter.jpg',
   INDIA_CALLE: '/india-tuktuk.jpg',
-  GUATEMALA: '/guatemala-tikal.jpg',
   COSTARICA: '/costarica-tucan.jpg',
   COSTARICA_PICO: '/costarica-pico.jpg',
   COSTARICA_ARENAL: '/costarica-arenal.jpg',
@@ -136,38 +135,38 @@ export const PORTADAS = [
   },
 ]
 
-// Lo que somos, contado en dos párrafos que se ven siempre y cuatro bloques
-// que se despliegan. El componente Marca decide qué enseña y qué esconde;
-// aquí solo está el texto.
+// De dónde sale Vagamundo, contado en primera persona. Dos párrafos que se
+// ven siempre y cuatro bloques que se despliegan. El componente Marca decide
+// qué enseña y qué esconde; aquí solo está el texto.
 export const MANIFIESTO = {
   entrada: [
-    'Vagamundo empezó en 1994 y no empezó como una agencia. Empezó como una libreta: dos semanas en la costa amalfitana apuntando quién abría la panadería a las seis, qué día no salía el barco y en qué terraza no había que sentarse. La primera ruta salió de esa libreta. La segunda, de las cartas de quienes volvían.',
-    'Treinta años después el método no ha cambiado. Volvemos a los mismos sitios año tras año hasta que dejan de ser un destino y se convierten en un barrio, y solo entonces abrimos plazas.',
+    'Nací en 1994 y no recuerdo un momento en el que no quisiera saber cómo era el resto del mundo. Vagamundo sale de ahí: de una curiosidad que, en vez de pasárseme con los años, se me ha ido haciendo más grande.',
+    'Cuando preparo un viaje ya estoy viajando. Me paso semanas leyendo sobre un sitio —blogs, foros, artículos, folletos viejos, mapas, fotografías de gente que estuvo allí hace años— hasta que puedo cerrar los ojos y recorrerlo. Esa parte me gusta tanto como llegar, y es la que quería compartir con alguien.',
   ],
   bloques: [
     {
-      id: 'como',
-      titulo: 'Ninguna ruta se vende sin haberla hecho antes',
+      id: 'mirar',
+      titulo: 'Dos cosas que me cambiaron la manera de mirar',
       texto:
-        'Cada viaje se recorre entero antes de entrar en el catálogo, en la misma época del año en que lo vamos a ofrecer y con el mismo presupuesto. Se duerme en las camas, se come en los sitios, se cronometra el trayecto de verdad y se conoce en persona a quien os va a recibir. Si algo no aguanta esa prueba, no se vende: se cae del itinerario o el destino espera un año más.',
+        'La primera, un amanecer en el Serengeti con la migración delante: un millón y medio de ñus y doscientas cincuenta mil cebras haciendo los ochocientos kilómetros que repiten cada año entre Tanzania y el Masai Mara keniano. La segunda, casi mil kilómetros al este y ya en el Índico: perderse en Stone Town, la ciudad vieja de Zanzíbar, la isla de especias que también es Tanzania y donde en cinco calles se mezclan África, Arabia y la India. El mismo país, y no se parecen en nada. Desde entonces no me interesa tanto ir a un país como entender qué guarda dentro.',
+    },
+    {
+      id: 'itinerario',
+      titulo: 'De dónde sale un itinerario',
+      texto:
+        'Nunca empiezo eligiendo un destino y rellenando luego los días. Empiezo al revés: qué tiene ese sitio que merezca doce horas de avión. Meses leyendo, descartando y preguntando a gente de allí, y después un viaje entero para comprobarlo en la misma época del año en que lo vamos a ofrecer. Lo que no aguanta esa prueba se cae, y si se cae demasiado, el destino espera un año más.',
     },
     {
       id: 'grupo',
-      titulo: 'De cinco a ocho personas, nunca más',
+      titulo: 'De cinco a ocho personas, ni una más',
       texto:
-        'Es el número que cabe en una barca, en la mesa de un restaurante de pueblo sin tener que reservar el local entero y en un todoterreno con el guía delante. A partir de nueve el viaje cambia de naturaleza: aparecen el autocar, el micrófono y el horario, y ya nadie entra en la cocina de nadie. Por eso las plazas son las que son y se acaban.',
+        'Cinco para que el viaje salga, ocho como tope. Ni una más, aunque haya lista de espera: en cuanto sois nueve hace falta un autocar, un micrófono y un horario, y se acabó lo de comer donde come la gente del pueblo o cambiar el plan a media mañana porque ha salido el sol. El grupo pequeño no es un detalle del folleto, es la mitad de lo que estáis comprando.',
     },
     {
-      id: 'diferencia',
-      titulo: 'Entre nosotras y el mostrador hay poca distancia',
+      id: 'trato',
+      titulo: 'Con quién habláis, de principio a fin',
       texto:
-        'No hay mayorista en medio. Habláis con la persona que ha escrito el itinerario, y es la misma que coge el teléfono en agosto si hay que cambiar algo sobre la marcha. No trabajamos con comisiones de excursiones ni hay paradas comerciales encubiertas: lo que está en el programa está porque merece la pena, no porque alguien lo pague.',
-    },
-    {
-      id: 'experiencias',
-      titulo: 'Lo que buscamos cuando montamos un día',
-      texto:
-        'Que una cosa se entienda, no solo se vea. La mañana en que el mercado está lleno y no la del autobús; el mirador al que se sube cuando ya no queda nadie; la cena en casa de alguien en lugar del restaurante con carta en cuatro idiomas. Y huecos: días sin plan, que en un viaje bien montado son los que más se agradecen.',
+        'Con la misma persona siempre: quien escribe el itinerario es quien contesta los correos, quien coge el teléfono cuando tenéis dudas antes de salir y quien está localizable mientras estáis fuera. Sin centralita, sin números de expediente y sin comerciales por medio. Y al volver preguntamos qué tal fue, porque de esas respuestas sale el viaje del año siguiente.',
     },
   ],
 }
@@ -226,9 +225,9 @@ export const TONOS = {
 // Las tres filas de la marquesina. Nombres que se reconocen de un vistazo:
 // pasa deprisa y en letra enorme, así que no es el sitio para los matices.
 export const FILAS_MARQUESINA = [
-  ['Positano', 'Santorini', 'Amalfi', 'Sicilia', 'Creta', 'Lisboa'],
-  ['Marrakech', 'Petra', 'Namibia', 'El Cairo', 'Zanzíbar', 'Ciudad del Cabo'],
-  ['Kioto', 'Bali', 'Bora Bora', 'Islandia', 'Río de Janeiro', 'Nueva York'],
+  ['Positano', 'Santorini', 'Amalfi', 'Sicilia', 'Estambul', 'Reikiavik'],
+  ['Marrakech', 'Petra', 'Wadi Rum', 'Etosha', 'Fez', 'Namibia'],
+  ['Kioto', 'Bora Bora', 'Tokio', 'Río de Janeiro', 'Hanói', 'Sídney'],
 ]
 
 
@@ -254,8 +253,8 @@ export const PASOS = [
     numero: '03',
     titulo: 'Y allí, alguien de allí',
     texto:
-      'Un guía del sitio para vuestro grupo, que conoce al del puerto y al del museo. Y un teléfono que se coge también el quince de agosto.',
-    dato: 'Asistencia 24 h',
+      'Un guía del sitio solo para vuestro grupo, que conoce a la gente del puerto y del museo. Mientras estáis fuera tenéis además un teléfono directo con nosotras, para lo que surja.',
+    dato: 'Asistencia durante todo el viaje',
   },
 ]
 

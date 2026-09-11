@@ -50,14 +50,18 @@ export default function Medida() {
           <ol className="flex flex-col justify-between gap-12">
             {PASOS.map(({ numero, titulo, texto, dato }) => (
               <li key={numero} className="border-t border-terracota-acento/25 pt-7">
-                <div className="flex items-baseline justify-between gap-6">
-                  <p className="titular cifras text-4xl text-terracota-acento/45">{numero}</p>
-                  <p className="etiqueta text-terracota-acento">{dato}</p>
-                </div>
+                <p className="titular cifras text-4xl text-terracota-acento/45">{numero}</p>
 
                 <h3 className="titular mt-5 text-2xl leading-snug">{titulo}</h3>
 
                 <p className="mt-3 leading-relaxed text-suave">{texto}</p>
+
+                {/* La letra pequeña, debajo del párrafo al que pertenece y no
+                    en una columna aparte, donde no se sabía de cuál era. */}
+                <p className="etiqueta mt-5 flex items-center gap-3 text-terracota-acento">
+                  <span aria-hidden="true" className="h-px w-6 bg-terracota-acento/50" />
+                  {dato}
+                </p>
               </li>
             ))}
           </ol>

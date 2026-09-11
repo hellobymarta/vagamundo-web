@@ -154,10 +154,19 @@ label {
   }
 }
 
-/* ---- Carril horizontal --------------------------------------------------- */
+/* ---- Carril horizontal ---------------------------------------------------
+   Un contenedor que se desplaza a lo ancho: las tarjetas se paran en su
+   sitio (scroll-snap) y la barra se esconde, porque el gesto es arrastrar.
+
+   `contain: paint` es lo que evita que la página entera se pueda mover en
+   horizontal. Medido en Chromium: sin él, y aunque el carril tenga su propio
+   overflow, el ancho de las tarjetas de dentro seguía contando para el
+   documento y se podía arrastrar la web hacia la derecha. */
 .carril {
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
+  overflow-y: hidden;
+  contain: paint;
 }
 
 .carril::-webkit-scrollbar {

@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+
+import { desplazarHasta } from '@/hooks/use-ancla'
 
 // Botón reutilizable. Las dos webs de referencia usan dos formas distintas:
 // NUBA pone rectángulos de contorno fino sobre la foto («SOLICITAR
@@ -28,6 +30,8 @@ export default function Boton({
   children,
   ...resto
 }) {
+  const { pathname } = useLocation()
+
   const tamano = compacto ? 'px-6 py-2.5' : 'px-10 py-4'
 
   const estilo = `etiqueta inline-flex items-center justify-center border ${FORMAS[forma]}
@@ -36,8 +40,21 @@ export default function Boton({
     ${VARIANTES[variante]} ${className}`
 
   if (a) {
+    // Enlaces a un ancla de la propia página («/#catalogo»): si ya estamos
+    // ahí, React Router no navega y el scroll no se movería. Lo hacemos a
+    // mano. Sigue siendo un <Link> de verdad, así que el clic con la rueda
+    // o con Cmd abre en otra pestaña como cualquier enlace.
+    const [ruta, ancla] = a.split('#')
+
+    function alPulsar(evento) {
+      if (ancla && pathname === (ruta || '/')) {
+        evento.preventDefault()
+        desplazarHasta(ancla)
+      }
+    }
+
     return (
-      <Link to={a} className={estilo} {...resto}>
+      <Link to={a} className={estilo} onClick={ancla ? alPulsar : undefined} {...resto}>
         {children}
       </Link>
     )

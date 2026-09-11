@@ -19,6 +19,7 @@ import Cargando from '@/components/cargando'
 import Aviso from '@/components/aviso'
 import Boton from '@/components/boton'
 import { useViajes } from '@/hooks/use-viajes'
+import { useAncla } from '@/hooks/use-ancla'
 import { enPalabras } from '@/formato'
 import { MOTIVACIONES, viajesDeMotivacion } from '@/config/motivaciones'
 import {
@@ -35,6 +36,10 @@ import {
 // país y la marquesina de nombres.
 export default function Viajes() {
   const { viajes, cargando, error, aviso, cargarViajes } = useViajes()
+
+  // Al llegar con un ancla en la dirección («/#catalogo», o el filtro de una
+  // motivación) la página baja sola hasta el catálogo.
+  useAncla()
 
   // El filtro se guarda en la URL, no en el estado: así se puede compartir
   // el enlace y el botón de atrás funciona solo.
@@ -144,7 +149,9 @@ export default function Viajes() {
         tono={TONOS.HUESO}
         etiqueta="Lo que cuentan"
         titulo="Cuatro que han vuelto"
+        texto="Dos a la vista; para ver las demás, arrastra hacia la derecha."
         centrado
+        aireArriba
       >
         <Testimonios />
       </Seccion>

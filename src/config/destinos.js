@@ -104,13 +104,13 @@ export const DESTINOS = [
     ],
   },
   {
-    id: 'portugal',
-    nombre: 'Portugal',
+    id: 'turquia',
+    nombre: 'Turquía',
     continente: 'Europa',
     titular: 'En preparación para 2027',
     entradilla:
-      'El Alentejo en abril y la costa vicentina cuando no hay nadie. Estamos cerrando las casas, que es lo que siempre cuesta.',
-    pistas: ['portugal', 'lisboa', 'alentejo', 'oporto', 'algarve', 'azores'],
+      'La costa del Egeo en barco de madera y la Capadocia fuera de la temporada de los globos. Nos falta encontrar a la persona que nos lleve por Estambul.',
+    pistas: ['turquia', 'turquía', 'estambul', 'capadocia', 'efeso', 'éfeso', 'bodrum', 'egeo'],
   },
   {
     id: 'jordania',
@@ -267,15 +267,6 @@ export const DESTINOS = [
     pistas: ['marruecos', 'marrakech', 'fez', 'esauira', 'merzouga', 'atlas'],
   },
   {
-    id: 'botsuana',
-    nombre: 'Botsuana',
-    continente: 'África',
-    titular: 'En preparación para 2027',
-    entradilla:
-      'El delta del Okavango en mokoro y sin motor. Es el destino más difícil de montar en grupo pequeño y por eso se está tomando su tiempo.',
-    pistas: ['botsuana', 'botswana', 'okavango', 'chobe', 'maun'],
-  },
-  {
     id: 'japon',
     nombre: 'Japón',
     continente: 'Asia',
@@ -383,17 +374,6 @@ export const DESTINOS = [
     entradilla:
       'Ni Río ni el Cristo. Mil kilómetros de dunas, lagunas que solo existen medio año y pueblos de pescadores a los que se llega en 4x4.',
     pistas: ['brasil', 'brazil', 'lencois', 'lençóis', 'jericoacoara', 'fortaleza', 'bahia'],
-  },
-  {
-    id: 'guatemala',
-    nombre: 'Guatemala',
-    continente: 'América',
-    foto: FOTOS.GUATEMALA,
-    fotoAlt: 'El templo del Gran Jaguar en Tikal',
-    titular: 'Tres volcanes desde el desayuno',
-    entradilla:
-      'Un lago con doce pueblos alrededor, el mercado más ruidoso de Centroamérica y una ciudad maya que la selva se tragó durante mil años.',
-    pistas: ['guatemala', 'tikal', 'antigua', 'atitlan', 'atitlán', 'chichicastenango'],
   },
   {
     id: 'india',
@@ -637,17 +617,6 @@ export const DESTINOS = [
     entradilla:
       'El centro rojo y el arrecife, con comunidades aborígenes que llevan la visita ellas mismas. Es la parte que estamos cerrando.',
     pistas: ['australia', 'uluru', 'sidney', 'sydney', 'cairns', 'tasmania'],
-  },
-  {
-    id: 'bolivia',
-    nombre: 'Bolivia',
-    continente: 'América',
-    foto: FOTOS.SALAR,
-    fotoAlt: 'Un salar al atardecer',
-    titular: 'En preparación para 2027',
-    entradilla:
-      'El salar de Uyuni sin caravana de todoterrenos, que es más difícil de lo que parece. Estamos buscando la manera.',
-    pistas: ['bolivia', 'uyuni', 'la paz'],
   },
   {
     id: 'mexico',

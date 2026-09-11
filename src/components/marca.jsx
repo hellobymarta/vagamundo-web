@@ -23,8 +23,8 @@ export default function Marca({ cuantos }) {
           <p className="etiqueta text-terracota-acento">Desde 1994</p>
 
           <h2 className="titular t-seccion mt-6">
-            Viajes <em className="titular-cursiva">de autor</em> por el Mediterráneo, y algunos
-            bastante más lejos
+            Un viaje empieza <em className="titular-cursiva">mucho antes</em> de subirse a un
+            avión
           </h2>
         </div>
 

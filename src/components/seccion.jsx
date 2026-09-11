@@ -8,13 +8,17 @@ export default function Seccion({
   texto,
   id,
   centrado = false,
+  // Aire de más por arriba, para las secciones que vienen justo detrás de
+  // una banda de color y necesitan separarse de ella.
+  aireArriba = false,
   ancho = 'max-w-[1440px]',
   children,
 }) {
   const alineado = centrado ? 'mx-auto max-w-3xl text-center' : 'max-w-2xl'
+  const arriba = aireArriba ? 'pt-40 md:pt-56' : 'pt-28 md:pt-36'
 
   return (
-    <section id={id} className={`${tono.fondo} px-6 py-28 md:px-10 md:py-36`}>
+    <section id={id} className={`${tono.fondo} px-6 pb-28 md:px-10 md:pb-36 ${arriba}`}>
       <div className={`mx-auto ${ancho}`}>
         <div className={alineado}>
           {etiqueta && <p className={`etiqueta ${tono.acento}`}>{etiqueta}</p>}

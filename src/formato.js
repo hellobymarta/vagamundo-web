@@ -43,9 +43,3 @@ export function enPalabras(numero) {
   return PALABRAS[numero] || String(numero)
 }
 
-// La primera letra en mayúscula, respetando el resto.
-// En la base de datos las categorías están en minúscula («aventura») y en un
-// título en serif eso canta. Se arregla al pintarlo, no tocando los datos.
-export function capitalizar(texto = '') {
-  return texto.charAt(0).toUpperCase() + texto.slice(1)
-}
