@@ -5,6 +5,7 @@ import Seccion from '@/components/seccion'
 import Silueta from '@/components/silueta'
 import Pasos from '@/components/pasos'
 import Galeria from '@/components/galeria'
+import Salidas from '@/components/salidas'
 import DatosDestino from '@/components/datos-destino'
 import Preguntas from '@/components/preguntas'
 import BandaOscura from '@/components/banda-oscura'
@@ -43,7 +44,7 @@ export default function Destino() {
     )
   }
 
-  const { nombre, continente, foto, fotoAlt, titular, entradilla, historia, datos, galeria } =
+  const { nombre, continente, foto, fotoAlt, titular, entradilla, historia, datos, galeria, salidas } =
     destino
 
   const abierto = estaAbierto(destino)
@@ -76,9 +77,7 @@ export default function Destino() {
             <div className="mt-10 flex flex-wrap items-center gap-x-10 gap-y-4">
               {abierto ? (
                 <p className="etiqueta cifras text-suave">
-                  {suyos.length > 0
-                    ? `${suyos.length} ${suyos.length === 1 ? 'viaje abierto' : 'viajes abiertos'}`
-                    : 'Salidas a consultar'}
+                  {salidas ? `Próxima salida · ${salidas.fechas[0].dia}` : 'Salidas a consultar'}
                 </p>
               ) : (
                 <p className="etiqueta text-terracota-acento">Próximamente · 2027</p>
@@ -114,6 +113,16 @@ export default function Destino() {
         </Seccion>
       )}
 
+      {abierto && salidas && (
+        <Seccion
+          tono={TONOS.ROSA}
+          etiqueta="Salidas"
+          titulo={`Cuándo se va a ${nombre}`}
+        >
+          <Salidas nombre={nombre} salidas={salidas} />
+        </Seccion>
+      )}
+
       <Seccion
         tono={TONOS.HUESO}
         etiqueta="Nuestros viajes"
@@ -121,7 +130,7 @@ export default function Destino() {
           suyos.length > 0
             ? `Lo que tenemos en ${nombre}`
             : abierto
-              ? `Las salidas de ${nombre}, por temporada`
+              ? `El itinerario de ${nombre}, a un correo`
               : `Todavía no abrimos ${nombre}`
         }
       >
@@ -133,7 +142,7 @@ export default function Destino() {
           <>
             <Aviso tono="info">
               {abierto
-                ? 'Las próximas fechas todavía no están en el catálogo. Escríbenos y te las pasamos con el itinerario completo.'
+                ? 'Las fechas están aquí arriba; el programa día a día todavía no está publicado en el catálogo. Escribidnos y os lo mandamos entero, con las casas y los horarios.'
                 : 'Lo estamos recorriendo en este momento. No abrimos plazas hasta haber probado nosotras cada casa y cada guía.'}
             </Aviso>
             <p className="etiqueta mt-10">

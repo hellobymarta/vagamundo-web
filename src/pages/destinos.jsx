@@ -5,13 +5,13 @@ import Seccion from '@/components/seccion'
 import Silueta from '@/components/silueta'
 import Cargando from '@/components/cargando'
 import { useViajes } from '@/hooks/use-viajes'
-import { CONTINENTES_CON_DESTINOS, viajesDeDestino } from '@/config/destinos'
+import { CONTINENTES_CON_DESTINOS } from '@/config/destinos'
 import { FOTOS, TONOS } from '@/config/constantes'
 
 // Índice de destinos, como el de NUBA: la lista agrupada por continente,
 // con una ficha por sitio. Cada una lleva a la página de ese destino.
 // Deconstruimos cada destino dentro del map y la key es su id, nunca la posición.
-function FichaDestino({ id, nombre, foto, fotoAlt, titular, proximamente, cuantos }) {
+function FichaDestino({ id, nombre, foto, fotoAlt, titular, proximamente, salidas }) {
   return (
     <article className="group">
       <Link
@@ -44,8 +44,8 @@ function FichaDestino({ id, nombre, foto, fotoAlt, titular, proximamente, cuanto
             <p className="etiqueta mt-2 text-white/70">
               {proximamente
                 ? 'Próximamente'
-                : cuantos > 0
-                  ? `${cuantos} ${cuantos === 1 ? 'viaje abierto' : 'viajes abiertos'}`
+                : salidas
+                  ? `Sale el ${salidas.fechas[0].dia}`
                   : 'Consultar salidas'}
             </p>
           </div>
@@ -58,7 +58,7 @@ function FichaDestino({ id, nombre, foto, fotoAlt, titular, proximamente, cuanto
 }
 
 export default function Destinos() {
-  const { viajes, cargando } = useViajes()
+  const { cargando } = useViajes()
 
   return (
     <>
@@ -87,7 +87,6 @@ export default function Destinos() {
                   key={id}
                   id={id}
                   {...resto}
-                  cuantos={viajesDeDestino(viajes, id).length}
                 />
               ))}
             </div>

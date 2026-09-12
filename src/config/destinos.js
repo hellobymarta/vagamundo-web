@@ -18,6 +18,19 @@ export const DESTINOS = [
     titular: 'El país al que siempre volvemos',
     entradilla:
       'Empezamos aquí, y aquí seguimos. La costa amalfitana en mayo y el tacón de la bota en septiembre, cuando el sur vuelve a ser de los del sur.',
+    // Ventana: los ferris entre pueblos de la costa solo navegan de finales
+    // de marzo a finales de octubre (costa-amalfitana.com), y julio y agosto
+    // colapsan la carretera SS163.
+    salidas: {
+      temporada: 'De mayo a junio y en septiembre',
+      porque:
+        'Mayo y junio, con el mar ya bañable y las escaleras vacías; septiembre, cuando se ha ido agosto y el agua sigue caliente. Fuera de esa ventana el ferry entre pueblos ni siquiera navega, y sin ferry la costa se recorre por una carretera de un carril.',
+      fechas: [
+        { id: 'italia-2705', dia: '10 de mayo de 2027', plazas: 6 },
+        { id: 'italia-2706', dia: '7 de junio de 2027', plazas: 3 },
+        { id: 'italia-2709', dia: '13 de septiembre de 2027', plazas: 8 },
+      ],
+    },
     pistas: ['italia', 'amalfi', 'amalfitana', 'apulia', 'positano', 'matera', 'bari', 'atrani', 'ravello'],
   },
   {
@@ -29,6 +42,19 @@ export const DESTINOS = [
     titular: 'Primero las piedras, después el mar',
     entradilla:
       'Micenas, Delfos y Meteora entre semana, con las excavaciones casi vacías, y las Cícladas al final, cuando ya te has ganado el baño.',
+    // Ventana: el meltemi sopla sobre todo en julio y agosto, con rachas de
+    // fuerza 7-8 que llegan a cerrar los puertos (Grecotour), y de noviembre
+    // a marzo cierra media isla.
+    salidas: {
+      temporada: 'De finales de abril a junio y en septiembre',
+      porque:
+        'Las excavaciones se caminan sin buscar la sombra y el mar ya está para meterse. En julio y agosto, a los cuarenta grados y a los precios se les suma el meltemi, que algunos días deja los barcos en puerto y te cambia el viaje entero.',
+      fechas: [
+        { id: 'grecia-2704', dia: '26 de abril de 2027', plazas: 8 },
+        { id: 'grecia-2705', dia: '31 de mayo de 2027', plazas: 5 },
+        { id: 'grecia-2709', dia: '13 de septiembre de 2027', plazas: 8 },
+      ],
+    },
     pistas: ['grecia', 'santorini', 'atenas', 'mikonos', 'cicladas', 'creta'],
   },
   {
@@ -90,6 +116,19 @@ export const DESTINOS = [
       },
     ],
 
+    // Ventana: la temporada de auroras va de finales de septiembre a abril
+    // (Islandia360), pero en diciembre y enero las tormentas cierran tramos
+    // de la carretera de circunvalación y quedan cuatro horas de luz.
+    salidas: {
+      temporada: 'De noviembre a marzo',
+      porque:
+        'Es cuando hay noche suficiente para que salgan las auroras. Elegimos noviembre y el final del invierno antes que diciembre o enero: con la vuelta completa a la isla por delante, conviene tener carretera abierta y algo de luz para ver el resto del país.',
+      fechas: [
+        { id: 'islandia-2611', dia: '16 de noviembre de 2026', plazas: 2 },
+        { id: 'islandia-2702', dia: '8 de febrero de 2027', plazas: 6 },
+        { id: 'islandia-2703', dia: '1 de marzo de 2027', plazas: 8 },
+      ],
+    },
     pistas: [
       'islandia',
       'reikiavik',
@@ -112,6 +151,19 @@ export const DESTINOS = [
     titular: 'Dos continentes en un viaje',
     entradilla:
       'Estambul a un lado y al otro del Bósforo, la Capadocia en temporada tranquila y el Egeo en barco de madera, durmiendo a bordo. Se sale en primavera y en octubre, que es cuando se puede andar por Éfeso sin buscar la sombra.',
+    // Ventana: los globos de la Capadocia se recomiendan de abril a noviembre;
+    // entre diciembre y marzo se cancelan muchas mañanas (IATI). En enero la
+    // Capadocia hace 7 grados de día y tres bajo cero de noche.
+    salidas: {
+      temporada: 'En abril y mayo, y de septiembre a octubre',
+      porque:
+        'Es cuando coinciden las tres cosas: Estambul sin bochorno, la Capadocia templada y el Egeo antes o después del calor. Y es cuando los globos vuelan casi todas las mañanas, que en invierno se cancelan más de las que salen.',
+      fechas: [
+        { id: 'turquia-2610', dia: '5 de octubre de 2026', plazas: 2 },
+        { id: 'turquia-2704', dia: '19 de abril de 2027', plazas: 8 },
+        { id: 'turquia-2709', dia: '27 de septiembre de 2027', plazas: 8 },
+      ],
+    },
     pistas: ['turquia', 'turquía', 'estambul', 'capadocia', 'efeso', 'éfeso', 'bodrum', 'egeo'],
   },
   {
@@ -181,6 +233,19 @@ export const DESTINOS = [
       },
     ],
 
+    // Ventana: más de 300 días de sol al año y las lluvias concentradas de
+    // diciembre a febrero (jordania.com). Amán promedia 33 grados en agosto,
+    // y Wadi Rum y el mar Muerto van bastante por encima.
+    salidas: {
+      temporada: 'De marzo a mayo y de septiembre a octubre',
+      porque:
+        'Petra son ocho horas andando y Wadi Rum, dos noches en el desierto: en verano no se puede, y en invierno la noche del campamento baja de cuatro grados. En primavera y otoño se camina cómodo de la mañana a la noche.',
+      fechas: [
+        { id: 'jordania-2610', dia: '18 de octubre de 2026', plazas: 1 },
+        { id: 'jordania-2703', dia: '14 de marzo de 2027', plazas: 7 },
+        { id: 'jordania-2704', dia: '25 de abril de 2027', plazas: 8 },
+      ],
+    },
     pistas: ['jordania', 'petra', 'wadi rum', 'amman', 'amán', 'aqaba', 'jerash', 'mar muerto', 'siq', 'nabateo'],
   },
   {
@@ -238,6 +303,19 @@ export const DESTINOS = [
       },
     ],
 
+    // Ventana: Etosha recibe más de 400 mm al año, casi todos entre finales de
+    // octubre y abril; junio y julio son los meses más secos y es cuando los
+    // animales se concentran en las charcas permanentes (Wikipedia, Etosha).
+    salidas: {
+      temporada: 'De mayo a octubre',
+      porque:
+        'En la estación seca no queda agua suelta por el parque, así que la fauna baja a las charcas y se la ve sin perseguirla. En la de lluvias hay charcos por todas partes, los animales se dispersan y las pistas de grava se ponen imposibles.',
+      fechas: [
+        { id: 'namibia-2610', dia: '4 de octubre de 2026', plazas: 2 },
+        { id: 'namibia-2706', dia: '6 de junio de 2027', plazas: 8 },
+        { id: 'namibia-2709', dia: '5 de septiembre de 2027', plazas: 6 },
+      ],
+    },
     pistas: [
       'namibia',
       'etosha',
@@ -343,6 +421,20 @@ export const DESTINOS = [
       },
     ],
 
+    // Ventana: previsión de floración 2026 de la Japan Meteorological
+    // Corporation — Kioto abre el 23 de marzo y llega a plena flor el 30, y la
+    // plena flor dura cinco o siete días. Junio y la primera mitad de julio
+    // son el tsuyu, la temporada de lluvias.
+    salidas: {
+      temporada: 'A finales de marzo y de octubre a noviembre',
+      porque:
+        'Los cerezos y el otoño rojo, que son dos viajes distintos al mismo sitio. La flor dura cinco o seis días y se mueve cada año, así que la salida de marzo se ajusta con la previsión en la mano. Evitamos junio, que es temporada de lluvias, y agosto, que es calor, humedad y tifones.',
+      fechas: [
+        { id: 'japon-2610', dia: '24 de octubre de 2026', plazas: 3 },
+        { id: 'japon-2703', dia: '27 de marzo de 2027', plazas: 0 },
+        { id: 'japon-2711', dia: '6 de noviembre de 2027', plazas: 8 },
+      ],
+    },
     pistas: [
       'japon',
       'japón',
@@ -429,6 +521,20 @@ export const DESTINOS = [
       },
     ],
 
+    // Ventana: el monzón llega a Delhi hacia el 21 de junio y julio y agosto
+    // son los meses más lluviosos; en verano se pasa de los 40 grados con
+    // habitualidad (Wikipedia, Delhi). En diciembre y enero la niebla y la
+    // contaminación llegan a suspender vuelos a centenares.
+    salidas: {
+      temporada: 'En noviembre y de febrero a marzo',
+      porque:
+        'Días templados, noches frescas y ni monzón ni calor de cuarenta grados. Nos saltamos diciembre y enero a propósito: son secos, pero la niebla de Delhi cancela vuelos internos y este viaje lleva dos.',
+      fechas: [
+        { id: 'india-2611', dia: '8 de noviembre de 2026', plazas: 4 },
+        { id: 'india-2702', dia: '14 de febrero de 2027', plazas: 8 },
+        { id: 'india-2703', dia: '7 de marzo de 2027', plazas: 8 },
+      ],
+    },
     pistas: ['india', 'delhi', 'jaipur', 'agra', 'benares', 'varanasi', 'rajastan', 'rajastán', 'amritsar', 'jodhpur', 'udaipur'],
   },
   {
@@ -497,6 +603,19 @@ export const DESTINOS = [
       },
     ],
 
+    // Ventana: estación seca en el Pacífico de diciembre a abril. Septiembre y
+    // octubre son los meses más lluviosos justo en Osa y el Pacífico, que es
+    // donde está Corcovado.
+    salidas: {
+      temporada: 'De diciembre a abril, y en julio',
+      porque:
+        'La estación seca del Pacífico, que es donde están Corcovado y la costa. En julio hay un paréntesis —el veranillo— que además cae en plena temporada de anidación en Tortuguero. Septiembre y octubre los dejamos fuera: es cuando más llueve justo por donde pasa la ruta.',
+      fechas: [
+        { id: 'costarica-2701', dia: '10 de enero de 2027', plazas: 5 },
+        { id: 'costarica-2702', dia: '21 de febrero de 2027', plazas: 8 },
+        { id: 'costarica-2707', dia: '11 de julio de 2027', plazas: 8 },
+      ],
+    },
     pistas: ['costa rica', 'arenal', 'monteverde', 'tortuguero', 'corcovado', 'osa', 'manzanillo', 'san jose', 'san josé'],
   },
   {
@@ -580,6 +699,18 @@ export const DESTINOS = [
       },
     ],
 
+    // Ventana: la temporada de ciclones del Pacífico Sur va del 1 de noviembre
+    // al 30 de abril (Wikipedia). El resto del año es la estación seca austral.
+    salidas: {
+      temporada: 'De junio a septiembre',
+      porque:
+        'Estación seca austral: menos lluvia, menos humedad y el agua transparente, que en un viaje que se hace dentro del agua lo es todo. De noviembre a abril es temporada oficial de ciclones y no programamos salidas.',
+      fechas: [
+        { id: 'polinesia-2706', dia: '26 de junio de 2027', plazas: 4 },
+        { id: 'polinesia-2707', dia: '17 de julio de 2027', plazas: 0 },
+        { id: 'polinesia-2709', dia: '4 de septiembre de 2027', plazas: 8 },
+      ],
+    },
     pistas: [
       'polinesia',
       'polinesia francesa',
@@ -635,6 +766,19 @@ export const DESTINOS = [
     titular: 'Nueva York por barrios, y luego la costa',
     entradilla:
       'Brooklyn y el Bronx antes que Times Square, el metro en vez del autocar y Coney Island un domingo. Después, si queda cuerpo, la otra costa: Los Ángeles y el Pacífico.',
+    // Ventana: mayo y junio son los dos meses de menos sol en la costa del sur
+    // de California —el June Gloom, un 64 % de sol posible en Los Ángeles
+    // (Wikipedia)— y en enero Nueva York se mueve entre cinco bajo cero y dos.
+    salidas: {
+      temporada: 'De mayo a junio y de septiembre a octubre',
+      porque:
+        'Nueva York se anda bien y Los Ángeles ya tiene cielo limpio. Preferimos el tramo de otoño: en mayo y junio la costa de California amanece tapada casi todos los días y el mar todavía no acompaña.',
+      fechas: [
+        { id: 'eeuu-2610', dia: '3 de octubre de 2026', plazas: 3 },
+        { id: 'eeuu-2705', dia: '16 de mayo de 2027', plazas: 8 },
+        { id: 'eeuu-2709', dia: '25 de septiembre de 2027', plazas: 8 },
+      ],
+    },
     pistas: ['estados unidos', 'estadosunidos', 'utah', 'arizona', 'yosemite', 'california'],
   },
 ]
