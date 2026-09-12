@@ -52,6 +52,7 @@ export const DESTINOS = [
       {
         id: 'barca',
         foto: FOTOS.BARCA,
+        vertical: true,
         alt: 'Una barca de madera fondeada frente a Positano',
         rotulo: 'La barca',
         pie: 'Salvatore sale a las siete, antes de que se levante el viento, y para donde no llega el ferry. Entre noviembre y marzo no hay barca ninguna: esta costa sin barco es otra cosa.',
@@ -59,6 +60,7 @@ export const DESTINOS = [
       {
         id: 'toscana',
         foto: FOTOS.ITALIA_TOSCANA,
+        vertical: true,
         alt: 'Un caserío toscano entre cipreses al amanecer, con la niebla en los valles',
         rotulo: 'Tierra adentro',
         pie: 'Italia no es solo la costa. Las salidas de junio y septiembre suben al campo, donde a las siete de la mañana todavía hay niebla en los valles.',
@@ -66,6 +68,7 @@ export const DESTINOS = [
       {
         id: 'mesa',
         foto: FOTOS.ITALIA_GASTRO,
+        vertical: true,
         alt: 'Una mesa italiana puesta con platos para compartir',
         rotulo: 'La mesa',
         pie: 'Se come donde comen los de allí, que casi nunca es donde está la carta en cuatro idiomas. Dos comidas del viaje son en casa de alguien.',
@@ -89,6 +92,7 @@ export const DESTINOS = [
     nombre: 'Grecia',
     continente: 'Europa',
     foto: FOTOS.GRECIA,
+        vertical: true,
     fotoAlt: 'Las cúpulas azules de Oia sobre la caldera de Santorini',
     titular: 'Primero las piedras, después el mar',
     entradilla:
@@ -127,6 +131,7 @@ export const DESTINOS = [
       {
         id: 'cariatides',
         foto: FOTOS.GRECIA_CARIATIDES,
+        vertical: true,
         alt: 'Las cariátides del Erecteión sobre la Acrópolis',
         rotulo: 'Las cariátides',
         pie: 'Seis mujeres de mármol sosteniendo el pórtico sur del Erecteión. Las que están en pie son copias; cinco de las originales se ven a cubierto en el Museo de la Acrópolis, y la sexta está en Londres.',
@@ -134,6 +139,7 @@ export const DESTINOS = [
       {
         id: 'herodes',
         foto: FOTOS.GRECIA_HERODES,
+        vertical: true,
         alt: 'Las gradas del Odeón de Herodes Ático',
         rotulo: 'El Odeón de Herodes Ático',
         pie: 'Un teatro romano del siglo II en la ladera de la Acrópolis que sigue programando ópera y conciertos cada verano. Si hay función la noche que estamos en Atenas, vamos.',
@@ -155,6 +161,7 @@ export const DESTINOS = [
       {
         id: 'molinos',
         foto: FOTOS.GRECIA_MOLINOS,
+        vertical: true,
         alt: 'Molino de viento encalado en Míkonos',
         rotulo: 'Los molinos de Kato Mili',
         pie: 'Molieron grano para los barcos que cruzaban el Egeo hasta bien entrado el siglo XX. Están donde están porque ahí pega el meltemi, el viento del norte que en verano no para.',
@@ -227,6 +234,7 @@ export const DESTINOS = [
       {
         id: 'playa',
         foto: FOTOS.ISLANDIA_PLAYA,
+        vertical: true,
         alt: 'Un farallón de roca sobre la arena negra de una playa islandesa',
         rotulo: 'La arena negra',
         pie: 'Reynisfjara, donde el basalto molido hace de playa y el Atlántico entra sin avisar. Se mira desde arriba: aquí abajo no se le da la espalda al mar.',
@@ -337,6 +345,7 @@ export const DESTINOS = [
       {
         id: 'goreme',
         foto: FOTOS.TURQUIA_GOREME,
+        vertical: true,
         alt: 'Viviendas excavadas en la toba de Capadocia',
         rotulo: 'Göreme',
         pie: 'Tres volcanes dejaron la toba y la gente descubrió que se excava con las manos y se endurece al aire. Quedan más de trescientas sesenta iglesias rupestres, de las que solo se visitan unas treinta.',
@@ -351,6 +360,7 @@ export const DESTINOS = [
       {
         id: 'terrazas',
         foto: FOTOS.TURQUIA_TERRAZAS,
+        vertical: true,
         alt: 'Terrazas blancas de cal en Pamukkale',
         rotulo: 'Pamukkale',
         pie: 'El agua termal baja de la montaña y va dejando la cal en terrazas. Se camina descalzo por obligación, para no rayar el travertino, y el suelo está caliente.',
@@ -358,6 +368,7 @@ export const DESTINOS = [
       {
         id: 'hierapolis',
         foto: FOTOS.TURQUIA_HIERAPOLIS,
+        vertical: true,
         alt: 'Ruinas romanas de Hierápolis sobre Pamukkale',
         rotulo: 'Hierápolis',
         pie: 'Encima de las terrazas hay una ciudad romana entera con su teatro y una necrópolis de más de dos kilómetros, de los cementerios grecorromanos mejor conservados del Mediterráneo.',
@@ -388,6 +399,7 @@ export const DESTINOS = [
     nombre: 'Jordania',
     continente: 'Oriente Medio',
     foto: FOTOS.JORDANIA,
+        vertical: true,
     fotoAlt: 'La fachada del Tesoro de Petra tallada en la roca rosa',
     titular: 'Petra, y todo lo que hay alrededor',
     entradilla:
@@ -424,6 +436,7 @@ export const DESTINOS = [
       {
         id: 'zoco',
         foto: FOTOS.JORDANIA_ZOCO,
+        vertical: true,
         alt: 'Bandejas de especias, flores secas y hierbas en la puerta de una tienda del zoco',
         rotulo: 'El zoco',
         pie: 'Zaatar, sumac, flor de hibisco y canela en rama. Se compra donde compra el cocinero que nos da de cenar, que es la única manera de no comprar mal.',
@@ -438,6 +451,7 @@ export const DESTINOS = [
       {
         id: 'aman',
         foto: FOTOS.JORDANIA_AMAN,
+        vertical: true,
         alt: 'Los tejados de Amán extendiéndose hasta el horizonte con la bandera gigante al fondo',
         rotulo: 'Amán',
         pie: 'Blanca, en cuesta y mucho más grande de lo que nadie espera. Se sube a la ciudadela al atardecer, cuando empiezan las llamadas a la oración y se oyen unas encima de otras.',
@@ -607,6 +621,7 @@ export const DESTINOS = [
       {
         id: 'santuario',
         foto: FOTOS.JAPON_SANTUARIO,
+        vertical: true,
         alt: 'Farolillos colgados bajo el tejado de un santuario, con una mujer en kimono',
         rotulo: 'Los ritos',
         pie: 'Antes de entrar se lavan las manos y la boca en la fuente. Nadie lo explica: se observa y se imita.',
@@ -628,6 +643,7 @@ export const DESTINOS = [
       {
         id: 'sensoji',
         foto: FOTOS.JAPON_SENSOJI,
+        vertical: true,
         alt: 'La pagoda del templo Sensoji entre cerezos en flor',
         rotulo: 'Asakusa',
         pie: 'El Sensoji y la arcada de Nakamise, en Tokio. En primavera el barrio entero se tiñe de rosa.',
@@ -642,6 +658,7 @@ export const DESTINOS = [
       {
         id: 'cerezos',
         foto: FOTOS.JAPON_CEREZOS,
+        vertical: true,
         alt: 'Cerezos en flor sobre un puente rojo en un jardín japonés',
         rotulo: 'Los cerezos',
         pie: 'La floración dura diez días y se mueve de sur a norte. Acertar con la fecha es medio oficio.',
@@ -722,6 +739,7 @@ export const DESTINOS = [
       {
         id: 'hawa',
         foto: FOTOS.INDIA_HAWA,
+        vertical: true,
         alt: 'La fachada del Hawa Mahal de Jaipur',
         rotulo: 'El Hawa Mahal',
         pie: 'Novecientas cincuenta y tres ventanas caladas en arenisca rosa para que las mujeres de la corte vieran la calle sin ser vistas. La fachada mira al este: se fotografía a primera hora.',
@@ -736,6 +754,7 @@ export const DESTINOS = [
       {
         id: 'ganesha',
         foto: FOTOS.INDIA_GANESHA,
+        vertical: true,
         alt: 'Una figura de Ganesha cubierta de guirnaldas y ofrendas',
         rotulo: 'Las ofrendas',
         pie: 'Oro, perlas y guirnaldas que se cambian cada mañana. No es un museo: es un altar en uso, y se entra descalzo y sin prisa.',
@@ -743,6 +762,7 @@ export const DESTINOS = [
       {
         id: 'callejon',
         foto: FOTOS.INDIA_CALLE,
+        vertical: true,
         alt: 'Un rickshaw amarillo en un callejón estrecho',
         rotulo: 'Donde no entra el coche',
         pie: 'Aquí se baja, se camina y el guía va delante. La ciudad vieja de Delhi y los callejones de Benarés se recorren así o no se recorren.',
@@ -750,6 +770,7 @@ export const DESTINOS = [
       {
         id: 'amritsar',
         foto: FOTOS.INDIA_AMRITSAR,
+        vertical: true,
         alt: 'Un templo dorado reflejado en el agua al anochecer',
         rotulo: 'El agua y el templo',
         pie: 'En el norte, la vida religiosa pasa por el agua: se baja al estanque o al río antes de que salga el sol. En Benarés lo vemos desde una barca, que es la única manera de no estorbar.',
@@ -826,13 +847,14 @@ export const DESTINOS = [
       {
         id: 'puentes',
         foto: FOTOS.COSTARICA_PUENTES,
+        vertical: true,
         alt: 'Puente colgante sobre el dosel del bosque',
         rotulo: 'Por encima del bosque',
         pie: 'Los puentes colgantes cruzan a la altura de las copas, que es donde pasa casi todo: tucanes, monos y perezosos viven arriba, no abajo. Se anda despacio y en silencio.',
       },
       {
         id: 'tucan',
-        foto: FOTOS.COSTARICA_TUCAN,
+        foto: FOTOS.COSTARICA_PICO,
         alt: 'Tucán de pico castaño posado en una rama',
         rotulo: 'El tucán de pico castaño',
         pie: 'Vive en las tierras bajas del Caribe y se le oye antes de verlo. El naturalista que va con el grupo lleva telescopio: sin él, la mitad de lo que hay en la copa pasa desapercibido.',
@@ -937,6 +959,7 @@ export const DESTINOS = [
       {
         id: 'motus',
         foto: FOTOS.POLINESIA_MOTUS,
+        vertical: true,
         alt: 'Vista aérea de una hilera de motus de cocoteros sobre la laguna, con Bora Bora al fondo',
         rotulo: 'Los motus',
         pie: 'Lenguas de arena y cocoteros sobre el anillo de coral, separadas por canales. Al fondo, a cuarenta kilómetros, el Otemanu de Bora Bora.',
@@ -944,6 +967,7 @@ export const DESTINOS = [
       {
         id: 'playa',
         foto: FOTOS.POLINESIA_PLAYA,
+        vertical: true,
         alt: 'Playa de arena blanca con cocoteros inclinados sobre una laguna transparente',
         rotulo: 'Moorea',
         pie: 'La pensión familiar en la que dormimos: seis habitaciones, la cocina de la señora de la casa y el mismo trozo de laguna para todo el mundo.',
@@ -1079,6 +1103,7 @@ export const DESTINOS = [
       {
         id: 'libertad',
         foto: FOTOS.EEUU_LIBERTAD,
+        vertical: true,
         alt: 'La Estatua de la Libertad desde el sur',
         rotulo: 'La bahía',
         pie: 'Al lado está Ellis Island, que funcionó del 1 de enero de 1892 a noviembre de 1954 y por donde pasaron más de doce millones de personas. En 1907 entró más de un millón en un solo año.',
@@ -1093,6 +1118,7 @@ export const DESTINOS = [
       {
         id: 'coney',
         foto: FOTOS.EEUU_CONEY,
+        vertical: true,
         alt: 'El puesto de perritos de Coney Island',
         rotulo: 'Coney Island',
         pie: 'Se va en metro, un domingo, y se come de pie en el puesto que abrió en 1916. El paseo de tablas, la noria de 1920 y la playa: el otro Nueva York, el que no sale en las postales.',
