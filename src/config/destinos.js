@@ -145,13 +145,6 @@ export const DESTINOS = [
         pie: 'Un teatro romano del siglo II en la ladera de la Acrópolis que sigue programando ópera y conciertos cada verano. Si hay función la noche que estamos en Atenas, vamos.',
       },
       {
-        id: 'oia',
-        foto: FOTOS.GRECIA_OIA,
-        alt: 'Cúpulas azules de Oía sobre la caldera de Santorini',
-        rotulo: 'Oía, en el filo de la caldera',
-        pie: 'Lo que se ve desde aquí es el borde del volcán que reventó hace tres mil quinientos años. Los pueblos están construidos justo en el corte, y bajo la ceniza sigue enterrada Akrotiri.',
-      },
-      {
         id: 'mikonos',
         foto: FOTOS.GRECIA_MIKONOS,
         alt: 'Casas con balcones sobre el agua en la Pequeña Venecia de Míkonos',
@@ -167,11 +160,26 @@ export const DESTINOS = [
         pie: 'Molieron grano para los barcos que cruzaban el Egeo hasta bien entrado el siglo XX. Están donde están porque ahí pega el meltemi, el viento del norte que en verano no para.',
       },
       {
+        id: 'callejon',
+        foto: FOTOS.GRECIA_CALLEJON,
+        alt: 'Buganvilla sobre una fachada encalada con contraventanas azules',
+        rotulo: 'El callejón de siempre',
+        pie: 'La cal se da cada primavera y el azul de las contraventanas lo pone cada casa. Se anda por aquí a media tarde, cuando la piedra ya no quema y las puertas se abren para que corra el aire.',
+      },
+      {
+        id: 'terraza',
+        foto: FOTOS.GRECIA_TERRAZA,
+        alt: 'Terraza encalada con vistas a la caldera de Santorini',
+        rotulo: 'La caldera desde la terraza',
+        pie: 'Lo que se ve enfrente es el borde del volcán que reventó hace tres mil quinientos años. La casa está construida justo en el corte, y por eso la terraza cuelga.',
+      },
+      {
         id: 'navagio',
-        foto: FOTOS.GRECIA_NAVAGIO,
-        alt: 'La playa del naufragio de Zante desde el acantilado',
+        foto: FOTOS.GRECIA_NAVAGIO_BARCO,
+        vertical: true,
+        alt: 'El carguero encallado de Navagio visto desde un barco fondeado',
         rotulo: 'Navagio',
-        pie: 'Una cala encerrada entre paredes de doscientos metros a la que solo se llega en barco. El carguero encallado lleva ahí desde 1980. Se va temprano, antes de que lleguen las excursiones grandes.',
+        pie: 'Una cala encerrada entre paredes de doscientos metros a la que solo se llega en barco. El carguero lleva encallado desde 1980. Se entra temprano, antes de que fondeen las excursiones grandes, y se ve así: desde cubierta.',
       },
       {
         id: 'creta',

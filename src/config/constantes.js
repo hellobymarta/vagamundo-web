@@ -52,7 +52,12 @@ export const FOTOS = {
   AMALFI_MAR: '/italia-amalfi/amalfi-mar.jpg',
 
   // Grecia
-  GRECIA: '/grecia/grecia-santorini.jpg',
+  // Portada de Grecia: Oía en el filo de la caldera, con el campanario y las
+  // cúpulas. La eligió Marta y manda ella.
+  GRECIA: '/grecia/grecia-oia.jpg',
+  GRECIA_CALLEJON: '/grecia/grecia-callejon.jpg',
+  GRECIA_NAVAGIO_BARCO: '/grecia/grecia-navagio-barco.jpg',
+  GRECIA_TERRAZA: '/grecia/santorini-view.jpg',
   GRECIA_ACROPOLIS: '/grecia/atenas-templo.jpg',
   GRECIA_MIKONOS: '/grecia/mykonos-venecia.jpg',
   GRECIA_NAVAGIO: '/grecia/zakynthos-naufragio.jpg',
