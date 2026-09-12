@@ -51,12 +51,26 @@ export const FOTOS = {
   AMALFI_PASEO: '/italia-amalfi/amalfi-paseo.jpg',
   AMALFI_MAR: '/italia-amalfi/amalfi-mar.jpg',
 
-  // Grecia y Turquía · de momento solo la portada de cada ficha
+  // Grecia
   GRECIA: '/grecia/grecia-santorini.jpg',
+  GRECIA_ACROPOLIS: '/grecia/atenas-templo.jpg',
+  GRECIA_MIKONOS: '/grecia/mykonos-venecia.jpg',
+  GRECIA_NAVAGIO: '/grecia/zakynthos-naufragio.jpg',
+  GRECIA_CRETA: '/grecia/creta-playa.jpg',
+
+  // Turquía
   TURQUIA: '/turquia/capadoccia.jpg',
+  TURQUIA_ESTAMBUL: '/turquia/mezquita-azul.jpg',
+  TURQUIA_GOREME: '/turquia/casa-cuevas.jpg',
+  TURQUIA_PAMUKKALE: '/turquia/pamukkale.jpg',
+  TURQUIA_EFESO: '/turquia/esmirna-arqu.jpg',
 
   // Estados Unidos
   ESTADOSUNIDOS: '/nueva-york/brooklyn.jpg',
+  EEUU_DUMBO: '/nueva-york/dumbo.jpg',
+  EEUU_CENTRAL: '/nueva-york/parque-central.jpg',
+  EEUU_CONEY: '/nueva-york/coney-island.jpg',
+  EEUU_ANGELES: '/nueva-york/losangeles.jpg',
 
   // Namibia
   NAMIBIA: '/namibia/namibia-elefantes.jpg',

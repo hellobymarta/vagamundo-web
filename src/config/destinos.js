@@ -21,6 +21,56 @@ export const DESTINOS = [
     // Ventana: los ferris entre pueblos de la costa solo navegan de finales
     // de marzo a finales de octubre (costa-amalfitana.com), y julio y agosto
     // colapsan la carretera SS163.
+
+    // La historia del sitio. Fuentes:
+    //  · Costa Amalfitana (Wikipedia) para la declaración de la Unesco, los
+    //    trece municipios y los cuarenta kilómetros de la SS163
+    //  · el folleto de Italia 2026 de Viajes El Corte Inglés
+    historia: [
+      'Trece pueblos colgados de cuarenta kilómetros de acantilado, y una sola carretera para todos: la SS163, que va de Vietri sul Mare a Positano por el borde del precipicio y que en agosto se convierte en un atasco con vistas. La Unesco declaró la costa Patrimonio de la Humanidad en 1997 y no lo hizo solo por el paisaje: la citó como un ejemplo de territorio mediterráneo trabajado durante siglos, con sus bancales, sus limoneros y su arquitectura.',
+      'Amalfi no fue siempre un pueblo bonito. Fue una república marinera que compitió con Venecia, Génova y Pisa, con su propia flota, su propio código de navegación y su propia moneda. De aquella ciudad queda la catedral, con el claustro del Paraíso, que se construyó en el siglo XIII y que es árabe, normando y bizantino a la vez, según qué arco mires.',
+      'Lo que hacemos aquí es movernos como se mueve la gente de allí. En barca cuando hay mar —y hay mar casi siempre desde abril—, andando por los caminos de bancal cuando la carretera no merece la pena, y en el autobús de línea sin ninguna vergüenza. Los senderos que unen los pueblos por arriba llevan siglos ahí: eran el único camino antes de que existiera la carretera.',
+      'Y después está el otro sur, el que casi nadie pisa: Apulia, Matera, la Toscana de campo. Aunque la casa empezó en esta costa, Italia nunca ha sido solo esta costa, y las salidas de junio y septiembre alargan la ruta tierra adentro.',
+    ],
+
+    datos: [
+      { etiqueta: 'Capital', valor: 'Roma' },
+      { etiqueta: 'Cuándo ir', valor: 'De mayo a junio y en septiembre' },
+      { etiqueta: 'Patrimonio', valor: 'Desde 1997' },
+      { etiqueta: 'Plazas', valor: 'De cinco a ocho por salida' },
+    ],
+
+    galeria: [
+      {
+        id: 'amalfi',
+        foto: FOTOS.AMALFI_PASEO,
+        alt: 'El paseo de Amalfi desde una terraza con maceteros, con el mar al fondo',
+        rotulo: 'Amalfi',
+        pie: 'La república marinera que compitió con Venecia y Génova, hoy de tres mil habitantes. Se llega en el ferry de las nueve, antes que los autocares.',
+      },
+      {
+        id: 'mar',
+        foto: FOTOS.AMALFI_MAR,
+        alt: 'El mar frente a la costa amalfitana en un día claro',
+        rotulo: 'El mar',
+        pie: 'Desde abril hay barca casi todos los días. Entre noviembre y marzo el ferry entre pueblos ni siquiera navega, y esta costa sin barco es otra cosa.',
+      },
+      {
+        id: 'toscana',
+        foto: FOTOS.ITALIA_TOSCANA,
+        alt: 'Un caserío toscano entre cipreses al amanecer, con la niebla en los valles',
+        rotulo: 'Tierra adentro',
+        pie: 'Italia no es solo la costa. Las salidas de junio y septiembre suben al campo, donde a las siete de la mañana todavía hay niebla en los valles.',
+      },
+      {
+        id: 'mesa',
+        foto: FOTOS.ITALIA_GASTRO,
+        alt: 'Una mesa italiana puesta con platos para compartir',
+        rotulo: 'La mesa',
+        pie: 'Se come donde comen los de allí, que casi nunca es donde está la carta en cuatro idiomas. Dos comidas del viaje son en casa de alguien.',
+      },
+    ],
+
     salidas: {
       temporada: 'De mayo a junio y en septiembre',
       porque:
@@ -45,6 +95,56 @@ export const DESTINOS = [
     // Ventana: el meltemi sopla sobre todo en julio y agosto, con rachas de
     // fuerza 7-8 que llegan a cerrar los puertos (Grecotour), y de noviembre
     // a marzo cierra media isla.
+
+    // La historia del sitio. Fuentes:
+    //  · Partenón y Acrópolis de Atenas (Wikipedia), para fechas y nombres
+    //  · el folleto de Mediterráneo 2026 de Viajes El Corte Inglés
+    //  · Grecotour, para el meltemi
+    historia: [
+      'El Partenón se levantó entre el 447 y el 432 antes de Cristo, en quince años, sobre una roca que ya llevaba mil ocupada. Lo mandó construir Pericles y lo hicieron Ictino y Calícrates con Fidias al frente de la escultura. Se sube a primera hora, cuando abre, porque a media mañana la Acrópolis es una fila y porque el mármol del Pentélico cambia de color según le da la luz: blanco a las ocho, dorado a las siete de la tarde.',
+      'Después están las islas, que no son una sola cosa. Santorini es el borde de un volcán: lo que se ve desde Oía es la caldera que dejó una erupción enorme hace tres mil quinientos años, y los pueblos están construidos justo en el filo. Míkonos es otra historia —callejuelas encaladas hechas para despistar a los piratas y una hilera de casas con los balcones sobre el agua—, y Zante guarda una cala a la que solo se llega en barco.',
+      'Hay que hablar del viento, porque manda más que el calendario. El meltemi sopla sobre todo en julio y agosto y alcanza con frecuencia fuerza siete u ocho: los días que arrecia, las capitanías cierran los puertos y las islas dejan de estar conectadas. Por eso vamos en mayo, en junio o en septiembre, cuando el mar está quieto y las excavaciones se caminan sin buscar la sombra.',
+      'Y Creta al final, que es casi otro país: la isla más grande, con montañas de dos mil metros, gargantas que se bajan andando en cinco horas y pueblos donde todavía te ponen raki sin preguntarte si lo quieres.',
+    ],
+
+    datos: [
+      { etiqueta: 'Capital', valor: 'Atenas' },
+      { etiqueta: 'Cuándo ir', valor: 'De finales de abril a junio y en septiembre' },
+      { etiqueta: 'El Partenón', valor: '447–432 a. C.' },
+      { etiqueta: 'Plazas', valor: 'De cinco a ocho por salida' },
+    ],
+
+    galeria: [
+      {
+        id: 'acropolis',
+        foto: FOTOS.GRECIA_ACROPOLIS,
+        alt: 'Las columnas del Partenón vistas desde abajo contra el cielo',
+        rotulo: 'La Acrópolis',
+        pie: 'Quince años de obra, hace dos mil cuatrocientos. Entramos cuando abre: a las once hay cola y el mármol ya no tiene ese color.',
+      },
+      {
+        id: 'mikonos',
+        foto: FOTOS.GRECIA_MIKONOS,
+        alt: 'Las casas de la Pequeña Venecia de Míkonos con las mesas frente al agua',
+        rotulo: 'La Pequeña Venecia',
+        pie: 'Balcones de madera colgados sobre el mar y un callejero hecho a propósito para que se perdieran los piratas. Funciona: todavía se pierde uno.',
+      },
+      {
+        id: 'navagio',
+        foto: FOTOS.GRECIA_NAVAGIO,
+        alt: 'La cala de Navagio en Zante, con el barco varado en la arena entre acantilados',
+        rotulo: 'Navagio',
+        pie: 'Una cala encerrada entre paredes de doscientos metros a la que solo se llega en barco. El carguero lleva ahí desde los años ochenta.',
+      },
+      {
+        id: 'creta',
+        foto: FOTOS.GRECIA_CRETA,
+        alt: 'Una playa de Creta con el agua clara y la costa al fondo',
+        rotulo: 'Creta',
+        pie: 'La isla grande, que es casi otro país: montañas de dos mil metros, gargantas de cinco horas y raki sin preguntar.',
+      },
+    ],
+
     salidas: {
       temporada: 'De finales de abril a junio y en septiembre',
       porque:
@@ -154,6 +254,56 @@ export const DESTINOS = [
     // Ventana: los globos de la Capadocia se recomiendan de abril a noviembre;
     // entre diciembre y marzo se cancelan muchas mañanas (IATI). En enero la
     // Capadocia hace 7 grados de día y tres bajo cero de noche.
+
+    // La historia del sitio. Fuentes:
+    //  · Biblioteca de Celso y Pamukkale (Wikipedia), para fechas y cifras
+    //  · IATI Seguros, para la temporada de los globos de la Capadocia
+    //  · el folleto de Mediterráneo y Oriente Medio 2026 de Viajes El Corte Inglés
+    historia: [
+      'Estambul es la única ciudad del mundo que está en dos continentes, y lo bueno es que se cruza de uno a otro en un vapor de línea por el precio de un billete de autobús. Lo hacemos a diario: se desayuna en el lado europeo y se come en el asiático, donde no hay una sola tienda de alfombras y sí los mejores desayunos de la ciudad.',
+      'De ahí a la Capadocia, que es un paisaje que hizo la ceniza. Tres volcanes cubrieron la llanura de toba, la lluvia y el viento la fueron cortando en chimeneas, y la gente descubrió que esa roca se excava con una cuchara: hay iglesias, palomares y casas enteras dentro de las agujas, algunas con los frescos todavía puestos. Los globos salen casi todas las mañanas de abril a noviembre; entre diciembre y marzo se cancelan más de las que vuelan.',
+      'Después el Egeo, que es donde está la Roma que no se ve en Roma. En Éfeso sigue en pie la fachada de la biblioteca de Celso, terminada hacia el año 117: la levantó un hijo en honor a su padre, guardaba doce mil rollos y es además su tumba, porque Celso está enterrado en una cripta justo debajo. Y a tres horas, Pamukkale: terrazas de travertino blanco formadas por el agua termal que baja de la montaña, Patrimonio de la Humanidad desde 1988, con la ciudad romana de Hierápolis construida justo encima.',
+      'Se acaba en el mar, en un barco de madera de los de toda la vida, durmiendo a bordo. No hay mejor manera de ver esta costa: los pueblos del Egeo están todos mirando al agua y casi todos dan la espalda a la carretera.',
+    ],
+
+    datos: [
+      { etiqueta: 'Capital', valor: 'Ankara' },
+      { etiqueta: 'Cuándo ir', valor: 'En abril y mayo, y de septiembre a octubre' },
+      { etiqueta: 'Pamukkale', valor: 'Patrimonio desde 1988' },
+      { etiqueta: 'Plazas', valor: 'De cinco a ocho por salida' },
+    ],
+
+    galeria: [
+      {
+        id: 'estambul',
+        foto: FOTOS.TURQUIA_ESTAMBUL,
+        alt: 'El interior de la Mezquita Azul de Estambul, con las cúpulas cubiertas de azulejos',
+        rotulo: 'Estambul',
+        pie: 'Lo azul de la Mezquita Azul son unos veinte mil azulejos de Iznik puestos uno a uno. Se entra a primera hora, y luego se cruza al lado asiático en el vapor de línea, con los demás.',
+      },
+      {
+        id: 'goreme',
+        foto: FOTOS.TURQUIA_GOREME,
+        alt: 'Viviendas e iglesias excavadas en las agujas de toba de la Capadocia',
+        rotulo: 'La Capadocia',
+        pie: 'Tres volcanes dejaron la toba y la gente descubrió que se excava con una cuchara. Dentro de esas agujas hay iglesias con los frescos todavía puestos.',
+      },
+      {
+        id: 'pamukkale',
+        foto: FOTOS.TURQUIA_PAMUKKALE,
+        alt: 'Las terrazas blancas de travertino de Pamukkale con el agua turquesa',
+        rotulo: 'Pamukkale',
+        pie: 'El agua termal baja de la montaña y va dejando la cal en terrazas. Patrimonio de la Humanidad desde 1988, con una ciudad romana construida encima.',
+      },
+      {
+        id: 'efeso',
+        foto: FOTOS.TURQUIA_EFESO,
+        alt: 'La fachada de la biblioteca de Celso en Éfeso',
+        rotulo: 'Éfeso',
+        pie: 'Doce mil rollos guardaba esta biblioteca del año 117. La levantó un hijo por su padre y es también su tumba: Celso está en una cripta justo debajo.',
+      },
+    ],
+
     salidas: {
       temporada: 'En abril y mayo, y de septiembre a octubre',
       porque:
@@ -769,6 +919,56 @@ export const DESTINOS = [
     // Ventana: mayo y junio son los dos meses de menos sol en la costa del sur
     // de California —el June Gloom, un 64 % de sol posible en Los Ángeles
     // (Wikipedia)— y en enero Nueva York se mueve entre cinco bajo cero y dos.
+
+    // La historia del sitio. Fuentes:
+    //  · Puente de Brooklyn (Wikipedia), para fechas y medidas
+    //  · June Gloom (Wikipedia), para la niebla de mayo y junio en California
+    //  · el folleto de América 2026 de Viajes El Corte Inglés
+    historia: [
+      'Nueva York se entiende por barrios o no se entiende. Por eso empezamos por Brooklyn y el Bronx y dejamos Times Square para el final, si es que da tiempo. El metro en vez del autocar, que además es más rápido, y las distancias andando: la ciudad se mide en manzanas y veinte manzanas son un paseo.',
+      'El puente de Brooklyn se inauguró en 1883 después de trece años de obra, y en su momento fue el puente colgante más largo del mundo: un cincuenta por ciento más que cualquiera anterior, con un vano de 486 metros. Fue también el primero suspendido con cables de acero. Se cruza andando a primera hora, desde el lado de Brooklyn, que es como hay que cruzarlo: de frente se te viene encima el sur de Manhattan.',
+      'Después está el otro Nueva York, el de domingo: Coney Island, con su paseo de tablas, su noria y el puesto de perritos que lleva ahí desde 1916. Y Central Park, que no es un parque dentro de la ciudad sino al revés — la ciudad creció alrededor de él, y eso se nota en cuanto entras.',
+      'Si queda cuerpo, la otra costa. Los Ángeles no se parece a nada de lo anterior: no tiene centro, se vive en el coche y el Pacífico está siempre a media hora. Vamos en otoño a propósito: en mayo y junio esa costa amanece tapada casi todos los días —lo llaman June Gloom, y son los dos meses de menos sol del año allí—, y a nadie le apetece cruzar medio país para encontrarse una nube.',
+    ],
+
+    datos: [
+      { etiqueta: 'Capital', valor: 'Washington D. C.' },
+      { etiqueta: 'Cuándo ir', valor: 'De mayo a junio y de septiembre a octubre' },
+      { etiqueta: 'El puente', valor: '486 m, de 1883' },
+      { etiqueta: 'Plazas', valor: 'De cinco a ocho por salida' },
+    ],
+
+    galeria: [
+      {
+        id: 'dumbo',
+        foto: FOTOS.EEUU_DUMBO,
+        alt: 'El puente de Manhattan encajado entre los almacenes de ladrillo de Dumbo',
+        rotulo: 'Dumbo',
+        pie: 'Una calle de adoquines entre almacenes de ladrillo y, al fondo, el puente entero. Se llega a las ocho, antes de que la esquina se llene de cámaras.',
+      },
+      {
+        id: 'central',
+        foto: FOTOS.EEUU_CENTRAL,
+        alt: 'Barcas de remos en el lago de Central Park, con las torres del San Remo al fondo',
+        rotulo: 'Central Park',
+        pie: 'No es un parque dentro de la ciudad: la ciudad creció a su alrededor. Se alquila una barca por horas y desde el agua no se oye un solo claxon.',
+      },
+      {
+        id: 'coney',
+        foto: FOTOS.EEUU_CONEY,
+        alt: 'El paseo de tablas de Coney Island con el puesto de perritos y la noria al fondo',
+        rotulo: 'Coney Island',
+        pie: 'Se va en metro, un domingo, y se come de pie en el puesto que abrió en 1916. Es el Nueva York que no sale en las listas y el que todo el mundo recuerda.',
+      },
+      {
+        id: 'angeles',
+        foto: FOTOS.EEUU_ANGELES,
+        alt: 'Los Ángeles con las palmeras y el perfil de la ciudad al fondo',
+        rotulo: 'Los Ángeles',
+        pie: 'Sin centro, en coche y con el Pacífico a media hora. Vamos en otoño: en mayo y junio esta costa amanece tapada casi todos los días.',
+      },
+    ],
+
     salidas: {
       temporada: 'De mayo a junio y de septiembre a octubre',
       porque:
