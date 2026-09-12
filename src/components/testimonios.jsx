@@ -45,14 +45,17 @@ export default function Testimonios() {
   }
 
   return (
-    <div>
+    // El bloque se queda muy por dentro del ancho de la sección: dos citas
+    // estiradas de borde a borde no se leen, y el aire de los lados es lo que
+    // hace que esto parezca una página y no un widget de reseñas.
+    <div className="mx-auto max-w-3xl lg:max-w-4xl">
       <div
         ref={carril}
         {...gestos}
         tabIndex={0}
         role="group"
         aria-label="Opiniones de viajeras y viajeros"
-        className={`carril -mx-6 flex scroll-pl-6 gap-12 overflow-x-auto px-6 pb-2 md:mx-0 md:scroll-pl-0 md:gap-12 md:px-0 ${
+        className={`carril -mx-6 flex scroll-pl-6 gap-12 overflow-x-auto px-6 pb-2 sm:mx-0 sm:scroll-pl-0 sm:px-0 ${
           arrastrando ? 'select-none' : ''
         }`}
       >
@@ -62,7 +65,7 @@ export default function Testimonios() {
             // Dos por pantalla en el ordenador contando el hueco; en el móvil,
             // una entera y el borde de la siguiente, que es lo que invita a
             // seguir tirando.
-            className="flex w-[82vw] shrink-0 flex-col sm:w-[62vw] md:w-[calc((100%-3rem)/2)]"
+            className="flex w-[80vw] shrink-0 flex-col sm:w-[calc((100%-3rem)/2)]"
           >
             <Estrellas cuantas={estrellas} />
 

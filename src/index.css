@@ -177,6 +177,19 @@ label {
   scroll-snap-align: start;
 }
 
+/* Fila que se desplaza a lo ancho pero sin paradas: para las pestañas de
+   continentes, donde el imán del scroll-snap estorba —al cargar arrastraba
+   la primera pestaña contra el borde y se comía el margen. */
+.fila-scroll {
+  scrollbar-width: none;
+  overflow-y: hidden;
+  contain: paint;
+}
+
+.fila-scroll::-webkit-scrollbar {
+  display: none;
+}
+
 /* ---- Preguntas frecuentes, con <details> y sin JavaScript ----------------
    El signo de la derecha es un trazo girado, no un carácter: así la cruz se
    convierte en raya con una transición y siempre queda a la misma altura. */

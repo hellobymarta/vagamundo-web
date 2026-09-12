@@ -20,7 +20,10 @@ export default function TarjetaViaje({
   disponible,
 }) {
   return (
-    <article className="group flex flex-col">
+    // El id hace de ancla: las portadas del hero enlazan con la ficha de su
+    // destino, no con el principio del catálogo. El hueco de la cabecera fija
+    // lo pone el scroll-margin-top que index.css aplica a todo [id].
+    <article id={`viaje-${id}`} className="group flex flex-col">
       <Link to={`/viaje/${id}`} className="block">
         <div className="relative aspect-[3/2] overflow-hidden">
           <img

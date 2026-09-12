@@ -1,5 +1,7 @@
 import Boton from '@/components/boton'
 import { useCarrusel } from '@/hooks/use-carrusel'
+import { useViajes } from '@/hooks/use-viajes'
+import { viajesDeDestino } from '@/config/destinos'
 import { PORTADAS, SEGUNDOS_PORTADA } from '@/config/constantes'
 
 // Dos intensidades de velo. Las fotografías claras necesitan el fuerte para
@@ -12,9 +14,18 @@ const VELO_SUAVE = 'bg-gradient-to-t from-tinta/65 via-tinta/15 to-transparent'
 // campaña a otra y lleva la paginación en puntitos abajo. El texto va
 // centrado, con el epígrafe en serif y un botón rectangular de contorno fino.
 export default function PortadaRotativa() {
+  const { viajes } = useViajes()
   const { indice, ir } = useCarrusel(PORTADAS.length, SEGUNDOS_PORTADA * 1000)
+
   const actual = PORTADAS[indice]
-  const { etiqueta, titulo, texto, enlace, accion } = actual
+  const { etiqueta, titulo, texto, enlace, accion, destinoId } = actual
+
+  // Si la campaña señala un destino, el botón lleva a la ficha de su viaje
+  // dentro del catálogo. Mientras el catálogo se está cargando —o si ese
+  // destino se quedara sin viajes— lleva al catálogo entero, que siempre
+  // existe: así el botón nunca apunta a un ancla que no está.
+  const suyo = destinoId ? viajesDeDestino(viajes, destinoId)[0] : null
+  const destinoDelBoton = destinoId ? (suyo ? `/#viaje-${suyo._id}` : '/#catalogo') : enlace
 
   return (
     // h-dvh es la altura real de la ventana, también en el móvil, donde
@@ -46,7 +57,7 @@ export default function PortadaRotativa() {
         <p className="mt-6 max-w-lg leading-relaxed text-white/75">{texto}</p>
 
         <div className="mt-10">
-          <Boton a={enlace} variante="claro" forma="recto">
+          <Boton a={destinoDelBoton} variante="claro" forma="recto">
             {accion}
           </Boton>
         </div>

@@ -160,11 +160,12 @@ export default function Viajes() {
         tono={TONOS.CREMA}
         etiqueta="Todos los destinos"
         titulo="Donde estamos y donde queremos estar"
-        texto="En negro, los que tienen plazas abiertas ahora mismo. En gris, los que estamos preparando para 2027: no aparecen hasta que los hemos hecho enteros nosotras."
+        centrado
+        texto="Elige un continente y abajo se abren sus sitios. En negro, los que tienen plazas ahora mismo, con el número de viajes al lado; en gris, los que estamos preparando para 2027."
       >
         <TodosDestinos viajes={viajes} />
 
-        <p className="etiqueta mt-16">
+        <p className="mt-20 text-center">
           <Boton a="/destinos" variante="contorno">
             Ver todos los destinos
           </Boton>

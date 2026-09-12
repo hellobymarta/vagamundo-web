@@ -1,5 +1,7 @@
+import { useSearchParams } from 'react-router-dom'
+
 import Boton from '@/components/boton'
-import { FOTOS, PASOS } from '@/config/constantes'
+import { FOTOS, PASOS, PARAMETRO_PROPUESTA } from '@/config/constantes'
 
 // Viajes a medida. Es la mitad de lo que hace la casa, así que ocupa una
 // sección entera a sangre y no una lista de tres puntos al final de la
@@ -7,11 +9,23 @@ import { FOTOS, PASOS } from '@/config/constantes'
 //
 // Deconstruimos cada paso dentro del map y la key es su número.
 export default function Medida() {
+  // Si se ha llegado desde una portada del hero, la dirección trae el destino
+  // («/?destino=Namibia#a-medida»). Se enseña aquí y se arrastra hasta el
+  // formulario, para que no haya que volver a escribirlo.
+  const [parametros] = useSearchParams()
+  const destino = parametros.get(PARAMETRO_PROPUESTA)
+
+  const enlaceFormulario = destino
+    ? `/nuevo?${PARAMETRO_PROPUESTA}=${encodeURIComponent(destino)}`
+    : '/nuevo'
+
   return (
-    <section className="bg-terracota px-6 py-28 md:px-10 md:py-36">
+    <section id="a-medida" className="scroll-mt-24 bg-terracota px-6 py-28 md:px-10 md:py-36">
       <div className="mx-auto max-w-[1440px]">
         <div className="max-w-2xl">
-          <p className="etiqueta text-terracota-acento">Viajes a medida</p>
+          <p className="etiqueta text-terracota-acento">
+            {destino ? `Viajes a medida · ${destino}` : 'Viajes a medida'}
+          </p>
 
           <h2 className="titular t-seccion mt-6">
             O el vuestro solo, con las{' '}
@@ -23,6 +37,13 @@ export default function Medida() {
             un viaje del catálogo o de una idea escrita en una servilleta, y se monta entero:
             mismas fechas que vosotros, mismo ritmo y las paradas que os apetezcan.
           </p>
+
+          {destino && (
+            <p className="etiqueta mt-7 flex items-center gap-3 text-terracota-acento">
+              <span aria-hidden="true" className="h-px w-8 bg-terracota-acento/50" />
+              Empezamos por {destino}
+            </p>
+          )}
         </div>
 
         <div className="mt-16 grid items-stretch gap-12 md:mt-20 md:grid-cols-2 md:gap-16">
@@ -68,7 +89,7 @@ export default function Medida() {
         </div>
 
         <div className="mt-14 flex flex-wrap items-center gap-x-10 gap-y-5 md:mt-16">
-          <Boton a="/nuevo">Contadnos vuestro viaje</Boton>
+          <Boton a={enlaceFormulario}>Contadnos vuestro viaje</Boton>
 
           <p className="etiqueta text-suave">
             O al teléfono: <span className="cifras text-tinta">+34 900 000 000</span>

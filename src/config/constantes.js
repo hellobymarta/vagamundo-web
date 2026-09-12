@@ -22,6 +22,10 @@ export const CATEGORIAS = [
 // Nombre del parámetro con el que se filtra el catálogo desde la URL.
 export const PARAMETRO_MOTIVACION = 'motivacion'
 
+// Y el que arrastra el destino desde la portada hasta el formulario cuando
+// alguien pide una propuesta a medida.
+export const PARAMETRO_PROPUESTA = 'destino'
+
 // Cada cuántos segundos pasa sola la portada, como el hero de NUBA.
 export const SEGUNDOS_PORTADA = 7
 
@@ -98,8 +102,12 @@ export const PORTADAS = [
     etiqueta: 'Costa amalfitana · siete días en mayo',
     titulo: 'Once años volviendo al mismo trozo de costa',
     texto: 'Positano cuando las escaleras están vacías y los limones pesan en el árbol.',
-    accion: 'Ver el viaje',
-    enlace: '/#catalogo',
+    accion: 'Ver el viaje a Amalfi',
+    // `destinoId` señala un destino del catálogo: la portada resuelve al
+    // vuelo qué viaje hay allí y enlaza con su ficha concreta, no con el
+    // principio de la lista. Si ese destino se queda sin viajes, cae en el
+    // catálogo entero.
+    destinoId: 'italia',
   },
   {
     id: 'namibia',
@@ -108,8 +116,10 @@ export const PORTADAS = [
     etiqueta: 'Namibia · once días de Etosha al Kalahari',
     titulo: 'Donde el desierto llega hasta el mar',
     texto: 'Dunas de trescientos metros, y once días en los que casi no se ve un coche.',
-    accion: 'Solicitar propuesta',
-    enlace: '/#catalogo',
+    accion: 'Solicitar propuesta a Namibia',
+    // Lleva a la sección de viajes a medida y le dice de qué destino se
+    // trata, que es lo que luego se arrastra hasta el formulario.
+    enlace: `/?${PARAMETRO_PROPUESTA}=Namibia#a-medida`,
   },
   {
     id: 'india',
@@ -118,8 +128,8 @@ export const PORTADAS = [
     etiqueta: 'Nuevo · Norte de la India',
     titulo: 'Agra a las seis de la mañana',
     texto: 'Entramos antes que nadie, con el mármol todavía frío y sin una sola cola.',
-    accion: 'Descubrir',
-    enlace: '/#catalogo',
+    accion: 'Descubrir la India',
+    destinoId: 'india',
   },
   {
     id: 'medida',
@@ -148,7 +158,7 @@ export const MANIFIESTO = {
       id: 'mirar',
       titulo: 'Dos cosas que me cambiaron la manera de mirar',
       texto:
-        'La primera, un amanecer en el Serengeti con la migración delante: un millón y medio de ñus y doscientas cincuenta mil cebras haciendo los ochocientos kilómetros que repiten cada año entre Tanzania y el Masai Mara keniano. La segunda, casi mil kilómetros al este y ya en el Índico: perderse en Stone Town, la ciudad vieja de Zanzíbar, la isla de especias que también es Tanzania y donde en cinco calles se mezclan África, Arabia y la India. El mismo país, y no se parecen en nada. Desde entonces no me interesa tanto ir a un país como entender qué guarda dentro.',
+        'Un amanecer en el Serengeti con la migración delante. Y perderme por las calles de Stone Town, en Zanzíbar. Dos sitios del mismo país que no se parecen en nada y que me enseñaron lo mismo: viajar no es llegar a un destino, es descubrir lo que guarda dentro.',
     },
     {
       id: 'itinerario',

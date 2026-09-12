@@ -1,16 +1,21 @@
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 
 import Portada from '@/components/portada'
 import Seccion from '@/components/seccion'
 import FormularioViaje from '@/components/formulario-viaje'
 import Aviso from '@/components/aviso'
 import { useViajes } from '@/hooks/use-viajes'
-import { FOTOS, TONOS } from '@/config/constantes'
+import { FOTOS, TONOS, VIAJE_VACIO, PARAMETRO_PROPUESTA } from '@/config/constantes'
 
 // Alta de un viaje: formulario controlado que hace POST contra la API.
 export default function Nuevo() {
   const { crearViaje, guardando, error } = useViajes()
   const navegar = useNavigate()
+
+  // Si se llega desde «Solicitar propuesta» la dirección trae el destino,
+  // así que el formulario abre con ese campo puesto.
+  const [parametros] = useSearchParams()
+  const destino = parametros.get(PARAMETRO_PROPUESTA)
 
   async function enviar(viaje) {
     const creado = await crearViaje(viaje)
@@ -24,7 +29,7 @@ export default function Nuevo() {
       <Portada
         imagen={FOTOS.PLAYA}
         alt="La playa de Atrani a primera hora"
-        etiqueta="Nuevo en el catálogo"
+        etiqueta={destino ? `Propuesta · ${destino}` : 'Nuevo en el catálogo'}
         titulo="Cuenta el viaje que tienes en la cabeza"
         texto="Se guarda en MongoDB a través de la API y aparece en el catálogo al momento."
         alto="h-[62vh]"
@@ -35,7 +40,12 @@ export default function Nuevo() {
           <Aviso tono="error">{error}</Aviso>
         </div>
 
-        <FormularioViaje onEnviar={enviar} enviando={guardando} textoBoton="Publicar viaje" />
+        <FormularioViaje
+          viajeInicial={destino ? { ...VIAJE_VACIO, destino } : VIAJE_VACIO}
+          onEnviar={enviar}
+          enviando={guardando}
+          textoBoton="Publicar viaje"
+        />
       </Seccion>
     </>
   )
