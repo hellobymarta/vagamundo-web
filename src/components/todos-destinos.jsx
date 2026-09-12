@@ -63,7 +63,7 @@ export default function TodosDestinos({ viajes }) {
         key={elegido.nombre}
         className="mt-14 flex flex-wrap justify-center gap-x-10 gap-y-5 md:mt-16 md:gap-x-14"
       >
-        {elegido.destinos.map(({ id, nombre: pais }) => {
+        {elegido.destinos.map(({ id, nombre: pais, proximamente }) => {
           const cuantos = viajesDeDestino(viajes, id).length
 
           return (
@@ -72,16 +72,18 @@ export default function TodosDestinos({ viajes }) {
               to={`/destinos/${id}`}
               className="group flex items-baseline gap-3 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracota-acento"
             >
+              {/* En negro los abiertos y en gris los que todavía no lo están.
+                  El estado lo dice el destino, no el número de viajes. */}
               <span
                 className={`titular text-2xl transition group-hover:text-terracota-acento md:text-3xl ${
-                  cuantos > 0 ? 'text-tinta' : 'text-suave/45'
+                  proximamente ? 'text-suave/45' : 'text-tinta'
                 }`}
               >
                 {pais}
               </span>
 
               <span className="etiqueta cifras text-suave/70">
-                {cuantos > 0 ? cuantos : '—'}
+                {proximamente ? '2027' : cuantos > 0 ? cuantos : ''}
               </span>
             </Link>
           )

@@ -13,8 +13,8 @@ import Cargando from '@/components/cargando'
 import Aviso from '@/components/aviso'
 import Boton from '@/components/boton'
 import { useViajes } from '@/hooks/use-viajes'
-import { DESTINOS, viajesDeDestino } from '@/config/destinos'
-import { FOTOS, TONOS } from '@/config/constantes'
+import { DESTINOS, estaAbierto, viajesDeDestino } from '@/config/destinos'
+import { FOTOS, TONOS, PARAMETRO_PROPUESTA } from '@/config/constantes'
 import { enPalabras } from '@/formato'
 
 // La página de cada destino, al modo de las de NUBA: portada a sangre con el
@@ -45,6 +45,8 @@ export default function Destino() {
 
   const { nombre, continente, foto, fotoAlt, titular, entradilla, historia, datos, galeria } =
     destino
+
+  const abierto = estaAbierto(destino)
   const suyos = viajesDeDestino(viajes, pais)
 
   return (
@@ -72,11 +74,17 @@ export default function Destino() {
             <p className="titular mt-6 text-2xl leading-snug md:text-3xl">{entradilla}</p>
 
             <div className="mt-10 flex flex-wrap items-center gap-x-10 gap-y-4">
-              <p className="etiqueta cifras text-suave">
-                {suyos.length} {suyos.length === 1 ? 'viaje abierto' : 'viajes abiertos'}
-              </p>
-              <p className="etiqueta text-suave">Ocho plazas por salida</p>
-              <p className="etiqueta text-suave">Guía privado de habla hispana</p>
+              {abierto ? (
+                <p className="etiqueta cifras text-suave">
+                  {suyos.length > 0
+                    ? `${suyos.length} ${suyos.length === 1 ? 'viaje abierto' : 'viajes abiertos'}`
+                    : 'Salidas a consultar'}
+                </p>
+              ) : (
+                <p className="etiqueta text-terracota-acento">Próximamente · 2027</p>
+              )}
+              <p className="etiqueta text-suave">De cinco a ocho plazas por salida</p>
+              <p className="etiqueta text-suave">Guía de allí en cada salida</p>
             </div>
           </div>
         </div>
@@ -109,7 +117,13 @@ export default function Destino() {
       <Seccion
         tono={TONOS.HUESO}
         etiqueta="Nuestros viajes"
-        titulo={suyos.length > 0 ? `Lo que tenemos en ${nombre}` : `Todavía no hay plazas en ${nombre}`}
+        titulo={
+          suyos.length > 0
+            ? `Lo que tenemos en ${nombre}`
+            : abierto
+              ? `Las salidas de ${nombre}, por temporada`
+              : `Todavía no abrimos ${nombre}`
+        }
       >
         {cargando ? (
           <Cargando />
@@ -118,8 +132,9 @@ export default function Destino() {
         ) : (
           <>
             <Aviso tono="info">
-              Lo estamos recorriendo en este momento. No abrimos plazas hasta haber probado
-              nosotras cada casa y cada guía.
+              {abierto
+                ? 'Las próximas fechas todavía no están en el catálogo. Escríbenos y te las pasamos con el itinerario completo.'
+                : 'Lo estamos recorriendo en este momento. No abrimos plazas hasta haber probado nosotras cada casa y cada guía.'}
             </Aviso>
             <p className="etiqueta mt-10">
               <Link
@@ -133,13 +148,15 @@ export default function Destino() {
         )}
       </Seccion>
 
-      <Seccion
-        tono={TONOS.TERRACOTA}
-        etiqueta="Viajes a medida"
-        titulo={`O lo diseñamos en privado, solo para vosotros`}
-      >
-        <Pasos />
-      </Seccion>
+      {abierto && (
+        <Seccion
+          tono={TONOS.TERRACOTA}
+          etiqueta="Viajes a medida"
+          titulo="O lo diseñamos en privado, solo para vosotros"
+        >
+          <Pasos />
+        </Seccion>
+      )}
 
       <Seccion
         tono={TONOS.AMARILLO}
@@ -150,14 +167,27 @@ export default function Destino() {
         <Preguntas />
       </Seccion>
 
-      <BandaOscura
-        imagen={foto}
-        pregunta={`¿Nos vamos a ${nombre}?`}
-        etiqueta="Te llamamos"
-        texto="Una conversación de media hora y os enviamos la propuesta completa: casas, guías y horarios con nombre propio."
-        accion="Solicitar propuesta"
-        enlace="/nuevo"
-      />
+      {/* La llamada final cambia con el estado: a un destino que todavía no
+          hemos abierto no se le puede pedir una propuesta. */}
+      {abierto ? (
+        <BandaOscura
+          imagen={foto}
+          pregunta={`¿Nos vamos a ${nombre}?`}
+          etiqueta="Te llamamos"
+          texto="Una conversación de media hora y os enviamos la propuesta completa: casas, guías y horarios con nombre propio."
+          accion="Solicitar propuesta"
+          enlace={`/nuevo?${PARAMETRO_PROPUESTA}=${encodeURIComponent(nombre)}`}
+        />
+      ) : (
+        <BandaOscura
+          imagen={foto}
+          pregunta={`${nombre} abre en 2027`}
+          etiqueta="Te avisamos"
+          texto="Déjanos el correo y te escribimos en cuanto cerremos las fechas. No mandamos nada más."
+          accion="Avisadme"
+          enlace="/#boletin"
+        />
+      )}
     </>
   )
 }

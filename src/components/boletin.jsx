@@ -20,7 +20,7 @@ export default function Boletin() {
   }
 
   return (
-    <section className="bg-caqui px-6 py-28 md:px-10 md:py-36">
+    <section id="boletin" className="scroll-mt-24 bg-caqui px-6 py-28 md:px-10 md:py-36">
       <div className="mx-auto grid max-w-[1440px] gap-16 md:grid-cols-2 md:gap-24">
         <div>
           <h2 className="titular t-seccion text-white">

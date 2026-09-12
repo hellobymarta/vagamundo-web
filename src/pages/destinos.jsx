@@ -11,7 +11,7 @@ import { FOTOS, TONOS } from '@/config/constantes'
 // Índice de destinos, como el de NUBA: la lista agrupada por continente,
 // con una ficha por sitio. Cada una lleva a la página de ese destino.
 // Deconstruimos cada destino dentro del map y la key es su id, nunca la posición.
-function FichaDestino({ id, nombre, foto, fotoAlt, titular, cuantos }) {
+function FichaDestino({ id, nombre, foto, fotoAlt, titular, proximamente, cuantos }) {
   return (
     <article className="group">
       <Link
@@ -39,10 +39,14 @@ function FichaDestino({ id, nombre, foto, fotoAlt, titular, cuantos }) {
 
           <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-6 pb-6 pt-20 text-white">
             <h3 className="titular text-3xl">{nombre}</h3>
+            {/* El estado sale del destino, no de cuántos viajes tenga: un
+                sitio abierto puede estar entre temporadas. */}
             <p className="etiqueta mt-2 text-white/70">
-              {cuantos > 0
-                ? `${cuantos} ${cuantos === 1 ? 'viaje' : 'viajes'}`
-                : 'Próximamente'}
+              {proximamente
+                ? 'Próximamente'
+                : cuantos > 0
+                  ? `${cuantos} ${cuantos === 1 ? 'viaje abierto' : 'viajes abiertos'}`
+                  : 'Consultar salidas'}
             </p>
           </div>
         </div>

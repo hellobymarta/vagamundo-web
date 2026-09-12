@@ -109,9 +109,9 @@ export const DESTINOS = [
     continente: 'Europa',
     foto: FOTOS.TURQUIA,
     fotoAlt: 'Globos sobre los valles de la Capadocia al amanecer',
-    titular: 'En preparación para 2027',
+    titular: 'Dos continentes en un viaje',
     entradilla:
-      'La costa del Egeo en barco de madera y la Capadocia fuera de la temporada de los globos. Nos falta encontrar a la persona que nos lleve por Estambul.',
+      'Estambul a un lado y al otro del Bósforo, la Capadocia en temporada tranquila y el Egeo en barco de madera, durmiendo a bordo. Se sale en primavera y en octubre, que es cuando se puede andar por Éfeso sin buscar la sombra.',
     pistas: ['turquia', 'turquía', 'estambul', 'capadocia', 'efeso', 'éfeso', 'bodrum', 'egeo'],
   },
   {
@@ -254,6 +254,7 @@ export const DESTINOS = [
   },
   {
     id: 'marruecos',
+    proximamente: true,
     nombre: 'Marruecos',
     continente: 'África',
     titular: 'En preparación para 2027',
@@ -361,6 +362,7 @@ export const DESTINOS = [
   },
   {
     id: 'brasil',
+    proximamente: true,
     nombre: 'Brasil',
     continente: 'América',
     titular: 'El nordeste, no las postales',
@@ -431,6 +433,7 @@ export const DESTINOS = [
   },
   {
     id: 'vietnam',
+    proximamente: true,
     nombre: 'Vietnam',
     continente: 'Asia',
     titular: 'En preparación para 2027',
@@ -595,6 +598,7 @@ export const DESTINOS = [
   },
   {
     id: 'nuevazelanda',
+    proximamente: true,
     nombre: 'Nueva Zelanda',
     continente: 'Oceanía',
     titular: 'En preparación para 2027',
@@ -604,6 +608,7 @@ export const DESTINOS = [
   },
   {
     id: 'australia',
+    proximamente: true,
     nombre: 'Australia',
     continente: 'Oceanía',
     titular: 'En preparación para 2027',
@@ -613,6 +618,7 @@ export const DESTINOS = [
   },
   {
     id: 'mexico',
+    proximamente: true,
     nombre: 'México',
     continente: 'América',
     titular: 'En preparación para 2027',
@@ -626,9 +632,9 @@ export const DESTINOS = [
     continente: 'América',
     foto: FOTOS.ESTADOSUNIDOS,
     fotoAlt: 'El puente de Brooklyn al atardecer, con el sur de Manhattan al fondo',
-    titular: 'En preparación para 2027',
+    titular: 'Nueva York por barrios, y luego la costa',
     entradilla:
-      'Los parques del oeste en furgoneta y fuera de temporada alta, que es la única manera de que no parezcan un aparcamiento.',
+      'Brooklyn y el Bronx antes que Times Square, el metro en vez del autocar y Coney Island un domingo. Después, si queda cuerpo, la otra costa: Los Ángeles y el Pacífico.',
     pistas: ['estados unidos', 'estadosunidos', 'utah', 'arizona', 'yosemite', 'california'],
   },
 ]
@@ -666,6 +672,13 @@ export function viajesDeDestino(viajes, id) {
 
 // La fotografía que le corresponde a un destino, para no acabar poniendo
 // una foto de Amalfi en un viaje a Namibia.
+// ¿Se puede reservar ya? Es un dato del destino, no algo que se deduzca de
+// cuántos viajes haya en el catálogo: una salida puede estar cerrada por
+// temporada sin que el destino deje de estar abierto.
+export function estaAbierto(destino) {
+  return !destino?.proximamente
+}
+
 export function fotoDeDestino(texto, porDefecto) {
   return buscarDestino(texto)?.foto || porDefecto
 }
