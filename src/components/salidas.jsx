@@ -9,9 +9,10 @@ import { PARAMETRO_PROPUESTA } from '@/config/constantes'
 //
 // Deconstruimos cada fecha dentro del map y la key es su id, nunca la posición.
 //
-// Cada fila es una rejilla de columnas fijas, no un justify-between: con
-// justify-between la columna del medio se movía según lo larga que fuera la
-// fecha y las filas parecían colocadas cada una por su cuenta.
+// Cada fila es una rejilla de tres columnas iguales y centradas, no un
+// justify-between: con justify-between la columna del medio se movía según lo
+// larga que fuera la fecha y las filas parecían colocadas cada una por su
+// cuenta. En el móvil las tres se apilan y siguen centradas.
 function estado(plazas) {
   if (plazas === 0) return { texto: 'Completa', clase: 'text-suave/60' }
   if (plazas === 1) return { texto: 'Última plaza', clase: 'text-terracota-acento' }
@@ -34,7 +35,15 @@ export default function Salidas({ nombre, salidas }) {
         <p className="leading-relaxed text-suave md:text-lg">{porque}</p>
       </div>
 
+      {/* Las tres columnas van rotuladas y centradas: salidas, plazas y
+          reservas, con el mismo peso y la misma separación. */}
       <ul className="mt-16 md:mt-20">
+        <li className="hidden pb-5 text-center md:grid md:grid-cols-3 md:gap-x-10">
+          <p className="etiqueta text-suave">Salidas</p>
+          <p className="etiqueta text-suave">Plazas</p>
+          <p className="etiqueta text-suave">Reservas</p>
+        </li>
+
         {fechas.map(({ id, dia, plazas }) => {
           const { texto, clase } = estado(plazas)
           const completa = plazas === 0
@@ -42,13 +51,13 @@ export default function Salidas({ nombre, salidas }) {
           return (
             <li
               key={id}
-              className="grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-x-8 gap-y-5 border-t border-tinta/12 py-7 md:grid-cols-[minmax(0,1fr)_11rem_11rem]"
+              className="grid gap-y-4 border-t border-tinta/12 py-8 text-center md:grid-cols-3 md:items-center md:gap-x-10"
             >
               <p className="titular text-xl md:text-2xl">{dia}</p>
 
-              <p className={`etiqueta cifras text-right md:text-left ${clase}`}>{texto}</p>
+              <p className={`etiqueta cifras ${clase}`}>{texto}</p>
 
-              <p className="col-span-2 md:col-span-1 md:justify-self-end">
+              <p className="justify-self-center">
                 <Boton
                   a={`/nuevo?${PARAMETRO_PROPUESTA}=${destino}`}
                   variante={completa ? 'contorno' : 'principal'}

@@ -4,8 +4,6 @@ import Portada from '@/components/portada'
 import Seccion from '@/components/seccion'
 import Silueta from '@/components/silueta'
 import Itinerario from '@/components/itinerario'
-import Galeria from '@/components/galeria'
-import DatosDestino from '@/components/datos-destino'
 import BandaOscura from '@/components/banda-oscura'
 import TarjetaViaje from '@/components/tarjeta-viaje'
 import Cargando from '@/components/cargando'
@@ -14,7 +12,7 @@ import Boton from '@/components/boton'
 import { useViajes } from '@/hooks/use-viajes'
 import { buscarDestino, fotoDeDestino } from '@/config/destinos'
 import { FOTOS, IMAGEN_POR_DEFECTO, TONOS } from '@/config/constantes'
-import { contarNoches, enPalabras, formatearPrecio } from '@/formato'
+import { contarNoches, formatearPrecio } from '@/formato'
 
 // Ficha de un viaje. Lo buscamos en el catálogo que ya tenemos en el contexto,
 // así no repetimos una llamada que la app ya ha hecho.
@@ -156,27 +154,24 @@ export default function Viaje() {
         </div>
       </Seccion>
 
-      {/* La historia del sitio: solo aparece si la tenemos escrita. */}
-      {sitio?.historia && (
+      {/* La historia, los datos y la galería del sitio viven en la página del
+          destino y no se repiten aquí: esta página es el viaje (precio,
+          itinerario y reserva) y aquella es el país. Desde aquí se va allí. */}
+      {sitio && (
         <Seccion
           tono={TONOS.HUESO}
           etiqueta={`Sobre ${sitio.nombre}`}
           titulo={sitio.titular}
+          texto={sitio.entradilla}
         >
-          <div className="grid gap-x-20 gap-y-8 md:grid-cols-2">
-            {sitio.historia.map((parrafo) => (
-              // La key es el principio del párrafo, que no se repite.
-              <p key={parrafo.slice(0, 40)} className="leading-relaxed text-suave md:text-lg">
-                {parrafo}
-              </p>
-            ))}
-          </div>
-
-          {sitio.datos && (
-            <div className="mt-20">
-              <DatosDestino datos={sitio.datos} />
-            </div>
-          )}
+          <p className="etiqueta">
+            <Link
+              to={`/destinos/${sitio.id}`}
+              className="border-b border-tinta/25 pb-1 transition hover:border-tinta"
+            >
+              Ver la página de {sitio.nombre}
+            </Link>
+          </p>
         </Seccion>
       )}
 
@@ -188,16 +183,6 @@ export default function Viaje() {
           texto="El itinerario base, día por día. Se ajusta a lo que os apetezca: es lo primero que hablamos."
         >
           <Itinerario texto={itinerario} />
-        </Seccion>
-      )}
-
-      {sitio?.galeria && (
-        <Seccion
-          tono={TONOS.TERRACOTA}
-          etiqueta="Lo que vas a ver"
-          titulo={`${sitio.nombre} en ${enPalabras(sitio.galeria.length)} lugares`}
-        >
-          <Galeria fotos={sitio.galeria} />
         </Seccion>
       )}
 

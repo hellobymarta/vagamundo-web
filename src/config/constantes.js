@@ -57,6 +57,12 @@ export const FOTOS = {
   GRECIA_MIKONOS: '/grecia/mykonos-venecia.jpg',
   GRECIA_NAVAGIO: '/grecia/zakynthos-naufragio.jpg',
   GRECIA_CRETA: '/grecia/creta-playa.jpg',
+  GRECIA_CARIATIDES: '/grecia/grecia-templo.jpg',
+  GRECIA_HERODES: '/grecia/atenas-rom.jpg',
+  GRECIA_OIA: '/grecia/santorini-cup.jpg',
+  GRECIA_MOLINOS: '/grecia/grecia-molinos.jpg',
+  GRECIA_CHANIA: '/grecia/grecia-atardecer.jpg',
+  GRECIA_KERI: '/grecia/zakynthos-beach.jpg',
 
   // Turquía
   TURQUIA: '/turquia/capadoccia.jpg',
@@ -64,6 +70,12 @@ export const FOTOS = {
   TURQUIA_GOREME: '/turquia/casa-cuevas.jpg',
   TURQUIA_PAMUKKALE: '/turquia/pamukkale.jpg',
   TURQUIA_EFESO: '/turquia/esmirna-arqu.jpg',
+  TURQUIA_GLOBOS: '/turquia/capadoccia.jpg',
+  TURQUIA_SANTASOFIA: '/turquia/estambul-mezq.jpg',
+  TURQUIA_CUERNO: '/turquia/estambul-noche.jpg',
+  TURQUIA_DONCELLA: '/turquia/estambul-torre.jpg',
+  TURQUIA_HIERAPOLIS: '/turquia/arqu-turquia.jpg',
+  TURQUIA_TERRAZAS: '/turquia/pamukkale-algodon.jpg',
 
   // Estados Unidos
   ESTADOSUNIDOS: '/nueva-york/brooklyn.jpg',
@@ -71,12 +83,18 @@ export const FOTOS = {
   EEUU_CENTRAL: '/nueva-york/parque-central.jpg',
   EEUU_CONEY: '/nueva-york/coney-island.jpg',
   EEUU_ANGELES: '/nueva-york/losangeles.jpg',
+  EEUU_MANHATTAN: '/nueva-york/newyork.jpg',
+  EEUU_TIMES: '/nueva-york/times-square.jpg',
+  EEUU_LIBERTAD: '/nueva-york/statue.jpg',
+  EEUU_TAXI: '/nueva-york/newyork-street.jpg',
+  EEUU_VENICE: '/nueva-york/surbeach.jpg',
 
   // Namibia
   NAMIBIA: '/namibia/namibia-elefantes.jpg',
   NAMIBIA_DESIERTO: '/namibia/namibia-desert.jpg',
   NAMIBIA_FLORA: '/namibia/namibia-flora.jpg',
   NAMIBIA_SAFARI: '/namibia/namibia-safari.jpg',
+  NAMIBIA_ELEFANTES: '/namibia/namibia-elefantes.jpg',
 
   // Jordania
   JORDANIA: '/jordania/petra-patrimonio.jpg',
@@ -109,6 +127,10 @@ export const FOTOS = {
   COSTARICA_PICO: '/costa-rica/costarica-pico.jpg',
   COSTARICA_ARENAL: '/costa-rica/costarica-arenal.jpg',
   COSTARICA_COSTA: '/costa-rica/costarica-beach.jpg',
+  COSTARICA_PUENTES: '/costa-rica/costarica-selva.jpg',
+  COSTARICA_TORTUGA: '/costa-rica/costarica-tort.jpg',
+  COSTARICA_CASCADA: '/costa-rica/costarica-casc.jpg',
+  COSTARICA_CARIBE: '/costa-rica/costarica-agua.jpg',
 
   // Islandia
   ISLANDIA: '/islandia/islandia-auroras.jpg',
@@ -182,7 +204,7 @@ export const PORTADAS = [
 // qué enseña y qué esconde; aquí solo está el texto.
 export const MANIFIESTO = {
   entrada: [
-    'Nací en 1994 y no recuerdo un momento en el que no quisiera saber cómo era el resto del mundo. Vagamundo sale de ahí: de una curiosidad que, en vez de pasárseme con los años, se me ha ido haciendo más grande.',
+    'Nací en 1994 y no recuerdo un momento en el que no quisiera saber cómo era el resto del mundo. Vagamundo sale de ahí: con los años, esa curiosidad no ha dejado de crecer.',
     'Cuando preparo un viaje ya estoy viajando. Me paso semanas leyendo sobre un sitio, entre blogs, foros, artículos, folletos viejos, mapas y fotografías de gente que estuvo allí hace años, hasta que puedo cerrar los ojos y recorrerlo. Esa parte me gusta tanto como llegar, y es la que quería compartir con alguien.',
   ],
   bloques: [
