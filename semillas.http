@@ -22,7 +22,7 @@ Content-Type: application/json
   "precio": 2450,
   "duracionDias": 7,
   "categoria": "Costa",
-  "imagen": "/positano-atardecer.jpg",
+  "imagen": "/italia-amalfi/positano-atardecer.jpg",
   "disponible": true,
   "itinerario": "Día 1 · Llegada a Nápoles y cena de pizza en el Barrio Sanità.\nDía 2 · Positano en ferry. Tarde de baño en la Spiaggia del Fornillo.\nDía 3 · Sendero de los Dioses de Bomerano a Nocelle, cuatro horas cuesta abajo con el mar delante.\nDía 4 · Amalfi y su claustro árabe-normando. Comida en Atrani, en la plaza más pequeña de Italia.\nDía 5 · Ravello. Los jardines de Villa Cimbrone y un concierto en el mirador.\nDía 6 · Día libre. La barca de Salvatore sale a las siete para quien quiera.\nDía 7 · Vuelta desde Nápoles."
 }
@@ -38,7 +38,7 @@ Content-Type: application/json
   "precio": 2179,
   "duracionDias": 8,
   "categoria": "Cultural",
-  "imagen": "/apulia-vieste.jpg",
+  "imagen": "/italia-amalfi/italia-colores.jpg",
   "disponible": true,
   "itinerario": "Día 1 · Llegada a Bari y cena en el casco viejo.\nDía 2 · Trani y su catedral a pie de mar. Por la tarde, la gruta de San Miguel en Monte Sant'Angelo.\nDía 3 · Vieste, callejeando entre arcos y miradores sobre el Adriático.\nDía 4 · Barletta, un molino de aceite con cata y el pan de Altamura. Bari vieja al atardecer.\nDía 5 · Las cuevas de Castellana, Alberobello y sus trulli, y Ostuni la blanca.\nDía 6 · Lecce, barroco de piedra dorada. Después Otranto, la puerta de Oriente.\nDía 7 · Matera. Dormimos en un sasso, dentro de la roca.\nDía 8 · Vuelta desde Bari."
 }
@@ -54,7 +54,7 @@ Content-Type: application/json
   "precio": 2219,
   "duracionDias": 10,
   "categoria": "Islas",
-  "imagen": "/grecia-mikonos.jpg",
+  "imagen": "/grecia/grecia-santorini.jpg",
   "disponible": true,
   "itinerario": "Día 1 · Llegada a Atenas.\nDía 2 · La Acrópolis a primera hora y el Museo Arqueológico sin prisa.\nDía 3 · El canal de Corinto, el teatro de Epidauro y la puerta de los leones de Micenas.\nDía 4 · Olimpia, donde se corría cada cuatro años. Continuación a Delfos.\nDía 5 · Delfos y la Vía Sacra. Después, Kalambaka.\nDía 6 · Meteora. Dos de los seis monasterios que siguen en pie sobre las rocas.\nDía 7 · Vuelo a Santorini.\nDías 8 y 9 · Santorini. Oia, los viñedos de Assyrtiko y el barco a Thirassia.\nDía 10 · Vuelta desde Santorini."
 }
@@ -72,7 +72,7 @@ Content-Type: application/json
   "precio": 3480,
   "duracionDias": 9,
   "categoria": "Naturaleza",
-  "imagen": "/islandia-auroras.jpg",
+  "imagen": "/islandia/islandia-auroras.jpg",
   "disponible": true,
   "itinerario": "Día 1 · Llegada a Reikiavik y primera salida nocturna si el cielo acompaña.\nDía 2 · Círculo Dorado: Thingvellir, donde se separan las dos placas, Geysir y Gullfoss.\nDía 3 · Costa sur. Seljalandsfoss por detrás y Skógafoss. Noche en Vík.\nDía 4 · Reynisfjara, la playa de arena negra, y el cabo de Dyrhólaey.\nDía 5 · Skaftafell y caminata sobre el glaciar con guía y crampones.\nDía 6 · Jökulsárlón en lancha entre los icebergs y la playa de los diamantes.\nDía 7 · Cueva de hielo azul, que solo existe en invierno y cambia cada año.\nDía 8 · Regreso hacia Reikiavik por la costa. Última noche de aurora.\nDía 9 · Laguna geotermal y vuelo de regreso."
 }
@@ -90,7 +90,7 @@ Content-Type: application/json
   "precio": 3890,
   "duracionDias": 11,
   "categoria": "Naturaleza",
-  "imagen": "/namibia-arco.jpg",
+  "imagen": "/namibia/namibia-elefantes.jpg",
   "disponible": true,
   "itinerario": "Día 1 · Vuelo a Windhoek. Noche a bordo.\nDía 2 · Llegada, recepción y traslado privado al Mövenpick. Resto del día libre para recuperar el vuelo.\nDía 3 · Al norte, hacia Etosha: 427 kilómetros por Okahandja y Otjiwarongo. Parada en el mercado de maderas talladas de Mbangura y, por la tarde, visita a un poblado himba, la única etnia que habita este país.\nDía 4 · Día completo de safari en Etosha, en 4x4 abierto y con guía de habla hispana. Es uno de los parques más extensos de África: rinoceronte negro, guepardo e impala de cara blanca.\nDía 5 · Etosha a Twyfelfontein, 484 kilómetros atravesando Damaraland. En ruta, el Bosque Petrificado y la welwitschia mirabilis. Por la tarde, los grabados rupestres de Twyfelfontein, de hasta seis mil años.\nDía 6 · Descenso a Swakopmund, 301 kilómetros. Aquí el desierto entra en el Atlántico. Tarde libre.\nDía 7 · Temprano a Walvis Bay: crucero privado en catamarán entre leones marinos y delfines, con ostras de la bahía y vino espumoso. Después, al desierto del Namib por los pasos de Ghaub y Kuiseb.\nDía 8 · Sossusvlei y Deadvlei al amanecer, cuando la arena todavía se puede pisar y las dunas de trescientos metros están vacías. Por la tarde, el cañón de Sesriem.\nDía 9 · Al Kalahari. Safari en la reserva privada del lodge y cóctel al ponerse el sol, que aquí dura veinte minutos.\nDía 10 · Caminata al alba con bosquimanos, la etnia más antigua de África. Almuerzo, regreso a Windhoek y vuelo de vuelta.\nDía 11 · Llegada a España."
 }
@@ -106,7 +106,7 @@ Content-Type: application/json
   "precio": 1450,
   "duracionDias": 8,
   "categoria": "Desierto",
-  "imagen": "/jordania-wadirum.jpg",
+  "imagen": "/jordania/jordania-desert.jpg",
   "disponible": true,
   "itinerario": "Día 1 · Llegada a Ammán.\nDía 2 · Jerash, la ciudad romana mejor conservada de Oriente. Tarde en la ciudadela de Ammán.\nDía 3 · El castillo de Kerak y los mosaicos de Madaba. Noche a las puertas de Petra.\nDía 4 · Petra entera, desde el Siq hasta el Monasterio. Ocho horas, y merece la pena cada una.\nDía 5 · Aqaba y el mar Rojo. Por la tarde, entrada a Wadi Rum en 4x4.\nDía 6 · Wadi Rum. Amanecer en las dunas y noche en el campamento.\nDía 7 · El mar Muerto. Flotar y no hacer nada más.\nDía 8 · Vuelta desde Ammán."
 }
@@ -124,7 +124,7 @@ Content-Type: application/json
   "precio": 3970,
   "duracionDias": 11,
   "categoria": "Naturaleza",
-  "imagen": "/brasil-lencois.jpg",
+  "imagen": "",
   "disponible": true,
   "itinerario": "Día 1 · Vuelo a Fortaleza.\nDía 2 · Avión a São Luís y tarde libre por el centro colonial.\nDía 3 · Barreirinhas. Por la tarde, 4x4 hasta la Laguna Azul para el baño y el atardecer.\nDía 4 · El río Preguiças en lancha: Vassouras, Mandacaru y su faro. Noche en Atins.\nDía 5 · Atins. Caminata por las dunas del parque y baño en las lagunas de lluvia.\nDía 6 · Cruce a Caburé y ruta hasta Parnaíba. Los pájaros guarás al ponerse el sol.\nDía 7 · Parnaíba a Jericoacoara en 4x4, con dos ferris y kilómetros de playa desierta.\nDía 8 · Jericoacoara en buggy: Lagoa Azul, Lagoa do Paraíso y las hamacas dentro del agua.\nDía 9 · Vuelta a Fortaleza por la costa.\nDía 10 · Vuelo de regreso.\nDía 11 · Llegada."
 }
@@ -140,7 +140,7 @@ Content-Type: application/json
   "precio": 4290,
   "duracionDias": 10,
   "categoria": "Naturaleza",
-  "imagen": "/costarica-tucan.jpg",
+  "imagen": "/costa-rica/costarica-tucan.jpg",
   "disponible": true,
   "itinerario": "Día 1 · Llegada a San José y noche en el valle central.\nDía 2 · Tortuguero. Vuelo corto y entrada en lancha por los canales.\nDía 3 · Tortuguero al amanecer, cuando bajan los aulladores. Tarde con los biólogos de la estación de tortugas.\nDía 4 · Arenal. Tarde de termales al pie del volcán.\nDía 5 · Puentes colgantes del Arenal y las cuevas del Venado.\nDía 6 · Monteverde. Bosque nuboso por encima de las copas, buscando el quetzal.\nDía 7 · Vuelo a bahía Drake, en la península de Osa.\nDía 8 · Corcovado, estación Sirena. Día completo con guía, que allí es obligatorio.\nDía 9 · Osa. Snorkel en la isla del Caño o mañana libre en la playa.\nDía 10 · Vuelo desde Drake a San José y regreso."
 }
@@ -158,7 +158,7 @@ Content-Type: application/json
   "precio": 2320,
   "duracionDias": 11,
   "categoria": "Ciudad",
-  "imagen": "/india-mov.jpg",
+  "imagen": "/india/india-mov.jpg",
   "disponible": true,
   "itinerario": "Día 1 · Vuelo a Delhi.\nDía 2 · Delhi. La vieja y la nueva, en rickshaw y en metro.\nDía 3 · Samode y Jaipur, la ciudad rosa.\nDía 4 · Jaipur. Amber, el observatorio y los tintoreros del bazar.\nDía 5 · Fatehpur Sikri, la ciudad que se abandonó por falta de agua. Continuación a Agra.\nDía 6 · El Taj Mahal a las seis de la mañana. Por la tarde, el fuerte rojo.\nDía 7 · Jhansi, Orchha y Khajuraho.\nDía 8 · Los templos de Khajuraho y vuelo a Benarés.\nDía 9 · Benarés. Los ghats al amanecer desde una barca y el aarti de la tarde.\nDía 10 · Vuelo de regreso vía Delhi.\nDía 11 · Llegada."
 }
@@ -174,7 +174,7 @@ Content-Type: application/json
   "precio": 5060,
   "duracionDias": 16,
   "categoria": "Cultural",
-  "imagen": "/japon-kioto.jpg",
+  "imagen": "/japon/japon-kioto.jpg",
   "disponible": true,
   "itinerario": "Día 1 · Vuelo a Osaka. Noche a bordo.\nDía 2 · Llegada, recepción en el aeropuerto y traslado a Kioto.\nDía 3 · Kioto. El castillo de Nijo, el Kinkaku-ji o Pabellón Dorado, las mil y una estatuas del Sanjusangen-do, el jardín del Tenryu-ji y el bosque de bambú de Arashiyama.\nDía 4 · Kioto libre. Recomendamos madrugar para Fushimi Inari: a las seis de la mañana el túnel de puertas está vacío. Por la tarde, Nara.\nDía 5 · El castillo de Himeji y Kurashiki, con la residencia de la familia Ohashi y el barrio de Bikan. Noche en Hiroshima. El equipaje viaja aparte: solo hace falta una bolsa de mano.\nDía 6 · Hiroshima. La cúpula de la bomba, el Parque de la Paz y su museo, y por la tarde el santuario de Itsukushima, en la isla de Miyajima, con el torii dentro del agua.\nDía 7 · Tren bala a Shin-Osaka y carretera a Koyasan, montaña sagrada. El templo Kongobu-ji, el Danjo Garan y el mausoleo de Okunoin entre cedros. Noche en un shukubo, un templo budista, con cena vegetariana.\nDía 8 · Oraciones del amanecer para quien quiera y desayuno vegetariano. Camino de Kumano: tres kilómetros de la antigua ruta de peregrinación. Cena kaiseki y noche en un ryokan de Kawayu Onsen, a pie de río.\nDía 9 · Osaka. El observatorio del Umeda Sky y el barrio de Dotombori.\nDía 10 · Kanazawa. El jardín Kenroku-en, el mercado de Oumicho, el barrio de las casas de té de Higashi Chaya-gai y la residencia de los samuráis Nomura.\nDía 11 · Shirakawa-go, patrimonio de la humanidad por sus casas de tejado de paja. Continuación a Takayama y su calle Kami-sannomachi.\nDía 12 · Tren bala a Odawara y Parque Nacional de Fuji-Hakone: minicrucero por el lago Ashi y teleférico para ver el monte Fuji, si el tiempo acompaña. Noche en Tokio.\nDía 13 · Tokio. La torre de Tokio y el templo Sensoji de Asakusa, con la arcada comercial de Nakamise.\nDía 14 · Tokio libre. Se puede subir a Nikko en el día.\nDía 15 · Traslado al aeropuerto y vuelo de regreso. Noche a bordo.\nDía 16 · Llegada a España."
 }

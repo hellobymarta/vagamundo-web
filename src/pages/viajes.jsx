@@ -184,7 +184,7 @@ export default function Viajes() {
       <Boletin />
 
       <BandaOscura
-        imagen={FOTOS.SALAR}
+        imagen={FOTOS.TURQUIA}
         pregunta="¿Cuál es tu viaje soñado?"
         etiqueta="Cuéntanoslo"
         texto="Cuéntanoslo con sus fechas, su precio y su itinerario. Se guarda en la base de datos y aparece en el catálogo al momento."

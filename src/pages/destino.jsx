@@ -52,6 +52,7 @@ export default function Destino() {
       <Portada
         imagen={foto}
         alt={fotoAlt}
+        fondo={<Silueta destino={nombre} tamano={300} />}
         etiqueta={continente}
         titulo={nombre}
         texto={titular}

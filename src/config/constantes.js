@@ -32,65 +32,86 @@ export const SEGUNDOS_PORTADA = 7
 // Cuántos viajes se enseñan en el bloque de plazas que se agotan.
 export const CUANTOS_DESTACADOS = 4
 
-// Fotografías. Las de la costa amalfitana son mías, de la PEC 1;
-// las tres últimas salen de los catálogos de viajes de 2026.
+// Fotografías. Viven en public/ agrupadas por destino, con los nombres en
+// minúscula, sin tildes y sin espacios: una carpeta llamada «NY-WS-LA  » o
+// «JAPÓN» obliga a codificar la ruta y falla en algunos servidores.
+//
+// Las de la costa amalfitana son mías, de la PEC 1; el resto salen de los
+// catálogos de viajes de 2026 y se usan solo con fines académicos.
 export const FOTOS = {
-  // Mías, de la PEC 1 (costa amalfitana)
-  PORTADA: '/positano-atardecer.jpg',
-  BARCA: '/positano-barca.jpg',
-  NOCHE: '/positano-noche.jpg',
-  PLAYA: '/atrani-playa.jpg',
+  // Italia · costa amalfitana
+  PORTADA: '/italia-amalfi/positano-atardecer.jpg',
+  BARCA: '/italia-amalfi/positano-barca.jpg',
+  NOCHE: '/italia-amalfi/positano-noche.jpg',
+  PLAYA: '/italia-amalfi/atrani-playa.jpg',
+  ITALIA_CALLE: '/italia-amalfi/italia-colores.jpg',
+  ITALIA_GASTRO: '/italia-amalfi/italia-gastro.jpg',
+  ITALIA_TOSCANA: '/italia-amalfi/italia-toscana.jpg',
   // Reservadas para la ficha de Italia, que todavía está por escribir.
-  AMALFI_PASEO: '/amalfi-paseo.jpg',
-  AMALFI_MAR: '/amalfi-mar.jpg',
+  AMALFI_PASEO: '/italia-amalfi/amalfi-paseo.jpg',
+  AMALFI_MAR: '/italia-amalfi/amalfi-mar.jpg',
 
-  // De los catálogos de viajes de 2026
-  APULIA: '/apulia-vieste.jpg',
-  BRASIL: '/brasil-lencois.jpg',
-  NAMIBIA: '/namibia-elefantes.jpg',
-  NAMIBIA_ARCO: '/namibia-arco.jpg',
-  NAMIBIA_DESIERTO: '/namibia-desert.jpg',
-  NAMIBIA_FLORA: '/namibia-flora.jpg',
-  NAMIBIA_SAFARI: '/namibia-safari.jpg',
-  JAPON: '/japon-kioto.jpg',
-  JAPON_INARI: '/kioto-arqui.jpg',
-  JAPON_MIYAJIMA: '/hosima-japon.jpg',
-  JAPON_NARA: '/japon-nara.jpg',
-  JAPON_NOCHE: '/japon-lights.jpg',
-  JAPON_CEREZOS: '/japon-osaka.jpg',
-  JAPON_SANTUARIO: '/japon-red.jpg',
-  JAPON_SENSOJI: '/kioto-flora.jpg',
-  INDIA: '/india-palacio.jpg',
-  INDIA_HAWA: '/india-arqu.jpg',
-  INDIA_JAIPUR: '/india-mov.jpg',
-  INDIA_GANESHA: '/india-cultura.jpg',
-  INDIA_AMRITSAR: '/india-watter.jpg',
-  INDIA_CALLE: '/india-tuktuk.jpg',
-  COSTARICA: '/costarica-tucan.jpg',
-  COSTARICA_PICO: '/costarica-pico.jpg',
-  COSTARICA_ARENAL: '/costarica-arenal.jpg',
-  COSTARICA_CARIBE: '/costarica-costa.jpg',
-  SALAR: '/salar-atardecer.jpg',
-  GRECIA: '/grecia-mikonos.jpg',
-  JORDANIA: '/petra-patrimonio.jpg',
-  JORDANIA_TESORO: '/petra-jordania.jpg',
-  JORDANIA_WADIRUM: '/jordania-desert.jpg',
-  JORDANIA_AMAN: '/amman-jordania.jpg',
-  JORDANIA_ZOCO: '/jordania-gastro.jpg',
-  JORDANIA_BANDERA: '/jordania-bandera.jpg',
-  ISLANDIA: '/islandia-auroras.jpg',
-  ISLANDIA_SELJALANDSFOSS: '/islandia.jpg',
-  ISLANDIA_DETRAS: '/islandia-natura.jpg',
-  ISLANDIA_GLACIAR: '/islandia-glaciar.jpg',
-  ISLANDIA_PLAYA: '/islandia-playa.jpg',
-  POLINESIA: '/polinesia-borabora.jpg',
-  POLINESIA_BUNGALOS: '/polinesia-bungalos.jpg',
-  POLINESIA_TIBURONES: '/polinesia-tiburones.jpg',
-  POLINESIA_GRUTA: '/polinesia-gruta.jpg',
-  POLINESIA_ARRECIFE: '/polinesia-arrecife.jpg',
-  POLINESIA_MOTUS: '/polinesia-motus.jpg',
-  POLINESIA_PLAYA: '/polinesia-playa.jpg',
-  POLINESIA_ATARDECER: '/polinesia-atardecer.jpg',
+  // Grecia y Turquía · de momento solo la portada de cada ficha
+  GRECIA: '/grecia/grecia-santorini.jpg',
+  TURQUIA: '/turquia/capadoccia.jpg',
+
+  // Estados Unidos
+  ESTADOSUNIDOS: '/nueva-york/brooklyn.jpg',
+
+  // Namibia
+  NAMIBIA: '/namibia/namibia-elefantes.jpg',
+  NAMIBIA_DESIERTO: '/namibia/namibia-desert.jpg',
+  NAMIBIA_FLORA: '/namibia/namibia-flora.jpg',
+  NAMIBIA_SAFARI: '/namibia/namibia-safari.jpg',
+
+  // Jordania
+  JORDANIA: '/jordania/petra-patrimonio.jpg',
+  JORDANIA_TESORO: '/jordania/petra-jordania.jpg',
+  JORDANIA_MONASTERIO: '/jordania/jordania-petra2.jpg',
+  JORDANIA_WADIRUM: '/jordania/jordania-desert.jpg',
+  JORDANIA_AMAN: '/jordania/amman-jordania.jpg',
+  JORDANIA_ZOCO: '/jordania/jordania-gastro.jpg',
+
+  // Japón
+  JAPON: '/japon/japon-kioto.jpg',
+  JAPON_INARI: '/japon/kioto-arqui.jpg',
+  JAPON_MIYAJIMA: '/japon/hosima-japon.jpg',
+  JAPON_NARA: '/japon/japon-nara.jpg',
+  JAPON_NOCHE: '/japon/japon-lights.jpg',
+  JAPON_CEREZOS: '/japon/japon-osaka.jpg',
+  JAPON_SANTUARIO: '/japon/japon-red.jpg',
+  JAPON_SENSOJI: '/japon/kioto-flora.jpg',
+
+  // India
+  INDIA: '/india/india-palacio.jpg',
+  INDIA_HAWA: '/india/india-arqu.jpg',
+  INDIA_JAIPUR: '/india/india-mov.jpg',
+  INDIA_GANESHA: '/india/india-cultura.jpg',
+  INDIA_AMRITSAR: '/india/india-watter.jpg',
+  INDIA_CALLE: '/india/india-tuktuk.jpg',
+
+  // Costa Rica
+  COSTARICA: '/costa-rica/costarica-tucan.jpg',
+  COSTARICA_PICO: '/costa-rica/costarica-pico.jpg',
+  COSTARICA_ARENAL: '/costa-rica/costarica-arenal.jpg',
+  COSTARICA_COSTA: '/costa-rica/costarica-beach.jpg',
+
+  // Islandia
+  ISLANDIA: '/islandia/islandia-auroras.jpg',
+  ISLANDIA_SELJALANDSFOSS: '/islandia/islandia.jpg',
+  ISLANDIA_DETRAS: '/islandia/islandia-natura.jpg',
+  ISLANDIA_GLACIAR: '/islandia/islandia-glaciar.jpg',
+  ISLANDIA_PLAYA: '/islandia/islandia-playa.jpg',
+
+  // Polinesia Francesa
+  POLINESIA: '/polinesia/polinesia-borabora.jpg',
+  POLINESIA_BUNGALOS: '/polinesia/polinesia-bungalos.jpg',
+  POLINESIA_TIBURONES: '/polinesia/polinesia-tiburones.jpg',
+  POLINESIA_GRUTA: '/polinesia/polinesia-gruta.jpg',
+  POLINESIA_ARRECIFE: '/polinesia/polinesia-arrecife.jpg',
+  POLINESIA_MOTUS: '/polinesia/polinesia-motus.jpg',
+  POLINESIA_PLAYA: '/polinesia/polinesia-playa.jpg',
+  POLINESIA_ATARDECER: '/polinesia/polinesia-atardecer.jpg',
 }
 
 // Las tres campañas que rotan en la portada, como el hero de NUBA.
@@ -389,5 +410,5 @@ export const MENSAJES = {
 
 // Imagen de reserva para los viajes que no traen foto ni destino conocido.
 // A propósito no es de Amalfi: ilustrar un viaje a Kioto con la costa
-// italiana es peor que no decir nada.
-export const IMAGEN_POR_DEFECTO = FOTOS.SALAR
+// italiana es peor que no decir nada. Una aérea de atolón no compromete.
+export const IMAGEN_POR_DEFECTO = FOTOS.POLINESIA_MOTUS

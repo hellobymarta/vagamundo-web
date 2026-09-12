@@ -25,7 +25,7 @@ export const DESTINOS = [
     nombre: 'Grecia',
     continente: 'Europa',
     foto: FOTOS.GRECIA,
-    fotoAlt: 'Casas blancas sobre las rocas en Mikonos',
+    fotoAlt: 'Las cúpulas azules de Oia sobre la caldera de Santorini',
     titular: 'Primero las piedras, después el mar',
     entradilla:
       'Micenas, Delfos y Meteora entre semana, con las excavaciones casi vacías, y las Cícladas al final, cuando ya te has ganado el baño.',
@@ -107,6 +107,8 @@ export const DESTINOS = [
     id: 'turquia',
     nombre: 'Turquía',
     continente: 'Europa',
+    foto: FOTOS.TURQUIA,
+    fotoAlt: 'Globos sobre los valles de la Capadocia al amanecer',
     titular: 'En preparación para 2027',
     entradilla:
       'La costa del Egeo en barco de madera y la Capadocia fuera de la temporada de los globos. Nos falta encontrar a la persona que nos lleve por Estambul.',
@@ -171,11 +173,11 @@ export const DESTINOS = [
         pie: 'Blanca, en cuesta y mucho más grande de lo que nadie espera. Se sube a la ciudadela al atardecer, cuando empiezan las llamadas a la oración y se oyen unas encima de otras.',
       },
       {
-        id: 'bandera',
-        foto: FOTOS.JORDANIA_BANDERA,
-        alt: 'La bandera de Jordania ondeando en un mirador sobre el cañón',
-        rotulo: 'El mirador',
-        pie: 'Los colores del levantamiento árabe y la estrella de siete puntas, una por cada versículo de la primera azora. Está en todos los altos del país.',
+        id: 'monasterio',
+        foto: FOTOS.JORDANIA_MONASTERIO,
+        alt: 'La fachada del Monasterio de Petra al sol de la tarde, con una persona diminuta al pie',
+        rotulo: 'El Monasterio',
+        pie: 'Ochocientos escalones tallados por encima de la ciudad, y arriba una fachada de cincuenta metros con una sola persona delante. Se sube a última hora, cuando el autobús ya se ha ido.',
       },
     ],
 
@@ -233,13 +235,6 @@ export const DESTINOS = [
         alt: 'Dunas rojas con hierba dorada y montañas al fondo, en Damaraland',
         rotulo: 'Damaraland',
         pie: 'Montañas volcánicas, bosque petrificado y la welwitschia, la «planta fósil» que vive milenios. Un guía de la zona y ningún otro vehículo a la vista.',
-      },
-      {
-        id: 'spitzkoppe',
-        foto: FOTOS.NAMIBIA_ARCO,
-        alt: 'El arco de granito del Spitzkoppe al atardecer',
-        rotulo: 'Spitzkoppe',
-        pie: 'El antiguo santuario bosquimano y sus pinturas en la roca. Se llega al atardecer, cuando el granito se vuelve naranja y no queda nadie.',
       },
     ],
 
@@ -368,8 +363,6 @@ export const DESTINOS = [
     id: 'brasil',
     nombre: 'Brasil',
     continente: 'América',
-    foto: FOTOS.BRASIL,
-    fotoAlt: 'Lagunas de agua de lluvia entre las dunas de los Lençóis',
     titular: 'El nordeste, no las postales',
     entradilla:
       'Ni Río ni el Cristo. Mil kilómetros de dunas, lagunas que solo existen medio año y pueblos de pescadores a los que se llega en 4x4.',
@@ -493,11 +486,11 @@ export const DESTINOS = [
         pie: 'Vive en las tierras bajas del Caribe y se le oye antes de verlo: un croar seco, más de rana que de pájaro. El pico mide un tercio de su cuerpo y pesa casi nada; por dentro está hueco.',
       },
       {
-        id: 'caribe',
-        foto: FOTOS.COSTARICA_CARIBE,
-        alt: 'Playa de arena con palmeras y un islote de roca sobre el arrecife, en el Caribe sur',
-        rotulo: 'El Caribe sur',
-        pie: 'Manzanillo y Punta Uva, donde el arrecife llega hasta la orilla y el país cambia de idioma. Dos días sin plan, que en un viaje así son los que más se agradecen.',
+        id: 'costa',
+        foto: FOTOS.COSTARICA_COSTA,
+        alt: 'Playa de arena vista desde el aire, con el bosque llegando hasta la orilla',
+        rotulo: 'La costa',
+        pie: 'El bosque baja hasta la arena y no hay una sola torre. Dos días sin plan al final del viaje, que en una ruta así son los que más se agradecen.',
       },
     ],
 
@@ -631,6 +624,8 @@ export const DESTINOS = [
     id: 'estadosunidos',
     nombre: 'Estados Unidos',
     continente: 'América',
+    foto: FOTOS.ESTADOSUNIDOS,
+    fotoAlt: 'El puente de Brooklyn al atardecer, con el sur de Manhattan al fondo',
     titular: 'En preparación para 2027',
     entradilla:
       'Los parques del oeste en furgoneta y fuera de temporada alta, que es la única manera de que no parezcan un aparcamiento.',

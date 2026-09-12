@@ -9,6 +9,9 @@ export default function Portada({
   dato,
   cursiva = false,
   alto = 'h-[80vh]',
+  // Qué dibujar cuando no hay fotografía. Lo usan los destinos que todavía
+  // estamos preparando, que enseñan el contorno del país.
+  fondo,
   children,
 }) {
   return (
@@ -19,7 +22,9 @@ export default function Portada({
       {imagen ? (
         <img src={imagen} alt={alt} className="absolute inset-0 h-full w-full object-cover" />
       ) : (
-        <div className="absolute inset-0 bg-noche" />
+        <div className="absolute inset-0 flex items-center justify-center bg-noche text-white/15">
+          {fondo}
+        </div>
       )}
 
       {/* El velo pesa donde va el texto y se levanta arriba, para no apagar el cielo. */}
