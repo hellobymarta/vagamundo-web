@@ -205,7 +205,7 @@ export default function Viaje() {
         <Seccion tono={TONOS.HUESO} etiqueta="Sigue mirando" titulo="Otros viajes del catálogo">
           {/* Carril horizontal con parada en cada ficha, como el carrusel
               de campamentos de Wilderness pero solo con CSS. */}
-          <div className="carril -mx-6 flex gap-10 overflow-x-auto px-6 pb-4 md:-mx-10 md:px-10">
+          <div className="carril -mx-6 flex scroll-pl-6 gap-10 overflow-x-auto px-6 pb-4 md:-mx-10 md:scroll-pl-10 md:px-10">
             {otros.map(({ _id, ...resto }) => (
               <div key={_id} className="w-[300px] shrink-0 md:w-[380px]">
                 <TarjetaViaje id={_id} {...resto} />

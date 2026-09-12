@@ -8,6 +8,10 @@ import { PARAMETRO_PROPUESTA } from '@/config/constantes'
 // fila no ofrece reservar: propone la lista de espera, que es lo honesto.
 //
 // Deconstruimos cada fecha dentro del map y la key es su id, nunca la posición.
+//
+// Cada fila es una rejilla de columnas fijas, no un justify-between: con
+// justify-between la columna del medio se movía según lo larga que fuera la
+// fecha y las filas parecían colocadas cada una por su cuenta.
 function estado(plazas) {
   if (plazas === 0) return { texto: 'Completa', clase: 'text-suave/60' }
   if (plazas === 1) return { texto: 'Última plaza', clase: 'text-terracota-acento' }
@@ -38,13 +42,13 @@ export default function Salidas({ nombre, salidas }) {
           return (
             <li
               key={id}
-              className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-4 border-t border-tinta/12 py-7"
+              className="grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-x-8 gap-y-5 border-t border-tinta/12 py-7 md:grid-cols-[minmax(0,1fr)_11rem_11rem]"
             >
               <p className="titular text-xl md:text-2xl">{dia}</p>
 
-              <p className={`etiqueta cifras ${clase}`}>{texto}</p>
+              <p className={`etiqueta cifras text-right md:text-left ${clase}`}>{texto}</p>
 
-              <p className="w-full md:w-auto">
+              <p className="col-span-2 md:col-span-1 md:justify-self-end">
                 <Boton
                   a={`/nuevo?${PARAMETRO_PROPUESTA}=${destino}`}
                   variante={completa ? 'contorno' : 'principal'}

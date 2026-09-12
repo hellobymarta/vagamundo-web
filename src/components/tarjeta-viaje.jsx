@@ -37,35 +37,35 @@ export default function TarjetaViaje({
           <div className="absolute inset-0 bg-tinta/10 transition duration-700 group-hover:bg-transparent" />
 
           {!disponible && (
-            <p className="etiqueta absolute left-5 top-5 bg-crema/95 px-3 py-1.5 text-tinta">
+            <p className="etiqueta absolute left-3 top-3 bg-crema/95 px-2 py-1 text-tinta sm:left-5 sm:top-5 sm:px-3 sm:py-1.5">
               Plazas agotadas
             </p>
           )}
         </div>
       </Link>
 
-      <div className="flex flex-1 flex-col pt-7">
+      <div className="flex flex-1 flex-col pt-4 sm:pt-7">
         <p className="etiqueta text-suave">{categoria || 'Viaje'}</p>
 
-        <h3 className="titular mt-4 text-2xl">
+        <h3 className="titular mt-3 text-lg leading-snug sm:mt-4 sm:text-2xl">
           <Link to={`/viaje/${id}`} className="transition group-hover:text-terracota-acento">
             {nombre}
           </Link>
         </h3>
 
-        <p className="mt-2 text-sm text-suave">{destino}</p>
+        <p className="mt-1.5 text-xs text-suave sm:mt-2 sm:text-sm">{destino}</p>
 
         {descripcion && (
-          <p className="mt-4 line-clamp-2 text-sm leading-relaxed text-suave">{descripcion}</p>
+          <p className="mt-4 hidden line-clamp-2 text-sm leading-relaxed text-suave sm:block">{descripcion}</p>
         )}
 
         {/* mt-auto empuja el precio abajo: así todas las fichas
             de la fila acaban a la misma altura. */}
-        <div className="mt-auto pt-8">
+        <div className="mt-auto pt-5 sm:pt-8">
           <div className="filete" />
 
-          <p className="cifras mt-4 text-sm text-suave">
-            Desde <span className="titular text-lg text-tinta">{formatearPrecio(precio)} €</span> por persona
+          <p className="cifras mt-3 text-xs text-suave sm:mt-4 sm:text-sm">
+            Desde <span className="titular text-base text-tinta sm:text-lg">{formatearPrecio(precio)} €</span> por persona
           </p>
           <p className="etiqueta cifras mt-2 text-suave">
             {duracionDias} días · {contarNoches(duracionDias)} noches

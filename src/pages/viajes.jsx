@@ -148,7 +148,7 @@ export default function Viajes() {
                 </p>
               </div>
 
-              <div className="mt-16 grid gap-x-10 gap-y-20 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="mt-16 grid grid-cols-2 gap-x-5 gap-y-12 sm:gap-x-10 sm:gap-y-20 lg:grid-cols-3">
                 {DESTINOS_PROXIMAMENTE.map(({ id, ...resto }) => (
                   <TarjetaProximamente key={id} id={id} {...resto} />
                 ))}

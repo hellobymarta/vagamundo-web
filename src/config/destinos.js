@@ -29,7 +29,7 @@ export const DESTINOS = [
     historia: [
       'Trece pueblos colgados de cuarenta kilómetros de acantilado, y una sola carretera para todos: la SS163, que va de Vietri sul Mare a Positano por el borde del precipicio y que en agosto se convierte en un atasco con vistas. La Unesco declaró la costa Patrimonio de la Humanidad en 1997 y no lo hizo solo por el paisaje: la citó como un ejemplo de territorio mediterráneo trabajado durante siglos, con sus bancales, sus limoneros y su arquitectura.',
       'Amalfi no fue siempre un pueblo bonito. Fue una república marinera que compitió con Venecia, Génova y Pisa, con su propia flota, su propio código de navegación y su propia moneda. De aquella ciudad queda la catedral, con el claustro del Paraíso, que se construyó en el siglo XIII y que es árabe, normando y bizantino a la vez, según qué arco mires.',
-      'Lo que hacemos aquí es movernos como se mueve la gente de allí. En barca cuando hay mar —y hay mar casi siempre desde abril—, andando por los caminos de bancal cuando la carretera no merece la pena, y en el autobús de línea sin ninguna vergüenza. Los senderos que unen los pueblos por arriba llevan siglos ahí: eran el único camino antes de que existiera la carretera.',
+      'Entre Positano, Amalfi y Ravello se va casi siempre por mar: el ferry tarda menos que la carretera y evita las curvas de la Amalfitana. Tierra adentro quedan los caminos de bancal que unían los pueblos antes de que existiera esa carretera. El más conocido es el Sentiero degli Dei, de Bomerano a Nocelle, unas tres horas con la costa siempre a la vista.',
       'Y después está el otro sur, el que casi nadie pisa: Apulia, Matera, la Toscana de campo. Aunque la casa empezó en esta costa, Italia nunca ha sido solo esta costa, y las salidas de junio y septiembre alargan la ruta tierra adentro.',
     ],
 
@@ -102,7 +102,7 @@ export const DESTINOS = [
     //  · Grecotour, para el meltemi
     historia: [
       'El Partenón se levantó entre el 447 y el 432 antes de Cristo, en quince años, sobre una roca que ya llevaba mil ocupada. Lo mandó construir Pericles y lo hicieron Ictino y Calícrates con Fidias al frente de la escultura. Se sube a primera hora, cuando abre, porque a media mañana la Acrópolis es una fila y porque el mármol del Pentélico cambia de color según le da la luz: blanco a las ocho, dorado a las siete de la tarde.',
-      'Después están las islas, que no son una sola cosa. Santorini es el borde de un volcán: lo que se ve desde Oía es la caldera que dejó una erupción enorme hace tres mil quinientos años, y los pueblos están construidos justo en el filo. Míkonos es otra historia —callejuelas encaladas hechas para despistar a los piratas y una hilera de casas con los balcones sobre el agua—, y Zante guarda una cala a la que solo se llega en barco.',
+      'Después están las islas, que no son una sola cosa. Santorini es el borde de un volcán: lo que se ve desde Oía es la caldera que dejó una erupción enorme hace tres mil quinientos años, y los pueblos están construidos justo en el filo. Míkonos es otra historia: callejuelas encaladas trazadas para despistar a los piratas y una hilera de casas con los balcones sobre el agua. Y Zante guarda una cala a la que solo se llega en barco.',
       'Hay que hablar del viento, porque manda más que el calendario. El meltemi sopla sobre todo en julio y agosto y alcanza con frecuencia fuerza siete u ocho: los días que arrecia, las capitanías cierran los puertos y las islas dejan de estar conectadas. Por eso vamos en mayo, en junio o en septiembre, cuando el mar está quieto y las excavaciones se caminan sin buscar la sombra.',
       'Y Creta al final, que es casi otro país: la isla más grande, con montañas de dos mil metros, gargantas que se bajan andando en cinco horas y pueblos donde todavía te ponen raki sin preguntarte si lo quieres.',
     ],
@@ -335,7 +335,7 @@ export const DESTINOS = [
       'Petra es Patrimonio de la Humanidad desde el 6 de diciembre de 1985 y una de las siete nuevas maravillas del mundo desde 2007, y aun así sigue sin parecerse a lo que uno se imagina. No es un monumento: es una ciudad entera excavada en la roca, capital de los nabateos, un pueblo de caravaneros que controló durante siglos la ruta del incienso y la mirra entre Arabia y el Mediterráneo.',
       'Se entra por el Siq, una grieta de kilómetro y medio con paredes de hasta doscientos metros que en algún punto se estrecha hasta los dos. Se camina esa grieta en penumbra, dando vueltas, sin ver nada, y al final se abre de golpe la fachada del Tesoro. Lo de Tesoro se lo pusieron los beduinos, que creían que dentro había oro escondido; en realidad es una tumba monumental del siglo I, probablemente la del rey Aretas IV.',
       'Lo que de verdad impresiona cuando te lo cuenta alguien que lo conoce no es la talla, es el agua. Los nabateos montaron una red de presas, cisternas y canalizaciones de cerámica que llevaba unos cuarenta millones de litros diarios hasta el centro de la ciudad, en mitad del desierto y sin una sola bomba. Por eso hubo aquí veinte o treinta mil personas. Europa no supo de Petra hasta 1812, cuando el suizo Burckhardt se hizo pasar por peregrino musulmán para poder entrar, y la mayor parte de la ciudad sigue todavía bajo la arena.',
-      'Alrededor hay un país que se recorre en pocas horas de coche. Jerash, que es de las ciudades romanas de provincias mejor conservadas que quedan en pie. Wadi Rum, donde se duerme en campamento y la arena es literalmente naranja. Y el mar Muerto, a cuatrocientos treinta y cinco metros bajo el nivel del mar —el punto más bajo de la tierra firme del planeta—, nueve veces más salado que el océano y bajando un metro al año.',
+      'Alrededor hay un país que se recorre en pocas horas de coche. Jerash, que es de las ciudades romanas de provincias mejor conservadas que quedan en pie. Wadi Rum, donde se duerme en campamento y la arena es literalmente naranja. Y el mar Muerto, a cuatrocientos treinta y cinco metros bajo el nivel del mar, el punto más bajo de la tierra firme del planeta, nueve veces más salado que el océano y bajando un metro al año.',
     ],
 
     datos: [
@@ -365,7 +365,7 @@ export const DESTINOS = [
         foto: FOTOS.JORDANIA_WADIRUM,
         alt: 'Las montañas de Wadi Rum sobre la arena naranja, con bruma al fondo',
         rotulo: 'Wadi Rum',
-        pie: 'Dos noches de campamento, cena bajo tierra —el zarb se cuece enterrado en la arena— y un cielo sin una sola luz alrededor.',
+        pie: 'Dos noches de campamento, cena de zarb cocida bajo la arena y un cielo sin una sola luz alrededor.',
       },
       {
         id: 'aman',
@@ -413,7 +413,7 @@ export const DESTINOS = [
     //  · la ficha de Namibia de safaris.wildernessdestinations.com
     //  · la ficha de Namibia de nuba.com
     historia: [
-      'El Namib es el desierto más antiguo de la Tierra: cincuenta y cinco millones de años. Solo la región de Sossusvlei ocupa ochenta y un mil kilómetros cuadrados de llanuras, salinas y montañas de arena. Namibia, en cambio, es el país más joven de África —independiente desde 1990— y el segundo menos densamente poblado del mundo después de Mongolia: tres millones de habitantes y 3,7 por kilómetro cuadrado.',
+      'El Namib es el desierto más antiguo de la Tierra: cincuenta y cinco millones de años. Solo la región de Sossusvlei ocupa ochenta y un mil kilómetros cuadrados de llanuras, salinas y montañas de arena. Namibia, en cambio, es el país más joven de África, independiente desde 1990, y el segundo menos densamente poblado del mundo después de Mongolia: tres millones de habitantes y 3,7 por kilómetro cuadrado.',
       'Aquí la fauna no vive en una reserva vallada, sino en un país entero, y ha tenido que aprender a hacerlo. Los elefantes del desierto recorren hasta setenta kilómetros diarios en busca de agua. Los órix resisten temperaturas muy por encima de lo que tolera casi cualquier otro mamífero. Del rinoceronte negro quedan alrededor de cinco mil ejemplares en el mundo, y Namibia conserva una de las mayores poblaciones en libertad que existen. Casi todos viven en Etosha, uno de los parques más extensos de África: allí están también el guepardo y el impala de cara blanca, y el día completo se recorre en 4x4 abierto, con un guía para ocho personas.',
       'Damaraland es el África antigua en estado puro: montañas volcánicas, un bosque petrificado y la welwitschia mirabilis, la «planta fósil», capaz de vivir milenios. En Twyfelfontein hay grabados en la roca de hasta seis mil años de antigüedad. Y en la costa, la niebla del Atlántico entra en las dunas y deja la Costa de los Esqueletos.',
       'Después está Deadvlei. Las acacias que siguen en pie llevan unos novecientos años muertas, desde que las dunas cortaron el paso del río que las alimentaba, y no se han descompuesto porque no hay humedad suficiente para que la madera se pudra. Detrás, dunas de más de trescientos metros. Se suben antes del amanecer, descalza, y a las nueve ya no se puede pisar la arena.',
@@ -505,9 +505,9 @@ export const DESTINOS = [
     //    (programa «Gran Tour de Japón», 16 días)
     //  · la ficha de Japón de nuba.com
     historia: [
-      'Un arco torii señala el umbral de un templo: a partir de ahí, el suelo que se pisa es otro. Japón entero funciona igual. Es la armonía difícil entre una tradición milenaria y una modernidad de vanguardia, y esa frontera se cruza varias veces al día sin darse cuenta —del tren bala al tatami, del rascacielos al jardín seco.',
+      'Un arco torii marca la entrada de un recinto sagrado: al cruzarlo se cambia de sitio. Japón convive con sus dos tiempos sin mezclarlos, y el salto se da varias veces al día: del tren bala al tatami, del rascacielos al jardín seco.',
       'Kioto fue la capital durante más de mil años y conserva lo que eso deja: el Pabellón Dorado, el castillo de Nijo, los mil y una estatuas del Sanjusangen-do, el jardín del Tenryu-ji y el bosque de bambú de Arashiyama. En Fushimi Inari hay miles de puertas rojas encadenadas monte arriba; a las seis de la mañana no hay absolutamente nadie, y esa es la única hora en que merece la pena.',
-      'El viaje entra después en el Japón que no sale en las guías. Koyasan es una montaña sagrada con un mausoleo, el Okunoin, entre cedros de siglos: se duerme en un shukubo —un templo budista—, se cena vegetariano y se asiste a las oraciones del amanecer si uno quiere. Al día siguiente se camina tres kilómetros de la antigua ruta de peregrinación de Kumano y se duerme en un ryokan a pie de río.',
+      'El viaje entra después en el Japón que no sale en las guías. Koyasan es una montaña sagrada con un mausoleo, el Okunoin, entre cedros de siglos: se duerme en un shukubo, que es un templo budista con alojamiento, se cena vegetariano y se asiste a las oraciones del amanecer si uno quiere. Al día siguiente se camina tres kilómetros de la antigua ruta de peregrinación de Kumano y se duerme en un ryokan a pie de río.',
       'Y al norte, Shirakawa-go y sus casas de tejado de paja, patrimonio de la humanidad; Kanazawa, con el jardín Kenroku-en y la residencia de los samuráis Nomura; el lago Ashi y el monte Fuji desde el teleférico, si el tiempo acompaña. Se termina en Tokio, en el Sensoji de Asakusa, que en primavera se llena de cerezos.',
     ],
 
@@ -759,7 +759,7 @@ export const DESTINOS = [
     salidas: {
       temporada: 'De diciembre a abril, y en julio',
       porque:
-        'La estación seca del Pacífico, que es donde están Corcovado y la costa. En julio hay un paréntesis —el veranillo— que además cae en plena temporada de anidación en Tortuguero. Septiembre y octubre los dejamos fuera: es cuando más llueve justo por donde pasa la ruta.',
+        'La estación seca del Pacífico, que es donde están Corcovado y la costa. En julio hay un paréntesis, el veranillo, que además cae en plena temporada de anidación en Tortuguero. Septiembre y octubre los dejamos fuera: es cuando más llueve justo por donde pasa la ruta.',
       fechas: [
         { id: 'costarica-2701', dia: '10 de enero de 2027', plazas: 5 },
         { id: 'costarica-2702', dia: '21 de febrero de 2027', plazas: 8 },
@@ -784,10 +784,10 @@ export const DESTINOS = [
     //  · el folleto de Asia y Oceanía 2026 de Viajes El Corte Inglés
     //  · nuba.com y utopica.travel, para la manera de contar el archipiélago
     historia: [
-      'Son ciento dieciocho islas y atolones, de los que solo sesenta y siete están habitados, repartidos en cinco archipiélagos: Sociedad, Tuamotu-Gambier, Marquesas y Australes. Toda la tierra firme junta suma 4.167 kilómetros cuadrados —menos que la provincia de Guipúzcoa— y está esparcida por dos millones y medio de kilómetros cuadrados de Pacífico. Doscientas setenta mil personas. Papeete es la única ciudad.',
+      'Son ciento dieciocho islas y atolones, de los que solo sesenta y siete están habitados, repartidos en cinco archipiélagos: Sociedad, Tuamotu-Gambier, Marquesas y Australes. Toda la tierra firme junta suma 4.167 kilómetros cuadrados, menos que la provincia de Guipúzcoa, y está esparcida por dos millones y medio de kilómetros cuadrados de Pacífico. Doscientas setenta mil personas. Papeete es la única ciudad.',
       'Un atolón es un volcán que se hundió. El coral que le crecía alrededor siguió subiendo hacia la luz a la misma velocidad a la que la isla se iba al fondo, y cuando el volcán desapareció del todo quedó el anillo: la laguna en el centro, el arrecife fuera y, encima, los motus, esas lenguas de arena y cocoteros separadas por canales. En las Tuamotu, la meseta de basalto sobre la que se apoya todo eso está a mil quinientos o dos mil metros de profundidad.',
       'Dentro de la laguna el agua tiene dos metros y está a veintiocho grados. Los tiburones de puntas negras que se acercan miden metro y medio, comen peces pequeños y no tienen ningún interés en nadie: se nada entre ellos con un guía polinesio, sin jaula y sin cebo, y lo raro es lo poco que pasa. Fuera, en las pasas donde entra la corriente del océano, es donde está el otro buceo, el de las mantas y los bancos que no caben en el visor.',
-      'Y hay una palabra que conviene aprender antes de ir: rāhui. Es la veda tradicional polinesia —se cierra una zona de pesca, se deja descansar, se reabre— y en 2016 la aplicaron a los dos millones y medio de kilómetros cuadrados de su zona económica exclusiva. No es una política importada: es cómo se ha gestionado este océano desde siempre.',
+      'Y hay una palabra que conviene aprender antes de ir: rāhui. Es la veda tradicional polinesia: se cierra una zona de pesca, se deja descansar y se reabre. En 2016 la aplicaron a los dos millones y medio de kilómetros cuadrados de su zona económica exclusiva. No es una política importada: es cómo se ha gestionado este océano desde siempre.',
     ],
 
     datos: [
@@ -927,8 +927,8 @@ export const DESTINOS = [
     historia: [
       'Nueva York se entiende por barrios o no se entiende. Por eso empezamos por Brooklyn y el Bronx y dejamos Times Square para el final, si es que da tiempo. El metro en vez del autocar, que además es más rápido, y las distancias andando: la ciudad se mide en manzanas y veinte manzanas son un paseo.',
       'El puente de Brooklyn se inauguró en 1883 después de trece años de obra, y en su momento fue el puente colgante más largo del mundo: un cincuenta por ciento más que cualquiera anterior, con un vano de 486 metros. Fue también el primero suspendido con cables de acero. Se cruza andando a primera hora, desde el lado de Brooklyn, que es como hay que cruzarlo: de frente se te viene encima el sur de Manhattan.',
-      'Después está el otro Nueva York, el de domingo: Coney Island, con su paseo de tablas, su noria y el puesto de perritos que lleva ahí desde 1916. Y Central Park, que no es un parque dentro de la ciudad sino al revés — la ciudad creció alrededor de él, y eso se nota en cuanto entras.',
-      'Si queda cuerpo, la otra costa. Los Ángeles no se parece a nada de lo anterior: no tiene centro, se vive en el coche y el Pacífico está siempre a media hora. Vamos en otoño a propósito: en mayo y junio esa costa amanece tapada casi todos los días —lo llaman June Gloom, y son los dos meses de menos sol del año allí—, y a nadie le apetece cruzar medio país para encontrarse una nube.',
+      'Después está el otro Nueva York, el de domingo: Coney Island, con su paseo de tablas, su noria y el puesto de perritos que lleva ahí desde 1916. Y Central Park, que no es un parque dentro de la ciudad: la ciudad creció a su alrededor, y eso se nota en cuanto entras.',
+      'Si queda cuerpo, la otra costa. Los Ángeles no se parece a nada de lo anterior: no tiene centro, se vive en el coche y el Pacífico está siempre a media hora. Vamos en otoño a propósito: en mayo y junio esa costa amanece tapada casi todos los días, lo que allí llaman June Gloom, y son los dos meses de menos sol del año. A nadie le apetece cruzar medio país para encontrarse una nube.',
     ],
 
     datos: [

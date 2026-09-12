@@ -27,33 +27,33 @@ export default function TarjetaProximamente({ id, nombre, continente, titular, e
             />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center text-white/25 transition duration-700 group-hover:text-white/40">
-              <Silueta destino={nombre} tamano={130} />
+              <Silueta destino={nombre} tamano={110} />
             </div>
           )}
 
-          <p className="etiqueta absolute left-5 top-5 bg-crema/95 px-3 py-1.5 text-tinta">
+          <p className="etiqueta absolute left-3 top-3 bg-crema/95 px-2 py-1 text-tinta sm:left-5 sm:top-5 sm:px-3 sm:py-1.5">
             Próximamente
           </p>
         </div>
       </Link>
 
-      <div className="flex flex-1 flex-col pt-7">
+      <div className="flex flex-1 flex-col pt-4 sm:pt-7">
         {/* El continente, no el año: el año ya lo dicen la chapa de la foto
             y el pie de la ficha, y repetirlo tres veces no informa de nada. */}
         <p className="etiqueta text-suave">{continente}</p>
 
-        <h3 className="titular mt-4 text-2xl">
+        <h3 className="titular mt-3 text-lg leading-snug sm:mt-4 sm:text-2xl">
           <Link to={`/destinos/${id}`} className="transition group-hover:text-terracota-acento">
             {nombre}
           </Link>
         </h3>
 
-        <p className="mt-2 text-sm text-suave">{titular}</p>
+        <p className="mt-1.5 text-xs text-suave sm:mt-2 sm:text-sm">{titular}</p>
 
-        <p className="mt-4 line-clamp-2 text-sm leading-relaxed text-suave">{entradilla}</p>
+        <p className="mt-4 hidden line-clamp-2 text-sm leading-relaxed text-suave sm:block">{entradilla}</p>
 
         {/* mt-auto deja el pie a la altura del de las demás fichas. */}
-        <div className="mt-auto pt-8">
+        <div className="mt-auto pt-5 sm:pt-8">
           <div className="filete" />
           <p className="etiqueta mt-4 text-suave">Abre en 2027 · Te avisamos</p>
         </div>

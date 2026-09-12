@@ -183,7 +183,7 @@ export const PORTADAS = [
 export const MANIFIESTO = {
   entrada: [
     'Nací en 1994 y no recuerdo un momento en el que no quisiera saber cómo era el resto del mundo. Vagamundo sale de ahí: de una curiosidad que, en vez de pasárseme con los años, se me ha ido haciendo más grande.',
-    'Cuando preparo un viaje ya estoy viajando. Me paso semanas leyendo sobre un sitio —blogs, foros, artículos, folletos viejos, mapas, fotografías de gente que estuvo allí hace años— hasta que puedo cerrar los ojos y recorrerlo. Esa parte me gusta tanto como llegar, y es la que quería compartir con alguien.',
+    'Cuando preparo un viaje ya estoy viajando. Me paso semanas leyendo sobre un sitio, entre blogs, foros, artículos, folletos viejos, mapas y fotografías de gente que estuvo allí hace años, hasta que puedo cerrar los ojos y recorrerlo. Esa parte me gusta tanto como llegar, y es la que quería compartir con alguien.',
   ],
   bloques: [
     {
@@ -345,7 +345,7 @@ export const PREGUNTAS = [
     grupo: 'El viaje',
     pregunta: '¿Hay que estar en forma?',
     respuesta:
-      'Para casi todos, no: se anda bastante, pero a ritmo de conversación y con paradas. Los que piden algo más —Corcovado, el Siq de Petra en un día completo, subir a la duna antes del amanecer— llevan un aviso claro en la ficha con los kilómetros y el desnivel. Si tenéis dudas, preguntad antes de reservar y os lo decimos sin adornos.',
+      'Para casi todos, no: se anda bastante, pero a ritmo de conversación y con paradas. Los que piden algo más, como Corcovado, el Siq de Petra en un día completo o subir a la duna antes del amanecer, llevan un aviso claro en la ficha con los kilómetros y el desnivel. Si tenéis dudas, preguntad antes de reservar y os lo decimos sin adornos.',
   },
   {
     id: 'seguro',

@@ -23,8 +23,8 @@ export default function Medida() {
           </h2>
 
           <p className="mt-7 leading-relaxed text-suave md:text-lg">
-            No hace falta que esté en el catálogo. Decidnos el sitio —uno de los nuestros o el que
-            lleváis años dándole vueltas— y lo montamos entero: solo vuestro grupo, vuestras
+            No hace falta que esté en el catálogo. Decidnos el sitio, uno de los nuestros o ese
+            al que lleváis años dándole vueltas, y lo montamos entero: solo vuestro grupo, vuestras
             fechas, vuestro ritmo y las paradas que os apetezcan. Con el mismo trabajo de detrás
             que cualquier salida: gente de allí, casas probadas y ninguna parada comercial.
           </p>

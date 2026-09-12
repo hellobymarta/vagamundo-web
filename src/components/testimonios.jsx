@@ -9,7 +9,7 @@ const TOTAL_ESTRELLAS = 5
 
 function Estrellas({ cuantas }) {
   return (
-    <p className="flex items-center gap-1 text-sm text-terracota-acento">
+    <p className="flex items-center justify-center gap-1 text-sm text-terracota-acento">
       <span className="sr-only">
         {cuantas} de {TOTAL_ESTRELLAS}
       </span>
@@ -72,15 +72,15 @@ export default function Testimonios() {
             // Tres por pantalla en el ordenador contando los dos huecos, dos
             // en tableta y, en el móvil, una entera con el borde de la
             // siguiente asomando, que es lo que invita a seguir tirando.
-            className="flex w-[80vw] shrink-0 flex-col sm:w-[calc((100%-2.5rem)/2)] lg:w-[calc((100%-6rem)/3)]"
+            className="flex w-[80vw] shrink-0 flex-col items-center text-center sm:w-[calc((100%-2.5rem)/2)] lg:w-[calc((100%-6rem)/3)]"
           >
             <Estrellas cuantas={estrellas} />
 
             <p className="titular mt-6 text-2xl leading-snug">«{cita}»</p>
 
             {/* mt-auto alinea las firmas aunque las citas midan distinto. */}
-            <footer className="mt-auto pt-8">
-              <div className="filete w-16" />
+            <footer className="mt-auto w-full pt-8">
+              <div className="filete mx-auto w-16" />
               <p className="etiqueta mt-5">{firma}</p>
               <p className="mt-2 text-sm text-suave">{lugar}</p>
             </footer>
