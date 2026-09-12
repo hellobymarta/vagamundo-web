@@ -20,12 +20,11 @@ export default function PortadaRotativa() {
   const actual = PORTADAS[indice]
   const { etiqueta, titulo, texto, enlace, accion, destinoId } = actual
 
-  // Si la campaña señala un destino, el botón lleva a la ficha de su viaje
-  // dentro del catálogo. Mientras el catálogo se está cargando —o si ese
-  // destino se quedara sin viajes— lleva al catálogo entero, que siempre
-  // existe: así el botón nunca apunta a un ancla que no está.
+  // Si la campaña señala un destino, el botón abre la página de su viaje.
+  // Mientras el catálogo se carga —o si ese destino se quedara sin viajes—
+  // cae en el catálogo entero, que siempre existe.
   const suyo = destinoId ? viajesDeDestino(viajes, destinoId)[0] : null
-  const destinoDelBoton = destinoId ? (suyo ? `/#viaje-${suyo._id}` : '/#catalogo') : enlace
+  const destinoDelBoton = destinoId ? (suyo ? `/viaje/${suyo._id}` : '/#catalogo') : enlace
 
   return (
     // h-dvh es la altura real de la ventana, también en el móvil, donde

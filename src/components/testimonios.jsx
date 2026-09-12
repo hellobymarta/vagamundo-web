@@ -23,7 +23,7 @@ function Estrellas({ cuantas }) {
   )
 }
 
-// Carril de opiniones: se ven dos y el resto se descubre desplazando.
+// Carril de opiniones: se ven tres y el resto se descubre desplazando.
 //
 // El desplazamiento es del navegador (overflow-x y scroll-snap, ya en
 // index.css), así que en el móvil funciona con el dedo sin escribir nada.
@@ -41,31 +41,38 @@ export default function Testimonios() {
     // Una tarjeta: lo que mide la primera más el hueco entre ellas.
     const tarjeta = caja.firstElementChild
 
-    caja.scrollBy({ left: sentido * (tarjeta ? tarjeta.offsetWidth + 48 : caja.clientWidth), behavior: 'smooth' })
+    // El hueco entre tarjetas sale del propio carril, no de un número escrito
+    // a mano: así sigue moviéndose una tarjeta exacta en cualquier ancho.
+    const hueco = parseFloat(getComputedStyle(caja).columnGap) || 0
+
+    caja.scrollBy({
+      left: sentido * (tarjeta ? tarjeta.offsetWidth + hueco : caja.clientWidth),
+      behavior: 'smooth',
+    })
   }
 
   return (
     // El bloque se queda muy por dentro del ancho de la sección: dos citas
     // estiradas de borde a borde no se leen, y el aire de los lados es lo que
     // hace que esto parezca una página y no un widget de reseñas.
-    <div className="mx-auto max-w-3xl lg:max-w-4xl">
+    <div className="mx-auto max-w-3xl lg:max-w-[1100px]">
       <div
         ref={carril}
         {...gestos}
         tabIndex={0}
         role="group"
         aria-label="Opiniones de viajeras y viajeros"
-        className={`carril -mx-6 flex scroll-pl-6 gap-12 overflow-x-auto px-6 pb-2 sm:mx-0 sm:scroll-pl-0 sm:px-0 ${
+        className={`carril -mx-6 flex scroll-pl-6 gap-10 overflow-x-auto px-6 pb-2 sm:mx-0 sm:scroll-pl-0 sm:px-0 lg:gap-12 ${
           arrastrando ? 'select-none' : ''
         }`}
       >
         {TESTIMONIOS.map(({ id, estrellas, cita, firma, lugar }) => (
           <blockquote
             key={id}
-            // Dos por pantalla en el ordenador contando el hueco; en el móvil,
-            // una entera y el borde de la siguiente, que es lo que invita a
-            // seguir tirando.
-            className="flex w-[80vw] shrink-0 flex-col sm:w-[calc((100%-3rem)/2)]"
+            // Tres por pantalla en el ordenador contando los dos huecos, dos
+            // en tableta y, en el móvil, una entera con el borde de la
+            // siguiente asomando, que es lo que invita a seguir tirando.
+            className="flex w-[80vw] shrink-0 flex-col sm:w-[calc((100%-2.5rem)/2)] lg:w-[calc((100%-6rem)/3)]"
           >
             <Estrellas cuantas={estrellas} />
 

@@ -108,7 +108,11 @@ label {
 
 .t-destino {
   font-size: clamp(2rem, 4.2vw, 3.5rem);
-  line-height: 1.05;
+  /* La cursiva de Playfair baja mucho: la J de «Japón» y «Jordania» tiene un
+     rabo largo que se salía de la caja de línea y quedaba cortado. Con este
+     interlineado y este respiro abajo, la palabra cabe entera. */
+  line-height: 1.22;
+  padding-bottom: 0.08em;
 }
 
 .cifras {

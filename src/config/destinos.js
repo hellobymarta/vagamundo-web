@@ -49,11 +49,11 @@ export const DESTINOS = [
         pie: 'La república marinera que compitió con Venecia y Génova, hoy de tres mil habitantes. Se llega en el ferry de las nueve, antes que los autocares.',
       },
       {
-        id: 'mar',
-        foto: FOTOS.AMALFI_MAR,
-        alt: 'El mar frente a la costa amalfitana en un día claro',
-        rotulo: 'El mar',
-        pie: 'Desde abril hay barca casi todos los días. Entre noviembre y marzo el ferry entre pueblos ni siquiera navega, y esta costa sin barco es otra cosa.',
+        id: 'barca',
+        foto: FOTOS.BARCA,
+        alt: 'Una barca de madera fondeada frente a Positano',
+        rotulo: 'La barca',
+        pie: 'Salvatore sale a las siete, antes de que se levante el viento, y para donde no llega el ferry. Entre noviembre y marzo no hay barca ninguna: esta costa sin barco es otra cosa.',
       },
       {
         id: 'toscana',
@@ -485,7 +485,7 @@ export const DESTINOS = [
     proximamente: true,
     nombre: 'Marruecos',
     continente: 'África',
-    titular: 'En preparación para 2027',
+    titular: 'El Atlas por dentro, no el zoco de siempre',
     entradilla:
       'El Atlas y el sur, sin la parada de la cooperativa de argán. Llevamos dos viajes de reconocimiento y falta uno.',
     pistas: ['marruecos', 'marrakech', 'fez', 'esauira', 'merzouga', 'atlas'],
@@ -692,7 +692,7 @@ export const DESTINOS = [
     proximamente: true,
     nombre: 'Vietnam',
     continente: 'Asia',
-    titular: 'En preparación para 2027',
+    titular: 'De norte a sur, en tren y sin prisa',
     entradilla:
       'De norte a sur en tren nocturno, con parada larga en Hoi An. Abrimos plazas cuando tengamos guía propio en las tres ciudades.',
     pistas: ['vietnam', 'hanoi', 'hoi an', 'saigon', 'halong', 'hue'],
@@ -882,7 +882,7 @@ export const DESTINOS = [
     proximamente: true,
     nombre: 'Nueva Zelanda',
     continente: 'Oceanía',
-    titular: 'En preparación para 2027',
+    titular: 'La isla sur, de Wanaka a los fiordos',
     entradilla:
       'La isla sur entera, de Wanaka a los fiordos. Son tres semanas largas y estamos viendo cómo hacerlas caber en dos.',
     pistas: ['nueva zelanda', 'nuevazelanda', 'wanaka', 'queenstown', 'milford', 'auckland'],
@@ -892,7 +892,7 @@ export const DESTINOS = [
     proximamente: true,
     nombre: 'Australia',
     continente: 'Oceanía',
-    titular: 'En preparación para 2027',
+    titular: 'El centro rojo contado por quien vive en él',
     entradilla:
       'El centro rojo y el arrecife, con comunidades aborígenes que llevan la visita ellas mismas. Es la parte que estamos cerrando.',
     pistas: ['australia', 'uluru', 'sidney', 'sydney', 'cairns', 'tasmania'],
@@ -902,7 +902,7 @@ export const DESTINOS = [
     proximamente: true,
     nombre: 'México',
     continente: 'América',
-    titular: 'En preparación para 2027',
+    titular: 'Oaxaca en noviembre y el Yucatán de tierra adentro',
     entradilla:
       'Oaxaca en noviembre y la península de Yucatán por dentro, no por la costa. Con cocinera en dos de los días.',
     pistas: ['mexico', 'méxico', 'oaxaca', 'yucatan', 'yucatán', 'merida', 'chiapas'],
@@ -1022,6 +1022,10 @@ export function viajesDeDestino(viajes, id) {
 export function estaAbierto(destino) {
   return !destino?.proximamente
 }
+
+// Los destinos que todavía no hemos abierto. Es la única lista de la que
+// tiran el catálogo y el índice, para que no haya dos versiones de la verdad.
+export const DESTINOS_PROXIMAMENTE = DESTINOS.filter(({ proximamente }) => proximamente)
 
 export function fotoDeDestino(texto, porDefecto) {
   return buscarDestino(texto)?.foto || porDefecto

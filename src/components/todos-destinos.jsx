@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import { CONTINENTES_CON_DESTINOS, viajesDeDestino } from '@/config/destinos'
+import { CONTINENTES_CON_DESTINOS } from '@/config/destinos'
 
 // Los destinos por continente, en una sola línea.
 //
@@ -14,7 +14,7 @@ import { CONTINENTES_CON_DESTINOS, viajesDeDestino } from '@/config/destinos'
 //
 // En pantallas estrechas la fila no se parte en dos: se desplaza a lo ancho
 // (.carril), que es lo que hacen las pestañas en el móvil.
-export default function TodosDestinos({ viajes }) {
+export default function TodosDestinos() {
   const [abierto, setAbierto] = useState(CONTINENTES_CON_DESTINOS[0]?.nombre)
 
   const elegido =
@@ -61,33 +61,25 @@ export default function TodosDestinos({ viajes }) {
           nombre, así que al cambiar de pestaña React rehace el bloque. */}
       <div
         key={elegido.nombre}
-        className="mt-14 flex flex-wrap justify-center gap-x-10 gap-y-5 md:mt-16 md:gap-x-14"
+        className="mt-14 flex flex-wrap items-baseline justify-center gap-x-12 gap-y-6 md:mt-16 md:gap-x-16"
       >
-        {elegido.destinos.map(({ id, nombre: pais, proximamente }) => {
-          const cuantos = viajesDeDestino(viajes, id).length
-
-          return (
-            <Link
-              key={id}
-              to={`/destinos/${id}`}
-              className="group flex items-baseline gap-3 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracota-acento"
+        {elegido.destinos.map(({ id, nombre: pais, proximamente }) => (
+          <Link
+            key={id}
+            to={`/destinos/${id}`}
+            className="group focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracota-acento"
+          >
+            {/* Solo el nombre. En negro los abiertos y en gris los que todavía
+                no lo están: el estado se ve sin tener que contar nada. */}
+            <span
+              className={`titular text-2xl transition group-hover:text-terracota-acento md:text-3xl ${
+                proximamente ? 'text-suave/45' : 'text-tinta'
+              }`}
             >
-              {/* En negro los abiertos y en gris los que todavía no lo están.
-                  El estado lo dice el destino, no el número de viajes. */}
-              <span
-                className={`titular text-2xl transition group-hover:text-terracota-acento md:text-3xl ${
-                  proximamente ? 'text-suave/45' : 'text-tinta'
-                }`}
-              >
-                {pais}
-              </span>
-
-              <span className="etiqueta cifras text-suave/70">
-                {proximamente ? '2027' : cuantos > 0 ? cuantos : ''}
-              </span>
-            </Link>
-          )
-        })}
+              {pais}
+            </span>
+          </Link>
+        ))}
       </div>
     </div>
   )

@@ -4,7 +4,6 @@ import PortadaRotativa from '@/components/portada-rotativa'
 import Marca from '@/components/marca'
 import Destacados from '@/components/destacados'
 import Explorador from '@/components/explorador'
-import Maneras from '@/components/maneras'
 import Medida from '@/components/medida'
 import Marquesina from '@/components/marquesina'
 import TodosDestinos from '@/components/todos-destinos'
@@ -15,6 +14,7 @@ import Motivaciones from '@/components/motivaciones'
 import Testimonios from '@/components/testimonios'
 import Preguntas from '@/components/preguntas'
 import ListaViajes from '@/components/lista-viajes'
+import TarjetaProximamente from '@/components/tarjeta-proximamente'
 import Cargando from '@/components/cargando'
 import Aviso from '@/components/aviso'
 import Boton from '@/components/boton'
@@ -22,6 +22,7 @@ import { useViajes } from '@/hooks/use-viajes'
 import { useAncla } from '@/hooks/use-ancla'
 import { enPalabras } from '@/formato'
 import { MOTIVACIONES, viajesDeMotivacion } from '@/config/motivaciones'
+import { DESTINOS_PROXIMAMENTE } from '@/config/destinos'
 import {
   CUANTOS_DESTACADOS,
   FOTOS,
@@ -50,7 +51,6 @@ export default function Viajes() {
   const visibles = viajesDeMotivacion(viajes, motivacion)
 
   const destacados = viajes.slice(0, CUANTOS_DESTACADOS)
-  const paraExplorar = viajes.slice(0, 6)
 
   return (
     <>
@@ -70,21 +70,15 @@ export default function Viajes() {
         </Seccion>
       )}
 
-      {!cargando && <Explorador viajes={paraExplorar} />}
-
-      <Seccion
-        tono={TONOS.CREMA}
-        etiqueta="Viajes Vagamundo"
-        titulo="Un día cualquiera, en tres viajes distintos"
-        texto="La manera de viajar no se explica con adjetivos, así que aquí van tres jornadas reales de tres rutas que no se parecen en nada."
-      >
-        <Maneras />
-      </Seccion>
+      {/* Todos los viajes del catálogo, que son los que están abiertos: los
+          destinos en preparación no tienen viaje y por tanto no entran aquí. */}
+      {!cargando && <Explorador viajes={viajes} />}
 
       <Seccion
         tono={TONOS.HUESO}
         etiqueta="Imagina tu viaje"
         titulo="¿Qué te apetece esta vez?"
+        aireArriba
         texto="Tres maneras de mirar el catálogo. Elige una y abajo se queda solo lo que encaja."
         centrado
       >
@@ -136,6 +130,31 @@ export default function Viajes() {
               <ListaViajes viajes={visibles} />
             )}
           </div>
+
+          {/* Los destinos que todavía no hemos abierto siguen en el catálogo,
+              pero con su estado y sin nada que se pueda reservar. Solo cuando
+              no hay filtro: no tienen categoría a la que pertenecer. */}
+          {!cargando && !elegida && (
+            <div className="mt-24 border-t border-borde pt-16 md:mt-32 md:pt-20">
+              <div className="flex flex-wrap items-end justify-between gap-6">
+                <div>
+                  <p className="etiqueta text-terracota-acento">En preparación</p>
+                  <h3 className="titular t-seccion mt-6">Los que abrimos en 2027</h3>
+                </div>
+
+                <p className="max-w-md text-suave">
+                  Los estamos recorriendo ahora. No abren plazas hasta que los hayamos hecho
+                  enteros nosotras, y entonces avisamos.
+                </p>
+              </div>
+
+              <div className="mt-16 grid gap-x-10 gap-y-20 sm:grid-cols-2 lg:grid-cols-3">
+                {DESTINOS_PROXIMAMENTE.map(({ id, ...resto }) => (
+                  <TarjetaProximamente key={id} id={id} {...resto} />
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -148,8 +167,8 @@ export default function Viajes() {
       <Seccion
         tono={TONOS.HUESO}
         etiqueta="Lo que cuentan"
-        titulo="Cuatro que han vuelto"
-        texto="Dos a la vista; para ver las demás, arrastra hacia la derecha."
+        titulo="Seis que han vuelto"
+        texto="Tres a la vista; para leer las demás, arrastra o usa las flechas."
         centrado
         aireArriba
       >
@@ -161,9 +180,9 @@ export default function Viajes() {
         etiqueta="Todos los destinos"
         titulo="Donde estamos y donde queremos estar"
         centrado
-        texto="Elige un continente y abajo se abren sus sitios. En negro, los que tienen plazas ahora mismo, con el número de viajes al lado; en gris, los que estamos preparando para 2027."
+        texto="Elige un continente y abajo se abren sus sitios. En negro, los que están abiertos; en gris, los que estamos preparando para 2027."
       >
-        <TodosDestinos viajes={viajes} />
+        <TodosDestinos />
 
         <p className="mt-20 text-center">
           <Boton a="/destinos" variante="contorno">

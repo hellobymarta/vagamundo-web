@@ -47,8 +47,8 @@ export const FOTOS = {
   ITALIA_CALLE: '/italia-amalfi/italia-colores.jpg',
   ITALIA_GASTRO: '/italia-amalfi/italia-gastro.jpg',
   ITALIA_TOSCANA: '/italia-amalfi/italia-toscana.jpg',
-  // Reservadas para la ficha de Italia, que todavía está por escribir.
   AMALFI_PASEO: '/italia-amalfi/amalfi-paseo.jpg',
+  // Libre: es de la PEC 1 y está esperando sitio.
   AMALFI_MAR: '/italia-amalfi/amalfi-mar.jpg',
 
   // Grecia
@@ -138,10 +138,9 @@ export const PORTADAS = [
     titulo: 'Once años volviendo al mismo trozo de costa',
     texto: 'Positano cuando las escaleras están vacías y los limones pesan en el árbol.',
     accion: 'Ver el viaje a Amalfi',
-    // `destinoId` señala un destino del catálogo: la portada resuelve al
-    // vuelo qué viaje hay allí y enlaza con su ficha concreta, no con el
-    // principio de la lista. Si ese destino se queda sin viajes, cae en el
-    // catálogo entero.
+    // `destinoId` señala un destino: la portada busca qué viaje hay allí y
+    // enlaza con SU PÁGINA, no con el catálogo. Si ese destino se quedara sin
+    // viajes, el botón cae en el catálogo entero, que siempre existe.
     destinoId: 'italia',
   },
   {
@@ -152,9 +151,7 @@ export const PORTADAS = [
     titulo: 'Donde el desierto llega hasta el mar',
     texto: 'Dunas de trescientos metros, y once días en los que casi no se ve un coche.',
     accion: 'Solicitar propuesta a Namibia',
-    // Lleva a la sección de viajes a medida y le dice de qué destino se
-    // trata, que es lo que luego se arrastra hasta el formulario.
-    enlace: `/?${PARAMETRO_PROPUESTA}=Namibia#a-medida`,
+    destinoId: 'namibia',
   },
   {
     id: 'india',
@@ -216,38 +213,6 @@ export const MANIFIESTO = {
   ],
 }
 
-// Tres días de tres viajes distintos, para la sección «Viajes Vagamundo».
-// Son ejemplos concretos a propósito: explicar cómo trabajamos con una frase
-// general no dice nada, y con una jornada de verdad se entiende sola.
-export const MANERAS = [
-  {
-    id: 'costa',
-    foto: FOTOS.BARCA,
-    fotoAlt: 'Barca de madera fondeada frente a Positano',
-    lugar: 'Costa amalfitana · día 6',
-    titulo: 'El mar se ve mejor desde una barca de madera',
-    texto:
-      'Salvatore sale a las siete, antes de que se levante el viento, y para donde no llega el ferry. Ese día no hay nada más apuntado: el que quiera quedarse durmiendo, se queda.',
-  },
-  {
-    id: 'fauna',
-    foto: FOTOS.NAMIBIA_SAFARI,
-    fotoAlt: 'Cebras cruzando una pista de grava bajo un cielo de tormenta',
-    lugar: 'Namibia · día 4',
-    titulo: 'Hora y media parados mirando una manada',
-    texto:
-      'En Etosha el horario lo pone la fauna. Como vamos seis o siete en un 4x4 y no treinta en un autocar, quedarse es una decisión del grupo y no un problema de logística.',
-  },
-  {
-    id: 'ciudad',
-    foto: FOTOS.JAPON_NARA,
-    fotoAlt: 'La pagoda de cinco pisos de Nara entre los árboles',
-    lugar: 'Japón · día 9',
-    titulo: 'A Nara se llega antes de que abran los autobuses',
-    texto:
-      'Primer tren, desayuno en la estación y la pagoda reflejada en el estanque con el parque todavía vacío. A las once, cuando llega todo el mundo, nosotras ya estamos comiendo en otro sitio.',
-  },
-]
 
 // Un color por sección. Cada tono trae su fondo, su acento y su borde.
 export const TONOS = {
@@ -270,9 +235,9 @@ export const TONOS = {
 // Las tres filas de la marquesina. Nombres que se reconocen de un vistazo:
 // pasa deprisa y en letra enorme, así que no es el sitio para los matices.
 export const FILAS_MARQUESINA = [
-  ['Positano', 'Santorini', 'Amalfi', 'Sicilia', 'Estambul', 'Reikiavik'],
-  ['Marrakech', 'Petra', 'Wadi Rum', 'Etosha', 'Fez', 'Namibia'],
-  ['Kioto', 'Bora Bora', 'Tokio', 'Río de Janeiro', 'Hanói', 'Sídney'],
+  ['Positano', 'Santorini', 'Amalfi', 'Capri', 'Estambul', 'Reikiavik'],
+  ['Capadocia', 'Petra', 'Wadi Rum', 'Etosha', 'Sossusvlei', 'Jaipur'],
+  ['Kioto', 'Bora Bora', 'Tokio', 'Benarés', 'Tortuguero', 'Manhattan'],
 ]
 
 
@@ -318,7 +283,7 @@ export const TESTIMONIOS = [
     estrellas: 5,
     cita: 'Cambiaron el itinerario a mitad de viaje porque había mar de fondo. Acertaron.',
     firma: 'Nuria D.',
-    lugar: 'Apulia · septiembre',
+    lugar: 'Cícladas · septiembre',
   },
   {
     id: 'javier',
@@ -333,6 +298,20 @@ export const TESTIMONIOS = [
     cita: 'Fui sola y no me sentí sola ni un día. Tampoco tuve que pagar el suplemento de siempre.',
     firma: 'Carmen L.',
     lugar: 'Japón · abril',
+  },
+  {
+    id: 'alberto',
+    estrellas: 5,
+    cita: 'Nos avisaron a las once de la noche de que había aurora y salimos en pijama. Eso no lo organiza una agencia cualquiera.',
+    firma: 'Alberto y Sofía',
+    lugar: 'Islandia · febrero',
+  },
+  {
+    id: 'marina',
+    estrellas: 5,
+    cita: 'Íbamos con dos niños y nadie nos miró mal en ningún momento. El guía se los ganó el primer día.',
+    firma: 'Marina P.',
+    lugar: 'Costa Rica · julio',
   },
 ]
 

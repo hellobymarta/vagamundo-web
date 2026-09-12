@@ -65,7 +65,10 @@ export default function Explorador({ viajes }) {
             {/* El nombre del viaje, en pequeño y en mayúsculas espaciadas. */}
             <p className="etiqueta line-clamp-1 text-white/55">{nombre}</p>
 
-            <h2 className="titular-cursiva t-destino mt-4 line-clamp-2 text-balance text-white">
+            {/* Sin line-clamp: recortar líneas obliga a overflow:hidden y eso
+                es justo lo que cortaba el rabo de la J. El hueco ya lo reserva
+                la altura mínima del contenedor. */}
+            <h2 className="titular-cursiva t-destino mt-4 text-balance text-white">
               {nombreCorto(destino)}
             </h2>
           </div>
