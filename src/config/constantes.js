@@ -41,7 +41,9 @@ export const CUANTOS_DESTACADOS = 4
 export const FOTOS = {
   // Italia · Cinque Terre
   CINQUETERRE: '/italia-amalfi/manarola.jpg',
-  CT_PORTADA: '/italia-amalfi/cinqueterre-sin-identificar.jpg',
+  // Riomaggiore desde arriba. Es la foto del viaje a las Cinque Terre en el
+  // catálogo, y por eso no entra en la galería: allí se repetiría.
+  CT_PORTADA: '/italia-amalfi/cinqueterre-riomaggiore.jpg',
   CT_MONTEROSSO: '/italia-amalfi/monterosso-beach.jpg',
   CT_VERNAZZA: '/italia-amalfi/vernazza.jpg',
   CT_CORNIGLIA: '/italia-amalfi/corniglia.jpg',
