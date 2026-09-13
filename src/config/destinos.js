@@ -869,7 +869,7 @@ export const DESTINOS = [
     salidas: {
       temporada: 'De marzo a mayo y de septiembre a octubre',
       porque:
-        'Petra son ocho horas andando y Wadi Rum, dos noches en el desierto: en verano no se puede, y en invierno la noche del campamento baja de cuatro grados. En primavera y otoño se camina cómodo de la mañana a la noche.',
+        'Petra son ocho horas andando y Wadi Rum, dos noches en el desierto: en verano no se puede, y en invierno la noche del campamento baja de cuatro grados. En primavera y otoño se camina cómodo de la mañana a la noche. Las salidas van en domingo y no por casualidad: Petra by Night solo se celebra de domingo a jueves, y saliendo en domingo la noche del quinto día siempre cae dentro.',
       fechas: [
         { id: 'jordania-2610', dia: '18 de octubre de 2026', plazas: 1 },
         { id: 'jordania-2703', dia: '14 de marzo de 2027', plazas: 7 },
