@@ -37,6 +37,14 @@ const PALABRAS = [
   'diez',
   'once',
   'doce',
+  'trece',
+  'catorce',
+  'quince',
+  'dieciséis',
+  'diecisiete',
+  'dieciocho',
+  'diecinueve',
+  'veinte',
 ]
 
 export function enPalabras(numero) {

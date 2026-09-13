@@ -132,7 +132,7 @@ export const SILUETAS = {
 // Cada silueta con las palabras que la disparan. Buscamos en el campo
 // "destino" del viaje, así que basta con que aparezca el país o una ciudad.
 const PISTAS = {
-  italia: ['italia', 'amalfi', 'amalfitana', 'apulia', 'positano', 'sicilia', 'roma', 'matera', 'bari', 'atrani', 'ravello'],
+  italia: ['italia', 'toscana', 'florencia', 'siena', 'cinque terre', 'amalfi', 'amalfitana', 'apulia', 'positano', 'sicilia', 'roma', 'matera', 'bari', 'atrani', 'ravello'],
   brasil: ['brasil', 'brazil', 'rio de janeiro', 'bahia', 'jericoacoara', 'fortaleza', 'lencois', 'lençóis'],
   namibia: ['namibia', 'etosha', 'sossusvlei', 'windhoek', 'kalahari'],
   espana: ['espana', 'españa', 'spain', 'mallorca', 'canarias', 'menorca', 'asturias'],

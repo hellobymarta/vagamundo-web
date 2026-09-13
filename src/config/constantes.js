@@ -39,6 +39,53 @@ export const CUANTOS_DESTACADOS = 4
 // Las de la costa amalfitana son mías, de la PEC 1; el resto salen de los
 // catálogos de viajes de 2026 y se usan solo con fines académicos.
 export const FOTOS = {
+  // Italia · Cinque Terre
+  CINQUETERRE: '/italia-amalfi/manarola.jpg',
+  CT_MONTEROSSO: '/italia-amalfi/monterosso-beach.jpg',
+  CT_VERNAZZA: '/italia-amalfi/vernazza.jpg',
+  CT_CORNIGLIA: '/italia-amalfi/corniglia.jpg',
+  CT_RIOMAGGIORE: '/italia-amalfi/riomaggiore.jpg',
+
+  // Toscana
+  TOSCANA: '/toscana/val-orcia.jpg',
+  TOSCANA_FLORENCIA: '/toscana/florencia.jpg',
+  TOSCANA_SIENA: '/toscana/siena.jpg',
+  TOSCANA_SANGIMIGNANO: '/toscana/san-gimignano.jpg',
+  TOSCANA_COLINAS: '/toscana/toscana-colinas.jpg',
+
+  // Grecia · Milos y Santorini
+  MILOS_SARAKINIKO: '/grecia/milos-sarakiniko.jpg',
+  MILOS_SARAKINIKO_VISTA: '/grecia/milos-sarakiniko-vista.jpg',
+  MILOS_KLEFTIKO: '/grecia/milos-kleftiko.jpg',
+  MILOS_KLIMA: '/grecia/milos-klima.jpg',
+  MILOS_PLAKA: '/grecia/milos-plaka.jpg',
+  MILOS_POLLONIA: '/grecia/milos-pollonia.jpg',
+  MILOS_FIROPOTAMOS: '/grecia/milos-firopotamos.jpg',
+  SANTORINI_FIRA: '/grecia/santorini-fira.jpg',
+  SANTORINI_OIA: '/grecia/santorini-oia.jpg',
+  SANTORINI_PYRGOS: '/grecia/santorini-pyrgos.jpg',
+  ATENAS_ACROPOLIS: '/grecia/atenas-acropolis.jpg',
+
+  // Turquía · el circuito largo
+  TURQUIA_ANKARA: '/turquia/ankara.jpg',
+  TURQUIA_BURSA: '/turquia/bursa.jpg',
+  TURQUIA_SARATLI: '/turquia/saratli-ciudad.jpg',
+  TURQUIA_KIRKGOZ: '/turquia/saratli-kirkgoz.jpg',
+  TURQUIA_FRESCOS: '/turquia/saratli.jpg',
+  TURQUIA_UCHISAR: '/turquia/uchisar.jpg',
+  TURQUIA_TROYA: '/turquia/canakkale-troya.jpg',
+
+  // Estados Unidos · Washington y Miami
+  EEUU_CAPITOLIO: '/estados-unidos/washington-capitolio.jpg',
+  EEUU_MALL: '/estados-unidos/washington-mall.jpg',
+  EEUU_LINCOLN: '/estados-unidos/washington-lincoln.jpg',
+  EEUU_CASA_BLANCA: '/estados-unidos/washington-casa-blanca.jpg',
+  EEUU_OCEAN_DRIVE: '/estados-unidos/miami-ocean-drive.jpg',
+  EEUU_ART_DECO: '/estados-unidos/miami-calle.jpg',
+  EEUU_LITTLE_HAVANA: '/estados-unidos/miami-little-havana.jpg',
+  EEUU_WYNWOOD: '/estados-unidos/miami-wynwood.jpg',
+  EEUU_MIAMI_BEACH: '/estados-unidos/miami-skyline.jpg',
+  EEUU_MIAMI_PALMERAS: '/estados-unidos/miami-palmeras.jpg',
   // Italia · costa amalfitana
   PORTADA: '/italia-amalfi/positano-atardecer.jpg',
   BARCA: '/italia-amalfi/positano-barca.jpg',
@@ -47,8 +94,7 @@ export const FOTOS = {
   ITALIA_CALLE: '/italia-amalfi/italia-colores.jpg',
   AMALFI_MARINA: '/italia-amalfi/amalfi-paseo.jpg',
   ITALIA_GASTRO: '/italia-amalfi/italia-gastro.jpg',
-  ITALIA_TOSCANA: '/italia-amalfi/italia-toscana.jpg',
-  AMALFI_PASEO: '/italia-amalfi/amalfi-paseo.jpg',
+    AMALFI_PASEO: '/italia-amalfi/amalfi-paseo.jpg',
   // Libre: es de la PEC 1 y está esperando sitio.
   AMALFI_MAR: '/italia-amalfi/amalfi-mar.jpg',
 
@@ -94,19 +140,19 @@ export const FOTOS = {
   TURQUIA_ESMIRNA: '/turquia/esmirna.jpg',
 
   // Estados Unidos
-  ESTADOSUNIDOS: '/nueva-york/brooklyn.jpg',
-  EEUU_DUMBO: '/nueva-york/dumbo.jpg',
-  EEUU_CENTRAL: '/nueva-york/parque-central.jpg',
-  EEUU_CONEY: '/nueva-york/coney-island.jpg',
-  EEUU_TIMES_SQUARE: '/nueva-york/times-square.jpg',
-  EEUU_BOARDWALK: '/nueva-york/coney-islandview.jpg',
-  EEUU_HOLLYWOOD: '/nueva-york/hollywood.jpg',
-  EEUU_ANGELES: '/nueva-york/losangeles.jpg',
-  EEUU_MANHATTAN: '/nueva-york/newyork.jpg',
-  EEUU_TIMES: '/nueva-york/times-square.jpg',
-  EEUU_LIBERTAD: '/nueva-york/statue.jpg',
-  EEUU_TAXI: '/nueva-york/newyork-street.jpg',
-  EEUU_VENICE: '/nueva-york/surbeach.jpg',
+  ESTADOSUNIDOS: '/estados-unidos/brooklyn.jpg',
+  EEUU_DUMBO: '/estados-unidos/dumbo.jpg',
+  EEUU_CENTRAL: '/estados-unidos/parque-central.jpg',
+  EEUU_CONEY: '/estados-unidos/coney-island.jpg',
+  EEUU_TIMES_SQUARE: '/estados-unidos/times-square.jpg',
+  EEUU_BOARDWALK: '/estados-unidos/coney-islandview.jpg',
+  EEUU_HOLLYWOOD: '/estados-unidos/hollywood.jpg',
+  EEUU_ANGELES: '/estados-unidos/losangeles.jpg',
+  EEUU_MANHATTAN: '/estados-unidos/newyork.jpg',
+  EEUU_TIMES: '/estados-unidos/times-square.jpg',
+  EEUU_LIBERTAD: '/estados-unidos/statue.jpg',
+  EEUU_TAXI: '/estados-unidos/newyork-street.jpg',
+  EEUU_VENICE: '/estados-unidos/surbeach.jpg',
 
   // Namibia
   NAMIBIA: '/namibia/namibia-elefantes.jpg',
