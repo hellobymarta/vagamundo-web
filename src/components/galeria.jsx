@@ -23,13 +23,32 @@
 const ALTA = 'h-[78vh] min-h-[460px] md:h-[86vh]'
 const NORMAL = 'h-[58vh] min-h-[360px] md:h-[66vh]'
 
+// El número de cada bloque y su formato dependen del orden, así que se
+// calculan aquí, en un bucle, y no dentro del map: en el map no se usa la
+// posición para nada.
+function preparar(fotos) {
+  const bloques = []
+
+  for (const foto of fotos) {
+    const posicion = bloques.length
+
+    bloques.push({
+      ...foto,
+      numero: String(posicion + 1).padStart(2, '0'),
+      destacada: posicion === 0 || posicion % 3 === 2,
+      primera: posicion === 0,
+    })
+  }
+
+  return bloques
+}
+
 export default function Galeria({ fotos }) {
   if (!fotos || fotos.length === 0) return null
 
   return (
     <div className="space-y-8 md:space-y-12">
-      {fotos.map(({ id, foto, alt, rotulo, pie, vertical }, posicion) => {
-        const destacada = posicion === 0 || posicion % 3 === 2
+      {preparar(fotos).map(({ id, foto, alt, rotulo, pie, vertical, numero, destacada, primera }) => {
 
         // La vertical no sangra: se queda en una columna centrada con su
         // propia proporción, así se ve la fotografía entera.
@@ -42,7 +61,7 @@ export default function Galeria({ fotos }) {
             <img
               src={foto}
               alt={alt}
-              loading={posicion === 0 ? 'eager' : 'lazy'}
+              loading={primera ? 'eager' : 'lazy'}
               className="absolute inset-0 h-full w-full object-cover object-center transition duration-[1600ms] ease-out group-hover:scale-[1.03]"
             />
 
@@ -54,9 +73,7 @@ export default function Galeria({ fotos }) {
                 vertical ? 'px-6 md:px-10' : 'px-6 md:px-14'
               }`}
             >
-              <p className="etiqueta text-white/70">
-                {String(posicion + 1).padStart(2, '0')}
-              </p>
+              <p className="etiqueta text-white/70">{numero}</p>
 
               <p
                 className={`titular mt-4 leading-tight ${

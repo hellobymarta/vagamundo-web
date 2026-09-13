@@ -30,16 +30,8 @@ export default function TodosDestinos() {
         aria-label="Continentes"
         className="fila-scroll -mx-6 flex items-center gap-6 overflow-x-auto px-6 md:mx-0 md:justify-center md:gap-8 md:px-0"
       >
-        {CONTINENTES_CON_DESTINOS.map(({ nombre }, posicion) => (
-          <div key={nombre} className="flex shrink-0 items-center gap-6 md:gap-8">
-            {/* El punto separador va entre continentes, nunca delante del
-                primero, y no lo lee el lector de pantalla. */}
-            {posicion > 0 && (
-              <span aria-hidden="true" className="text-suave/40">
-                ·
-              </span>
-            )}
-
+        {CONTINENTES_CON_DESTINOS.map(({ nombre }) => (
+          <div key={nombre} className="group flex shrink-0 items-center gap-6 md:gap-8">
             <button
               type="button"
               role="tab"
@@ -53,6 +45,13 @@ export default function TodosDestinos() {
             >
               {nombre.toUpperCase()}
             </button>
+
+            {/* El punto separador va entre continentes. Lo esconde el CSS en
+                el último, así no hace falta saber en qué posición vamos, y el
+                lector de pantalla no lo lee. */}
+            <span aria-hidden="true" className="text-suave/40 group-last:hidden">
+              ·
+            </span>
           </div>
         ))}
       </div>

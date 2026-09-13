@@ -281,10 +281,24 @@ export const TONOS = {
 
 // Las tres filas de la marquesina. Nombres que se reconocen de un vistazo:
 // pasa deprisa y en letra enorme, así que no es el sitio para los matices.
+// Cada fila lleva su propio ritmo escrito: así el componente no necesita
+// saber en qué posición va, que es lo que obligaba a recorrerla con índice.
 export const FILAS_MARQUESINA = [
-  ['Positano', 'Santorini', 'Amalfi', 'Capri', 'Estambul', 'Reikiavik'],
-  ['Capadocia', 'Petra', 'Wadi Rum', 'Etosha', 'Sossusvlei', 'Jaipur'],
-  ['Kioto', 'Bora Bora', 'Tokio', 'Benarés', 'Tortuguero', 'Manhattan'],
+  {
+    id: 'mediterraneo',
+    ritmo: '',
+    nombres: ['Positano', 'Santorini', 'Amalfi', 'Capri', 'Estambul', 'Reikiavik'],
+  },
+  {
+    id: 'desierto',
+    ritmo: 'marquesina-fila--reves',
+    nombres: ['Capadocia', 'Petra', 'Wadi Rum', 'Etosha', 'Sossusvlei', 'Jaipur'],
+  },
+  {
+    id: 'lejos',
+    ritmo: 'marquesina-fila--lenta',
+    nombres: ['Kioto', 'Bora Bora', 'Tokio', 'Benarés', 'Tortuguero', 'Manhattan'],
+  },
 ]
 
 

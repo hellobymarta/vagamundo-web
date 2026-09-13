@@ -5,7 +5,7 @@
 // («Costa amalfitana, Italia»), así que aquí está la tabla que lo traduce
 // a un destino de verdad, igual que hacemos con las siluetas de los mapas.
 
-import { FOTOS } from '@/config/constantes'
+import { FOTOS, TONOS } from '@/config/constantes'
 import { contienePalabra } from '@/formato'
 
 export const DESTINOS = [
@@ -1274,9 +1274,22 @@ export function fotoAlternativa(texto, porDefecto) {
 }
 
 // Los continentes en el orden de NUBA, con sus destinos dentro.
-export const CONTINENTES_CON_DESTINOS = ['Europa', 'África', 'Oriente Medio', 'Asia', 'Oceanía', 'América']
-  .map((nombre) => ({
-    nombre,
-    destinos: DESTINOS.filter((destino) => destino.continente === nombre),
-  }))
-  .filter(({ destinos }) => destinos.length > 0)
+const ORDEN_CONTINENTES = ['Europa', 'África', 'Oriente Medio', 'Asia', 'Oceanía', 'América']
+
+// El fondo de cada sección va alternando crema y hueso. Se resuelve aquí, con
+// un bucle, para que la página no tenga que recorrer la lista con la posición.
+function continentesConDestinos() {
+  const lista = []
+
+  for (const nombre of ORDEN_CONTINENTES) {
+    const destinos = DESTINOS.filter((destino) => destino.continente === nombre)
+
+    if (destinos.length === 0) continue
+
+    lista.push({ nombre, destinos, tono: lista.length % 2 === 0 ? TONOS.CREMA : TONOS.HUESO })
+  }
+
+  return lista
+}
+
+export const CONTINENTES_CON_DESTINOS = continentesConDestinos()

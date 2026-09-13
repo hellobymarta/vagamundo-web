@@ -74,10 +74,10 @@ export default function Destinos() {
       {cargando ? (
         <Cargando texto="Consultando el catálogo…" />
       ) : (
-        CONTINENTES_CON_DESTINOS.map(({ nombre, destinos }, posicion) => (
+        CONTINENTES_CON_DESTINOS.map(({ nombre, destinos, tono }) => (
           <Seccion
             key={nombre}
-            tono={posicion % 2 === 0 ? TONOS.CREMA : TONOS.HUESO}
+            tono={tono}
             etiqueta={nombre}
             titulo={`${destinos.length} ${destinos.length === 1 ? 'destino' : 'destinos'}`}
           >

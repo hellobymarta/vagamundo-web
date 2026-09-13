@@ -5,21 +5,25 @@ import { FILAS_MARQUESINA } from '@/config/constantes'
 // sentido. La animación es CSS pura (ver .marquesina-fila en index.css).
 //
 // Cada fila repite su lista dos veces porque el desplazamiento es del 50 %:
-// cuando la primera copia se ha ido, la segunda está justo en su sitio.
-const RITMOS = ['', 'marquesina-fila--reves', 'marquesina-fila--lenta']
+// cuando la primera copia se ha ido, la segunda está justo en su sitio. La
+// duplicación se prepara aquí, con la copia marcada como dato, para que el
+// map no tenga que recorrerse con la posición.
+function duplicar(nombres) {
+  return [
+    ...nombres.map((nombre) => ({ id: `${nombre}-a`, nombre })),
+    ...nombres.map((nombre) => ({ id: `${nombre}-b`, nombre })),
+  ]
+}
 
 export default function Marquesina() {
   return (
     <section className="overflow-hidden bg-noche py-16" aria-hidden="true">
       <div className="space-y-2">
-        {FILAS_MARQUESINA.map((fila, posicion) => (
-          // La key es el primer nombre de la fila, que no se repite entre filas.
-          <div key={fila[0]} className={`marquesina-fila ${RITMOS[posicion % RITMOS.length]}`}>
-            {[...fila, ...fila].map((nombre, copia) => (
+        {FILAS_MARQUESINA.map(({ id, ritmo, nombres }) => (
+          <div key={id} className={`marquesina-fila ${ritmo}`}>
+            {duplicar(nombres).map(({ id: idCopia, nombre }) => (
               <span
-                // Aquí sí hace falta distinguir la copia: el nombre aparece
-                // dos veces a propósito, así que va con el sufijo.
-                key={`${nombre}-${copia < fila.length ? 'a' : 'b'}`}
+                key={idCopia}
                 className="titular whitespace-nowrap px-6 text-[clamp(2.5rem,6vw,5.5rem)] text-white/12"
               >
                 {nombre}
