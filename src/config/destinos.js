@@ -583,10 +583,12 @@ export const DESTINOS = [
       },
       {
         id: 'troya',
-        foco: '50% 30%',
+        // La foto es apaisada y el caballo cabe entero, pero mide 1440 de
+        // ancho: en una pantalla mayor la imagen se amplía y el recorte se
+        // come la cabeza. Por eso el encuadre se pega arriba.
+        foco: '50% 4%',
         foto: FOTOS.TURQUIA_TROYA,
-        vertical: true,
-        alt: 'La réplica del caballo de madera de Troya',
+        alt: 'La réplica del caballo de madera de Troya, con visitantes subiendo por la escalera',
         rotulo: 'Troya',
         pie: 'Nueve ciudades superpuestas en la misma colina, excavadas desde 1871. El museo que abrió en 2018, un cubo de acero oxidado medio enterrado, explica el yacimiento mejor que el yacimiento mismo.',
       },

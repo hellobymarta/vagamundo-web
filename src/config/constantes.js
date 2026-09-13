@@ -73,7 +73,7 @@ export const FOTOS = {
   TURQUIA_KIRKGOZ: '/turquia/saratli-kirkgoz.jpg',
   TURQUIA_FRESCOS: '/turquia/saratli.jpg',
   TURQUIA_UCHISAR: '/turquia/uchisar.jpg',
-  TURQUIA_TROYA: '/turquia/canakkale-troya.jpg',
+  TURQUIA_TROYA: '/turquia/troytour.jpg',
 
   // Estados Unidos · Washington y Miami
   EEUU_CAPITOLIO: '/estados-unidos/washington-capitolio.jpg',
