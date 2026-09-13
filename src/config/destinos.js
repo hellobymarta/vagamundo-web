@@ -29,6 +29,9 @@ export const DESTINOS = [
     //    de Portovenere, las Cinque Terre y las islas
     //  · parks.it y el Parco Nazionale delle Cinque Terre, para la superficie
     //    del parque y los kilómetros de muro de piedra seca
+    //  · el Parco Naturale Regionale di Portovenere, para las fechas de la
+    //    iglesia de San Pedro
+    //  · tempiosanbiagio.it, para la obra de Sangallo el Viejo en Montepulciano
     //  · el folleto de Italia 2026 de Viajes El Corte Inglés
     historia: [
       'Italia no se recorre entera, y por eso aquí son tres viajes y no uno. La costa amalfitana, los cinco pueblos de Liguria y el campo toscano están a cientos de kilómetros unos de otros y piden cosas distintas: barco, sendero y carretera de curvas. Lo que comparten es la manera de estar hechos, que es la de un sitio donde el paisaje lo levantó alguien a mano y lleva siglos sosteniéndose.',
@@ -44,6 +47,22 @@ export const DESTINOS = [
       { etiqueta: 'Plazas', valor: 'De cinco a ocho por salida' },
     ],
     galeria: [
+      {
+        id: 'pompeya',
+        foto: FOTOS.AMALFI_POMPEYA,
+        alt: 'La calzada de Pompeya con el Vesubio al fondo',
+        rotulo: 'Pompeya',
+        pie: 'Se entra por Porta Marina a la hora de apertura, que son tres horas largas de calzada y de casas. Al fondo de la calle está el Vesubio, el mismo que la enterró en el año 79 y al que se sube la víspera, por el sendero de ceniza hasta el borde del cráter.',
+      },
+      {
+        id: 'ravello',
+        foco: '50% 45%',
+        foto: FOTOS.AMALFI_RAVELLO,
+        vertical: true,
+        alt: 'El jardín de Villa Rufolo en Ravello, con un pino sobre el mar',
+        rotulo: 'Ravello',
+        pie: 'Villa Rufolo cuelga trescientos metros por encima del mar, y su jardín es el que Wagner visitó en 1880. De ahí viene el festival que monta cada verano el escenario sobre el acantilado. Enfrente queda la Terrazza dell\'Infinito de Villa Cimbrone.',
+      },
       {
         id: 'amalfi',
         foto: FOTOS.AMALFI_MAR,
@@ -83,6 +102,13 @@ export const DESTINOS = [
         pie: 'La pendiente se entiende mejor cuando se encienden las luces: son escaleras, no calles, y por eso no hay un solo coche dentro del pueblo. El ferry de línea deja de navegar al caer la tarde.',
       },
       {
+        id: 'paestum',
+        foto: FOTOS.AMALFI_PAESTUM,
+        alt: 'Los templos dóricos de Paestum vistos desde el aire',
+        rotulo: 'Paestum',
+        pie: 'Tres templos dóricos en pie, de los siglos VI y V antes de Cristo, de una colonia griega que se llamó Poseidonia. En el museo está la Tumba del Nadador. Es el último día, de camino al aeropuerto de Nápoles.',
+      },
+      {
         id: 'monterosso',
         foto: FOTOS.CT_MONTEROSSO,
         alt: 'La playa de Monterosso al Mare con sombrillas y el peñón al fondo',
@@ -118,6 +144,13 @@ export const DESTINOS = [
         pie: 'Las barcas se varan en mitad de la calle porque no hay puerto donde dejarlas. De aquí arranca la Via dell\'Amore, reabierta en 2024 con reserva de franja horaria y sentido único: veinte minutos de paseo colgado sobre el agua.',
       },
       {
+        id: 'portovenere',
+        foto: FOTOS.CT_PORTOVENERE,
+        alt: 'La iglesia de San Pedro de Portovenere sobre la roca, al atardecer',
+        rotulo: 'Portovenere',
+        pie: 'La iglesia de San Pedro está en el filo de la roca: la parte gótica se levantó entre 1256 y 1277 sobre una románica anterior. Debajo se abre la gruta de Byron y enfrente queda la isla Palmaria. Entra en la misma declaración de la Unesco que los cinco pueblos.',
+      },
+      {
         id: 'florencia',
         foto: FOTOS.TOSCANA_FLORENCIA,
         alt: 'La cúpula de Brunelleschi sobre los tejados de Florencia',
@@ -149,6 +182,16 @@ export const DESTINOS = [
         alt: 'Colinas y viñedos toscanos con niebla al amanecer',
         rotulo: 'El Chianti',
         pie: 'Cosme III delimitó la zona en 1716, de las primeras denominaciones del mundo, y de ahí viene el gallo negro del cuello de la botella. Se sale de amanecida, que es cuando la niebla se queda enganchada en las vaguadas.',
+      },
+      {
+        id: 'montepulciano',
+        // El templo queda en la parte baja de la foto: el encuadre se va
+        // hasta el pie para que entre entero y no lo tape el rótulo.
+        foco: '50% 100%',
+        foto: FOTOS.TOSCANA_MONTEPULCIANO,
+        alt: 'El templo de San Biagio entre la niebla, a los pies de Montepulciano',
+        rotulo: 'Montepulciano',
+        pie: 'El templo de San Biagio lo levantó Antonio da Sangallo el Viejo entre 1518 y 1545, todo en travertino y en planta de cruz griega. Está abajo, a un kilómetro del pueblo, y se baja andando. Arriba se cata el Vino Nobile.',
       },
       {
         id: 'siena',

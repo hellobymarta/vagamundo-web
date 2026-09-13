@@ -49,12 +49,21 @@ export const FOTOS = {
   CT_CORNIGLIA: '/italia-amalfi/corniglia.jpg',
   CT_RIOMAGGIORE: '/italia-amalfi/riomaggiore.jpg',
 
+  // Costa amalfitana: lo que el itinerario recorre fuera de la costa
+  AMALFI_POMPEYA: '/italia-amalfi/pompeya.jpg',
+  AMALFI_RAVELLO: '/italia-amalfi/ravello.jpg',
+  AMALFI_PAESTUM: '/italia-amalfi/paestum.jpg',
+
+  // El golfo de los Poetas, que es la segunda mitad del viaje a Cinque Terre
+  CT_PORTOVENERE: '/italia-amalfi/portovenere.jpg',
+
   // Toscana
   TOSCANA: '/toscana/val-orcia.jpg',
   TOSCANA_FLORENCIA: '/toscana/florencia.jpg',
   TOSCANA_SIENA: '/toscana/siena.jpg',
   TOSCANA_SANGIMIGNANO: '/toscana/san-gimignano.jpg',
   TOSCANA_COLINAS: '/toscana/toscana-colinas.jpg',
+  TOSCANA_MONTEPULCIANO: '/toscana/montepulciano.jpg',
 
   // Grecia · Milos y Santorini
   MILOS_SARAKINIKO: '/grecia/milos-sarakiniko.jpg',
