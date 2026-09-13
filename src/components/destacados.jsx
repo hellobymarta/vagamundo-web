@@ -10,8 +10,6 @@ import { formatearPrecio, contarNoches } from '@/formato'
 //  · la fotografía NO es la del viaje, es otra del mismo sitio (la primera
 //    de su galería), para que las dos secciones no se repitan;
 //  · lleva encima el aviso de plazas, que es lo que da la urgencia.
-//
-// Deconstruimos cada viaje dentro del map y esparcimos el resto aquí.
 function Destacado({ id, nombre, destino, imagen, precio, duracionDias, disponible }) {
   return (
     <article className="group flex h-full flex-col">

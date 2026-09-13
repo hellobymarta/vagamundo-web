@@ -4,10 +4,10 @@ import { useCarrusel } from '@/hooks/use-carrusel'
 import { IMAGEN_POR_DEFECTO } from '@/config/constantes'
 import { fotoDeDestino, nombreCorto } from '@/config/destinos'
 
-// Explorador de viajes, calcado del hero de destinos de Utópica.
+// Explorador de viajes, al modo del hero de destinos de Utópica.
 //
-// Lo importante, y lo que me faltaba: el título grande en cursiva es el
-// nombre del SITIO («Chile», «Omán», «Maldivas»), no el del viaje. Por eso
+// El título grande en cursiva es el nombre del SITIO («Chile», «Omán»,
+// «Maldivas»), no el del viaje. Por eso
 // en su web nunca se descuadra: son una o dos palabras. El nombre del viaje
 // va en pequeño encima, y a los lados van otra vez los sitios, no los viajes.
 export default function Explorador({ viajes }) {
@@ -58,8 +58,8 @@ export default function Explorador({ viajes }) {
             {nombreCorto(anteriorViaje.destino)}
           </button>
 
-          {/* Altura fija. Los nombres miden lo que miden —«Namibia» y
-              «Polinesia Francesa» no ocupan lo mismo— y sin reservar el
+          {/* Altura fija. Los nombres miden lo que miden («Namibia» y
+              «Polinesia Francesa» no ocupan lo mismo) y sin reservar el
               hueco la sección entera daba un salto en cada cambio. */}
           <div className="flex min-h-[7.5rem] flex-col justify-center px-2 text-center md:min-h-[9.5rem] md:px-8">
             {/* El nombre del viaje, en pequeño y en mayúsculas espaciadas. */}

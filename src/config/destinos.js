@@ -880,7 +880,7 @@ export const DESTINOS = [
     ],
 
     // Ventana: previsión de floración 2026 de la Japan Meteorological
-    // Corporation — Kioto abre el 23 de marzo y llega a plena flor el 30, y la
+    // Corporation: Kioto abre el 23 de marzo y llega a plena flor el 30, y la
     // plena flor dura cinco o siete días. Junio y la primera mitad de julio
     // son el tsuyu, la temporada de lluvias.
     salidas: {
@@ -1019,7 +1019,7 @@ export const DESTINOS = [
     entradilla:
       'Un país del tamaño de Aragón que guarda el seis por ciento de la biodiversidad del planeta. Diez días de bosque nuboso, canales y Pacífico, con un naturalista que lleva veinte años mirando las mismas ramas y sigue encontrando cosas.',
 
-    // La historia del sitio. Las cifras están verificadas una a una:
+    // La historia del sitio. Las cifras salen de:
     //  · biodiversidad, superficie y número de especies: Biodiversidad de
     //    Costa Rica (Wikipedia, con fuente en el SINAC y el INBio)
     //  · deforestación y áreas protegidas: Deforestación en Costa Rica
@@ -1248,8 +1248,8 @@ export const DESTINOS = [
     entradilla:
       'Brooklyn y el Bronx antes que Times Square, el metro en vez del autocar y Coney Island un domingo. Después, si queda cuerpo, la otra costa: Los Ángeles y el Pacífico.',
     // Ventana: mayo y junio son los dos meses de menos sol en la costa del sur
-    // de California —el June Gloom, un 64 % de sol posible en Los Ángeles
-    // (Wikipedia)— y en enero Nueva York se mueve entre cinco bajo cero y dos.
+    // de California (el June Gloom, un 64 % de sol posible en Los Ángeles,
+    // según Wikipedia) y en enero Nueva York se mueve entre cinco bajo cero y dos.
 
     // La historia del sitio. Fuentes:
     //  · Puente de Brooklyn (Wikipedia), para fechas y medidas
@@ -1472,8 +1472,8 @@ export function fotoAlternativa(texto, porDefecto) {
 // Los continentes en el orden de NUBA, con sus destinos dentro.
 const ORDEN_CONTINENTES = ['Europa', 'África', 'Oriente Medio', 'Asia', 'Oceanía', 'América']
 
-// El fondo de cada sección va alternando crema y hueso. Se resuelve aquí, con
-// un bucle, para que la página no tenga que recorrer la lista con la posición.
+// El fondo de cada sección va alternando crema y hueso, y queda resuelto aquí,
+// al construir la lista.
 function continentesConDestinos() {
   const lista = []
 

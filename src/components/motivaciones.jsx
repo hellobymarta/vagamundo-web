@@ -9,8 +9,6 @@ import { MOTIVACIONES, esDeMotivacion } from '@/config/motivaciones'
 //
 // La motivación elegida se escribe en la URL, no en el estado: el enlace se
 // puede compartir y el botón de atrás funciona solo.
-//
-// Deconstruimos cada motivación dentro del map y la key es su id.
 export default function Motivaciones({ activa, viajes }) {
   return (
     <div className="grid gap-x-8 gap-y-12 md:grid-cols-3">

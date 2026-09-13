@@ -7,8 +7,8 @@ import { MENSAJES } from '@/config/constantes'
 // todas las páginas, en lugar de que cada una repita la misma llamada.
 export const ViajesContext = createContext(null)
 
-// Un único useState para todo el estado del catálogo, porque son datos
-// relacionados entre sí: la lista, si está cargando y qué ha pasado.
+// Todo el estado del catálogo va junto, porque se mueve junto: la lista, si
+// está cargando y qué ha pasado.
 const ESTADO_INICIAL = {
   viajes: [],
   cargando: true,

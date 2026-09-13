@@ -9,8 +9,8 @@ import { CONTINENTES_CON_DESTINOS } from '@/config/destinos'
 // pantalla de texto pequeño. Ahora los continentes van en una fila y debajo
 // se abren los sitios del que esté elegido, como el menú desplegable de NUBA.
 //
-// Un solo useState, con el primer continente abierto de entrada: la sección
-// nunca se ve vacía y no hace falta adivinar que hay que pulsar algo.
+// Arranca con el primer continente abierto: así la sección nunca se ve vacía
+// y no hace falta adivinar que hay que pulsar algo.
 //
 // En pantallas estrechas la fila no se parte en dos: se desplaza a lo ancho
 // (.carril), que es lo que hacen las pestañas en el móvil.
@@ -46,9 +46,8 @@ export default function TodosDestinos() {
               {nombre.toUpperCase()}
             </button>
 
-            {/* El punto separador va entre continentes. Lo esconde el CSS en
-                el último, así no hace falta saber en qué posición vamos, y el
-                lector de pantalla no lo lee. */}
+            {/* El punto separador va entre continentes; en el último lo
+                esconde el CSS. No lo lee el lector de pantalla. */}
             <span aria-hidden="true" className="text-suave/40 group-last:hidden">
               ·
             </span>

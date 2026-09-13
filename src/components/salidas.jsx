@@ -7,8 +7,6 @@ import { PARAMETRO_PROPUESTA } from '@/config/constantes'
 // Las plazas son un número del 0 al 8. Cero significa completa, y entonces la
 // fila no ofrece reservar: propone la lista de espera, que es lo honesto.
 //
-// Deconstruimos cada fecha dentro del map y la key es su id, nunca la posición.
-//
 // Cada fila es una rejilla de tres columnas iguales y centradas, no un
 // justify-between: con justify-between la columna del medio se movía según lo
 // larga que fuera la fecha y las filas parecían colocadas cada una por su

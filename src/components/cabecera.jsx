@@ -2,16 +2,15 @@ import { Link, NavLink } from 'react-router-dom'
 
 import { useCabeceraSolida } from '@/hooks/use-cabecera-solida'
 
-// Cabecera calcada de NUBA, con su efecto de scroll medido en su propia web:
+// Cabecera al modo de NUBA, con su efecto de scroll:
 //
 //   arriba de la página  ->  fija, 90 px de alto, fondo transparente,
 //                            enlaces y logotipo en blanco sobre la foto
 //   al bajar             ->  75 px, fondo crema, texto en negro y un filete
 //                            de 1 px abajo, con una transición de 0,6 s
 //
-// Ellos lo hacen poniendo la clase .did-scroll en el body; aquí lo resuelve
-// el hook useCabeceraSolida. Igual que en su web, el menú también se vuelve
-// sólido al pasar el ratón por encima (group-hover).
+// Lo resuelve el hook useCabeceraSolida. Igual que en su web, el menú también
+// se vuelve sólido al pasar el ratón por encima (group-hover).
 const IZQUIERDA = [
   { destino: '/', texto: 'Viajes' },
   { destino: '/destinos', texto: 'Destinos' },

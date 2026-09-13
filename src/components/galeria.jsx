@@ -19,9 +19,8 @@
 // cambiándole la caja.
 const ALTO = 'h-[52vh] min-h-[320px] md:h-[68vh]'
 
-// El número de cada bloque y su formato dependen del orden, así que se
-// calculan aquí, en un bucle, y no dentro del map: en el map no se usa la
-// posición para nada.
+// El número que lleva cada bloque depende del orden, así que lo calculo
+// antes de pintar y viaja con la foto.
 function preparar(fotos) {
   const bloques = []
 

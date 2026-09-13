@@ -2,8 +2,7 @@ import TarjetaViaje from '@/components/tarjeta-viaje'
 import Aviso from '@/components/aviso'
 import { MENSAJES } from '@/config/constantes'
 
-// Recorre el catálogo. Deconstruimos cada viaje dentro del map y pasamos
-// el resto de sus datos a la tarjeta con el operador spread.
+// Recorre el catálogo y monta una ficha por viaje.
 //
 // Dos columnas desde el móvil: en una sola, el catálogo entero pedía diez
 // pantallas de scroll. La ficha se adapta encogiendo el titular y guardando

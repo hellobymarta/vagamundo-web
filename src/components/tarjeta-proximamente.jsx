@@ -5,8 +5,8 @@ import Silueta from '@/components/silueta'
 // La ficha de un destino que todavía no hemos abierto, para que el catálogo
 // los enseñe sin dar a entender que se pueden reservar.
 //
-// Comparte medidas y ritmo con TarjetaViaje —misma proporción de imagen,
-// mismos huecos— pero no lleva precio, ni duración, ni enlace a un viaje que
+// Comparte medidas y ritmo con TarjetaViaje (misma proporción de imagen,
+// mismos huecos), pero no lleva precio, ni duración, ni enlace a un viaje que
 // no existe: lleva a la página del destino.
 //
 // No tienen fotografía a propósito: en su hueco va el contorno del país.

@@ -1,4 +1,4 @@
-// Todas las constantes de configuración viven aquí, en UPPER_SNAKE_CASE.
+// Todas las constantes de configuración viven aquí.
 // Ningún componente escribe una URL, un color ni un texto fijo a mano.
 
 // La URL de la API viene de la variable de entorno VITE_API_URL (.env).
@@ -100,7 +100,7 @@ export const FOTOS = {
 
   // Grecia
   // Portada de Grecia: Oía en el filo de la caldera, con el campanario y las
-  // cúpulas. La eligió Marta y manda ella.
+  // cúpulas.
   GRECIA: '/grecia/grecia-oia.jpg',
   GRECIA_CALLEJON: '/grecia/grecia-callejon.jpg',
   GRECIA_NAVAGIO_BARCO: '/grecia/grecia-navagio-barco.jpg',
@@ -327,8 +327,7 @@ export const TONOS = {
 
 // Las tres filas de la marquesina. Nombres que se reconocen de un vistazo:
 // pasa deprisa y en letra enorme, así que no es el sitio para los matices.
-// Cada fila lleva su propio ritmo escrito: así el componente no necesita
-// saber en qué posición va, que es lo que obligaba a recorrerla con índice.
+// Cada fila lleva escrito su propio ritmo en vez de deducirlo de su orden.
 export const FILAS_MARQUESINA = [
   {
     id: 'mediterraneo',

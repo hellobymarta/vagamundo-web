@@ -4,7 +4,7 @@ import { TESTIMONIOS } from '@/config/constantes'
 import { useArrastrar } from '@/hooks/use-arrastrar'
 
 // Las estrellas se dibujan a partir del número, no se escriben a mano: así
-// la valoración es un dato del catálogo y no un adorno del maquetador.
+// la valoración es un dato del catálogo y no un adorno escrito a mano.
 const TOTAL_ESTRELLAS = 5
 
 function Estrellas({ cuantas }) {

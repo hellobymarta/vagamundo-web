@@ -10,7 +10,6 @@ import { FOTOS, TONOS } from '@/config/constantes'
 
 // Índice de destinos, como el de NUBA: la lista agrupada por continente,
 // con una ficha por sitio. Cada una lleva a la página de ese destino.
-// Deconstruimos cada destino dentro del map y la key es su id, nunca la posición.
 function FichaDestino({ id, nombre, foto, fotoAlt, titular, proximamente, salidas }) {
   return (
     <article className="group">

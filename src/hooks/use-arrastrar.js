@@ -1,12 +1,13 @@
 import { useRef, useState } from 'react'
 
 // Arrastrar con el ratón un carril que ya se puede desplazar con el dedo y
-// con la rueda. En el móvil no hace falta —el navegador lo hace solo— pero
-// en el ordenador nadie encuentra una barra de scroll horizontal escondida.
+// con la rueda. En el móvil no hace falta, porque el navegador lo hace solo,
+// pero en el ordenador nadie encuentra una barra de scroll horizontal
+// escondida.
 //
-// Un solo useState, para saber si se está arrastrando y cambiar el cursor.
-// Las medidas del gesto van en refs, porque cambian en cada movimiento del
-// ratón y no tienen que repintar nada.
+// En el estado solo guardo si se está arrastrando, que es lo que cambia el
+// cursor. Las medidas del gesto van en refs, porque cambian en cada
+// movimiento del ratón y no tienen que repintar nada.
 export function useArrastrar() {
   const [arrastrando, setArrastrando] = useState(false)
 
@@ -33,7 +34,7 @@ export function useArrastrar() {
     if (arrastrando) setArrastrando(false)
   }
 
-  // Se esparcen sobre el carril: <div {...gestos}>
+  // Estos gestos se aplican sobre el carril.
   const gestos = {
     onPointerDown: alBajar,
     onPointerMove: alMover,

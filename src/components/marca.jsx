@@ -8,9 +8,9 @@ import { enPalabras } from '@/formato'
 // Arriba, el titular largo centrado de NUBA; debajo, dos párrafos que se ven
 // siempre y cuatro que se despliegan al pulsar «Leer más».
 //
-// Un solo useState para abrir y cerrar. El contenido está SIEMPRE en el DOM
-// y se oculta con `hidden`, no se desmonta: así lo encuentra el buscador y
-// el lector de pantalla sabe, por aria-expanded, que hay más debajo.
+// El contenido está siempre en el DOM y se oculta con `hidden`, no se
+// desmonta: así lo encuentra el buscador y el lector de pantalla sabe, por
+// aria-expanded, que hay más debajo.
 export default function Marca({ cuantos }) {
   const [abierto, setAbierto] = useState(false)
 

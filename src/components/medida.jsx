@@ -5,11 +5,8 @@ import { FOTOS, PASOS } from '@/config/constantes'
 // sección entera a sangre y no una lista de tres puntos al final de la página.
 //
 // La sección NO habla de un destino concreto: se puede montar cualquiera,
-// esté o no en el catálogo. Los ejemplos van marcados como ejemplos, que es
-// lo que faltaba: antes el epígrafe decía Namibia y la cita hablaba de
-// Jordania, y no había manera de entender de qué iba esto.
-//
-// Deconstruimos cada paso dentro del map y la key es su número.
+// esté o no en el catálogo. Los ejemplos van marcados como ejemplos, para que
+// no se lean como un destino más del catálogo.
 export default function Medida() {
   return (
     <section id="a-medida" className="scroll-mt-24 bg-terracota px-6 py-28 md:px-10 md:py-36">

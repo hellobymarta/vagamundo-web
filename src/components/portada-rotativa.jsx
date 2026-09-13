@@ -21,7 +21,7 @@ export default function PortadaRotativa() {
   const { etiqueta, titulo, texto, enlace, accion, destinoId } = actual
 
   // Si la campaña señala un destino, el botón abre la página de su viaje.
-  // Mientras el catálogo se carga —o si ese destino se quedara sin viajes—
+  // Mientras el catálogo se carga, o si ese destino se quedara sin viajes,
   // cae en el catálogo entero, que siempre existe.
   const suyo = destinoId ? viajesDeDestino(viajes, destinoId)[0] : null
   const destinoDelBoton = destinoId ? (suyo ? `/viaje/${suyo._id}` : '/#catalogo') : enlace

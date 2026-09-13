@@ -151,7 +151,7 @@ label {
   }
 }
 
-/* Si alguien tiene desactivadas las animaciones del sistema, se para. */
+/* Si el sistema tiene desactivadas las animaciones, se para. */
 @media (prefers-reduced-motion: reduce) {
   .marquesina-fila {
     animation: none;

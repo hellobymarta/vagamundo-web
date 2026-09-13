@@ -6,8 +6,7 @@ import { FILAS_MARQUESINA } from '@/config/constantes'
 //
 // Cada fila repite su lista dos veces porque el desplazamiento es del 50 %:
 // cuando la primera copia se ha ido, la segunda está justo en su sitio. La
-// duplicación se prepara aquí, con la copia marcada como dato, para que el
-// map no tenga que recorrerse con la posición.
+// duplicación se prepara aquí y cada copia viaja con su propia clave.
 function duplicar(nombres) {
   return [
     ...nombres.map((nombre) => ({ id: `${nombre}-a`, nombre })),

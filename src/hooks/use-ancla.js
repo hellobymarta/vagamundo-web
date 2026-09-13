@@ -16,7 +16,7 @@ export function desplazarHasta(hash = '') {
 
   if (!destino) return false
 
-  // Si alguien tiene desactivadas las animaciones del sistema, salto seco.
+  // Si el sistema tiene desactivadas las animaciones, salto seco.
   const suave = !window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
   destino.scrollIntoView({ behavior: suave ? 'smooth' : 'auto', block: 'start' })

@@ -3,7 +3,7 @@ import { useContext } from 'react'
 import { ViajesContext } from '@/context/viajes-context'
 
 // Atajo para leer el contexto del catálogo desde cualquier componente,
-// con un aviso claro si alguien se olvida del Provider.
+// y avisa si se usa fuera del Provider.
 export function useViajes() {
   const contexto = useContext(ViajesContext)
 

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 
 // Sigue el ratón para el cursor propio, como el de travelmachine.es.
-// Un solo useState con todo lo que necesita el punto: dónde está, si está
-// encima de algo pulsable y si hay que dibujarlo.
+// El estado lleva todo lo que necesita el punto: dónde está, si está encima
+// de algo pulsable y si hay que dibujarlo.
 const FUERA = { x: -100, y: -100, sobrePulsable: false, visible: false }
 
 export function useRaton() {

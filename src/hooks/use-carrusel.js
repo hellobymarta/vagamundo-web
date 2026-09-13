@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 
-// Un único useState para el carrusel: guarda en qué posición estamos
-// y devuelve las funciones para moverse. Da la vuelta por los dos lados,
+// El carrusel guarda en qué posición estamos y devuelve las funciones para
+// moverse. Da la vuelta por los dos lados,
 // así nunca se queda sin sitio donde ir.
 //
 // Con `automatico` en milisegundos avanza solo, como el hero de NUBA.

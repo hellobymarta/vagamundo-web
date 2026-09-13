@@ -6,8 +6,8 @@ import { contarNoches, formatearPrecio } from '@/formato'
 
 // Ficha del catálogo: foto, etiqueta de categoría, título serif, filete y el
 // precio en el formato de Wilderness («Desde X € por persona»).
-// Recibe las props ya deconstruidas, así en el listado basta con esparcir
-// cada viaje del map sobre este componente.
+// Recibe los datos del viaje sueltos, uno por prop, para que el listado no
+// tenga que armar nada antes de pintarlos.
 export default function TarjetaViaje({
   id,
   nombre,
