@@ -12,6 +12,11 @@ export default function Seccion({
   // una banda de color y necesitan separarse de ella.
   aireArriba = false,
   ancho = 'max-w-[1440px]',
+  // Contenido que va de borde a borde del viewport. No entra en el contenedor
+  // centrado: se saca con el margen negativo exacto del padding lateral de la
+  // sección, así mide justo el ancho de la pantalla sin recurrir a 100vw, que
+  // cuenta la barra de desplazamiento y provoca scroll horizontal.
+  sangre,
   children,
 }) {
   const alineado = centrado ? 'mx-auto max-w-3xl text-center' : 'max-w-2xl'
@@ -38,6 +43,8 @@ export default function Seccion({
 
         {children && <div className="mt-16 md:mt-20">{children}</div>}
       </div>
+
+      {sangre && <div className="-mx-6 mt-16 md:-mx-10 md:mt-20">{sangre}</div>}
     </section>
   )
 }

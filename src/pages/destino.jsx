@@ -108,9 +108,12 @@ export default function Destino() {
       )}
 
       {galeria && (
-        <Seccion tono={TONOS.CREMA} etiqueta="Lo que vas a ver" titulo={`${nombre} en ${enPalabras(galeria.length)} lugares`}>
-          <Galeria fotos={galeria} />
-        </Seccion>
+        <Seccion
+          tono={TONOS.CREMA}
+          etiqueta="Lo que vas a ver"
+          titulo={`${nombre} en ${enPalabras(galeria.length)} lugares`}
+          sangre={<Galeria fotos={galeria} />}
+        />
       )}
 
       {abierto && salidas && (
