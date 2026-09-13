@@ -183,6 +183,17 @@ export const FOTOS = {
   JORDANIA_ARCO: '/jordania/jordania-wadirum.jpg',
   JORDANIA_ZOCO: '/jordania/jordania-gastro.jpg',
 
+  // El resto del recorrido, de Amán a Aqaba
+  JORDANIA_CIUDADELA: '/jordania/aman-ciudadela.jpg',
+  JORDANIA_JERASH: '/jordania/jerash.jpg',
+  JORDANIA_AJLOUN: '/jordania/ajloun.jpg',
+  JORDANIA_MADABA: '/jordania/madaba-mapa.jpg',
+  JORDANIA_NEBO: '/jordania/monte-nebo.jpg',
+  JORDANIA_MAR_MUERTO: '/jordania/mar-muerto.jpg',
+  JORDANIA_DANA: '/jordania/dana.jpg',
+  JORDANIA_CAMPAMENTO: '/jordania/wadirum-campamento.jpg',
+  JORDANIA_AQABA: '/jordania/aqaba.jpg',
+
   // Japón
   JAPON: '/japon/japon-kioto.jpg',
   JAPON_INARI: '/japon/kioto-arqui.jpg',

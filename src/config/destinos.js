@@ -792,6 +792,7 @@ export const DESTINOS = [
     //  · Petra y Mar Muerto (Wikipedia), para fechas, cifras y la ingeniería
     //    hidráulica nabatea
     //  · el folleto de África y Oriente Medio 2026 de Viajes El Corte Inglés
+    //  · visitpetra.jo, para los días y la hora de Petra by Night
     //  · nuba.com, para la manera de plantear los días
     historia: [
       'Petra la levantaron los nabateos, que eran caravaneros y sobre todo ingenieros del agua. Por las paredes del Siq corren las canalizaciones talladas que abastecían la ciudad, y alrededor hay presas para desviar las crecidas. Es Patrimonio Mundial desde 1985 y se ha excavado una parte pequeña de lo que hay.',
@@ -809,6 +810,72 @@ export const DESTINOS = [
     ],
 
     galeria: [
+      {
+        id: 'aman',
+        foto: FOTOS.JORDANIA_AMAN,
+        vertical: true,
+        alt: 'Las casas blancas de Amán subiendo por las colinas',
+        rotulo: 'Amán',
+        pie: 'Blanca, en cuesta y mucho más grande de lo que nadie espera. Se reparte por diecinueve colinas, y de una a otra se baja y se sube: aquí no hay manera de andar en llano.',
+      },
+      {
+        id: 'ciudadela',
+        foto: FOTOS.JORDANIA_CIUDADELA,
+        alt: 'Las columnas del templo de Hércules en la Ciudadela de Amán, con la ciudad detrás',
+        rotulo: 'La Ciudadela de Amán',
+        pie: 'Lo que queda en pie del templo de Hércules, levantado bajo Marco Aurelio, y a su lado la mano de mármol que es lo único que se conserva de la estatua que hubo dentro. Detrás está el palacio omeya, y la ciudad entera desde arriba.',
+      },
+      {
+        id: 'especias',
+        foto: FOTOS.JORDANIA_ZOCO,
+        vertical: true,
+        alt: 'Cuencos de especias en un puesto del mercado',
+        rotulo: 'El mercado de especias de Amán',
+        pie: 'Zaatar, sumac, flor de hibisco y canela en rama. Se compra donde compran los de allí, en el centro, y se cena mansaf, que está en la lista de patrimonio inmaterial de la UNESCO.',
+      },
+      {
+        id: 'jerash',
+        foto: FOTOS.JORDANIA_JERASH,
+        alt: 'La plaza Oval de Jerash rodeada por su columnata',
+        rotulo: 'Jerash',
+        pie: 'La plaza Oval, con las columnas cerrándose en herradura, y de ahí arranca el Cardo Máximo con las rodadas de los carros todavía marcadas en la piedra. Se entra por el arco de Adriano, levantado para su visita del año 129.',
+      },
+      {
+        id: 'ajloun',
+        foco: '50% 55%',
+        foto: FOTOS.JORDANIA_AJLOUN,
+        alt: 'Una escalera abovedada en el interior del castillo de Ajloun',
+        rotulo: 'El castillo de Ajloun',
+        pie: 'Lo mandó levantar en 1184 un comandante de Saladino, y no contra el desierto sino contra los castillos cruzados del otro lado del valle. Por dentro es un laberinto de rampas y bóvedas pensado para defenderse escalón a escalón.',
+      },
+      {
+        id: 'madaba',
+        foto: FOTOS.JORDANIA_MADABA,
+        alt: 'El mosaico del mapa de Madaba, con letras griegas sobre las teselas',
+        rotulo: 'El mapa de Madaba',
+        pie: 'En el suelo de la iglesia de San Jorge, del siglo VI: la representación cartográfica más antigua que se conserva de Tierra Santa. Está en griego y Jerusalén sale en el centro, con su calle porticada, tal como era entonces.',
+      },
+      {
+        id: 'nebo',
+        foto: FOTOS.JORDANIA_NEBO,
+        alt: 'La cruz serpentiforme del monte Nebo sobre el valle del Jordán',
+        rotulo: 'El monte Nebo',
+        pie: 'Desde aquí, dice el Deuteronomio, vio Moisés la tierra prometida sin llegar a entrar. Se ve el valle del Jordán entero y, con el día limpio, hasta el mar Muerto. La cruz retorcida de la explanada es una obra moderna, de Giovanni Fantoni.',
+      },
+      {
+        id: 'marmuerto',
+        foto: FOTOS.JORDANIA_MAR_MUERTO,
+        alt: 'La orilla del mar Muerto con la costra de sal blanca sobre las piedras',
+        rotulo: 'El mar Muerto',
+        pie: 'Cuatrocientos treinta metros por debajo del nivel del mar, que es el punto más bajo de tierra firme del planeta, y casi diez veces más salado que el océano. La sal se cristaliza en la orilla y cruje al pisarla. No se nada: se flota, y con la barba o las rodillas raspadas escuece.',
+      },
+      {
+        id: 'dana',
+        foto: FOTOS.JORDANIA_DANA,
+        alt: 'El valle de la reserva de Dana abriéndose entre paredes de arenisca',
+        rotulo: 'La reserva de Dana',
+        pie: 'La mayor reserva natural del país, y la única que baja de los mil quinientos metros al desierto: cuatro pisos de vegetación en una sola ladera. Se duerme aquí, en el pueblo viejo colgado del borde, para poder andarla por la mañana.',
+      },
       {
         id: 'siq',
         foto: FOTOS.JORDANIA_SIQ,
@@ -843,23 +910,21 @@ export const DESTINOS = [
         foto: FOTOS.JORDANIA_ARCO,
         alt: 'Un arco de roca natural sobre el desierto de Wadi Rum',
         rotulo: 'Los arcos de Wadi Rum',
-        pie: 'Puentes de roca que la erosión ha dejado en pie. Se sube a alguno a pie, sin cuerdas, con el conductor beduino delante enseñando dónde pisar. Debajo se duerme en campamento.',
+        pie: 'Puentes de roca que la erosión ha dejado en pie. Se sube a alguno a pie, sin cuerdas, con el conductor beduino delante enseñando dónde pisar.',
       },
       {
-        id: 'aman',
-        foto: FOTOS.JORDANIA_AMAN,
-        vertical: true,
-        alt: 'Las casas blancas de Amán subiendo por las colinas',
-        rotulo: 'Amán',
-        pie: 'Blanca, en cuesta y mucho más grande de lo que nadie espera. Arriba está la ciudadela, con el templo de Hércules y el palacio omeya, y abajo el teatro romano encajado entre los edificios.',
+        id: 'campamento',
+        foto: FOTOS.JORDANIA_CAMPAMENTO,
+        alt: 'Las tiendas de un campamento beduino sobre la arena roja de Wadi Rum',
+        rotulo: 'El campamento de Wadi Rum',
+        pie: 'Se duerme dos noches en el desierto, con cena hecha en el zarb, el horno enterrado en la arena. Lo que se viene a ver es lo de arriba: sin una sola luz alrededor, la Vía Láctea se ve a simple vista.',
       },
       {
-        id: 'especias',
-        foto: FOTOS.JORDANIA_ZOCO,
-        vertical: true,
-        alt: 'Cuencos de especias en un puesto del mercado',
-        rotulo: 'El mercado de especias de Amán',
-        pie: 'Zaatar, sumac, flor de hibisco y canela en rama. Se compra donde compran los de allí, en el centro, y se cena mansaf, que está en la lista de patrimonio inmaterial de la UNESCO.',
+        id: 'aqaba',
+        foto: FOTOS.JORDANIA_AQABA,
+        alt: 'La orilla del mar Rojo en Aqaba al atardecer, con una barca fondeada',
+        rotulo: 'Aqaba',
+        pie: 'Los veintisiete kilómetros de costa que tiene Jordania, y el único puerto del país. El arrecife empieza a pocos metros de la orilla, así que el último baño del viaje se hace con tubo y sin botella.',
       },
     ],
 
