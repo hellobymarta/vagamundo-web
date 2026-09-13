@@ -221,6 +221,21 @@ export const FOTOS = {
   ISLANDIA_GLACIAR: '/islandia/islandia-glaciar.jpg',
   ISLANDIA_PLAYA: '/islandia/islandia-playa.jpg',
 
+  // La vuelta a la isla, en el orden en que se recorre
+  ISLANDIA_THINGVELLIR: '/islandia/thingvellir.jpg',
+  ISLANDIA_STROKKUR: '/islandia/strokkur.jpg',
+  ISLANDIA_GULLFOSS: '/islandia/gullfoss.jpg',
+  ISLANDIA_SKOGAFOSS: '/islandia/skogafoss.jpg',
+  ISLANDIA_DYRHOLAEY: '/islandia/dyrholaey.jpg',
+  ISLANDIA_SVARTIFOSS: '/islandia/svartifoss.jpg',
+  ISLANDIA_DIAMANTES: '/islandia/diamond-beach.jpg',
+  ISLANDIA_SEYDISFJORDUR: '/islandia/seydisfjordur.jpg',
+  ISLANDIA_MYVATN: '/islandia/myvatn-banos.jpg',
+  ISLANDIA_GODAFOSS: '/islandia/godafoss.jpg',
+  ISLANDIA_AKUREYRI: '/islandia/akureyri.jpg',
+  ISLANDIA_KIRKJUFELL: '/islandia/kirkjufell.jpg',
+  ISLANDIA_ARNARSTAPI: '/islandia/arnarstapi.jpg',
+
   // Polinesia Francesa
   POLINESIA: '/polinesia/polinesia-borabora.jpg',
   POLINESIA_BUNGALOS: '/polinesia/polinesia-bungalos.jpg',

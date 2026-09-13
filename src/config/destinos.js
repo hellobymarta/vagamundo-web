@@ -404,42 +404,55 @@ export const DESTINOS = [
     fotoAlt: 'Una aurora boreal verde sobre un 4x4 parado en la nieve',
     titular: 'Una isla que todavía se está haciendo',
     entradilla:
-      'Nueve días de febrero dando la vuelta a la isla en 4x4, con conductor y con un cazador de auroras que decide cada noche adónde vamos según el parte. No se promete la aurora: se persigue.',
+      'Nueve días dando la vuelta entera a la isla por la carretera de circunvalación, en septiembre: con el norte y los fiordos del este todavía abiertos y con noche suficiente para que salga la aurora.',
 
     // La historia del sitio. Fuentes:
     //  · Islandia y Jökulsárlón (Wikipedia), para superficie, población,
     //    energía y las cifras de la laguna
+    //  · Gullfoss y Skógafoss (Wikipedia), para los saltos, la escalera y
+    //    la historia de Sigríður Tómasdóttir
     //  · nuba.com y utopica.travel, para la manera de plantear el viaje
     historia: [
       'Islandia está partida por la mitad. En Thingvellir se camina por dentro de la falla de Almannagjá, que es el borde de la placa norteamericana, con la euroasiática al otro lado del valle. Se separan unos dos centímetros al año.',
       'El Vatnajökull es Patrimonio Mundial desde 2019 por un criterio estrictamente geológico: más de 1.400.000 hectáreas, casi el catorce por ciento del país, con ocho volcanes debajo del hielo. Cuando uno de ellos entra en erupción bajo el glaciar, el deshielo baja de golpe y se lleva por delante lo que encuentra.',
       'La laguna de Jökulsárlón no existía hace un siglo. Empezó a formarse hacia 1935, cuando el glaciar Breiðamerkurjökull inició su retroceso, y desde los años setenta se ha cuadruplicado. Es geología en tiempo real, no un paisaje quieto.',
-      'La aurora no se reserva. Se produce cuando el viento solar excita el oxígeno y el nitrógeno entre cien y trescientos kilómetros de altura, y para verla tienen que alinearse dos cosas que van por su cuenta: actividad geomagnética suficiente y cielo abierto. La oficina meteorológica islandesa publica las dos cada día, en una escala de cero a nueve y un mapa de nubes. Por eso se sale cada noche y por eso el viaje dura nueve días.',
+      'La vuelta a la isla son unos 1.300 kilómetros por la carretera de circunvalación, y la fecha lo decide todo. En pleno invierno los tramos del este se cierran con las tormentas y quedan cuatro horas de luz, así que la vuelta completa no se sostiene; en pleno verano hay carretera y luz de sobra, pero no hay noche y no se ve una aurora. Septiembre es el mes en que coinciden las dos cosas.',
+      'Y la aurora, cuando sale, no se reserva: se produce cuando el viento solar excita el oxígeno y el nitrógeno entre cien y trescientos kilómetros de altura, y hacen falta actividad geomagnética suficiente y cielo abierto, dos cosas que van por su cuenta. La oficina meteorológica islandesa publica las dos cada día, en una escala de cero a nueve y un mapa de nubes. Se mira cada noche, pero el viaje no depende de ella.',
       'Thingvellir es además Patrimonio Mundial desde 2004 por otro motivo: allí se reunía el Althingi, la asamblea al aire libre fundada en el año 930, y allí se acordó en el año 1000 la conversión al cristianismo sin llegar a la guerra. Y la institución social del país no es la Laguna Azul, es la piscina geotérmica de barrio, abierta todo el año, con una norma innegociable: ducha completa y sin bañador antes de entrar.',
     ],
 
     datos: [
       { etiqueta: 'Capital', valor: 'Reikiavik' },
-      { etiqueta: 'Cuándo ir', valor: 'De septiembre a abril' },
+      { etiqueta: 'Cuándo ir', valor: 'En septiembre' },
       { etiqueta: 'Energía renovable', valor: '100 % de la luz' },
       { etiqueta: 'Plazas', valor: 'Ocho por salida' },
     ],
 
     galeria: [
       {
-        id: 'jokulsarlon',
-        foto: FOTOS.ISLANDIA_GLACIAR,
-        alt: 'Icebergs flotando en la laguna glaciar de Jökulsárlón',
-        rotulo: 'Jökulsárlón',
-        pie: 'No existía hace un siglo: empezó a formarse hacia 1935, cuando el glaciar Breiðamerkurjökull inició su retroceso, y desde los años setenta se ha cuadruplicado. Se recorre en lancha entre los bloques de hielo.',
+        id: 'thingvellir',
+        foco: '50% 55%',
+        foto: FOTOS.ISLANDIA_THINGVELLIR,
+        vertical: true,
+        alt: 'La pared de basalto de la falla de Almannagjá, con el río Öxará al pie',
+        rotulo: 'Þingvellir',
+        pie: 'Se camina por dentro de la falla de Almannagjá, que es el borde de la placa norteamericana, con la euroasiática al otro lado del valle. Aquí se reunía el Althingi al aire libre desde el año 930, y aquí se acordó en el 1000 la conversión al cristianismo sin llegar a la guerra.',
       },
       {
-        id: 'reynisfjara',
-        foto: FOTOS.ISLANDIA_PLAYA,
+        id: 'strokkur',
+        foco: '50% 45%',
+        foto: FOTOS.ISLANDIA_STROKKUR,
         vertical: true,
-        alt: 'Los farallones de Reynisdrangar sobre la arena negra de Reynisfjara',
-        rotulo: 'Reynisfjara',
-        pie: 'Basalto molido por el Atlántico hasta convertirse en arena. Enfrente están los farallones de Reynisdrangar y al lado el cabo de Dyrhólaey. Nunca se da la espalda al agua: las olas de resaca entran mucho más arriba de lo que parece.',
+        alt: 'La columna de agua de Strokkur saliendo del suelo, con su piedra rotulada delante',
+        rotulo: 'Geysir',
+        pie: 'El Geysir que dio nombre a todos los demás lleva décadas casi dormido, así que el que se ve es Strokkur, a cincuenta metros: revienta cada pocos minutos y la burbuja azul que se hincha antes del chorro avisa con un segundo de margen.',
+      },
+      {
+        id: 'gullfoss',
+        foto: FOTOS.ISLANDIA_GULLFOSS,
+        alt: 'Los dos saltos de Gullfoss cayendo al cañón, con un arcoíris sobre el agua',
+        rotulo: 'Gullfoss',
+        pie: 'Dos saltos, de once y de veintiún metros, que se meten en una grieta de treinta y dos metros de hondo y dos kilómetros y medio de largo. Se salvó de una hidroeléctrica y el mérito se le atribuye a Sigríður Tómasdóttir, hija del copropietario; es sitio protegido desde 1979.',
       },
       {
         id: 'seljalandsfoss',
@@ -453,7 +466,100 @@ export const DESTINOS = [
         foto: FOTOS.ISLANDIA_DETRAS,
         alt: 'El valle visto desde detrás de la cortina de agua de Seljalandsfoss',
         rotulo: 'Detrás de Seljalandsfoss',
-        pie: 'Se entra por un sendero de piedra mojada y se sale por el otro lado. En invierno el suelo se hiela y se cruza con crampones; se vuelve empapado y merece la pena.',
+        pie: 'Se entra por un sendero de piedra mojada y se sale por el otro lado. Se vuelve empapado y merece la pena. Al lado, escondido en una grieta, está Gljúfrabúi, que casi nadie busca.',
+      },
+      {
+        id: 'skogafoss',
+        foto: FOTOS.ISLANDIA_SKOGAFOSS,
+        alt: 'Skógafoss cayendo recta sobre el río, con la pared verde a los lados',
+        rotulo: 'Skógafoss',
+        pie: 'Sesenta metros de alto por veinticinco de ancho, y una escalera de 527 escalones por el lado. Arriba empieza el Fimmvörðuháls, el sendero que cruza entre el Eyjafjallajökull y el Mýrdalsjökull hasta Þórsmörk.',
+      },
+      {
+        id: 'dyrholaey',
+        foto: FOTOS.ISLANDIA_DYRHOLAEY,
+        alt: 'La playa negra y los acantilados vistos desde el promontorio de Dyrhólaey',
+        rotulo: 'Dyrhólaey',
+        pie: 'Un promontorio con un arco de roca por el que cabe un barco pequeño, y desde arriba la costa sur entera de una vista. En primavera y principio de verano cría el frailecillo y hay tramos cerrados.',
+      },
+      {
+        id: 'reynisfjara',
+        foto: FOTOS.ISLANDIA_PLAYA,
+        vertical: true,
+        alt: 'Los farallones de Reynisdrangar sobre la arena negra de Reynisfjara',
+        rotulo: 'Reynisfjara',
+        pie: 'Basalto molido por el Atlántico hasta convertirse en arena. Enfrente están los farallones de Reynisdrangar. Nunca se da la espalda al agua: las olas de resaca entran mucho más arriba de lo que parece.',
+      },
+      {
+        id: 'svartifoss',
+        foto: FOTOS.ISLANDIA_SVARTIFOSS,
+        alt: 'Svartifoss cayendo delante de una pared de columnas de basalto negro',
+        rotulo: 'Svartifoss',
+        pie: 'La cascada negra de Skaftafell, dentro del Parque Nacional Vatnajökull, con la pared de columnas hexagonales que se formaron al enfriarse la lava despacio. De esas columnas sale la fachada de la Hallgrímskirkja de Reikiavik.',
+      },
+      {
+        id: 'jokulsarlon',
+        foto: FOTOS.ISLANDIA_GLACIAR,
+        alt: 'Icebergs flotando en la laguna glaciar de Jökulsárlón',
+        rotulo: 'Jökulsárlón',
+        pie: 'No existía hace un siglo: empezó a formarse hacia 1935, cuando el glaciar Breiðamerkurjökull inició su retroceso, y desde los años setenta se ha cuadruplicado. Se recorre en lancha entre los bloques de hielo.',
+      },
+      {
+        id: 'diamantes',
+        foto: FOTOS.ISLANDIA_DIAMANTES,
+        alt: 'Bloques de hielo transparente varados en la arena negra de Diamond Beach',
+        rotulo: 'Diamond Beach',
+        pie: 'El hielo que sale de la laguna cruza el canal, llega al mar y la marea lo devuelve a la arena negra. Está enfrente de Jökulsárlón, cruzando la carretera, y cambia de un día para otro.',
+      },
+      {
+        id: 'seydisfjordur',
+        // La calle pintada es la mitad del motivo, y va por debajo de la
+        // iglesia: el encuadre baja para que entren las dos.
+        foco: '50% 72%',
+        foto: FOTOS.ISLANDIA_SEYDISFJORDUR,
+        vertical: true,
+        alt: 'La iglesia azul de Seyðisfjörður al final de la calle pintada de colores',
+        rotulo: 'Seyðisfjörður',
+        pie: 'Al final de un fiordo de diecisiete kilómetros, con la iglesia azul y la calle pintada delante. Es el único puerto de Islandia con ferry a Europa continental, y de ahí vienen las casas de madera noruegas que se montaron aquí a piezas.',
+      },
+      {
+        id: 'myvatn',
+        foco: '50% 50%',
+        foto: FOTOS.ISLANDIA_MYVATN,
+        vertical: true,
+        alt: 'Una persona bañándose en el agua caliente de los baños naturales de Mývatn',
+        rotulo: 'Los baños de Mývatn',
+        pie: 'Agua geotérmica a unos cuarenta grados al final del día, después de Hverir y de Dimmuborgir. La norma islandesa no se negocia: ducha completa y sin bañador antes de entrar, y no es un trámite, es la razón de que el agua esté como está.',
+      },
+      {
+        id: 'godafoss',
+        foto: FOTOS.ISLANDIA_GODAFOSS,
+        alt: 'La herradura de Goðafoss con el agua cayendo entre rocas oscuras',
+        rotulo: 'Goðafoss',
+        pie: 'La cascada de los dioses: cuenta la saga que al volver del Althingi del año 1000, donde se acordó la conversión, el legislador del norte tiró aquí las figuras de los antiguos. Es ancha y baja, y se ve desde las dos orillas.',
+      },
+      {
+        id: 'akureyri',
+        foto: FOTOS.ISLANDIA_AKUREYRI,
+        alt: 'Akureyri al fondo del fiordo de Eyjafjörður, con las montañas nevadas detrás',
+        rotulo: 'Akureyri',
+        pie: 'La segunda ciudad del país al fondo del fiordo más largo de Islandia, a menos de cien kilómetros del círculo polar. Tiene un jardín botánico que no debería salir adelante a esta latitud y sale, y de aquí se sube a Húsavík a ver ballenas.',
+      },
+      {
+        id: 'kirkjufell',
+        foto: FOTOS.ISLANDIA_KIRKJUFELL,
+        alt: 'El monte Kirkjufell detrás de los saltos de Kirkjufellsfoss',
+        rotulo: 'Kirkjufell',
+        pie: 'Una montaña de poco más de cuatrocientos metros que quedó suelta cuando el hielo se llevó todo lo que tenía alrededor. La foto se hace desde Kirkjufellsfoss, los saltos que tiene enfrente, y hay que cruzar el aparcamiento y poco más.',
+      },
+      {
+        id: 'arnarstapi',
+        foco: '50% 60%',
+        foto: FOTOS.ISLANDIA_ARNARSTAPI,
+        vertical: true,
+        alt: 'El arco de basalto de Gatklettur en la costa de Arnarstapi',
+        rotulo: 'Arnarstapi',
+        pie: 'El arco de Gatklettur y los acantilados donde crían las gaviotas tridáctilas. De aquí sale el sendero de la costa hasta Hellnar, dos kilómetros y medio por el borde, con el Snæfellsjökull a la espalda.',
       },
     ],
 
@@ -461,13 +567,13 @@ export const DESTINOS = [
     // (Islandia360), pero en diciembre y enero las tormentas cierran tramos
     // de la carretera de circunvalación y quedan cuatro horas de luz.
     salidas: {
-      temporada: 'De noviembre a marzo',
+      temporada: 'En septiembre',
       porque:
-        'Es cuando hay noche suficiente para que salgan las auroras. Elegimos noviembre y el final del invierno antes que diciembre o enero: con la vuelta completa a la isla por delante, conviene tener carretera abierta y algo de luz para ver el resto del país.',
+        'La vuelta entera pide carretera abierta y noche a la vez, y eso solo pasa al principio del otoño. En septiembre los fiordos del este se cruzan sin problema, en Húsavík todavía salen los barcos de ballenas y ya oscurece lo bastante para mirar al cielo. En invierno el este se cierra y en julio no hay noche.',
       fechas: [
-        { id: 'islandia-2611', dia: '16 de noviembre de 2026', plazas: 2 },
-        { id: 'islandia-2702', dia: '8 de febrero de 2027', plazas: 6 },
-        { id: 'islandia-2703', dia: '1 de marzo de 2027', plazas: 8 },
+        { id: 'islandia-2709a', dia: '5 de septiembre de 2027', plazas: 8 },
+        { id: 'islandia-2709b', dia: '19 de septiembre de 2027', plazas: 5 },
+        { id: 'islandia-2710', dia: '3 de octubre de 2027', plazas: 8 },
       ],
     },
     pistas: [
@@ -481,6 +587,12 @@ export const DESTINOS = [
       'vik',
       'auroras',
       'aurora boreal',
+      'thingvellir',
+      'gullfoss',
+      'myvatn',
+      'akureyri',
+      'snaefellsnes',
+      'kirkjufell',
     ],
   },
     {
