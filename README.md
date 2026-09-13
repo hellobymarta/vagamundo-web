@@ -3,7 +3,7 @@
 Frontend en **React + Vite** del proyecto Vagamundo. No tiene datos propios: todo el catálogo
 de viajes se pide a la **API de la PEC 3** (Express + MongoDB Atlas) y se pinta en pantalla.
 
-- **Frontend desplegado:** _(pendiente de desplegar en Vercel)_ ← último paso que queda
+- **Frontend desplegado:** https://vagamundo-web.vercel.app
 - **Repositorio del frontend:** https://github.com/hellobymarta/vagamundo-web
 - **Repositorio de la API (PEC 3):** https://github.com/hellobymarta/vagamundo-api
 - **API desplegada:** https://vagamundo-api.vercel.app
