@@ -59,6 +59,7 @@ export const DESTINOS = [
       },
       {
         id: 'positano',
+        foco: '50% 48%',
         foto: FOTOS.BARCA,
         vertical: true,
         alt: 'Una barca de madera fondeada frente a las casas de Positano',
@@ -171,6 +172,7 @@ export const DESTINOS = [
       },
       {
         id: 'herodes',
+        foco: '50% 78%',
         foto: FOTOS.GRECIA_HERODES,
         vertical: true,
         alt: 'Las gradas del Odeón de Herodes Ático',
@@ -208,6 +210,7 @@ export const DESTINOS = [
       },
       {
         id: 'pollonia',
+        foco: '50% 62%',
         foto: FOTOS.MILOS_POLLONIA,
         vertical: true,
         alt: 'Una capilla blanca de cúpula azul sobre el mar, en Milos',
@@ -216,6 +219,7 @@ export const DESTINOS = [
       },
       {
         id: 'kleftiko',
+        foco: '50% 72%',
         foto: FOTOS.MILOS_KLEFTIKO,
         vertical: true,
         alt: 'Los farallones blancos y el arco de Kleftiko sobre el agua turquesa',
@@ -393,6 +397,7 @@ export const DESTINOS = [
       },
       {
         id: 'valorcia',
+        foco: '50% 72%',
         foto: FOTOS.TOSCANA,
         vertical: true,
         alt: 'Carretera de tierra flanqueada por cipreses en la Val d\'Orcia',
@@ -401,6 +406,7 @@ export const DESTINOS = [
       },
       {
         id: 'colinas',
+        foco: '50% 62%',
         foto: FOTOS.TOSCANA_COLINAS,
         vertical: true,
         alt: 'Colinas y viñedos toscanos con niebla al amanecer',
@@ -511,6 +517,7 @@ export const DESTINOS = [
       },
       {
         id: 'pamukkale',
+        foco: '50% 55%',
         foto: FOTOS.TURQUIA_POZAS,
         vertical: true,
         alt: 'Las pozas turquesa de las terrazas de Pamukkale vistas desde arriba',
@@ -534,6 +541,7 @@ export const DESTINOS = [
       },
       {
         id: 'esmirna',
+        foco: '50% 70%',
         foto: FOTOS.TURQUIA_ESMIRNA,
         vertical: true,
         alt: 'Barcas de madera en la orilla de Esmirna al atardecer',
@@ -557,6 +565,7 @@ export const DESTINOS = [
       },
       {
         id: 'desayuno',
+        foco: '50% 64%',
         foto: FOTOS.TURQUIA_DESAYUNO,
         vertical: true,
         alt: 'Una mesa de desayuno turco en una terraza de Capadocia',
@@ -565,6 +574,7 @@ export const DESTINOS = [
       },
       {
         id: 'egeo',
+        foco: '50% 55%',
         foto: FOTOS.TURQUIA_EGEO,
         vertical: true,
         alt: 'Un pueblo de casas bajas sobre el agua en la costa del Egeo',
@@ -573,6 +583,7 @@ export const DESTINOS = [
       },
       {
         id: 'troya',
+        foco: '50% 30%',
         foto: FOTOS.TURQUIA_TROYA,
         vertical: true,
         alt: 'La réplica del caballo de madera de Troya',
@@ -581,6 +592,7 @@ export const DESTINOS = [
       },
       {
         id: 'bursa',
+        foco: '50% 60%',
         foto: FOTOS.TURQUIA_BURSA,
         vertical: true,
         alt: 'Un patio con mesas y edificios otomanos de madera en Bursa',
@@ -1273,6 +1285,7 @@ export const DESTINOS = [
       },
       {
         id: 'central',
+        foco: '50% 42%',
         foto: FOTOS.EEUU_CENTRAL,
         alt: 'Barcas de remos en el lago de Central Park',
         rotulo: 'Central Park',
@@ -1280,8 +1293,8 @@ export const DESTINOS = [
       },
       {
         id: 'libertad',
+        foco: '50% 60%',
         foto: FOTOS.EEUU_LIBERTAD,
-        vertical: true,
         alt: 'La Estatua de la Libertad vista desde el sur',
         rotulo: 'La Estatua de la Libertad',
         pie: 'Se sube al pedestal con billete reservado, y al lado está Ellis Island, que funcionó del 1 de enero de 1892 a noviembre de 1954. Por allí pasaron más de doce millones de personas.',

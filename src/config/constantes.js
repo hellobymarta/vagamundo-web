@@ -142,7 +142,7 @@ export const FOTOS = {
   // Estados Unidos
   ESTADOSUNIDOS: '/estados-unidos/brooklyn.jpg',
   EEUU_DUMBO: '/estados-unidos/dumbo.jpg',
-  EEUU_CENTRAL: '/estados-unidos/parque-central.jpg',
+  EEUU_CENTRAL: '/estados-unidos/centralpark.jpg',
   EEUU_CONEY: '/estados-unidos/coney-island.jpg',
   EEUU_TIMES_SQUARE: '/estados-unidos/times-square.jpg',
   EEUU_BOARDWALK: '/estados-unidos/coney-islandview.jpg',
@@ -150,7 +150,7 @@ export const FOTOS = {
   EEUU_ANGELES: '/estados-unidos/losangeles.jpg',
   EEUU_MANHATTAN: '/estados-unidos/newyork.jpg',
   EEUU_TIMES: '/estados-unidos/times-square.jpg',
-  EEUU_LIBERTAD: '/estados-unidos/statue.jpg',
+  EEUU_LIBERTAD: '/estados-unidos/statue-liberty.jpg',
   EEUU_TAXI: '/estados-unidos/newyork-street.jpg',
   EEUU_VENICE: '/estados-unidos/surbeach.jpg',
 
