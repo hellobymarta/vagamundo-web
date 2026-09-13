@@ -74,6 +74,63 @@ export const DESTINOS = [
         pie: 'De aquí salían las galeras de la república y de aquí sale ahora el ferry de línea. En la Costiera se vive en vertical y todo el mundo tiene una terraza como esta.',
       },
       {
+        id: 'positano-noche',
+        foto: FOTOS.NOCHE,
+        alt: 'Positano encendido al anochecer, con el pueblo subiendo por la ladera',
+        rotulo: 'Positano de noche',
+        pie: 'La pendiente se entiende mejor cuando se encienden las luces: son escaleras, no calles, y por eso no hay un solo coche dentro del pueblo. El ferry de línea deja de navegar al caer la tarde.',
+      },
+    ],
+
+    salidas: {
+      temporada: 'De mayo a junio y en septiembre',
+      porque:
+        'Mayo y junio, con el mar ya bañable y las escaleras vacías; septiembre, cuando se ha ido agosto y el agua sigue caliente. Fuera de esa ventana el ferry entre pueblos ni siquiera navega, y sin ferry la costa se recorre por una carretera de un carril.',
+      fechas: [
+        { id: 'italia-2705', dia: '10 de mayo de 2027', plazas: 6 },
+        { id: 'italia-2706', dia: '7 de junio de 2027', plazas: 3 },
+        { id: 'italia-2709', dia: '13 de septiembre de 2027', plazas: 8 },
+      ],
+    },
+    pistas: ['italia', 'amalfi', 'amalfitana', 'apulia', 'positano', 'matera', 'bari', 'atrani', 'ravello'],
+  },
+  {
+    id: 'cinqueterre',
+    nombre: 'Cinque Terre',
+    continente: 'Europa',
+    foto: FOTOS.CT_PORTADA,
+    fotoAlt: 'Los pueblos de las Cinque Terre sobre el acantilado, al final de la tarde',
+    titular: 'Cinco pueblos colgados de una pared de bancales',
+    entradilla:
+      'Los cinco a pie, en tren y en barco, con base en Monterosso, y después el golfo de La Spezia, que es lo que casi nadie añade: Portovenere, la isla Palmaria y Lerici.',
+    // Ventana: el tren regional y los barcos de línea funcionan todo el año,
+    // pero los barcos entre pueblos solo navegan de finales de marzo a
+    // principios de noviembre, y en julio y agosto los senderos van llenos.
+
+    // La historia del sitio. Fuentes:
+    //  · la ficha 826 de la lista del Patrimonio Mundial de la Unesco, para
+    //    el nombre oficial, el año, los criterios y la superficie
+    //  · parks.it y el Parco Nazionale delle Cinque Terre, para la superficie
+    //    del parque y las cifras de los muros de piedra seca
+    //  · el comunicado de la Regione Liguria de julio de 2024, para la
+    //    reapertura de la Via dell'Amore
+    historia: [
+      'Son cinco pueblos en quince kilómetros de costa ligur, entre Levanto y Portovenere, y ninguno está donde estaría si hubiera podido elegir. La montaña cae al mar sin dejar llanura, así que Monterosso ocupa la única playa, Vernazza el único puerto natural, Riomaggiore y Manarola sendas gargantas, y Corniglia ni siquiera baja: se queda a cien metros de altura sobre un promontorio de viñas.',
+      'La Unesco los inscribió en 1997 junto con Portovenere y las islas Palmaria, Tino y Tinetto, en un solo bien de 4.689 hectáreas. No entraron como monumento sino como paisaje cultural, por los criterios ii, iv y v: lo que se protege es el resultado de casi mil años de gente reordenando una ladera para poder vivir de ella. En 1999 se creó encima el Parque Nacional de las Cinque Terre, 3.860 hectáreas repartidas entre cinco municipios, y es el parque nacional más pequeño de Italia.',
+      'La cifra que lo explica todo está en los muros. Unas dos mil hectáreas de ladera están abancaladas, y el parque calcula que los muros de piedra seca que las sostienen suman 6.729 kilómetros de longitud y ocho millones cuatrocientos mil metros cúbicos de piedra colocada a mano, sin mortero. Ese muro es lo que sujeta la montaña: cuando se abandona un bancal, el agua se lleva la ladera. La riada de octubre de 2011 enterró Vernazza y Monterosso en barro y dejó claro que el paisaje no se conserva mirándolo.',
+      'Los senderos son el medio de transporte de toda la vida, y hoy están a medias. El Sentiero Azzurro enlaza los cinco: el tramo de Monterosso a Vernazza son 3,5 kilómetros y unas dos horas de subidas y bajadas, y el de Manarola a Corniglia sigue cortado desde 2012, así que se rodea por Volastra. La Via dell\'Amore, entre Riomaggiore y Manarola, reabrió el 27 de julio de 2024 después de doce años cerrada y veintitrés millones de euros de obra: se entra con reserva de franja horaria y en un solo sentido.',
+      'De los bancales sale un vino blanco de uva bosco, albarola y vermentino, y el Sciacchetrà, que es el mismo vino pasificado y se hace aquí desde la Edad Media: hacen falta unos cuatro kilos de uva para un litro. Se come anchoa de Monterosso, salada en salmuera, y pesto, que es ligur antes que italiano. Y al sur, cerrando el bien de la Unesco, está el golfo de La Spezia, que Italia llama el golfo de los Poetas: Portovenere con la iglesia de San Pedro en el filo de la roca, la gruta donde se bañaba Byron y, enfrente, la isla Palmaria.',
+    ],
+
+    datos: [
+      { etiqueta: 'Región', valor: 'Liguria' },
+      { etiqueta: 'Cuándo ir', valor: 'De mayo a junio y en septiembre' },
+      { etiqueta: 'Los bancales', valor: '6.729 km de muro seco' },
+      { etiqueta: 'Plazas', valor: 'De cinco a ocho por salida' },
+    ],
+
+    galeria: [
+      {
         id: 'monterosso',
         foto: FOTOS.CT_MONTEROSSO,
         alt: 'La playa de Monterosso al Mare con sombrillas y el peñón al fondo',
@@ -113,14 +170,25 @@ export const DESTINOS = [
     salidas: {
       temporada: 'De mayo a junio y en septiembre',
       porque:
-        'Mayo y junio, con el mar ya bañable y las escaleras vacías; septiembre, cuando se ha ido agosto y el agua sigue caliente. Fuera de esa ventana el ferry entre pueblos ni siquiera navega, y sin ferry la costa se recorre por una carretera de un carril.',
+        'Los senderos piden tiempo fresco y piernas: en julio y agosto se anda a mediodía con treinta grados y el tramo de Monterosso a Vernazza va en fila india. Mayo y junio dan el mar ya bañable, y septiembre el agua caliente sin la cola de agosto.',
       fechas: [
-        { id: 'italia-2705', dia: '10 de mayo de 2027', plazas: 6 },
-        { id: 'italia-2706', dia: '7 de junio de 2027', plazas: 3 },
-        { id: 'italia-2709', dia: '13 de septiembre de 2027', plazas: 8 },
+        { id: 'ct-2705', dia: '17 de mayo de 2027', plazas: 8 },
+        { id: 'ct-2706', dia: '14 de junio de 2027', plazas: 5 },
+        { id: 'ct-2709', dia: '20 de septiembre de 2027', plazas: 8 },
       ],
     },
-    pistas: ['italia', 'amalfi', 'amalfitana', 'apulia', 'positano', 'matera', 'bari', 'atrani', 'ravello'],
+    pistas: [
+      'cinque terre',
+      'cinqueterre',
+      'liguria',
+      'monterosso',
+      'vernazza',
+      'corniglia',
+      'manarola',
+      'riomaggiore',
+      'portovenere',
+      'levanto',
+    ],
   },
   {
     id: 'grecia',

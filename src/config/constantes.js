@@ -41,6 +41,7 @@ export const CUANTOS_DESTACADOS = 4
 export const FOTOS = {
   // Italia · Cinque Terre
   CINQUETERRE: '/italia-amalfi/manarola.jpg',
+  CT_PORTADA: '/italia-amalfi/cinqueterre-sin-identificar.jpg',
   CT_MONTEROSSO: '/italia-amalfi/monterosso-beach.jpg',
   CT_VERNAZZA: '/italia-amalfi/vernazza.jpg',
   CT_CORNIGLIA: '/italia-amalfi/corniglia.jpg',
