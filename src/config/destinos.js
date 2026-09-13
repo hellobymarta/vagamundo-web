@@ -1382,8 +1382,9 @@ export const DESTINOS = [
       },
       {
         id: 'hollywood',
+        // El cartel queda alto en la foto, asi que el encuadre sube.
+        foco: '50% 32%',
         foto: FOTOS.EEUU_HOLLYWOOD,
-        vertical: true,
         alt: 'El cartel de Hollywood en la ladera de las colinas',
         rotulo: 'El cartel de Hollywood',
         pie: 'Se puso en 1923 y decía Hollywoodland: era el anuncio de una promoción inmobiliaria. Se ve de cerca desde el Griffith Observatory, que es donde se sube la última mañana del viaje.',
