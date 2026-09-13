@@ -81,6 +81,8 @@ export const FOTOS = {
   TURQUIA_DONCELLA: '/turquia/estambul-torre.jpg',
   TURQUIA_HIERAPOLIS: '/turquia/arqu-turquia.jpg',
   TURQUIA_TERRAZAS: '/turquia/pamukkale-algodon.jpg',
+  TURQUIA_SULTANAHMET: '/turquia/plaza-estambul.jpg',
+  TURQUIA_ESMIRNA: '/turquia/esmirna.jpg',
 
   // Estados Unidos
   ESTADOSUNIDOS: '/nueva-york/brooklyn.jpg',
@@ -107,6 +109,8 @@ export const FOTOS = {
   JORDANIA_MONASTERIO: '/jordania/jordania-petra2.jpg',
   JORDANIA_WADIRUM: '/jordania/jordania-desert.jpg',
   JORDANIA_AMAN: '/jordania/amman-jordania.jpg',
+  JORDANIA_SIQ: '/jordania/jordania-petra3.jpg',
+  JORDANIA_ARCO: '/jordania/jordania-wadirum.jpg',
   JORDANIA_ZOCO: '/jordania/jordania-gastro.jpg',
 
   // Japón
