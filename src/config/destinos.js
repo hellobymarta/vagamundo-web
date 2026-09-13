@@ -812,6 +812,7 @@ export const DESTINOS = [
     galeria: [
       {
         id: 'aman',
+        foco: '50% 75%',
         foto: FOTOS.JORDANIA_AMAN,
         vertical: true,
         alt: 'Las casas blancas de Amán subiendo por las colinas',
@@ -827,6 +828,7 @@ export const DESTINOS = [
       },
       {
         id: 'especias',
+        foco: '50% 55%',
         foto: FOTOS.JORDANIA_ZOCO,
         vertical: true,
         alt: 'Cuencos de especias en un puesto del mercado',
@@ -835,6 +837,7 @@ export const DESTINOS = [
       },
       {
         id: 'jerash',
+        foco: '50% 62%',
         foto: FOTOS.JORDANIA_JERASH,
         alt: 'La plaza Oval de Jerash rodeada por su columnata',
         rotulo: 'Jerash',
@@ -864,6 +867,7 @@ export const DESTINOS = [
       },
       {
         id: 'marmuerto',
+        foco: '50% 78%',
         foto: FOTOS.JORDANIA_MAR_MUERTO,
         alt: 'La orilla del mar Muerto con la costra de sal blanca sobre las piedras',
         rotulo: 'El mar Muerto',
@@ -877,19 +881,20 @@ export const DESTINOS = [
         pie: 'La mayor reserva natural del país, y la única que baja de los mil quinientos metros al desierto: cuatro pisos de vegetación en una sola ladera. Se duerme aquí, en el pueblo viejo colgado del borde, para poder andarla por la mañana.',
       },
       {
-        id: 'siq',
+        id: 'tesoro',
+        foco: '50% 45%',
         foto: FOTOS.JORDANIA_SIQ,
         vertical: true,
-        alt: 'El Tesoro de Petra asomando al final del desfiladero del Siq',
-        rotulo: 'El Siq',
-        pie: 'Un kilómetro y medio de desfiladero con las canalizaciones nabateas talladas en la pared, las que traían el agua a la ciudad. Al final se abre de golpe, y lo que hay enfrente es el Tesoro.',
+        alt: 'La fachada del Tesoro de Petra excavada en la roca rosa, vista desde la salida del Siq',
+        pie: 'Cuarenta metros de fachada excavados en la arenisca en el siglo I. No es un edificio: es una pared vaciada. Se llega por el Siq, un kilómetro y medio de desfiladero con las canalizaciones nabateas talladas a media altura, y al final se abre de golpe y está enfrente.',
+        rotulo: 'El Tesoro de Petra',
       },
       {
-        id: 'tesoro',
+        id: 'mirador',
         foto: FOTOS.JORDANIA_TESORO,
-        alt: 'La fachada del Tesoro de Petra excavada en la roca rosa',
-        rotulo: 'El Tesoro de Petra',
-        pie: 'Cuarenta metros de fachada excavados en la arenisca en el siglo I. No es un edificio: es una pared vaciada. Patrimonio Mundial desde 1985, y de la ciudad entera solo se ha excavado una parte pequeña.',
+        alt: 'El Tesoro de Petra visto desde arriba, con el desfiladero alrededor',
+        rotulo: 'El mirador del Tesoro',
+        pie: 'Se sube por el camino de Al-Khubtha, casi una hora de escalones tallados, y desde el saliente se ve la fachada entera desde arriba, con la explanada y la gente del tamaño de un dedo. Petra es Patrimonio Mundial desde 1985 y de la ciudad solo se ha excavado una parte pequeña.',
       },
       {
         id: 'monasterio',
@@ -900,6 +905,7 @@ export const DESTINOS = [
       },
       {
         id: 'wadirum',
+        foco: '50% 75%',
         foto: FOTOS.JORDANIA_WADIRUM,
         alt: 'Las montañas de Wadi Rum sobre la arena naranja',
         rotulo: 'Wadi Rum',
@@ -921,6 +927,7 @@ export const DESTINOS = [
       },
       {
         id: 'aqaba',
+        foco: '50% 65%',
         foto: FOTOS.JORDANIA_AQABA,
         alt: 'La orilla del mar Rojo en Aqaba al atardecer, con una barca fondeada',
         rotulo: 'Aqaba',
