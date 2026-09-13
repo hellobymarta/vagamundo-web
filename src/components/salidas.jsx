@@ -7,6 +7,10 @@ import { PARAMETRO_PROPUESTA } from '@/config/constantes'
 // Las plazas son un número del 0 al 8. Cero significa completa, y entonces la
 // fila no ofrece reservar: propone la lista de espera, que es lo honesto.
 //
+// Si el destino tiene varios viajes, cada fecha lleva encima el nombre del
+// suyo: con tres itinerarios distintos, una lista de fechas sueltas no se
+// entiende.
+//
 // Cada fila es una rejilla de tres columnas iguales y centradas, no un
 // justify-between: con justify-between la columna del medio se movía según lo
 // larga que fuera la fecha y las filas parecían colocadas cada una por su
@@ -42,7 +46,7 @@ export default function Salidas({ nombre, salidas }) {
           <p className="etiqueta text-suave">Reservas</p>
         </li>
 
-        {fechas.map(({ id, dia, plazas }) => {
+        {fechas.map(({ id, viaje, dia, plazas }) => {
           const { texto, clase } = estado(plazas)
           const completa = plazas === 0
 
@@ -51,7 +55,13 @@ export default function Salidas({ nombre, salidas }) {
               key={id}
               className="grid gap-y-4 border-t border-tinta/12 py-8 text-center md:grid-cols-3 md:items-center md:gap-x-10"
             >
-              <p className="titular text-xl md:text-2xl">{dia}</p>
+              <div>
+                {/* Cuando un destino tiene más de un viaje, la fecha sola no
+                    dice bastante: hay que saber a cuál pertenece. */}
+                {viaje && <p className="etiqueta text-suave">{viaje}</p>}
+
+                <p className="titular text-xl md:text-2xl">{dia}</p>
+              </div>
 
               <p className={`etiqueta cifras ${clase}`}>{texto}</p>
 
