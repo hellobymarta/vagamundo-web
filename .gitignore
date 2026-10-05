@@ -3,3 +3,6 @@ dist
 .env
 .env.local
 .DS_Store
+
+# Duplicados que crea macOS al copiar dos veces un archivo: «package-lock 2.json».
+* [0-9].*
