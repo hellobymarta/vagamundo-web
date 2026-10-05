@@ -1,0 +1,12 @@
+# Vagamundo
+User-agent: *
+Allow: /
+
+# Las páginas con sesión no tienen nada que indexar.
+Disallow: /panel
+Disallow: /reservas
+Disallow: /nuevo
+Disallow: /editar/
+Disallow: /diario/nueva
+
+Sitemap: https://vagamundo-web.vercel.app/sitemap.xml

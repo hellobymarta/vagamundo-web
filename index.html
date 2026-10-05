@@ -6,7 +6,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta
       name="description"
-      content="Vagamundo · atelier de viajes de autor por el Mediterráneo y más allá."
+      content="Viajes en grupo pequeño por sitios que hemos recorrido antes nosotras, con su catálogo, su diario de viaje y sus reservas."
     />
 
     <!-- Playfair Display (también en cursiva, que es como Utópica titula sus
@@ -18,10 +18,32 @@
       rel="stylesheet"
     />
 
+    <!-- Los metadatos por defecto, para el primer pintado y para los
+         rastreadores que no ejecutan JavaScript. Cada página los reescribe con
+         los suyos al montarse, en hooks/use-cabecera-documento.ts. -->
+    <link rel="canonical" href="https://vagamundo-web.vercel.app/" />
+    <meta name="theme-color" content="#efebe6" />
+    <meta name="author" content="Marta Alarcón" />
+
+    <meta property="og:site_name" content="Vagamundo" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:title" content="Vagamundo · atelier de viajes" />
+    <meta
+      property="og:description"
+      content="Viajes en grupo pequeño por sitios que hemos recorrido antes nosotras, con su catálogo, su diario de viaje y sus reservas."
+    />
+    <meta property="og:url" content="https://vagamundo-web.vercel.app/" />
+    <meta
+      property="og:image"
+      content="https://vagamundo-web.vercel.app/italia-amalfi/positano-atardecer.jpg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
     <title>Vagamundo · atelier de viajes</title>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

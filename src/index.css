@@ -8,10 +8,14 @@
   --font-texto: "Inter", system-ui, -apple-system, sans-serif;
   --font-etiqueta: "Montserrat", system-ui, sans-serif;
 
+  /* Los cuatro colores de texto se oscurecieron lo justo para pasar el
+     contraste AA (4.5:1) sobre todos los fondos claros de la paleta, incluido
+     el terracota, que es el más oscuro de ellos. El tono es el mismo: lo que
+     baja es la luminosidad. Antes se quedaban entre 3,6 y 4,4. */
   --color-crema: #efebe6;
   --color-crema-hueso: #f6f3ef;
   --color-tinta: #191512;
-  --color-suave: #7d746c;
+  --color-suave: #6d655e;
   --color-borde: #ddd6cd;
 
   --color-azul: #1b4b7a;
@@ -20,11 +24,11 @@
   --color-noche: #16202b;
 
   --color-rosa: #f4e5e0;
-  --color-rosa-acento: #a85c4b;
+  --color-rosa-acento: #985344;
   --color-terracota: #f3e3d7;
-  --color-terracota-acento: #a2603a;
+  --color-terracota-acento: #935735;
   --color-amarillo: #f7eeda;
-  --color-amarillo-acento: #937128;
+  --color-amarillo-acento: #7f6223;
   --color-oliva: #e7ebde;
   --color-oliva-acento: #5f6b45;
 
@@ -70,7 +74,7 @@ label {
 
 /* Etiquetas pequeñas en mayúsculas muy espaciadas. NUBA y Utópica las usan
    a 11-12 px con un interletrado enorme para presentar cada bloque. */
-.etiqueta {
+.u-etiqueta {
   font-family: var(--font-etiqueta);
   font-size: 11px;
   font-weight: 500;
@@ -80,7 +84,7 @@ label {
 }
 
 /* Títulos serif en peso normal y apretados. */
-.titular {
+.u-titular {
   font-family: var(--font-titulo);
   font-weight: 400;
   letter-spacing: -0.02em;
@@ -88,7 +92,7 @@ label {
 }
 
 /* La cursiva con la que Utópica pone el nombre del destino en su explorador. */
-.titular-cursiva {
+.u-titularCursiva {
   font-family: var(--font-titulo);
   font-style: italic;
   font-weight: 400;
@@ -98,15 +102,15 @@ label {
 
 /* Escala contenida: ninguna de las tres referencias pasa de 40 px
    en los títulos de sección. El aire hace el trabajo, no el tamaño. */
-.t-portada {
+.u-tituloPortada {
   font-size: clamp(2rem, 4.4vw, 3.25rem);
 }
 
-.t-seccion {
+.u-tituloSeccion {
   font-size: clamp(1.65rem, 2.7vw, 2.35rem);
 }
 
-.t-destino {
+.u-tituloDestino {
   font-size: clamp(2rem, 4.2vw, 3.5rem);
   /* La cursiva de Playfair baja mucho: la J de «Japón» y «Jordania» tiene un
      rabo largo que se salía de la caja de línea y quedaba cortado. Con este
@@ -115,11 +119,11 @@ label {
   padding-bottom: 0.08em;
 }
 
-.cifras {
+.u-cifras {
   font-variant-numeric: lining-nums tabular-nums;
 }
 
-.filete {
+.Filete {
   height: 1px;
   background-color: var(--color-borde);
 }
@@ -128,17 +132,17 @@ label {
    Las filas de nombres gigantes que Utópica desliza en su home. El truco:
    la lista va duplicada dentro de la fila y la fila se mueve exactamente
    la mitad de su ancho, así el bucle no se nota. */
-.marquesina-fila {
+.MarquesinaFila {
   display: flex;
   width: max-content;
   animation: deslizar 46s linear infinite;
 }
 
-.marquesina-fila--reves {
+.MarquesinaFila--reves {
   animation-direction: reverse;
 }
 
-.marquesina-fila--lenta {
+.MarquesinaFila--lenta {
   animation-duration: 66s;
 }
 
@@ -153,7 +157,7 @@ label {
 
 /* Si el sistema tiene desactivadas las animaciones, se para. */
 @media (prefers-reduced-motion: reduce) {
-  .marquesina-fila {
+  .MarquesinaFila {
     animation: none;
   }
 }
@@ -166,61 +170,61 @@ label {
    horizontal. Medido en Chromium: sin él, y aunque el carril tenga su propio
    overflow, el ancho de las tarjetas de dentro seguía contando para el
    documento y se podía arrastrar la web hacia la derecha. */
-.carril {
+.Carril {
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   overflow-y: hidden;
   contain: paint;
 }
 
-.carril::-webkit-scrollbar {
+.Carril::-webkit-scrollbar {
   display: none;
 }
 
-.carril > * {
+.Carril > * {
   scroll-snap-align: start;
 }
 
 /* Fila que se desplaza a lo ancho pero sin paradas: para las pestañas de
-   continentes, donde el imán del scroll-snap estorba —al cargar arrastraba
+   continentes, donde el imán del scroll-snap estorba: al cargar arrastraba
    la primera pestaña contra el borde y se comía el margen. */
-.fila-scroll {
+.FilaScroll {
   scrollbar-width: none;
   overflow-y: hidden;
   contain: paint;
 }
 
-.fila-scroll::-webkit-scrollbar {
+.FilaScroll::-webkit-scrollbar {
   display: none;
 }
 
 /* ---- Preguntas frecuentes, con <details> y sin JavaScript ----------------
    El signo de la derecha es un trazo girado, no un carácter: así la cruz se
    convierte en raya con una transición y siempre queda a la misma altura. */
-.pregunta summary {
+.Pregunta summary {
   position: relative;
   cursor: pointer;
   list-style: none;
   transition: color 0.3s ease;
 }
 
-.pregunta summary::-webkit-details-marker {
+.Pregunta summary::-webkit-details-marker {
   display: none;
 }
 
-.pregunta summary:hover {
+.Pregunta summary:hover {
   color: var(--color-amarillo-acento);
 }
 
 /* El foco del teclado tiene que verse, y con holgura. */
-.pregunta summary:focus-visible {
+.Pregunta summary:focus-visible {
   outline: 2px solid var(--color-amarillo-acento);
   outline-offset: 4px;
 }
 
 /* La barra horizontal del signo, siempre visible. */
-.pregunta summary::before,
-.pregunta summary::after {
+.Pregunta summary::before,
+.Pregunta summary::after {
   content: "";
   position: absolute;
   right: 0;
@@ -232,16 +236,16 @@ label {
 }
 
 /* La vertical se gira hasta tumbarse: de + a –. */
-.pregunta summary::after {
+.Pregunta summary::after {
   transform: rotate(90deg);
 }
 
-.pregunta[open] summary::after {
+.Pregunta[open] summary::after {
   transform: rotate(0deg);
 }
 
 /* La respuesta entra sin dar el salto seco de siempre. */
-.pregunta[open] > p {
+.Pregunta[open] > p {
   animation: desplegar 0.35s ease-out;
 }
 
@@ -257,9 +261,9 @@ label {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .pregunta summary::before,
-  .pregunta summary::after,
-  .pregunta[open] > p {
+  .Pregunta summary::before,
+  .Pregunta summary::after,
+  .Pregunta[open] > p {
     transition: none;
     animation: none;
   }
@@ -275,13 +279,13 @@ label {
   }
 }
 
-.silueta path {
+.Silueta path {
   stroke-dasharray: 1400;
   animation: trazar 2.4s ease-out forwards;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .silueta path {
+  .Silueta path {
     stroke-dasharray: none;
     animation: none;
   }
@@ -290,4 +294,248 @@ label {
 /* Con la cabecera fija encima, las anclas tienen que dejar su hueco. */
 [id] {
   scroll-margin-top: 100px;
+}
+
+/* ---- Zona del equipo -----------------------------------------------------
+   Lo que se añadió para el proyecto final: la sesión, el diario, las reservas
+   y el panel. Escrito en CSS propio, no en utilidades, porque son piezas que
+   se repiten en varias páginas y así se tocan en un solo sitio. */
+
+/* Acción escrita, sin caja: la usan editar, borrar y cancelar cuando el botón
+   de verdad ya está en otro sitio y no conviene competir con él. */
+.EnlaceAccion {
+  font-family: var(--font-etiqueta);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-suave);
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition:
+    color 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.EnlaceAccion:hover:not(:disabled) {
+  color: var(--color-tinta);
+  border-bottom-color: var(--color-tinta);
+}
+
+.EnlaceAccion:disabled {
+  opacity: 0.4;
+}
+
+/* ---- Paginación del diario ---------------------------------------------- */
+/* ---- Comentarios ---------------------------------------------------------
+   Un filete a la izquierda en lugar de una caja: pesa menos en una página que
+   ya tiene una fotografía a sangre arriba. */
+.Comentario {
+  border-left: 1px solid var(--color-borde);
+  padding-left: 1.75rem;
+}
+
+/* ---- Ficha de reserva ----------------------------------------------------
+   Foto y datos en dos columnas en pantallas anchas, apiladas en el móvil. */
+.FichaReserva {
+  display: grid;
+  gap: 2rem;
+  border-top: 1px solid var(--color-borde);
+  padding-top: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .FichaReserva {
+    grid-template-columns: 220px 1fr;
+    align-items: start;
+  }
+}
+
+.FichaReserva-foto {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+/* Estado de la reserva. El color dice de un vistazo en qué punto está. */
+.Estado {
+  font-family: var(--font-etiqueta);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+}
+
+.Estado--pendiente {
+  color: var(--color-amarillo-acento);
+}
+
+.Estado--confirmada {
+  color: var(--color-oliva-acento);
+}
+
+.Estado--cancelada {
+  color: var(--color-rosa-acento);
+}
+
+/* ---- Panel ---------------------------------------------------------------
+   Cada cifra cuelga de un filete superior, como las fichas de datos de la
+   página de destino. */
+.Dato {
+  border-top: 1px solid var(--color-borde);
+  padding-top: 1.5rem;
+}
+
+/* Barras del reparto por destino. No hay librería de gráficos: la anchura
+   llega en la variable --parte y se anima al entrar, que es todo lo que hace
+   falta para comparar doce valores. */
+.Barra {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  .Barra {
+    grid-template-columns: 180px 1fr 140px;
+    gap: 1.5rem;
+  }
+}
+
+.Barra-nombre {
+  font-family: var(--font-etiqueta);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-suave);
+}
+
+.Barra-pista {
+  height: 10px;
+  background-color: var(--color-borde);
+  overflow: hidden;
+}
+
+.Barra-relleno {
+  display: block;
+  height: 100%;
+  width: var(--parte);
+  background-color: var(--color-azul);
+  transform-origin: left center;
+  animation: crecer 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes crecer {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.Barra-cifra {
+  font-size: 0.875rem;
+  color: var(--color-suave);
+}
+
+@media (min-width: 640px) {
+  .Barra-cifra {
+    text-align: right;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .Barra-relleno {
+    animation: none;
+  }
+}
+
+/* El enlace de salto al contenido. Fuera de la pantalla hasta que recibe el
+   foco, que es cuando baja y se lee como cualquier otro botón de la web. */
+.EnlaceDeSalto {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: 60;
+  transform: translate(-50%, -150%);
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-tinta);
+  color: var(--color-crema);
+  font-family: var(--font-etiqueta);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: transform 0.2s ease-out;
+}
+
+.EnlaceDeSalto:focus-visible {
+  transform: translate(-50%, 0);
+  outline: 2px solid var(--color-amarillo-acento);
+  outline-offset: 2px;
+}
+
+/* Cabecera en pantallas estrechas.
+
+   Por debajo de 400 px el logotipo y los tres enlaces comparten una sola
+   línea y, con el interletraje de siempre, «Entrar» se salía de la pantalla.
+   Aquí se aprieta el interletraje y se recorta el aire de los lados, que es
+   lo que menos se nota: no se quita ningún enlace. A partir de 400 px todo
+   vuelve a los valores normales. */
+@media (max-width: 400px) {
+  .Cabecera-barra {
+    padding-inline: 1rem;
+  }
+
+  .Cabecera-marca {
+    letter-spacing: 0.12em;
+  }
+
+  .Cabecera-cuenta {
+    gap: 0.75rem;
+  }
+
+  .Cabecera-cuenta .u-etiqueta {
+    letter-spacing: 0.12em;
+  }
+}
+
+/* Y en las más estrechas de todas (320 px, el iPhone SE antiguo y la pantalla
+   exterior de los plegables) el logotipo baja además un punto de tamaño.
+   Sigue leyéndose y deja sitio a los tres enlaces. */
+@media (max-width: 340px) {
+  .Cabecera-marca {
+    font-size: 0.875rem;
+    letter-spacing: 0.08em;
+  }
+
+  .Cabecera-cuenta {
+    gap: 0.5rem;
+  }
+}
+
+/* Zona táctil.
+
+   Un enlace de once píxeles o un punto del carrusel se leen bien pero se
+   tocan mal: la zona que responde al dedo se queda muy por debajo de los
+   24 × 24 px que pide la WCAG 2.2 (criterio 2.5.8). En vez de agrandar el
+   elemento y descolocar el diseño, se le cuelga delante una caja invisible
+   centrada que sí mide lo que tiene que medir. */
+.u-zonaTactil {
+  position: relative;
+}
+
+.u-zonaTactil::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 100%;
+  min-width: 24px;
+  height: 24px;
 }

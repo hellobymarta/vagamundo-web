@@ -1,19 +1,36 @@
-### Semillas del catálogo · PEC 4
+### Semillas del catálogo · Vagamundo
 #
-# Los diez viajes de Vagamundo. Se lanzan con la extensión REST Client de
+# Los once viajes de Vagamundo. Se lanzan con la extensión REST Client de
 # VS Code: abre este archivo y pulsa "Send Request" encima de cada bloque.
 # También sirven de prueba manual del POST.
 #
 # La duración, el precio y la ruta salen de los catálogos de viajes de 2026.
 # Los nombres y los textos están escritos con la voz de Vagamundo.
+#
+# IMPORTANTE: crear viajes pide sesión. Lanza primero el bloque de entrada,
+# que guarda el token, y luego ya sí los demás: todos lo llevan en su
+# cabecera Authorization.
 
 @base = https://vagamundo-api.vercel.app
+
+### 0 · Entrar (hay que lanzarlo antes que el resto)
+# @name login
+POST {{base}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "marta@vagamundo.es",
+  "password": "vagamundo2026"
+}
+
+@token = {{login.response.body.token}}
 
 # ─────────────────────────────── MEDITERRÁNEO ───────────────────────────────
 
 ### 1 · Amalfi en primavera
 POST {{base}}/api/travels
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
   "nombre": "Amalfi en primavera",
@@ -30,6 +47,7 @@ Content-Type: application/json
 ### 2 · Apulia inédita
 POST {{base}}/api/travels
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
   "nombre": "Apulia inédita",
@@ -46,6 +64,7 @@ Content-Type: application/json
 ### 3 · Grecia, del continente a Santorini
 POST {{base}}/api/travels
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
   "nombre": "Del continente a Santorini",
@@ -64,6 +83,7 @@ Content-Type: application/json
 ### 4 · Islandia en invierno
 POST {{base}}/api/travels
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
   "nombre": "Islandia, a la caza de la aurora",
@@ -82,6 +102,7 @@ Content-Type: application/json
 ### 5 · Namibia
 POST {{base}}/api/travels
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
   "nombre": "Namibia, de Etosha al Kalahari",
@@ -98,6 +119,7 @@ Content-Type: application/json
 ### 6 · Jordania
 POST {{base}}/api/travels
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
   "nombre": "Jordania, el desierto por dentro",
@@ -116,6 +138,7 @@ Content-Type: application/json
 ### 7 · Ruta de las emociones
 POST {{base}}/api/travels
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
   "nombre": "Ruta de las emociones",
@@ -132,6 +155,7 @@ Content-Type: application/json
 ### 8 · Costa Rica de punta a punta
 POST {{base}}/api/travels
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
   "nombre": "Costa Rica de punta a punta",
@@ -150,6 +174,7 @@ Content-Type: application/json
 ### 9 · India Masala
 POST {{base}}/api/travels
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
   "nombre": "India, de Delhi al Ganges",
@@ -166,6 +191,7 @@ Content-Type: application/json
 ### 10 · Japón
 POST {{base}}/api/travels
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
   "nombre": "Japón, de Koyasan al Fuji",
