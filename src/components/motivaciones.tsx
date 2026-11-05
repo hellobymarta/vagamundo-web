@@ -14,9 +14,11 @@ import { ANCLAS, RUTAS } from '@/config/rutas'
 export default function Motivaciones({
   activa,
   viajes,
+  cargando = false,
 }: {
   activa: string | null
   viajes: Viaje[]
+  cargando?: boolean
 }) {
   return (
     <div className="grid gap-x-8 gap-y-12 md:grid-cols-3">
@@ -65,7 +67,7 @@ export default function Motivaciones({
 
                 <p className="u-etiqueta mt-5 flex items-center gap-3">
                   <span className={seleccionada ? 'text-white' : 'text-white/70'}>
-                    {seleccionada ? 'Quitar filtro' : `Ver los ${cuantos}`}
+                    {seleccionada ? 'Quitar filtro' : cargando ? 'Ver viajes' : `Ver los ${cuantos}`}
                   </span>
                   <span aria-hidden="true" className="h-px w-8 bg-white/50" />
                 </p>

@@ -91,7 +91,7 @@ export default function Viajes() {
         texto="Tres maneras de mirar el catálogo. Elige una y abajo se queda solo lo que encaja."
         centrado
       >
-        <Motivaciones activa={motivacion} viajes={viajes} />
+        <Motivaciones activa={motivacion} viajes={viajes} cargando={cargando} />
       </Seccion>
 
       <section id={ANCLAS.catalogo} className="scroll-mt-24 bg-crema px-6 py-28 md:px-10 md:py-36">
@@ -103,7 +103,9 @@ export default function Viajes() {
               <h2 className="u-titular u-tituloSeccion mt-6">
                 {elegida
                   ? elegida.tituloCatalogo
-                  : `Los ${enPalabras(viajes.length)} viajes, uno por uno`}
+                  : cargando
+                    ? 'Los viajes, uno por uno'
+                    : `Los ${enPalabras(viajes.length)} viajes, uno por uno`}
               </h2>
 
               <p className="mt-6 max-w-lg text-suave">
